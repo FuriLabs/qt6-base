@@ -1,6 +1,8 @@
 qt6-base (6.2.2+dfsg-6~bpo11+1) bullseye-backports; urgency=medium
 
+  [ Lisandro Damián Nicanor Pérez Meyer ]
   * Rebuild for bullseye-backports.
+  * Update symbols files for the current build.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 06 Apr 2022 11:30:42 -0300
 

@@ -2623,6 +2623,8 @@ libQt6Core.so.6 libqt6core6 #MINVER#
  _ZN9QDateTime19fromMSecsSinceEpochExRK9QTimeZone@Qt_6 6.1.2
  _ZN9QDateTime21currentSecsSinceEpochEv@Qt_6 6.1.2
  _ZN9QDateTime22currentMSecsSinceEpochEv@Qt_6 6.1.2
+ (arch=amd64)_ZN9QDateTime4DataC1EN2Qt8TimeSpecE@Qt_6 6.2.2
+ (arch=amd64)_ZN9QDateTime4DataC2EN2Qt8TimeSpecE@Qt_6 6.2.2
  _ZN9QDateTime4DataD1Ev@Qt_6 6.1.2
  _ZN9QDateTime4DataD2Ev@Qt_6 6.1.2
  _ZN9QDateTime7setDateE5QDate@Qt_6 6.1.2
@@ -4963,7 +4965,7 @@ libQt6Core.so.6 libqt6core6 #MINVER#
  (optional=templinst)_ZNSt8_Rb_treeIiSt4pairIKi8QVariantESt10_Select1stIS3_ESt4lessIiESaIS3_EE24_M_get_insert_unique_posERS1_@Qt_6 6.1.2
  (optional=templinst|arch=amd64 arm64 ia64 mips64el ppc64el riscv64 sh4 sparc64)_ZNSt8_Rb_treeIiSt4pairIKi8QVariantESt10_Select1stIS3_ESt4lessIiESaIS3_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS3_ERS1_@Qt_6 6.1.2
  (optional=templinst|subst)_ZNSt8__detail16_Hashtable_allocINSt3pmr21polymorphic_allocatorINS_10_Hash_nodeI7QStringLb1EEEEEE19_M_allocate_bucketsE{size_t}@Qt_6 6.2.0
- (optional=templinst)_ZNSt8seed_seq8generateIPjEEvT_S2_@Qt_6 6.2.1
+ (optional=templinst|arch=!amd64)_ZNSt8seed_seq8generateIPjEEvT_S2_@Qt_6 6.2.1
  _ZTI10QEventLoop@Qt_6 6.1.2
  _ZTI10QException@Qt_6 6.1.2
  _ZTI11QChildEvent@Qt_6 6.1.2
