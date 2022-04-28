@@ -1573,7 +1573,6 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZN16QNativeInterface15QX11ApplicationD0Ev@Qt_6 6.2.0
  _ZN16QNativeInterface15QX11ApplicationD1Ev@Qt_6 6.2.0
  _ZN16QNativeInterface15QX11ApplicationD2Ev@Qt_6 6.2.0
- _ZN16QOpenGLFunctions17glBindFramebufferEjj@Qt_6 6.2.4
  _ZN16QOpenGLFunctions25initializeOpenGLFunctionsEv@Qt_6 6.1.2
  _ZN16QOpenGLFunctionsC1EP14QOpenGLContext@Qt_6 6.1.2
  _ZN16QOpenGLFunctionsC1Ev@Qt_6 6.1.2
