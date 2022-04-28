@@ -1,3 +1,10 @@
+qt6-base (6.2.4+dfsg-4~bpo11+1) bullseye-backports; urgency=medium
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Rebuild for bullseye-backports.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 28 Apr 2022 15:01:39 -0300
+
 qt6-base (6.2.4+dfsg-4) unstable; urgency=medium
 
   [ Patrick Franz ]
@@ -38,14 +45,6 @@ qt6-base (6.2.4+dfsg-1) experimental; urgency=medium
     libqt6network6, thx to Dan Bungert (Closes: #1006954).
 
  -- Patrick Franz <deltaone@debian.org>  Sun, 27 Mar 2022 16:35:23 +0200
-
-qt6-base (6.2.2+dfsg-6~bpo11+1) bullseye-backports; urgency=medium
-
-  [ Lisandro Damián Nicanor Pérez Meyer ]
-  * Rebuild for bullseye-backports.
-  * Update symbols files for the current build.
-
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 06 Apr 2022 11:30:42 -0300
 
 qt6-base (6.2.2+dfsg-6) unstable; urgency=medium
 
