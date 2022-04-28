@@ -1,3 +1,44 @@
+qt6-base (6.2.4+dfsg-4) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Upload to unstable.
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 22 Apr 2022 20:06:19 +0200
+
+qt6-base (6.2.4+dfsg-3) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * Add libgl-dev as a dependency for qt6-base-dev.
+
+ -- Patrick Franz <deltaone@debian.org>  Mon, 11 Apr 2022 19:13:00 +0200
+
+qt6-base (6.2.4+dfsg-2) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * Disable rpath.
+  * Add libglx-dev and libopengl-dev as dependencies for qt6-base-dev.
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 10 Apr 2022 20:52:38 +0200
+
+qt6-base (6.2.4+dfsg-1) experimental; urgency=medium
+
+  [ Lu YaNing ]
+  * New upstream release (6.2.4).
+  * Update ABI to 6.2.4.
+  * Update installed files.
+  * Update symbols.
+  * Update d/copyright.
+  * Update lintian-overrides.
+  * Specifies parameters to pass to the platform plugin.
+
+  [ Patrick Franz ]
+  * Add patch to prevent embedding the build path, thx to Vagrant
+    Cascadian (Closes: #1006407).
+  * Do not hardcode the libssl version as a dependency for
+    libqt6network6, thx to Dan Bungert (Closes: #1006954).
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 27 Mar 2022 16:35:23 +0200
+
 qt6-base (6.2.2+dfsg-6~bpo11+1) bullseye-backports; urgency=medium
 
   [ Lisandro Damián Nicanor Pérez Meyer ]

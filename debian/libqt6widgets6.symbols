@@ -1,6 +1,6 @@
-# SymbolsHelper-Confirmed: 6.2.2 amd64 armel armhf i386 ia64 mips64el mipsel powerpc ppc64 s390x
+# SymbolsHelper-Confirmed: 6.2.4 amd64
 libQt6Widgets.so.6 libqt6widgets6 #MINVER#
-| libqt6widgets6 #MINVER#, qt6-base-abi (= 6.2.2)
+| libqt6widgets6 #MINVER#, qt6-base-abi (= 6.2.4)
 * Build-Depends-Package: qt6-base-dev
  Qt_6.0@Qt_6.0 6.1.2
  Qt_6.1@Qt_6.1 6.1.2
@@ -6463,7 +6463,6 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZTI18QGraphicsItemGroup@Qt_6 6.1.2
  _ZTI18QGraphicsTransform@Qt_6 6.1.2
  _ZTI18QItemEditorFactory@Qt_6 6.1.2
- _ZTI18QMutableTouchEvent@Qt_6 6.1.2
  _ZTI18QTapAndHoldGesture@Qt_6 6.1.2
  _ZTI19QAbstractScrollArea@Qt_6 6.1.2
  _ZTI19QGraphicsBlurEffect@Qt_6 6.1.2
@@ -6490,7 +6489,6 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZTI24QGraphicsSceneHoverEvent@Qt_6 6.1.2
  _ZTI24QGraphicsSceneMouseEvent@Qt_6 6.1.2
  _ZTI24QGraphicsSceneWheelEvent@Qt_6 6.1.2
- _ZTI24QMutableSinglePointEvent@Qt_6 6.1.2
  _ZTI24QPlainTextDocumentLayout@Qt_6 6.1.2
  _ZTI25QGraphicsDropShadowEffect@Qt_6 6.1.2
  _ZTI25QGraphicsSceneResizeEvent@Qt_6 6.1.2
@@ -6631,7 +6629,6 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZTS18QGraphicsItemGroup@Qt_6 6.1.2
  _ZTS18QGraphicsTransform@Qt_6 6.1.2
  _ZTS18QItemEditorFactory@Qt_6 6.1.2
- _ZTS18QMutableTouchEvent@Qt_6 6.1.2
  _ZTS18QTapAndHoldGesture@Qt_6 6.1.2
  _ZTS19QAbstractScrollArea@Qt_6 6.1.2
  _ZTS19QGraphicsBlurEffect@Qt_6 6.1.2
@@ -6658,7 +6655,6 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZTS24QGraphicsSceneHoverEvent@Qt_6 6.1.2
  _ZTS24QGraphicsSceneMouseEvent@Qt_6 6.1.2
  _ZTS24QGraphicsSceneWheelEvent@Qt_6 6.1.2
- _ZTS24QMutableSinglePointEvent@Qt_6 6.1.2
  _ZTS24QPlainTextDocumentLayout@Qt_6 6.1.2
  _ZTS25QGraphicsDropShadowEffect@Qt_6 6.1.2
  _ZTS25QGraphicsSceneResizeEvent@Qt_6 6.1.2
@@ -6799,7 +6795,6 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZTV18QGraphicsItemGroup@Qt_6 6.1.2
  _ZTV18QGraphicsTransform@Qt_6 6.1.2
  _ZTV18QItemEditorFactory@Qt_6 6.1.2
- _ZTV18QMutableTouchEvent@Qt_6 6.1.2
  _ZTV18QTapAndHoldGesture@Qt_6 6.1.2
  _ZTV19QAbstractScrollArea@Qt_6 6.1.2
  _ZTV19QGraphicsBlurEffect@Qt_6 6.1.2
@@ -6825,7 +6820,6 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZTV24QGraphicsSceneHoverEvent@Qt_6 6.1.2
  _ZTV24QGraphicsSceneMouseEvent@Qt_6 6.1.2
  _ZTV24QGraphicsSceneWheelEvent@Qt_6 6.1.2
- _ZTV24QMutableSinglePointEvent@Qt_6 6.1.2
  _ZTV24QPlainTextDocumentLayout@Qt_6 6.1.2
  _ZTV25QGraphicsDropShadowEffect@Qt_6 6.1.2
  _ZTV25QGraphicsSceneResizeEvent@Qt_6 6.1.2

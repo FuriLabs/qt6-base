@@ -1,6 +1,6 @@
-# SymbolsHelper-Confirmed: 6.2.2 amd64 hurd-i386 ia64 mips64el mipsel
+# SymbolsHelper-Confirmed: 6.2.4 amd64
 libQt6Core.so.6 libqt6core6 #MINVER#
-| libqt6core6 #MINVER#, qt6-base-abi (= 6.2.2)
+| libqt6core6 #MINVER#, qt6-base-abi (= 6.2.4)
 * Build-Depends-Package: qt6-base-dev
  Qt_6.0@Qt_6.0 6.1.2
  Qt_6.1@Qt_6.1 6.1.2
@@ -1031,7 +1031,6 @@ libQt6Core.so.6 libqt6core6 #MINVER#
  _ZN16QLoggingCategoryD2Ev@Qt_6 6.1.2
  _ZN16QMetaAssociation15MetaAssociationI4QMapI7QString8QVariantEE5valueE@Qt_6 6.1.2
  _ZN16QMetaAssociation15MetaAssociationI5QHashI7QString8QVariantEE5valueE@Qt_6 6.1.2
- _ZN16QNativeInterface7Private17lcNativeInterfaceEv@Qt_6 6.2.0
  (subst)_ZN16QRandomGenerator10_fillRangeEPv{qptrdiff}@Qt_6 6.1.2
  _ZN16QRandomGenerator7discardEy@Qt_6 6.1.2
  _ZN16QRandomGeneratorC1EPKjS1_@Qt_6 6.1.2
@@ -1621,10 +1620,12 @@ libQt6Core.so.6 libqt6core6 #MINVER#
  _ZN20QFutureInterfaceBase15reportExceptionERK10QException@Qt_6 6.1.2
  _ZN20QFutureInterfaceBase15resultStoreBaseEv@Qt_6 6.1.2
  _ZN20QFutureInterfaceBase15setContinuationESt8functionIFvRKS_EE@Qt_6 6.1.2
+ _ZN20QFutureInterfaceBase15setContinuationESt8functionIFvRKS_EEP27QFutureInterfaceBasePrivate@Qt_6 6.2.4
  _ZN20QFutureInterfaceBase15toggleSuspendedEv@Qt_6 6.1.2
  _ZN20QFutureInterfaceBase15waitForFinishedEv@Qt_6 6.1.2
  _ZN20QFutureInterfaceBase16setProgressRangeEii@Qt_6 6.1.2
  _ZN20QFutureInterfaceBase16setProgressValueEi@Qt_6 6.1.2
+ _ZN20QFutureInterfaceBase17cleanContinuationEv@Qt_6 6.2.4
  _ZN20QFutureInterfaceBase17waitForNextResultEv@Qt_6 6.1.2
  _ZN20QFutureInterfaceBase18reportResultsReadyEii@Qt_6 6.1.2
  _ZN20QFutureInterfaceBase18suspendIfRequestedEv@Qt_6 6.1.2
@@ -3380,6 +3381,7 @@ libQt6Core.so.6 libqt6core6 #MINVER#
  _ZN9QtPrivate16QStringList_joinERK5QListI7QStringE13QLatin1String@Qt_6 6.1.2
  _ZN9QtPrivate16QStringList_sortEP5QListI7QStringEN2Qt15CaseSensitivityE@Qt_6 6.1.2
  _ZN9QtPrivate16convertToQStringE14QAnyStringView@Qt_6 6.1.2
+ _ZN9QtPrivate17lcNativeInterfaceEv@Qt_6 6.2.4
  _ZN9QtPrivate17shouldLogToStderrEv@Qt_6 6.1.2
  _ZN9QtPrivate18QStringList_filterEPK5QListI7QStringE11QStringViewN2Qt15CaseSensitivityE@Qt_6 6.1.2
  _ZN9QtPrivate18QStringList_filterEPK5QListI7QStringERK18QRegularExpression@Qt_6 6.1.2
@@ -4140,6 +4142,7 @@ libQt6Core.so.6 libqt6core6 #MINVER#
  _ZNK20QFutureInterfaceBase12isSuspendingEv@Qt_6 6.1.2
  _ZNK20QFutureInterfaceBase12progressTextEv@Qt_6 6.1.2
  _ZNK20QFutureInterfaceBase13progressValueEv@Qt_6 6.1.2
+ _ZNK20QFutureInterfaceBase15isChainCanceledEv@Qt_6 6.2.4
  _ZNK20QFutureInterfaceBase15isResultReadyAtEi@Qt_6 6.1.2
  _ZNK20QFutureInterfaceBase15progressMaximumEv@Qt_6 6.1.2
  _ZNK20QFutureInterfaceBase15progressMinimumEv@Qt_6 6.1.2

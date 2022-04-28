@@ -84,7 +84,7 @@ Package: libqt6core6
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
-Provides: qt6-base-abi (= 6.2.2)
+Provides: qt6-base-abi (= 6.2.4)
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Qt 6 core module
  Qt is a cross-platform C++ application framework. Qt's primary feature
@@ -203,7 +203,7 @@ Package: libqt6network6
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
-Depends: libssl1.1, ${misc:Depends}, ${shlibs:Depends}
+Depends: ${libssl:Depends}, ${misc:Depends}, ${shlibs:Depends}
 Description: Qt 6 network module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -331,7 +331,10 @@ Package: qt6-base-dev
 Section: libdevel
 Architecture: any
 Multi-Arch: same
-Depends: libqt6concurrent6 (= ${binary:Version}),
+Depends: libgl-dev,
+         libglx-dev,
+         libopengl-dev,
+         libqt6concurrent6 (= ${binary:Version}),
          libqt6core6 (= ${binary:Version}),
          libqt6dbus6 (= ${binary:Version}),
          libqt6gui6 (= ${binary:Version}),

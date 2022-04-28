@@ -464,3 +464,4 @@ usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/win32-icc/qmake.conf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/win32-icc/qplatformdefs.h
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/win32-msvc/qmake.conf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/win32-msvc/qplatformdefs.h
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/qt6.conf

@@ -1,6 +1,6 @@
-# SymbolsHelper-Confirmed: 6.2.2 amd64 arm64 armel armhf i386 ia64 mips64el mipsel powerpc ppc64 s390x
+# SymbolsHelper-Confirmed: 6.2.4 amd64
 libQt6Network.so.6 libqt6network6 #MINVER#
-| libqt6network6 #MINVER#, qt6-base-abi (= 6.2.2)
+| libqt6network6 #MINVER#, qt6-base-abi (= 6.2.4)
 * Build-Depends-Package: qt6-base-dev
  Qt_6.0@Qt_6.0 6.1.2
  Qt_6.1@Qt_6.1 6.1.2
@@ -606,22 +606,6 @@ libQt6Network.so.6 libqt6network6 #MINVER#
  _ZN17QSslConfigurationaSERKS_@Qt_6 6.1.2
  _ZN17QSslEllipticCurve12fromLongNameERK7QString@Qt_6 6.1.2
  _ZN17QSslEllipticCurve13fromShortNameERK7QString@Qt_6 6.1.2
- _ZN17QSslSocketPrivate12setEncryptedEb@Qt_6 6.1.2
- _ZN17QSslSocketPrivate14tlsWriteBufferEv@Qt_6 6.1.2
- _ZN17QSslSocketPrivate15setPendingCloseEb@Qt_6 6.1.2
- _ZN17QSslSocketPrivate16readyReadPointerEv@Qt_6 6.1.2
- _ZN17QSslSocketPrivate17ensureInitializedEv@Qt_6 6.2.0
- _ZN17QSslSocketPrivate20pauseSocketNotifiersEP10QSslSocket@Qt_6 6.1.2
- _ZN17QSslSocketPrivate20setMaxReadBufferSizeEx@Qt_6 6.1.2
- _ZN17QSslSocketPrivate20systemCaCertificatesEv@Qt_6 6.2.0
- _ZN17QSslSocketPrivate21resumeSocketNotifiersEP10QSslSocket@Qt_6 6.1.2
- _ZN17QSslSocketPrivate22tlsEmittedBytesWrittenEv@Qt_6 6.1.2
- _ZN17QSslSocketPrivate23unixRootCertDirectoriesEv@Qt_6 6.1.2
- _ZN17QSslSocketPrivate27verifyErrorsHaveBeenIgnoredEv@Qt_6 6.1.2
- _ZN17QSslSocketPrivate32rootCertOnDemandLoadingSupportedEv@Qt_6 6.1.2
- _ZN17QSslSocketPrivate35setRootCertOnDemandLoadingSupportedEb@Qt_6 6.1.2
- _ZN17QSslSocketPrivate9setPausedEb@Qt_6 6.1.2
- _ZN17QSslSocketPrivate9tlsBufferEv@Qt_6 6.1.2
  _ZN18QNetworkProxyQuery11setPeerPortEi@Qt_6 6.1.2
  _ZN18QNetworkProxyQuery12setLocalPortEi@Qt_6 6.1.2
  _ZN18QNetworkProxyQuery12setQueryTypeENS_9QueryTypeE@Qt_6 6.1.2
@@ -1200,15 +1184,6 @@ libQt6Network.so.6 libqt6network6 #MINVER#
  _ZNK17QSslEllipticCurve15isTlsNamedCurveEv@Qt_6 6.1.2
  _ZNK17QSslEllipticCurve8longNameEv@Qt_6 6.1.2
  _ZNK17QSslEllipticCurve9shortNameEv@Qt_6 6.1.2
- _ZNK17QSslSocketPrivate11tlsHostNameEv@Qt_6 6.1.2
- _ZNK17QSslSocketPrivate14isPendingCloseEv@Qt_6 6.1.2
- _ZNK17QSslSocketPrivate14plainTcpSocketEv@Qt_6 6.1.2
- _ZNK17QSslSocketPrivate16verificationNameEv@Qt_6 6.1.2
- _ZNK17QSslSocketPrivate17maxReadBufferSizeEv@Qt_6 6.1.2
- _ZNK17QSslSocketPrivate22isRootsOnDemandAllowedEv@Qt_6 6.1.2
- _ZNK17QSslSocketPrivate23isAutoStartingHandshakeEv@Qt_6 6.1.2
- _ZNK17QSslSocketPrivate7tlsModeEv@Qt_6 6.1.2
- _ZNK17QSslSocketPrivate8isPausedEv@Qt_6 6.1.2
  _ZNK18QNetworkProxyQuery11protocolTagEv@Qt_6 6.1.2
  _ZNK18QNetworkProxyQuery12peerHostNameEv@Qt_6 6.1.2
  _ZNK18QNetworkProxyQuery3urlEv@Qt_6 6.1.2

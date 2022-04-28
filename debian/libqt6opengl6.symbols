@@ -1,6 +1,6 @@
-# SymbolsHelper-Confirmed: 6.2.0 amd64
+# SymbolsHelper-Confirmed: 6.2.4 amd64
 libQt6OpenGL.so.6 libqt6opengl6 #MINVER#
-| libqt6opengl6 #MINVER#, qt6-base-abi (= 6.2.2)
+| libqt6opengl6 #MINVER#, qt6-base-abi (= 6.2.4)
 * Build-Depends-Package: qt6-base-dev
  Qt_6.0@Qt_6.0 6.1.2
  Qt_6.1@Qt_6.1 6.1.2
@@ -834,7 +834,6 @@ libQt6OpenGL.so.6 libqt6opengl6 #MINVER#
  _ZTI25QOpenGLFunctions_4_3_Core@Qt_6 6.1.2
  _ZTI25QOpenGLFunctions_4_4_Core@Qt_6 6.1.2
  _ZTI25QOpenGLFunctions_4_5_Core@Qt_6 6.1.2
- _ZTI25QPaintDeviceWindowPrivate@Qt_6 6.1.2
  _ZTI34QOpenGLFunctions_3_2_Compatibility@Qt_6 6.1.2
  _ZTI34QOpenGLFunctions_3_3_Compatibility@Qt_6 6.1.2
  _ZTI34QOpenGLFunctions_4_0_Compatibility@Qt_6 6.1.2
@@ -874,7 +873,6 @@ libQt6OpenGL.so.6 libqt6opengl6 #MINVER#
  _ZTS25QOpenGLFunctions_4_3_Core@Qt_6 6.1.2
  _ZTS25QOpenGLFunctions_4_4_Core@Qt_6 6.1.2
  _ZTS25QOpenGLFunctions_4_5_Core@Qt_6 6.1.2
- _ZTS25QPaintDeviceWindowPrivate@Qt_6 6.1.2
  _ZTS34QOpenGLFunctions_3_2_Compatibility@Qt_6 6.1.2
  _ZTS34QOpenGLFunctions_3_3_Compatibility@Qt_6 6.1.2
  _ZTS34QOpenGLFunctions_4_0_Compatibility@Qt_6 6.1.2
@@ -913,7 +911,6 @@ libQt6OpenGL.so.6 libqt6opengl6 #MINVER#
  _ZTV25QOpenGLFunctions_4_3_Core@Qt_6 6.1.2
  _ZTV25QOpenGLFunctions_4_4_Core@Qt_6 6.1.2
  _ZTV25QOpenGLFunctions_4_5_Core@Qt_6 6.1.2
- _ZTV25QPaintDeviceWindowPrivate@Qt_6 6.1.2
  _ZTV34QOpenGLFunctions_3_2_Compatibility@Qt_6 6.1.2
  _ZTV34QOpenGLFunctions_3_3_Compatibility@Qt_6 6.1.2
  _ZTV34QOpenGLFunctions_4_0_Compatibility@Qt_6 6.1.2

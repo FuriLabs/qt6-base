@@ -1,6 +1,6 @@
-# SymbolsHelper-Confirmed: 6.2.2 amd64 hurd-i386 ia64 mips64el mipsel
+# SymbolsHelper-Confirmed: 6.2.4 amd64
 libQt6Gui.so.6 libqt6gui6 #MINVER#
-| libqt6gui6 #MINVER#, qt6-base-abi (= 6.2.2)
+| libqt6gui6 #MINVER#, qt6-base-abi (= 6.2.4)
 * Build-Depends-Package: qt6-base-dev
  Qt_6.0@Qt_6.0 6.1.2
  Qt_6.1@Qt_6.1 6.1.2
@@ -1573,6 +1573,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZN16QNativeInterface15QX11ApplicationD0Ev@Qt_6 6.2.0
  _ZN16QNativeInterface15QX11ApplicationD1Ev@Qt_6 6.2.0
  _ZN16QNativeInterface15QX11ApplicationD2Ev@Qt_6 6.2.0
+ _ZN16QOpenGLFunctions17glBindFramebufferEjj@Qt_6 6.2.4
  _ZN16QOpenGLFunctions25initializeOpenGLFunctionsEv@Qt_6 6.1.2
  _ZN16QOpenGLFunctionsC1EP14QOpenGLContext@Qt_6 6.1.2
  _ZN16QOpenGLFunctionsC1Ev@Qt_6 6.1.2
@@ -4517,7 +4518,6 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZTI29QAccessibleTableCellInterface@Qt_6 6.1.2
  _ZTI29QAccessibleTextSelectionEvent@Qt_6 6.1.2
  _ZTI29QScreenOrientationChangeEvent@Qt_6 6.1.2
- _ZTI31QAbstractEventDispatcherPrivate@Qt_6 6.1.2
  _ZTI32QAccessibleEditableTextInterface@Qt_6 6.1.2
  _ZTI32QAccessibleTableModelChangeEvent@Qt_6 6.1.2
  _ZTI5QDrag@Qt_6 6.1.2
@@ -4687,7 +4687,6 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZTS29QAccessibleTableCellInterface@Qt_6 6.1.2
  _ZTS29QAccessibleTextSelectionEvent@Qt_6 6.1.2
  _ZTS29QScreenOrientationChangeEvent@Qt_6 6.1.2
- _ZTS31QAbstractEventDispatcherPrivate@Qt_6 6.1.2
  _ZTS32QAccessibleEditableTextInterface@Qt_6 6.1.2
  _ZTS32QAccessibleTableModelChangeEvent@Qt_6 6.1.2
  _ZTS5QDrag@Qt_6 6.1.2
@@ -4849,13 +4848,13 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZTV27QAbstractTextDocumentLayout@Qt_6 6.1.2
  _ZTV27QAccessibleStateChangeEvent@Qt_6 6.1.2
  _ZTV27QAccessibleValueChangeEvent@Qt_6 6.1.2
+ _ZTV27QEventDispatcherGlibPrivate@Qt_6 6.2.4
  _ZTV27QRegularExpressionValidator@Qt_6 6.1.2
  _ZTV28QApplicationStateChangeEvent@Qt_6 6.1.2
  _ZTV29QAccessibleHyperlinkInterface@Qt_6 6.2.0
  _ZTV29QAccessibleTableCellInterface@Qt_6 6.1.2
  _ZTV29QAccessibleTextSelectionEvent@Qt_6 6.1.2
  _ZTV29QScreenOrientationChangeEvent@Qt_6 6.1.2
- _ZTV31QAbstractEventDispatcherPrivate@Qt_6 6.1.2
  _ZTV32QAccessibleEditableTextInterface@Qt_6 6.1.2
  _ZTV32QAccessibleTableModelChangeEvent@Qt_6 6.1.2
  _ZTV5QDrag@Qt_6 6.1.2

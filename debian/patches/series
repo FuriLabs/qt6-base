@@ -10,3 +10,4 @@ upstream_QFileSystemEngine-canonicalName-Unix-clean-up-contro.patch
 
 # Debian specific
 remove_privacy_breaches.diff
+build_path_embedded_qtbuildinternalsextra_cmake.patch

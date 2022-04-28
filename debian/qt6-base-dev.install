@@ -1620,6 +1620,7 @@ usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/QtCMakeHelpers.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/QtCMakeVersionHelpers.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/QtCompilerFlags.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/QtCompilerOptimization.cmake
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/QtCopyFileIfDifferent.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/QtConfigDependencies.cmake.in
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/QtDbusHelpers.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/QtDeferredDependenciesHelpers.cmake
@@ -1661,6 +1662,7 @@ usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/QtPrecompiledHeadersHelpers.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/QtPriHelpers.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/QtPrlHelpers.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/QtProcessConfigureArgs.cmake
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/QtPublicCMakeHelpers.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/QtQmakeHelpers.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/QtResourceHelpers.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/QtRpathHelpers.cmake
@@ -2085,6 +2087,7 @@ usr/share/qt6/doc/global/externalsites.qdocconf
 usr/share/qt6/doc/global/externalsites/external-resources.qdoc
 usr/share/qt6/doc/global/externalsites/qt-webpages.qdoc
 usr/share/qt6/doc/global/externalsites/qtcreator.qdoc
+usr/share/qt6/doc/global/externalsites/qtdesignstudio.qdoc
 usr/share/qt6/doc/global/externalsites/rfc.qdoc
 usr/share/qt6/doc/global/fileextensions.qdocconf
 usr/share/qt6/doc/global/html-config.qdocconf

@@ -1,6 +1,6 @@
 # SymbolsHelper-Confirmed: 6.2.0 amd64
 libQt6Test.so.6 libqt6test6 #MINVER#
-| libqt6test6 #MINVER#, qt6-base-abi (= 6.2.2)
+| libqt6test6 #MINVER#, qt6-base-abi (= 6.2.4)
 * Build-Depends-Package: qt6-base-dev
  Qt_6.0@Qt_6.0 6.1.2
  Qt_6.1@Qt_6.1 6.1.2

@@ -5,6 +5,7 @@
 include /usr/share/dpkg/architecture.mk
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+sslpkgname := $(shell dpkg-query --show '--showformat=$${Depends}' libssl-dev | cut -d ' ' -f1)
 
 ifneq (,$(filter libqt6sql6-ibase,$(shell dh_listpackages)))
         extra_cmake_args += -DFEATURE_sql_ibase=ON
@@ -69,7 +70,7 @@ override_dh_auto_configure:
 		-DFEATURE_png=ON \
 		-DFEATURE_system_png=ON \
 		-DFEATURE_system_libb2=ON \
-		-DCMAKE_BUILD_RPATH_USE_ORIGIN=ON \
+		-DFEATURE_rpath=OFF \
 		$(extra_cmake_args)
 
 
@@ -81,6 +82,13 @@ execute_after_dh_auto_install:
 	# Reproducible builds: remove build paths from .prl files
 	sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libQt6*.prl
 
+	# Specifies parameters to pass to the platform plugin.
+	mkdir -p debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/qt6
+	sed 's/@DEB_HOST_MULTIARCH@/$(DEB_HOST_MULTIARCH)/' debian/qt.conf.in \
+		> debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/qt6/qt6.conf
 
 override_dh_makeshlibs:
 	dh_makeshlibs -XlibQt6EglFSDeviceIntegration -XlibQt6EglFsKmsGbmSupport -XlibQt6EglFsKmsSupport -XlibQt6XcbQpa
+
+execute_after_dh_shlibdeps-arch:
+	echo libssl:Depends=$(sslpkgname) >> debian/libqt6network6.substvars

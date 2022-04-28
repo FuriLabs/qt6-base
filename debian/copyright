@@ -24,7 +24,7 @@ Files-Excluded: examples/xml/htmlinfo
 # * src/3rdparty/wintab — license does not permit modification
 
 Files: *
-Copyright: 2016-2021 The Qt Company Ltd.
+Copyright: 2016-2022 The Qt Company Ltd.
 License: LGPL-3 or GPL-2
 
 Files: *.qdoc
@@ -43,7 +43,7 @@ Files: conanfile.py
        src/tools/*
        tests/*
        util/*
-Copyright: 2016-2021 The Qt Company Ltd.
+Copyright: 2016-2022 The Qt Company Ltd.
 License: GPL-3 with Qt-1.0 exception
 
 Files: doc/src/snippets/*
@@ -58,7 +58,7 @@ Files: doc/src/snippets/*
        tests/manual/wasm/*
        tests/manual/widgets/widgets/defaultUpMenuBar/main.cpp
        tests/manual/widgets/widgets/qtabbar/stylesheet/main.cpp
-Copyright: 2016-2021 The Qt Company Ltd.
+Copyright: 2016-2022 The Qt Company Ltd.
 License: BSD-3-clause
 
 Files: debian/*
@@ -512,7 +512,7 @@ Files: configure
        tests/benchmarks/corelib/text/qbytearray/main.cpp
        tests/benchmarks/corelib/tools/qhash/main.cpp
 Copyright: 2016-2021 Intel Corporation
-           2016-2021 The Qt Company Ltd.
+           2016-2022 The Qt Company Ltd.
 License: GPL-3 with Qt-1.0 exception
 
 Files: tests/auto/corelib/global/qglobalstatic/tst_qglobalstatic.cpp
@@ -782,7 +782,7 @@ License: LGPL-3 or GPL-2
 
 Files: src/corelib/io/qprocess_unix.cpp
 Copyright: 2021 Alex Trotsenko.
-           2021 Intel Corporation
+           2022 Intel Corporation
            2020 The Qt Company Ltd.
 License: LGPL-3 or GPL-2
 
@@ -1194,9 +1194,15 @@ Files: src/corelib/global/qlogging.cpp
        src/corelib/thread/qmutex.cpp
        src/corelib/thread/qmutex_p.h
        src/corelib/thread/qreadwritelock.cpp
-Copyright: 2016-2018 Intel Corporation
+Copyright: 2016-2021 Intel Corporation
            2012-2016 Olivier Goffart <ogoffart@woboq.com>
            2016-2021 The Qt Company Ltd.
+License: LGPL-3 or GPL-2
+
+Files: src/corelib/kernel/qmetatype.cpp
+Copyright: 2021 The Qt Company Ltd.
+           2021 Klarälvdalens Datakonsult AB, a KDAB Group company
+           2021 Intel Corporation
 License: LGPL-3 or GPL-2
 
 Files: src/corelib/io/qfilesystemengine_unix.cpp
@@ -1340,7 +1346,7 @@ Files: config.tests/arch/arch.cpp
        src/testlib/qtestcase.cpp
        src/widgets/kernel/qwidget.cpp
 Copyright: 2015-2021 Intel Corporation
-           2016-2021 The Qt Company Ltd.
+           2016-2022 The Qt Company Ltd.
 License: LGPL-3 or GPL-2
 
 Files: src/corelib/global/qfloat16tables.cpp
@@ -1394,7 +1400,6 @@ License: LGPL-3 or GPL-2
 
 Files: src/corelib/time/qtimezone.cpp
        src/corelib/time/qtimezone.h
-       src/corelib/time/qtimezoneprivate_win.cpp
        src/gui/painting/qpagelayout.cpp
        src/gui/painting/qpagelayout.h
        src/gui/painting/qpagesize.cpp
@@ -1415,13 +1420,14 @@ Files: src/corelib/time/qtimezoneprivate.cpp
        src/corelib/time/qtimezoneprivate_icu.cpp
        src/corelib/time/qtimezoneprivate_mac.mm
        src/corelib/time/qtimezoneprivate_p.h
+       src/corelib/time/qtimezoneprivate_win.cpp
        src/plugins/printsupport/cups/qcupsprintersupport.cpp
        src/plugins/printsupport/cups/qcupsprintersupport_p.h
        src/printsupport/kernel/qplatformprintdevice.h
        src/printsupport/platform/windows/qwindowsprintdevice.cpp
        src/printsupport/platform/windows/qwindowsprintdevice_p.h
 Copyright: 2013-2014 John Layt <jlayt@kde.org>
-           2016-2021 The Qt Company Ltd.
+           2016-2022 The Qt Company Ltd.
 License: LGPL-3 or GPL-2
 
 Files: src/platformsupport/input/evdevtouch/qevdevtouchfilter_p.h
@@ -1919,7 +1925,7 @@ License: Expat
 # Manual rules for some files with non-standard licenses
 
 Files: tests/auto/testlib/selftests/catch_p_p.h
-Copyright: 2020 Two Blue Cubes Ltd.
+Copyright: 2022 Two Blue Cubes Ltd.
 License: Boost-1.0
 
 Files: src/gui/vulkan/vk.xml
