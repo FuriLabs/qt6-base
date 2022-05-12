@@ -92,3 +92,8 @@ override_dh_makeshlibs:
 
 execute_after_dh_shlibdeps-arch:
 	echo libssl:Depends=$(sslpkgname) >> debian/libqt6network6.substvars
+
+ifeq ($(DEB_HOST_ARCH_CPU),arm64)
+# See https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=968670
+override_dh_dwz:
+endif
