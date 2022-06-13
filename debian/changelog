@@ -1,3 +1,43 @@
+qt6-base (6.2.4+dfsg-8) unstable; urgency=medium
+
+  * Team upload.
+  * Disable relocatable feature, to fix paths on usr-merged systems.
+    Thanks to Steven Trabert for the patch! (Closes: #1010575, LP: #1970057)
+  * Mark one inline symbol as optional to fix build on Ubuntu ppc64el.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Mon, 23 May 2022 00:56:59 +0300
+
+qt6-base (6.2.4+dfsg-7) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Dmitry Shachnev ]
+  * Backport two upstream patches to fix libatomic detection.
+  * Update symbols files from buildds’ logs.
+
+  [ Lu YaNing ]
+  * Modify LibraryExecutables path.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sat, 14 May 2022 20:14:37 +0300
+
+qt6-base (6.2.4+dfsg-6) unstable; urgency=medium
+
+  * Team upload.
+  * Update symbols files from the logs of buildds.
+  * Bump Standards-Version to 4.6.1, no changes required.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 14 May 2022 06:39:30 +0200
+
+qt6-base (6.2.4+dfsg-5) unstable; urgency=medium
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Move plugins to the package they do belong to:
+    - libqcertonlybackend.so and libqopensslbackend.so to libqt6network6.
+    - libqgif.so, libqico.so and libqjpeg.so to libqt6gui6.
+    (Closes: #1009632).
+
+ -- Patrick Franz <deltaone@debian.org>  Sat, 30 Apr 2022 19:16:53 +0200
+
 qt6-base (6.2.4+dfsg-4~bpo11+2) bullseye-backports; urgency=medium
 
   * Override dh_dwz on arm64 until #968670 is fixed.

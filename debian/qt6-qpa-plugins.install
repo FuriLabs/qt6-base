@@ -14,9 +14,6 @@ usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/egldeviceintegrations/libqeglfs-x11-in
 [linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/generic/libqlibinputplugin.so
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/generic/libqtslibplugin.so
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/generic/libqtuiotouchplugin.so
-usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/imageformats/libqgif.so
-usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/imageformats/libqico.so
-usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/imageformats/libqjpeg.so
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/platforminputcontexts/libcomposeplatforminputcontextplugin.so
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/platforminputcontexts/libibusplatforminputcontextplugin.so
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/platforms/libqeglfs.so
@@ -28,6 +25,4 @@ usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/platforms/libqvnc.so
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/platforms/libqxcb.so
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/xcbglintegrations/libqxcb-glx-integration.so
 [linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/platforms/libqvkkhrdisplay.so
-usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/tls/libqcertonlybackend.so
-usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/tls/libqopensslbackend.so
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/xcbglintegrations/libqxcb-egl-integration.so

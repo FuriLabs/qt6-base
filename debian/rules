@@ -71,6 +71,7 @@ override_dh_auto_configure:
 		-DFEATURE_system_png=ON \
 		-DFEATURE_system_libb2=ON \
 		-DFEATURE_rpath=OFF \
+		-DFEATURE_relocatable=OFF \
 		$(extra_cmake_args)
 
 
