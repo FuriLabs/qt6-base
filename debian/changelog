@@ -1,3 +1,9 @@
+qt6-base (6.2.4+dfsg-8~bpo11+1) bullseye-backports; urgency=medium
+
+  * Rebuild for bullseye-backports.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Mon, 13 Jun 2022 20:13:16 -0300
+
 qt6-base (6.2.4+dfsg-8) unstable; urgency=medium
 
   * Team upload.
