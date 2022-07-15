@@ -3,3 +3,4 @@ usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/3rdparty/extra-cmake-modules/qt_attribut
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/3rdparty/kwin/COPYING-CMAKE-SCRIPTS
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/3rdparty/kwin/qt_attribution.json
 usr/lib/qt6/bin/qmake
+usr/lib/qt6/bin/qtpaths

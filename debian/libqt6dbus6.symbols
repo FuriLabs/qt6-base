@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.2.4 arm64 armel armhf i386 mipsel ppc64 ppc64el riscv64 s390x sh4 sparc64
+# SymbolsHelper-Confirmed: 6.2.4 amd64 arm64 armel armhf hppa i386 ia64 m68k mips64el mipsel ppc64 ppc64el riscv64 s390x sh4 sparc64
 libQt6DBus.so.6 libqt6dbus6 #MINVER#
 | libqt6dbus6 #MINVER#, qt6-base-abi (= 6.2.4)
 * Build-Depends-Package: qt6-base-dev
@@ -402,10 +402,10 @@ libQt6DBus.so.6 libqt6dbus6 #MINVER#
  _ZNK24QDBusConnectionInterface23activatableServiceNamesEv@Qt_6 6.1.2
  (optional=templinst)_ZNKSt8_Rb_treeI7QStringSt4pairIKS0_S0_ESt10_Select1stIS3_ESt4lessIS0_ESaIS3_EE4findERS2_@Qt_6 6.1.2
  (optional=templinst)_ZNSt8_Rb_treeI7QStringSt4pairIKS0_8QVariantESt10_Select1stIS4_ESt4lessIS0_ESaIS4_EE24_M_get_insert_unique_posERS2_@Qt_6 6.1.2
- (optional=templinst|arch=arm64 ppc64el riscv64 sh4 sparc64)_ZNSt8_Rb_treeI7QStringSt4pairIKS0_8QVariantESt10_Select1stIS4_ESt4lessIS0_ESaIS4_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS4_ERS2_@Qt_6 6.1.2
- (optional=templinst|arch=arm64 ppc64el riscv64 sh4 sparc64)_ZNSt8_Rb_treeI7QStringSt4pairIKS0_S0_ESt10_Select1stIS3_ESt4lessIS0_ESaIS3_EE11equal_rangeERS2_@Qt_6 6.1.2
+ (optional=templinst|arch=amd64 arm64 hppa ia64 m68k mips64el ppc64el riscv64 sh4 sparc64)_ZNSt8_Rb_treeI7QStringSt4pairIKS0_8QVariantESt10_Select1stIS4_ESt4lessIS0_ESaIS4_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS4_ERS2_@Qt_6 6.1.2
+ (optional=templinst|arch=amd64 arm64 hppa ia64 m68k mips64el ppc64el riscv64 sh4 sparc64)_ZNSt8_Rb_treeI7QStringSt4pairIKS0_S0_ESt10_Select1stIS3_ESt4lessIS0_ESaIS3_EE11equal_rangeERS2_@Qt_6 6.1.2
  (optional=templinst)_ZNSt8_Rb_treeI7QStringSt4pairIKS0_S0_ESt10_Select1stIS3_ESt4lessIS0_ESaIS3_EE12_M_erase_auxESt23_Rb_tree_const_iteratorIS3_ESB_@Qt_6 6.1.2
- (optional=templinst|arch=!armel !armhf)_ZNSt8_Rb_treeI7QStringSt4pairIKS0_S0_ESt10_Select1stIS3_ESt4lessIS0_ESaIS3_EE16_M_insert_uniqueIS3_EES1_ISt17_Rb_tree_iteratorIS3_EbEOT_@Qt_6 6.1.2
+ (optional=templinst|arch=!armel !armhf !m68k)_ZNSt8_Rb_treeI7QStringSt4pairIKS0_S0_ESt10_Select1stIS3_ESt4lessIS0_ESaIS3_EE16_M_insert_uniqueIS3_EES1_ISt17_Rb_tree_iteratorIS3_EbEOT_@Qt_6 6.1.2
  (optional=templinst)_ZNSt8_Rb_treeI7QStringSt4pairIKS0_S0_ESt10_Select1stIS3_ESt4lessIS0_ESaIS3_EE24_M_get_insert_unique_posERS2_@Qt_6 6.1.2
  (optional=templinst)_ZNSt8_Rb_treeI7QStringSt4pairIKS0_S0_ESt10_Select1stIS3_ESt4lessIS0_ESaIS3_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS3_ERS2_@Qt_6 6.1.2
  (optional=templinst)_ZNSt8_Rb_treeI7QStringSt4pairIKS0_S0_ESt10_Select1stIS3_ESt4lessIS0_ESaIS3_EE4findERS2_@Qt_6 6.1.2

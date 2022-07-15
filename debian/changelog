@@ -1,3 +1,29 @@
+qt6-base (6.2.4+dfsg-10) unstable; urgency=medium
+
+  * Team upload.
+  * qtpaths and qtpaths6 follow the same logic as qmake and qmake6: they are
+    both identical files. Only install qtpaths6 and link it into /usr/bin.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Thu, 07 Jul 2022 11:30:30 -0300
+
+qt6-base (6.2.4+dfsg-9) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Pino Toscano ]
+  * Update symbols files from the logs of buildds.
+  * Make libqt6core6 depend on shared-mime-info: QtCore is built without an
+    embedded freedesktop MIME type database, so the system one is needed to
+    make the QMimeType APIs work; this matches what was done in
+    qtbase-opensource-src 5.14.1+dfsg-1.
+  * Make libqt6core6 recommend qt6-translations-l10n; this matches what was
+    done in qtbase-opensource-src 5.3.1+dfsg-5.
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Remove dependencies upon qtchooser, we don't need them in Qt 6.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 06 Jul 2022 16:33:21 -0300
+
 qt6-base (6.2.4+dfsg-8~bpo11+1) bullseye-backports; urgency=medium
 
   * Rebuild for bullseye-backports.
