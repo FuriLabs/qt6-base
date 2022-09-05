@@ -1,10 +1,11 @@
-# SymbolsHelper-Confirmed: 6.2.4 amd64 arm64 armel armhf hppa i386 ia64 m68k mips64el mipsel ppc64 ppc64el riscv64 s390x sh4 sparc64
+# SymbolsHelper-Confirmed: 6.3.1 amd64 arm64 armel armhf i386 mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sparc64
 libQt6Widgets.so.6 libqt6widgets6 #MINVER#
-| libqt6widgets6 #MINVER#, qt6-base-abi (= 6.2.4)
+| libqt6widgets6 #MINVER#, qt6-base-abi (= 6.3.1)
 * Build-Depends-Package: qt6-base-dev
  Qt_6.0@Qt_6.0 6.1.2
  Qt_6.1@Qt_6.1 6.1.2
  Qt_6.2@Qt_6.2 6.2.0
+ Qt_6.3@Qt_6.3 6.3.0
  Qt_6@Qt_6 6.1.2
  (symver)Qt_6_PRIVATE_API 0 1
  _Z11qFadeEffectP7QWidgeti@Qt_6 6.1.2
@@ -41,12 +42,10 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _Z24qt_qscrollbarStyleOptionP10QScrollBar@Qt_6 6.1.2
  _Z33qt_graphicsItem_highlightSelectedP13QGraphicsItemP8QPainterPK24QStyleOptionGraphicsItem@Qt_6 6.1.2
  _Z9qGeomCalcR5QListI13QLayoutStructEiiiii@Qt_6 6.1.2
- _ZGVZN9QMetaType21registerConverterImplI5QListI11QModelIndexE9QIterableI13QMetaSequenceEEEbSt8functionIFbPKvPvEES_S_E10unregister@Qt_6 6.2.0
  _ZGVZN9QMetaType21registerConverterImplI5QListI21QPersistentModelIndexE9QIterableI13QMetaSequenceEEEbSt8functionIFbPKvPvEES_S_E10unregister@Qt_6 6.2.0
  _ZGVZN9QMetaType21registerConverterImplI5QListI4QUrlE9QIterableI13QMetaSequenceEEEbSt8functionIFbPKvPvEES_S_E10unregister@Qt_6 6.2.0
  _ZGVZN9QMetaType21registerConverterImplI5QListI6QRectFE9QIterableI13QMetaSequenceEEEbSt8functionIFbPKvPvEES_S_E10unregister@Qt_6 6.2.0
  _ZGVZN9QMetaType21registerConverterImplI5QListIiE9QIterableI13QMetaSequenceEEEbSt8functionIFbPKvPvEES_S_E10unregister@Qt_6 6.2.0
- _ZGVZN9QMetaType23registerMutableViewImplI5QListI11QModelIndexE9QIterableI13QMetaSequenceEEEbSt8functionIFbPvS8_EES_S_E10unregister@Qt_6 6.2.0
  _ZGVZN9QMetaType23registerMutableViewImplI5QListI21QPersistentModelIndexE9QIterableI13QMetaSequenceEEEbSt8functionIFbPvS8_EES_S_E10unregister@Qt_6 6.2.0
  _ZGVZN9QMetaType23registerMutableViewImplI5QListI4QUrlE9QIterableI13QMetaSequenceEEEbSt8functionIFbPvS8_EES_S_E10unregister@Qt_6 6.2.0
  _ZGVZN9QMetaType23registerMutableViewImplI5QListI6QRectFE9QIterableI13QMetaSequenceEEEbSt8functionIFbPvS8_EES_S_E10unregister@Qt_6 6.2.0
@@ -1314,10 +1313,13 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZN13QFontComboBox11qt_metacallEN11QMetaObject4CallEiPPv@Qt_6 6.1.2
  _ZN13QFontComboBox11qt_metacastEPKc@Qt_6 6.1.2
  _ZN13QFontComboBox14setCurrentFontERK5QFont@Qt_6 6.1.2
+ _ZN13QFontComboBox14setDisplayFontERK7QStringRK5QFont@Qt_6 6.3.0
  _ZN13QFontComboBox14setFontFiltersE6QFlagsINS_10FontFilterEE@Qt_6 6.1.2
  _ZN13QFontComboBox16setWritingSystemEN13QFontDatabase13WritingSystemE@Qt_6 6.1.2
  _ZN13QFontComboBox16staticMetaObjectE@Qt_6 6.1.2
  _ZN13QFontComboBox18currentFontChangedERK5QFont@Qt_6 6.1.2
+ _ZN13QFontComboBox20setSampleTextForFontERK7QStringS2_@Qt_6 6.3.0
+ _ZN13QFontComboBox22setSampleTextForSystemEN13QFontDatabase13WritingSystemERK7QString@Qt_6 6.3.0
  _ZN13QFontComboBox5eventEP6QEvent@Qt_6 6.1.2
  _ZN13QFontComboBoxC1EP7QWidget@Qt_6 6.1.2
  _ZN13QFontComboBoxC2EP7QWidget@Qt_6 6.1.2
@@ -1536,7 +1538,6 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZN13QMdiSubWindowD0Ev@Qt_6 6.1.2
  _ZN13QMdiSubWindowD1Ev@Qt_6 6.1.2
  _ZN13QMdiSubWindowD2Ev@Qt_6 6.1.2
- _ZN13QMetaSequence12MetaSequenceI5QListI11QModelIndexEE5valueE@Qt_6 6.1.2
  _ZN13QMetaSequence12MetaSequenceI5QListI21QPersistentModelIndexEE5valueE@Qt_6 6.1.2
  _ZN13QMetaSequence12MetaSequenceI5QListI4QUrlEE5valueE@Qt_6 6.1.2
  _ZN13QMetaSequence12MetaSequenceI5QListI6QRectFEE5valueE@Qt_6 6.1.2
@@ -3637,6 +3638,14 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZN7QWidget8setFocusEN2Qt11FocusReasonE@Qt_6 6.1.2
  _ZN7QWidget8setStyleEP6QStyle@Qt_6 6.1.2
  _ZN7QWidget9addActionEP7QAction@Qt_6 6.1.2
+ _ZN7QWidget9addActionERK5QIconRK7QString@Qt_6 6.3.0
+ _ZN7QWidget9addActionERK5QIconRK7QStringPK7QObjectPKcN2Qt14ConnectionTypeE@Qt_6 6.3.0
+ _ZN7QWidget9addActionERK5QIconRK7QStringRK12QKeySequence@Qt_6 6.3.0
+ _ZN7QWidget9addActionERK5QIconRK7QStringRK12QKeySequencePK7QObjectPKcN2Qt14ConnectionTypeE@Qt_6 6.3.0
+ _ZN7QWidget9addActionERK7QString@Qt_6 6.3.0
+ _ZN7QWidget9addActionERK7QStringPK7QObjectPKcN2Qt14ConnectionTypeE@Qt_6 6.3.0
+ _ZN7QWidget9addActionERK7QStringRK12QKeySequence@Qt_6 6.3.0
+ _ZN7QWidget9addActionERK7QStringRK12QKeySequencePK7QObjectPKcN2Qt14ConnectionTypeE@Qt_6 6.3.0
  _ZN7QWidget9clearMaskEv@Qt_6 6.1.2
  _ZN7QWidget9dropEventEP10QDropEvent@Qt_6 6.1.2
  _ZN7QWidget9grabMouseERK7QCursor@Qt_6 6.1.2
@@ -4963,8 +4972,11 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZNK13QErrorMessage10metaObjectEv@Qt_6 6.1.2
  _ZNK13QFontComboBox10metaObjectEv@Qt_6 6.1.2
  _ZNK13QFontComboBox11currentFontEv@Qt_6 6.1.2
+ _ZNK13QFontComboBox11displayFontERK7QString@Qt_6 6.3.0
  _ZNK13QFontComboBox11fontFiltersEv@Qt_6 6.1.2
  _ZNK13QFontComboBox13writingSystemEv@Qt_6 6.1.2
+ _ZNK13QFontComboBox17sampleTextForFontERK7QString@Qt_6 6.3.0
+ _ZNK13QFontComboBox19sampleTextForSystemEN13QFontDatabase13WritingSystemE@Qt_6 6.3.0
  _ZNK13QFontComboBox8sizeHintEv@Qt_6 6.1.2
  _ZNK13QGestureEvent10isAcceptedEN2Qt11GestureTypeE@Qt_6 6.1.2
  _ZNK13QGestureEvent10isAcceptedEP8QGesture@Qt_6 6.1.2
@@ -6352,7 +6364,7 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  (optional=templinst)_ZNSt8_Rb_treeIN2Qt11GestureTypeESt4pairIKS1_bESt10_Select1stIS4_ESt4lessIS1_ESaIS4_EE16_M_insert_uniqueIS4_EES2_ISt17_Rb_tree_iteratorIS4_EbEOT_@Qt_6 6.1.2
  (optional=templinst|arch=amd64)_ZNSt8_Rb_treeIP13QGraphicsItemSt4pairIKS1_S1_ESt10_Select1stIS4_ESt4lessIS1_ESaIS4_EE21_M_insert_equal_lowerIRKS4_EESt17_Rb_tree_iteratorIS4_EOT_@Qt_6 6.2.2
  (optional=templinst)_ZNSt8_Rb_treeIP13QGraphicsItemSt4pairIKS1_S1_ESt10_Select1stIS4_ESt4lessIS1_ESaIS4_EE28_M_get_insert_hint_equal_posESt23_Rb_tree_const_iteratorIS4_ERS3_@Qt_6 6.1.2
- (optional=templinst|arch=amd64 arm64 hppa ia64 m68k mips64el ppc64el riscv64 sh4 sparc64)_ZNSt8_Rb_treeIP7QObjectSt4pairIKS1_N2Qt11GestureTypeEESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE28_M_get_insert_hint_equal_posESt23_Rb_tree_const_iteratorIS6_ERS3_@Qt_6 6.1.2
+ (optional=templinst|arch=amd64 arm64 mips64el ppc64el riscv64 sparc64)_ZNSt8_Rb_treeIP7QObjectSt4pairIKS1_N2Qt11GestureTypeEESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE28_M_get_insert_hint_equal_posESt23_Rb_tree_const_iteratorIS6_ERS3_@Qt_6 6.1.2
  (optional=templinst)_ZNSt8_Rb_treeIP7QObjectSt4pairIKS1_P9QScrollerESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE24_M_get_insert_unique_posERS3_@Qt_6 6.1.2
  (optional=templinst)_ZNSt8_Rb_treeIP7QObjectSt4pairIKS1_P9QScrollerESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS6_ERS3_@Qt_6 6.1.2
  (optional=templinst|arch=amd64 arm64 hppa sh4)_ZNSt8_Rb_treeIiSt4pairIKi11QEventPointESt10_Select1stIS3_ESt4lessIiESaIS3_EE16_M_insert_uniqueIS3_EES0_ISt17_Rb_tree_iteratorIS3_EbEOT_@Qt_6 6.1.2
@@ -6362,9 +6374,9 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  (optional=templinst)_ZNSt8_Rb_treeIiSt4pairIKi7QStringESt10_Select1stIS3_ESt4lessIiESaIS3_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS3_ERS1_@Qt_6 6.1.2
  (optional=templinst)_ZNSt8_Rb_treeIiSt4pairIKi8QVariantESt10_Select1stIS3_ESt4lessIiESaIS3_EE16_M_insert_uniqueIS3_EES0_ISt17_Rb_tree_iteratorIS3_EbEOT_@Qt_6 6.1.2
  (optional=templinst)_ZNSt8_Rb_treeIiSt4pairIKi8QVariantESt10_Select1stIS3_ESt4lessIiESaIS3_EE24_M_get_insert_unique_posERS1_@Qt_6 6.1.2
- (optional=templinst|arch=amd64 arm64 hppa ia64 m68k mips64el ppc64el riscv64 sh4 sparc64)_ZNSt8_Rb_treeIiSt4pairIKi8QVariantESt10_Select1stIS3_ESt4lessIiESaIS3_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS3_ERS1_@Qt_6 6.1.2
+ (optional=templinst|arch=amd64 arm64 mips64el ppc64el riscv64 sparc64)_ZNSt8_Rb_treeIiSt4pairIKi8QVariantESt10_Select1stIS3_ESt4lessIiESaIS3_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS3_ERS1_@Qt_6 6.1.2
  (optional=templinst)_ZNSt8_Rb_treeIiSt4pairIKiP11QWizardPageESt10_Select1stIS4_ESt4lessIiESaIS4_EE24_M_get_insert_unique_posERS1_@Qt_6 6.1.2
- (optional=templinst|arch=amd64 arm64 hppa ia64 m68k mips64el ppc64el riscv64 sh4 sparc64)_ZNSt8_Rb_treeIiSt4pairIKiP11QWizardPageESt10_Select1stIS4_ESt4lessIiESaIS4_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS4_ERS1_@Qt_6 6.1.2
+ (optional=templinst|arch=amd64 arm64 mips64el ppc64el riscv64 sparc64)_ZNSt8_Rb_treeIiSt4pairIKiP11QWizardPageESt10_Select1stIS4_ESt4lessIiESaIS4_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS4_ERS1_@Qt_6 6.1.2
  (optional=templinst)_ZNSt8_Rb_treeIiSt4pairIKiP13QGraphicsItemESt10_Select1stIS4_ESt4lessIiESaIS4_EE12_M_erase_auxESt23_Rb_tree_const_iteratorIS4_ESC_@Qt_6 6.1.2
  (optional=templinst)_ZNSt8_Rb_treeIiSt4pairIKiP13QGraphicsItemESt10_Select1stIS4_ESt4lessIiESaIS4_EE24_M_get_insert_unique_posERS1_@Qt_6 6.1.2
  (optional=templinst)_ZNSt8_Rb_treeIiSt4pairIKiP13QGraphicsItemESt10_Select1stIS4_ESt4lessIiESaIS4_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS4_ERS1_@Qt_6 6.1.2
@@ -6500,7 +6512,6 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZTI6QFrame@Qt_6 6.1.2
  _ZTI6QLabel@Qt_6 6.1.2
  _ZTI6QStyle@Qt_6 6.1.2
- _ZTI7QBitmap@Qt_6 6.1.2
  _ZTI7QDialog@Qt_6 6.1.2
  _ZTI7QLayout@Qt_6 6.1.2
  _ZTI7QSlider@Qt_6 6.1.2
@@ -6527,12 +6538,10 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZTI9QTreeView@Qt_6 6.1.2
  _ZTI9QUndoView@Qt_6 6.1.2
  _ZTIN5QTest25QTouchEventWidgetSequenceE@Qt_6 6.1.2
- _ZTIZN9QMetaType17registerConverterI5QListI11QModelIndexE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTIZN9QMetaType17registerConverterI5QListI21QPersistentModelIndexE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTIZN9QMetaType17registerConverterI5QListI4QUrlE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTIZN9QMetaType17registerConverterI5QListI6QRectFE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTIZN9QMetaType17registerConverterI5QListIiE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS2_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
- _ZTIZN9QMetaType19registerMutableViewI5QListI11QModelIndexE9QIterableI13QMetaSequenceEN9QtPrivate37QSequentialIterableMutableViewFunctorIS3_EEEEbT1_EUlPvSB_E_@Qt_6 6.1.2
  _ZTIZN9QMetaType19registerMutableViewI5QListI21QPersistentModelIndexE9QIterableI13QMetaSequenceEN9QtPrivate37QSequentialIterableMutableViewFunctorIS3_EEEEbT1_EUlPvSB_E_@Qt_6 6.1.2
  _ZTIZN9QMetaType19registerMutableViewI5QListI4QUrlE9QIterableI13QMetaSequenceEN9QtPrivate37QSequentialIterableMutableViewFunctorIS3_EEEEbT1_EUlPvSB_E_@Qt_6 6.1.2
  _ZTIZN9QMetaType19registerMutableViewI5QListI6QRectFE9QIterableI13QMetaSequenceEN9QtPrivate37QSequentialIterableMutableViewFunctorIS3_EEEEbT1_EUlPvSB_E_@Qt_6 6.1.2
@@ -6666,7 +6675,6 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZTS6QFrame@Qt_6 6.1.2
  _ZTS6QLabel@Qt_6 6.1.2
  _ZTS6QStyle@Qt_6 6.1.2
- _ZTS7QBitmap@Qt_6 6.1.2
  _ZTS7QDialog@Qt_6 6.1.2
  _ZTS7QLayout@Qt_6 6.1.2
  _ZTS7QSlider@Qt_6 6.1.2
@@ -6693,12 +6701,10 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZTS9QTreeView@Qt_6 6.1.2
  _ZTS9QUndoView@Qt_6 6.1.2
  _ZTSN5QTest25QTouchEventWidgetSequenceE@Qt_6 6.1.2
- _ZTSZN9QMetaType17registerConverterI5QListI11QModelIndexE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTSZN9QMetaType17registerConverterI5QListI21QPersistentModelIndexE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTSZN9QMetaType17registerConverterI5QListI4QUrlE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTSZN9QMetaType17registerConverterI5QListI6QRectFE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTSZN9QMetaType17registerConverterI5QListIiE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS2_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
- _ZTSZN9QMetaType19registerMutableViewI5QListI11QModelIndexE9QIterableI13QMetaSequenceEN9QtPrivate37QSequentialIterableMutableViewFunctorIS3_EEEEbT1_EUlPvSB_E_@Qt_6 6.1.2
  _ZTSZN9QMetaType19registerMutableViewI5QListI21QPersistentModelIndexE9QIterableI13QMetaSequenceEN9QtPrivate37QSequentialIterableMutableViewFunctorIS3_EEEEbT1_EUlPvSB_E_@Qt_6 6.1.2
  _ZTSZN9QMetaType19registerMutableViewI5QListI4QUrlE9QIterableI13QMetaSequenceEN9QtPrivate37QSequentialIterableMutableViewFunctorIS3_EEEEbT1_EUlPvSB_E_@Qt_6 6.1.2
  _ZTSZN9QMetaType19registerMutableViewI5QListI6QRectFE9QIterableI13QMetaSequenceEN9QtPrivate37QSequentialIterableMutableViewFunctorIS3_EEEEbT1_EUlPvSB_E_@Qt_6 6.1.2
@@ -6831,7 +6837,6 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZTV6QFrame@Qt_6 6.1.2
  _ZTV6QLabel@Qt_6 6.1.2
  _ZTV6QStyle@Qt_6 6.1.2
- _ZTV7QBitmap@Qt_6 6.1.2
  _ZTV7QDialog@Qt_6 6.1.2
  _ZTV7QLayout@Qt_6 6.1.2
  _ZTV7QSlider@Qt_6 6.1.2
@@ -6858,12 +6863,10 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZTV9QTreeView@Qt_6 6.1.2
  _ZTV9QUndoView@Qt_6 6.1.2
  _ZTVN5QTest25QTouchEventWidgetSequenceE@Qt_6 6.1.2
- (optional=templinst)_ZZN9QMetaType21registerConverterImplI5QListI11QModelIndexE9QIterableI13QMetaSequenceEEEbSt8functionIFbPKvPvEES_S_E10unregister@Qt_6 6.2.0
  (optional=templinst)_ZZN9QMetaType21registerConverterImplI5QListI21QPersistentModelIndexE9QIterableI13QMetaSequenceEEEbSt8functionIFbPKvPvEES_S_E10unregister@Qt_6 6.2.0
  (optional=templinst)_ZZN9QMetaType21registerConverterImplI5QListI4QUrlE9QIterableI13QMetaSequenceEEEbSt8functionIFbPKvPvEES_S_E10unregister@Qt_6 6.2.0
  (optional=templinst)_ZZN9QMetaType21registerConverterImplI5QListI6QRectFE9QIterableI13QMetaSequenceEEEbSt8functionIFbPKvPvEES_S_E10unregister@Qt_6 6.2.0
  (optional=templinst)_ZZN9QMetaType21registerConverterImplI5QListIiE9QIterableI13QMetaSequenceEEEbSt8functionIFbPKvPvEES_S_E10unregister@Qt_6 6.2.0
- (optional=templinst)_ZZN9QMetaType23registerMutableViewImplI5QListI11QModelIndexE9QIterableI13QMetaSequenceEEEbSt8functionIFbPvS8_EES_S_E10unregister@Qt_6 6.2.0
  (optional=templinst)_ZZN9QMetaType23registerMutableViewImplI5QListI21QPersistentModelIndexE9QIterableI13QMetaSequenceEEEbSt8functionIFbPvS8_EES_S_E10unregister@Qt_6 6.2.0
  (optional=templinst)_ZZN9QMetaType23registerMutableViewImplI5QListI4QUrlE9QIterableI13QMetaSequenceEEEbSt8functionIFbPvS8_EES_S_E10unregister@Qt_6 6.2.0
  (optional=templinst)_ZZN9QMetaType23registerMutableViewImplI5QListI6QRectFE9QIterableI13QMetaSequenceEEEbSt8functionIFbPvS8_EES_S_E10unregister@Qt_6 6.2.0

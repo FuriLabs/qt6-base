@@ -85,7 +85,7 @@ Package: libqt6core6
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
-Provides: qt6-base-abi (= 6.2.4)
+Provides: qt6-base-abi (= 6.3.1)
 Depends: shared-mime-info, ${misc:Depends}, ${shlibs:Depends}
 Recommends: qt6-translations-l10n
 Description: Qt 6 core module
@@ -127,9 +127,9 @@ Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: fontconfig, ${misc:Depends}, ${shlibs:Depends}
-Breaks: qt6-qpa-plugins (<< 6.2.4+dfsg-5~)
-Replaces: qt6-qpa-plugins (<< 6.2.4+dfsg-5~)
-Recommends: qt6-gtk-platformtheme
+Breaks: qt6-qpa-plugins (<< 6.3.1+dfsg-6~)
+Replaces: qt6-qpa-plugins (<< 6.3.1+dfsg-6~)
+Recommends: qt6-gtk-platformtheme, qt6-qpa-plugins
 Description: Qt 6 GUI module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -141,12 +141,16 @@ Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: fontconfig, ${misc:Depends}, ${shlibs:Depends}
-Breaks: libqt6gui6 (<< 6.2.4+dfsg-5~), libqt6network6 (<< 6.2.4+dfsg-5~)
-Description: Qt 6 EGL plugins
+Breaks: libqt6gui6 (<< 6.3.1+dfsg-6~),
+        libqt6network6 (<< 6.2.4+dfsg-5~),
+        libqt6opengl6 (<< 6.3.1+dfsg-6~),
+Description: Qt 6 QPA plugins
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
  .
- This package contains QPA-related plugins.
+ This package contains the following plugins:
+   * uioTouch Plugin
+   * VNC Plugin
 
 Package: qt6-gtk-platformtheme
 Architecture: any
@@ -177,6 +181,8 @@ Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: qt6-qpa-plugins (<< 6.3.1+dfsg-6~)
+Replaces: qt6-qpa-plugins (<< 6.3.1+dfsg-6~)
 Description: Qt 6 OpenGL module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -352,6 +358,7 @@ Depends: libgl-dev,
          libqt6test6 (= ${binary:Version}),
          libqt6widgets6 (= ${binary:Version}),
          libqt6xml6 (= ${binary:Version}),
+         libvulkan-dev [linux-any],
          qmake6 (= ${binary:Version}),
          qt6-base-dev-tools (= ${binary:Version}),
          qt6-qpa-plugins (= ${binary:Version}),
@@ -389,9 +396,7 @@ Package: qt6-base-dev-tools
 Architecture: any
 Multi-Arch: foreign
 Section: devel
-Depends: ${misc:Depends},
-         ${perl:Depends},
-         ${shlibs:Depends},
+Depends: ${misc:Depends}, ${perl:Depends}, ${shlibs:Depends}
 Description: Qt 6 base development programs
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.

@@ -1,10 +1,11 @@
-# SymbolsHelper-Confirmed: 6.2.4 amd64
+# SymbolsHelper-Confirmed: 6.3.0 amd64
 libQt6OpenGL.so.6 libqt6opengl6 #MINVER#
-| libqt6opengl6 #MINVER#, qt6-base-abi (= 6.2.4)
+| libqt6opengl6 #MINVER#, qt6-base-abi (= 6.3.1)
 * Build-Depends-Package: qt6-base-dev
  Qt_6.0@Qt_6.0 6.1.2
  Qt_6.1@Qt_6.1 6.1.2
  Qt_6.2@Qt_6.2 6.2.0
+ Qt_6.3@Qt_6.3 6.3.0
  Qt_6@Qt_6 6.1.2
  (symver)Qt_6_PRIVATE_API 0 1
  _Z22qt_gl_read_framebufferRK5QSizebb@Qt_6 6.1.2
@@ -767,6 +768,7 @@ libQt6OpenGL.so.6 libqt6opengl6 #MINVER#
  _ZNK20QOpenGLShaderProgram7shadersEv@Qt_6 6.1.2
  _ZNK20QOpenGLShaderProgram8isLinkedEv@Qt_6 6.1.2
  _ZNK20QOpenGLShaderProgram9programIdEv@Qt_6 6.1.2
+ _ZNK21QOpenGLTextureBlitter23supportsRectangleTargetEv@Qt_6 6.3.0
  _ZNK21QOpenGLTextureBlitter25supportsExternalOESTargetEv@Qt_6 6.1.2
  _ZNK21QOpenGLTextureBlitter9isCreatedEv@Qt_6 6.1.2
  _ZNK21QOpenGLVersionProfile11hasProfilesEv@Qt_6 6.1.2

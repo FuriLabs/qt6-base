@@ -1,3 +1,120 @@
+qt6-base (6.3.1+dfsg-9) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Add libvulkan-dev [linux-any] as a qt6-base-dev dependency, as some CMake
+    file looks for it. (Closes: #1018877)
+
+  [ Pino Toscano ]
+  * Update symbols files for an ia64-specific change.
+  * Update lintian overrides.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 03 Sep 2022 08:15:09 +0200
+
+qt6-base (6.3.1+dfsg-8) unstable; urgency=medium
+
+  * Team upload.
+  * Update symbols files with current build logs, marking QString::clear() as
+    optional (it's an inline).
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Thu, 18 Aug 2022 22:08:54 -0300
+
+qt6-base (6.3.1+dfsg-7) unstable; urgency=medium
+
+  * Team upload.
+  * qt6-qpa-plugins: add missing Breaks against libqt6opengl6 and restore the
+    correct version for libqt6network6.
+  * Update symbols files with latests buildds' logs.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Thu, 18 Aug 2022 14:38:17 -0300
+
+qt6-base (6.3.1+dfsg-6) unstable; urgency=medium
+
+  [ Dmitry Shachnev ]
+  * Make libqt6gui6 recommend qt6-qpa-plugins.
+
+  [ Patrick Franz ]
+  * Move lots of QPA plugins into library packages.
+  * Update symbols from buildlogs.
+  * Update lintian-overrides.
+
+ -- Patrick Franz <deltaone@debian.org>  Mon, 15 Aug 2022 18:53:42 +0200
+
+qt6-base (6.3.1+dfsg-5) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * Update symbols from buildlogs.
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 17 Jul 2022 04:04:45 +0200
+
+qt6-base (6.3.1+dfsg-4) experimental; urgency=medium
+
+  [ Pino Toscano ]
+  * Drop -march=native from the CXXFLAGS, as it will optimize the build for the
+    hardware it is built on (i.e. a specific buildd for each architecture),
+    making the binaries unusable (SIGBUS, "Illegal instruction") on hardware
+    without the build-time features.
+
+  [ Patrick Franz ]
+  * Add patch to not use yield on CPUs that do not support it (thx to
+    Adrian Bunk).
+
+ -- Patrick Franz <deltaone@debian.org>  Sat, 16 Jul 2022 20:37:59 +0200
+
+qt6-base (6.3.1+dfsg-3) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * Adjust CXXFLAGS.
+
+ -- Patrick Franz <deltaone@debian.org>  Sat, 16 Jul 2022 02:58:23 +0200
+
+qt6-base (6.3.1+dfsg-2) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * Update symbols from buildlogs.
+  * Add CXXFLAGS to fix build failure on armel.
+
+ -- Patrick Franz <deltaone@debian.org>  Sat, 16 Jul 2022 02:16:45 +0200
+
+qt6-base (6.3.1+dfsg-1) experimental; urgency=medium
+
+  [ Pino Toscano ]
+  * Update symbols files from the logs of buildds.
+
+  [ Patrick Franz ]
+  * New upstream release (6.3.1).
+  * Update ABI to 6.3.1.
+  * Remove upstream_Explicitly-check-for-atomic-addition.patch and
+    upstream_Hardcode-atomic_LIB-as-latomic.patch as they have been
+    applied upstream.
+  * Update patches.
+  * Update list of installed files.
+  * Update symbols from buildlogs.
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 15 Jul 2022 20:03:54 +0200
+
+qt6-base (6.3.0+dfsg-2) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * Update symbols from buildlogs.
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 24 May 2022 08:48:38 +0200
+
+qt6-base (6.3.0+dfsg-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.3.0).
+  * Update ABI to 6.3.0.
+  * Remove upstream_QStorageInfo-limit-Linux-only-code-with-
+    Q_OS_LINUX.patch as it has been applied upstream.
+  * Update list of installed files.
+  * Update symbols from buildlogs.
+  * Update d/copyright.
+  * Update lintian-overrides.
+
+ -- Patrick Franz <deltaone@debian.org>  Mon, 23 May 2022 20:12:56 +0200
+
 qt6-base (6.2.4+dfsg-10~bpo11+1) bullseye-backports; urgency=medium
 
   * Rebuild for bullseye-backports.

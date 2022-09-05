@@ -47,7 +47,7 @@ index b06dec60d8..d267f560c1 100644
  
  if(NOT QT_QMAKE_TARGET_MKSPEC)
 diff --git a/cmake/QtPlatformSupport.cmake b/cmake/QtPlatformSupport.cmake
-index f39bf0e780..a10e7226eb 100644
+index c8462043c9..44db95d807 100644
 --- a/cmake/QtPlatformSupport.cmake
 +++ b/cmake/QtPlatformSupport.cmake
 @@ -18,6 +18,7 @@ qt_set01(FREEBSD CMAKE_SYSTEM_NAME STREQUAL "FreeBSD") # FIXME: How to identify
@@ -55,8 +55,9 @@ index f39bf0e780..a10e7226eb 100644
  qt_set01(WASM CMAKE_SYSTEM_NAME STREQUAL "Emscripten" OR EMSCRIPTEN)
  qt_set01(SOLARIS CMAKE_SYSTEM_NAME STREQUAL "SunOS")
 +qt_set01(HURD CMAKE_SYSTEM_NAME STREQUAL "GNU")
- 
- qt_set01(BSD APPLE OR OPENBSD OR FREEBSD OR NETBSD)
+
+ # This is the only reliable way we can determine the webOS platform as the yocto recipe adds this
+ # compile definition into its generated toolchain.cmake file
  
 diff --git a/cmake/QtRpathHelpers.cmake b/cmake/QtRpathHelpers.cmake
 index 6e3414b50f..cbe33a6b77 100644
