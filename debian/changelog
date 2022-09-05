@@ -1,6 +1,10 @@
 qt6-base (6.3.1+dfsg-9~bpo11+1) bullseye-backports; urgency=medium
 
+  [ Lisandro Damián Nicanor Pérez Meyer ]
   * Rebuild for bullseye-backports.
+  * Bump CMake's version to 3.24. Version 3.18 in stable won't create
+    pkg-config's .pc files, and we are installing them now. The change might
+    have occurred in a previous CMake version.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 05 Sep 2022 16:33:58 -0300
 
