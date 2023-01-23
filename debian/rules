@@ -4,7 +4,7 @@
 # Use already defined DEB_HOST_* variables.
 include /usr/share/dpkg/architecture.mk
 
-export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all optimize=+lto
 sslpkgname := $(shell dpkg-query --show '--showformat=$${Depends}' libssl-dev | cut -d ' ' -f1)
 
 ifneq (,$(filter libqt6sql6-ibase,$(shell dh_listpackages)))
@@ -25,6 +25,7 @@ endif
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
+		--log-level=STATUS \
 		-DCMAKE_LIBRARY_PATH=$(DEB_HOST_MULTIARCH) \
 		-DCMAKE_INSTALL_PREFIX=/usr \
 		-DINSTALL_BINDIR=lib/qt6/bin \

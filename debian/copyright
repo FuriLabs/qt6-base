@@ -7,7 +7,7 @@ Files-Excluded: examples/xml/htmlinfo
                 src/3rdparty/sqlite
                 src/3rdparty/wintab
                 tests/auto/corelib/serialization/qtextstream/rfc3261.txt
-                tests/auto/corelib/text/qbytearray/rfc3252.txt
+                tests/auto/corelib/text/qbytearray_large/rfc3252.txt
                 tests/auto/network/access/qnetworkreply/bigfile
                 tests/auto/network/access/qnetworkreply/resource
                 tests/auto/network/access/qnetworkreply/rfc3252.txt

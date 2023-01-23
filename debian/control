@@ -74,7 +74,7 @@ Build-Depends: cmake (>= 3.24~),
                pkg-kde-tools (>= 0.15.17~),
                unixodbc-dev,
                zlib1g-dev,
-Standards-Version: 4.6.1
+Standards-Version: 4.6.2
 Section: libs
 Homepage: https://www.qt.io/developers/
 Rules-Requires-Root: no
@@ -85,7 +85,7 @@ Package: libqt6core6
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
-Provides: qt6-base-abi (= 6.3.1)
+Provides: qt6-base-abi (= 6.4.2)
 Depends: shared-mime-info, ${misc:Depends}, ${shlibs:Depends}
 Recommends: qt6-translations-l10n
 Description: Qt 6 core module
@@ -364,6 +364,7 @@ Depends: libgl-dev,
          qt6-qpa-plugins (= ${binary:Version}),
          ${misc:Depends},
 Recommends: libqt6opengl6-dev (= ${binary:Version})
+Breaks: libqt6opengl6-dev (<< 6.3.1+dfsg-10~)
 Description: Qt 6 base development files
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -397,6 +398,7 @@ Architecture: any
 Multi-Arch: foreign
 Section: devel
 Depends: ${misc:Depends}, ${perl:Depends}, ${shlibs:Depends}
+Suggests: cmake
 Description: Qt 6 base development programs
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -415,6 +417,8 @@ Section: libdevel
 Depends: libqt6opengl6 (= ${binary:Version}),
          qt6-base-dev (= ${binary:Version}),
          ${misc:Depends},
+Breaks: qt6-base-dev (<< 6.3.1+dfsg-10~)
+Replaces: qt6-base-dev (<< 6.3.1+dfsg-10~)
 Description: Qt 6 OpenGL library development files
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.

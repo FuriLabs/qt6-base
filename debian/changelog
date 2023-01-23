@@ -1,3 +1,101 @@
+qt6-base (6.4.2+dfsg~rc1-3) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Upload to unstable.
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 30 Dec 2022 16:58:05 +0100
+
+qt6-base (6.4.2+dfsg~rc1-2) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * Update symbols from buildlogs.
+
+ -- Patrick Franz <deltaone@debian.org>  Wed, 28 Dec 2022 14:19:02 +0100
+
+qt6-base (6.4.2+dfsg~rc1-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * Enable link time optimization (Closes: #1015617).
+  * Update ABI to 6.4.2.
+  * Update excluded files from tarball.
+  * Bump Standards-Version to 4.6.2 (no changes needed).
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 27 Dec 2022 22:26:09 +0100
+
+qt6-base (6.4.1+dfsg-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * Make cmake a suggestion of qt6-base-dev-tools instead of a hard
+    dependency (Closes: #1019870).
+  * New upstream release (6.4.1).
+  * Update ABI to 6.4.1.
+  * Update symbols from buildlogs.
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 15 Nov 2022 18:30:46 +0100
+
+qt6-base (6.4.0+dfsg-5) experimental; urgency=medium
+
+  * Team upload.
+  * Update symbols files from the logs of buildds.
+
+ -- Pino Toscano <pino@debian.org>  Sun, 16 Oct 2022 18:06:33 +0200
+
+qt6-base (6.4.0+dfsg-4) experimental; urgency=medium
+
+  * Team upload.
+  * Backport upstream commit e81cba0cd33339c2e5f5e3c670741605264b21c2 to support
+    HPPA; patch upstream_Add-HPPA-detection.patch. (Closes: #1021404)
+  * Backport upstream commit ac17a394a5701174c705050640e26c9cb95d289b to support
+    M68k; patch upstream_Add-M68k-detection.patch.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 15 Oct 2022 07:43:54 +0200
+
+qt6-base (6.4.0+dfsg-3) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * Do not install cmake-files for various plugins.
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 02 Oct 2022 11:20:53 +0200
+
+qt6-base (6.4.0+dfsg-2) experimental; urgency=medium
+
+  * Team upload.
+  * Update symbols files from the logs of buildds.
+
+ -- Pino Toscano <pino@debian.org>  Sun, 02 Oct 2022 08:19:09 +0200
+
+qt6-base (6.4.0+dfsg-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.4.0).
+  * Update ABI to 6.4.0.
+  * Remove some patches as they have been applied upstream.
+  * Update list of installed files.
+  * Update symbols from buildlogs.
+  * Update lintian-overrides.
+
+ -- Patrick Franz <deltaone@debian.org>  Sat, 01 Oct 2022 20:35:52 +0200
+
+qt6-base (6.3.1+dfsg-10) unstable; urgency=medium
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Bump minimum CMake version to 3.24. Version 3.18 in stable won't create
+    pkg-config's .pc files, and we are installing them now. The change might
+    have occurred in a previous CMake version.
+
+  [ Patrick Franz ]
+  * Increase CMake verbosity level.
+  * Add cmake as a dependency to qt6-base-dev-tools as qt-cmake requires
+    it (Closes: #1019870).
+  * Move development files for libQt6EglFSDeviceIntegration,
+    libQt6EglFsKmsGbmSupport and libQt6EglFsKmsSupport from qt6-base-dev
+    into libqt6opengl6-dev (Closes: #1017940).
+
+  [ Pino Toscano ]
+  * Update symbols files from the logs of buildds.
+
+ -- Patrick Franz <deltaone@debian.org>  Sat, 01 Oct 2022 18:58:47 +0200
+
 qt6-base (6.3.1+dfsg-9~bpo11+2) bullseye-backports; urgency=medium
 
   * Update symbols files with buildss' logs.

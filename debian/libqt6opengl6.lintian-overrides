@@ -10,9 +10,9 @@ libqt6opengl6: symbols-declares-dependency-on-other-package qt6-base-abi *
 # We are still shipping the headers but they only contain the version and
 # the only binaries that depend on them are shipped within this very same
 # binary package, so it's safe to override these Lintian warnings.
-libqt6opengl6: shared-library-symbols-not-tracked libQt6EglFSDeviceIntegration 6 for usr/lib/*/libQt6EglFSDeviceIntegration.so.6.3.1 [symbols]
-libqt6opengl6: shared-library-symbols-not-tracked libQt6EglFsKmsGbmSupport 6 for usr/lib/*/libQt6EglFsKmsGbmSupport.so.6.3.1 [symbols]
-libqt6opengl6: shared-library-symbols-not-tracked libQt6EglFsKmsSupport 6 for usr/lib/*/libQt6EglFsKmsSupport.so.6.3.1 [symbols]
-libqt6opengl6: ships-undeclared-shared-library libQt6EglFSDeviceIntegration 6 for usr/lib/*/libQt6EglFSDeviceIntegration.so.6.3.1 [shlibs]
-libqt6opengl6: ships-undeclared-shared-library libQt6EglFsKmsGbmSupport 6 for usr/lib/*/libQt6EglFsKmsGbmSupport.so.6.3.1 [shlibs]
-libqt6opengl6: ships-undeclared-shared-library libQt6EglFsKmsSupport 6 for usr/lib/*/libQt6EglFsKmsSupport.so.6.3.1 [shlibs]
+libqt6opengl6: shared-library-symbols-not-tracked libQt6EglFSDeviceIntegration 6 for usr/lib/*/libQt6EglFSDeviceIntegration.so.6.* [symbols]
+libqt6opengl6: shared-library-symbols-not-tracked libQt6EglFsKmsGbmSupport 6 for usr/lib/*/libQt6EglFsKmsGbmSupport.so.6.* [symbols]
+libqt6opengl6: shared-library-symbols-not-tracked libQt6EglFsKmsSupport 6 for usr/lib/*/libQt6EglFsKmsSupport.so.6.* [symbols]
+libqt6opengl6: ships-undeclared-shared-library libQt6EglFSDeviceIntegration 6 for usr/lib/*/libQt6EglFSDeviceIntegration.so.6.* [shlibs]
+libqt6opengl6: ships-undeclared-shared-library libQt6EglFsKmsGbmSupport 6 for usr/lib/*/libQt6EglFsKmsGbmSupport.so.6.* [shlibs]
+libqt6opengl6: ships-undeclared-shared-library libQt6EglFsKmsSupport 6 for usr/lib/*/libQt6EglFsKmsSupport.so.6.* [shlibs]
