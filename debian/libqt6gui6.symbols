@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.4.1 amd64
+# SymbolsHelper-Confirmed: 6.4.2 amd64
 libQt6Gui.so.6 libqt6gui6 #MINVER#
 | libqt6gui6 #MINVER#, qt6-base-abi (= 6.4.2)
 * Build-Depends-Package: qt6-base-dev
@@ -3478,6 +3478,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZNK12QPaintDevice11initPainterEP8QPainter@Qt_6 6.1.2
  _ZNK12QPaintDevice13sharedPainterEv@Qt_6 6.1.2
  _ZNK12QPaintDevice6metricENS_17PaintDeviceMetricE@Qt_6 6.1.2
+ _ZNK12QPaintDevice7devTypeEv@Qt_6 6.4.2
  _ZNK12QPaintEngine10systemClipEv@Qt_6 6.1.2
  _ZNK12QPaintEngine10systemRectEv@Qt_6 6.1.2
  _ZNK12QPaintEngine11paintDeviceEv@Qt_6 6.1.2
@@ -4573,8 +4574,10 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZNK9QVector3D9unprojectERK10QMatrix4x4S2_RK5QRect@Qt_6 6.1.2
  _ZNK9QVector3Dcv8QVariantEv@Qt_6 6.1.2
  _ZNK9QVector4Dcv8QVariantEv@Qt_6 6.1.2
+ _ZNKR6QImage16colorTransformedERK15QColorTransform@Qt_6 6.4.0
  (optional=templinst)_ZNKSt8_Rb_treeI4QUrlSt4pairIKS0_8QVariantESt10_Select1stIS4_ESt4lessIS0_ESaIS4_EE4findERS2_@Qt_6 6.1.2
  (optional=templinst)_ZNKSt8_Rb_treeI7QStringSt4pairIKS0_S0_ESt10_Select1stIS3_ESt4lessIS0_ESaIS3_EE4findERS2_@Qt_6 6.1.2
+ _ZNO6QImage16colorTransformedERK15QColorTransform@Qt_6 6.4.0
  (optional=templinst)_ZNSt6vectorI18QRegularExpressionSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_@Qt_6 6.2.0
  (optional=templinst|subst)_ZNSt6vectorIiSaIiEE14_M_fill_assignE{size_t}RKi@Qt_6 6.1.2
  (optional=templinst|subst)_ZNSt6vectorIiSaIiEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPiS1_EE{size_t}RKi@Qt_6 6.1.2
@@ -4614,9 +4617,6 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  (optional=templinst|subst)_ZNSt8__detail16_Hashtable_allocINSt3pmr21polymorphic_allocatorINS_10_Hash_nodeI7QStringLb1EEEEEE19_M_allocate_bucketsE{size_t}@Qt_6 6.2.0
  (optional=templinst|subst)_ZNSt8__detail16_Hashtable_allocINSt3pmr21polymorphic_allocatorINS_10_Hash_nodeIP13QStandardItemLb1EEEEEE19_M_allocate_bucketsE{size_t}@Qt_6 6.2.0
  (optional=templinst|subst)_ZNSt8__detail16_Hashtable_allocINSt3pmr21polymorphic_allocatorINS_10_Hash_nodeIiLb1EEEEEE19_M_allocate_bucketsE{size_t}@Qt_6 6.3.0
- _ZNKR6QImage16colorTransformedERK15QColorTransform@Qt_6 6.4.0
- _ZNO6QImage16colorTransformedERK15QColorTransform@Qt_6 6.4.0
- _ZSt19piecewise_construct@Qt_6 6.4.1
  _ZTI10QClipboard@Qt_6 6.1.2
  _ZTI10QDropEvent@Qt_6 6.1.2
  _ZTI10QHelpEvent@Qt_6 6.1.2
@@ -5070,6 +5070,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZTV27QAbstractTextDocumentLayout@Qt_6 6.1.2
  _ZTV27QAccessibleStateChangeEvent@Qt_6 6.1.2
  _ZTV27QAccessibleValueChangeEvent@Qt_6 6.1.2
+ _ZTV27QEventDispatcherGlibPrivate@Qt_6 6.4.2
  _ZTV27QRegularExpressionValidator@Qt_6 6.1.2
  _ZTV28QApplicationStateChangeEvent@Qt_6 6.1.2
  _ZTV29QAccessibleHyperlinkInterface@Qt_6 6.2.0

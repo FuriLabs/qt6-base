@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.4.1 amd64
+# SymbolsHelper-Confirmed: 6.4.2 amd64
 libQt6Test.so.6 libqt6test6 #MINVER#
 | libqt6test6 #MINVER#, qt6-base-abi (= 6.4.2)
 * Build-Depends-Package: qt6-base-dev
@@ -140,15 +140,4 @@ libQt6Test.so.6 libqt6test6 #MINVER#
  _ZTV14QTestEventLoop@Qt_6 6.1.2
  _ZTV24QAbstractItemModelTester@Qt_6 6.1.2
  _ZZN14QTestEventLoop8instanceEvE8testLoop@Qt_6 6.3.0
- (optional=templinst)_ZZN9QtPrivate16QMetaTypeForTypeI18QRegularExpressionE10getCopyCtrEvENUlPKNS_18QMetaTypeInterfaceEPvPKvE_4_FUNES5_S6_S8_@Qt_6 6.3.0
- (optional=templinst)_ZZN9QtPrivate16QMetaTypeForTypeI18QRegularExpressionE10getMoveCtrEvENUlPKNS_18QMetaTypeInterfaceEPvS6_E_4_FUNES5_S6_S6_@Qt_6 6.3.0
- (optional=templinst)_ZZN9QtPrivate16QMetaTypeForTypeI18QRegularExpressionE13getDefaultCtrEvENUlPKNS_18QMetaTypeInterfaceEPvE_4_FUNES5_S6_@Qt_6 6.3.0
- (optional=templinst)_ZZN9QtPrivate16QMetaTypeForTypeI18QRegularExpressionE7getDtorEvENUlPKNS_18QMetaTypeInterfaceEPvE_4_FUNES5_S6_@Qt_6 6.3.0
- (optional=templinst)_ZZN9QtPrivate16QMetaTypeForTypeI5QSizeE10getCopyCtrEvENUlPKNS_18QMetaTypeInterfaceEPvPKvE_4_FUNES5_S6_S8_@Qt_6 6.1.2
- (optional=templinst)_ZZN9QtPrivate16QMetaTypeForTypeI5QSizeE10getMoveCtrEvENUlPKNS_18QMetaTypeInterfaceEPvS6_E_4_FUNES5_S6_S6_@Qt_6 6.1.2
- (optional=templinst)_ZZN9QtPrivate16QMetaTypeForTypeI5QSizeE13getDefaultCtrEvENUlPKNS_18QMetaTypeInterfaceEPvE_4_FUNES5_S6_@Qt_6 6.1.2
- (optional=templinst)_ZZN9QtPrivate16QMetaTypeForTypeI7QStringE10getCopyCtrEvENUlPKNS_18QMetaTypeInterfaceEPvPKvE_4_FUNES5_S6_S8_@Qt_6 6.1.2
- (optional=templinst)_ZZN9QtPrivate16QMetaTypeForTypeI7QStringE10getMoveCtrEvENUlPKNS_18QMetaTypeInterfaceEPvS6_E_4_FUNES5_S6_S6_@Qt_6 6.1.2
- (optional=templinst)_ZZN9QtPrivate16QMetaTypeForTypeI7QStringE13getDefaultCtrEvENUlPKNS_18QMetaTypeInterfaceEPvE_4_FUNES5_S6_@Qt_6 6.1.2
- (optional=templinst)_ZZN9QtPrivate16QMetaTypeForTypeI7QStringE7getDtorEvENUlPKNS_18QMetaTypeInterfaceEPvE_4_FUNES5_S6_@Qt_6 6.1.2
  (optional=templinst|arch=!amd64 !arm64 !armel !armhf !i386 !mipsel !ppc64el !s390x)_ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits@Qt_6 6.3.1

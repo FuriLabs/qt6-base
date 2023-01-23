@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.4.2 armel armhf
+# SymbolsHelper-Confirmed: 6.4.2 amd64 armel armhf
 libQt6Widgets.so.6 libqt6widgets6 #MINVER#
 | libqt6widgets6 #MINVER#, qt6-base-abi (= 6.4.2)
 * Build-Depends-Package: qt6-base-dev
@@ -6400,7 +6400,6 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  (optional=templinst)_ZNSt8_Rb_treeIiSt4pairIKiP7QActionESt10_Select1stIS4_ESt4lessIiESaIS4_EE16_M_insert_uniqueIS4_EES0_ISt17_Rb_tree_iteratorIS4_EbEOT_@Qt_6 6.1.2
  (optional=templinst|subst)_ZNSt8__detail16_Hashtable_allocINSt3pmr21polymorphic_allocatorINS_10_Hash_nodeI7QStringLb1EEEEEE19_M_allocate_bucketsE{size_t}@Qt_6 6.2.0
  (optional=templinst|subst)_ZNSt8__detail16_Hashtable_allocINSt3pmr21polymorphic_allocatorINS_10_Hash_nodeIP15QTreeWidgetItemLb1EEEEEE19_M_allocate_bucketsE{size_t}@Qt_6 6.2.0
- _ZSt19piecewise_construct@Qt_6 6.4.1
  _ZTI10QBoxLayout@Qt_6 6.1.2
  _ZTI10QCompleter@Qt_6 6.1.2
  _ZTI10QLCDNumber@Qt_6 6.1.2
