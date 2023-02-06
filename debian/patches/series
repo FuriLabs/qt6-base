@@ -5,6 +5,7 @@ upstream_Add-M68k-detection.patch
 # Debian specific
 remove_privacy_breaches.diff
 build_path_embedded_qtbuildinternalsextra_cmake.patch
+cross.patch
 
 # Don't use yield on CPUs that might not support it
 armel-noyield.patch

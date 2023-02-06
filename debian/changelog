@@ -1,3 +1,20 @@
+qt6-base (6.4.2+dfsg-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Switch to the official 6.4.2 tarball, the tarball is the same.
+
+  [ Helmut Grohne ]
+  * Fix FTCBFS: Pass QT_HOST_PATH. (Closes: #1023054)
+    + cross.patch: Honour PKG_CONFIG_EXECUTABLE
+    + cross.patch: Allow building android tools
+    + Pass QT_HOST_* variables to build.
+    + Depend on a native qt toolchain for the former.
+    + Do build tools even when cross building.
+    + Add excess files to debian/not-installed.
+  * Install <triplet>-qmake6 cross wrapper (Closes: #1025663).
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 31 Jan 2023 19:16:32 +0100
+
 qt6-base (6.4.2+dfsg~rc1-3~bpo11+1) bullseye-backports; urgency=medium
 
   [ Lisandro Damián Nicanor Pérez Meyer ]

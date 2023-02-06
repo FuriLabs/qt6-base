@@ -72,6 +72,7 @@ Build-Depends: cmake (>= 3.24~),
                ninja-build,
                pkg-config,
                pkg-kde-tools (>= 0.15.17~),
+               qt6-base-dev:native <cross>,
                unixodbc-dev,
                zlib1g-dev,
 Standards-Version: 4.6.2
