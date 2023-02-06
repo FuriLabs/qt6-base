@@ -1,3 +1,11 @@
+qt6-base (6.4.2+dfsg-1~bpo11+1) bullseye-backports; urgency=medium
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Rebuild for bullseye-backports.
+  * Adjust symbols files with current build log.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 06 Feb 2023 09:41:05 -0300
+
 qt6-base (6.4.2+dfsg-1) unstable; urgency=medium
 
   [ Patrick Franz ]
@@ -14,14 +22,6 @@ qt6-base (6.4.2+dfsg-1) unstable; urgency=medium
   * Install <triplet>-qmake6 cross wrapper (Closes: #1025663).
 
  -- Patrick Franz <deltaone@debian.org>  Tue, 31 Jan 2023 19:16:32 +0100
-
-qt6-base (6.4.2+dfsg~rc1-3~bpo11+1) bullseye-backports; urgency=medium
-
-  [ Lisandro Damián Nicanor Pérez Meyer ]
-  * Rebuild for bullseye-backports.
-  * Adjust symbols files with current build log.
-
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 23 Jan 2023 10:04:36 -0300
 
 qt6-base (6.4.2+dfsg~rc1-3) unstable; urgency=medium
 
