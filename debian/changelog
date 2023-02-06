@@ -1,5 +1,9 @@
 qt6-base (6.4.2+dfsg-1~bpo11+2) UNRELEASED; urgency=medium
 
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Update symbols files with buildds' logs, explicitely ignoring the adition
+    of libzstd's symbols, to be fixed in next upload.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 06 Feb 2023 19:35:53 -0300
 
 qt6-base (6.4.2+dfsg-1~bpo11+1) bullseye-backports; urgency=medium
