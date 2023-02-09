@@ -1,5 +1,8 @@
 qt6-base (6.4.2+dfsg-1~bpo11+3) UNRELEASED; urgency=medium
 
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Update symbols files with buildds' logs.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 09 Feb 2023 14:09:20 -0300
 
 qt6-base (6.4.2+dfsg-1~bpo11+2) bullseye-backports; urgency=medium

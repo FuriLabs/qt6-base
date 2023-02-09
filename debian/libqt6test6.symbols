@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.4.2 amd64
+# SymbolsHelper-Confirmed: 6.4.2 amd64 mips64el
 libQt6Test.so.6 libqt6test6 #MINVER#
 | libqt6test6 #MINVER#, qt6-base-abi (= 6.4.2)
 * Build-Depends-Package: qt6-base-dev
@@ -140,4 +140,3 @@ libQt6Test.so.6 libqt6test6 #MINVER#
  _ZTV14QTestEventLoop@Qt_6 6.1.2
  _ZTV24QAbstractItemModelTester@Qt_6 6.1.2
  _ZZN14QTestEventLoop8instanceEvE8testLoop@Qt_6 6.3.0
- (optional=templinst|arch=!amd64 !arm64 !armel !armhf !i386 !mipsel !ppc64el !s390x)_ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits@Qt_6 6.3.1

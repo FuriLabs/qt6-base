@@ -1,140 +1,7 @@
-# SymbolsHelper-Confirmed: 6.4.2 amd64 arm64 armel armhf hppa i386 powerpc ppc64 ppc64el s390x
+# SymbolsHelper-Confirmed: 6.4.2 amd64 arm64 armel armhf hppa i386 mips64el mipsel powerpc ppc64 ppc64el s390x
 libQt6Network.so.6 libqt6network6 #MINVER#
 | libqt6network6 #MINVER#, qt6-base-abi (= 6.4.2)
 * Build-Depends-Package: qt6-base-dev
- (arch=ppc64el)ERR_getErrorString@Qt_6 6.4.2
- (arch=ppc64el)FSE_buildDTable@Qt_6 6.4.2
- (arch=ppc64el)FSE_buildDTable_raw@Qt_6 6.4.2
- (arch=ppc64el)FSE_buildDTable_rle@Qt_6 6.4.2
- (arch=ppc64el)FSE_buildDTable_wksp@Qt_6 6.4.2
- (arch=ppc64el)FSE_createDTable@Qt_6 6.4.2
- (arch=ppc64el)FSE_decompress@Qt_6 6.4.2
- (arch=ppc64el)FSE_decompress_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)FSE_decompress_wksp@Qt_6 6.4.2
- (arch=ppc64el)FSE_decompress_wksp_bmi2@Qt_6 6.4.2
- (arch=ppc64el)FSE_freeDTable@Qt_6 6.4.2
- (arch=ppc64el)FSE_getErrorName@Qt_6 6.4.2
- (arch=ppc64el)FSE_isError@Qt_6 6.4.2
- (arch=ppc64el)FSE_readNCount@Qt_6 6.4.2
- (arch=ppc64el)FSE_readNCount_bmi2@Qt_6 6.4.2
- (arch=ppc64el)FSE_versionNumber@Qt_6 6.4.2
- (arch=ppc64el)FSEv05_buildDTable@Qt_6 6.4.2
- (arch=ppc64el)FSEv05_buildDTable_raw@Qt_6 6.4.2
- (arch=ppc64el)FSEv05_buildDTable_rle@Qt_6 6.4.2
- (arch=ppc64el)FSEv05_createDTable@Qt_6 6.4.2
- (arch=ppc64el)FSEv05_decompress@Qt_6 6.4.2
- (arch=ppc64el)FSEv05_decompress_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)FSEv05_freeDTable@Qt_6 6.4.2
- (arch=ppc64el)FSEv05_getErrorName@Qt_6 6.4.2
- (arch=ppc64el)FSEv05_isError@Qt_6 6.4.2
- (arch=ppc64el)FSEv05_readNCount@Qt_6 6.4.2
- (arch=ppc64el)FSEv06_buildDTable@Qt_6 6.4.2
- (arch=ppc64el)FSEv06_buildDTable_raw@Qt_6 6.4.2
- (arch=ppc64el)FSEv06_buildDTable_rle@Qt_6 6.4.2
- (arch=ppc64el)FSEv06_createDTable@Qt_6 6.4.2
- (arch=ppc64el)FSEv06_decompress@Qt_6 6.4.2
- (arch=ppc64el)FSEv06_decompress_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)FSEv06_freeDTable@Qt_6 6.4.2
- (arch=ppc64el)FSEv06_getErrorName@Qt_6 6.4.2
- (arch=ppc64el)FSEv06_isError@Qt_6 6.4.2
- (arch=ppc64el)FSEv06_readNCount@Qt_6 6.4.2
- (arch=ppc64el)FSEv07_buildDTable@Qt_6 6.4.2
- (arch=ppc64el)FSEv07_buildDTable_raw@Qt_6 6.4.2
- (arch=ppc64el)FSEv07_buildDTable_rle@Qt_6 6.4.2
- (arch=ppc64el)FSEv07_createDTable@Qt_6 6.4.2
- (arch=ppc64el)FSEv07_decompress@Qt_6 6.4.2
- (arch=ppc64el)FSEv07_decompress_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)FSEv07_freeDTable@Qt_6 6.4.2
- (arch=ppc64el)FSEv07_getErrorName@Qt_6 6.4.2
- (arch=ppc64el)FSEv07_isError@Qt_6 6.4.2
- (arch=ppc64el)FSEv07_readNCount@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress1X1@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress1X1_DCtx@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress1X1_DCtx_wksp@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress1X1_DCtx_wksp_bmi2@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress1X1_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress1X2@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress1X2_DCtx@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress1X2_DCtx_wksp@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress1X2_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress1X_DCtx@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress1X_DCtx_wksp@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress1X_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress1X_usingDTable_bmi2@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress4X1@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress4X1_DCtx@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress4X1_DCtx_wksp@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress4X1_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress4X2@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress4X2_DCtx@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress4X2_DCtx_wksp@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress4X2_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress4X_DCtx@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress4X_hufOnly@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress4X_hufOnly_wksp@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress4X_hufOnly_wksp_bmi2@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress4X_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress4X_usingDTable_bmi2@Qt_6 6.4.2
- (arch=ppc64el)HUF_decompress@Qt_6 6.4.2
- (arch=ppc64el)HUF_getErrorName@Qt_6 6.4.2
- (arch=ppc64el)HUF_isError@Qt_6 6.4.2
- (arch=ppc64el)HUF_readDTableX1@Qt_6 6.4.2
- (arch=ppc64el)HUF_readDTableX1_wksp@Qt_6 6.4.2
- (arch=ppc64el)HUF_readDTableX1_wksp_bmi2@Qt_6 6.4.2
- (arch=ppc64el)HUF_readDTableX2@Qt_6 6.4.2
- (arch=ppc64el)HUF_readDTableX2_wksp@Qt_6 6.4.2
- (arch=ppc64el)HUF_readDTableX2_wksp_bmi2@Qt_6 6.4.2
- (arch=ppc64el)HUF_readStats@Qt_6 6.4.2
- (arch=ppc64el)HUF_readStats_wksp@Qt_6 6.4.2
- (arch=ppc64el)HUF_selectDecoder@Qt_6 6.4.2
- (arch=ppc64el)HUFv05_decompress1X2@Qt_6 6.4.2
- (arch=ppc64el)HUFv05_decompress1X2_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUFv05_decompress1X4@Qt_6 6.4.2
- (arch=ppc64el)HUFv05_decompress1X4_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUFv05_decompress4X2@Qt_6 6.4.2
- (arch=ppc64el)HUFv05_decompress4X2_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUFv05_decompress4X4@Qt_6 6.4.2
- (arch=ppc64el)HUFv05_decompress4X4_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUFv05_decompress@Qt_6 6.4.2
- (arch=ppc64el)HUFv05_getErrorName@Qt_6 6.4.2
- (arch=ppc64el)HUFv05_isError@Qt_6 6.4.2
- (arch=ppc64el)HUFv05_readDTableX2@Qt_6 6.4.2
- (arch=ppc64el)HUFv05_readDTableX4@Qt_6 6.4.2
- (arch=ppc64el)HUFv06_decompress1X2@Qt_6 6.4.2
- (arch=ppc64el)HUFv06_decompress1X2_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUFv06_decompress1X4@Qt_6 6.4.2
- (arch=ppc64el)HUFv06_decompress1X4_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUFv06_decompress4X2@Qt_6 6.4.2
- (arch=ppc64el)HUFv06_decompress4X2_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUFv06_decompress4X4@Qt_6 6.4.2
- (arch=ppc64el)HUFv06_decompress4X4_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUFv06_decompress@Qt_6 6.4.2
- (arch=ppc64el)HUFv06_readDTableX2@Qt_6 6.4.2
- (arch=ppc64el)HUFv06_readDTableX4@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_decompress1X2@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_decompress1X2_DCtx@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_decompress1X2_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_decompress1X4@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_decompress1X4_DCtx@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_decompress1X4_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_decompress1X_DCtx@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_decompress1X_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_decompress4X2@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_decompress4X2_DCtx@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_decompress4X2_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_decompress4X4@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_decompress4X4_DCtx@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_decompress4X4_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_decompress4X_DCtx@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_decompress4X_hufOnly@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_decompress4X_usingDTable@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_decompress@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_getErrorName@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_isError@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_readDTableX2@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_readDTableX4@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_readStats@Qt_6 6.4.2
- (arch=ppc64el)HUFv07_selectDecoder@Qt_6 6.4.2
  Qt_6.0@Qt_6.0 6.1.2
  Qt_6.1@Qt_6.1 6.1.2
  Qt_6.2@Qt_6.2 6.2.0
@@ -1493,13 +1360,13 @@ libQt6Network.so.6 libqt6network6 #MINVER#
  _ZNK9QSslError11errorStringEv@Qt_6 6.1.2
  _ZNK9QSslError5errorEv@Qt_6 6.1.2
  _ZNK9QSslErroreqERKS_@Qt_6 6.1.2
- (optional=templinst|arch=!ia64 !m68k !mips64el !riscv64 !sparc64)_ZNKSt8_Rb_treeIN4QSsl24AlternativeNameEntryTypeESt4pairIKS1_7QStringESt10_Select1stIS5_ESt4lessIS1_ESaIS5_EE11equal_rangeERS3_@Qt_6 6.1.2
+ (optional=templinst)_ZNKSt8_Rb_treeIN4QSsl24AlternativeNameEntryTypeESt4pairIKS1_7QStringESt10_Select1stIS5_ESt4lessIS1_ESaIS5_EE11equal_rangeERS3_@Qt_6 6.1.2
  (optional=templinst|subst)_ZNSt11_Deque_baseIjSaIjEE17_M_initialize_mapE{size_t}@Qt_6 6.1.2
  (optional=templinst)_ZNSt11_Deque_baseIjSaIjEED1Ev@Qt_6 6.1.2
  (optional=templinst)_ZNSt11_Deque_baseIjSaIjEED2Ev@Qt_6 6.1.2
  (optional=templinst)_ZNSt5dequeIjSaIjEE16_M_push_back_auxIJRKjEEEvDpOT_@Qt_6 6.1.2
  (optional=templinst|subst)_ZNSt5dequeIjSaIjEE17_M_reallocate_mapE{size_t}b@Qt_6 6.1.2
- (optional=templinst|arch=amd64 arm64 i386 mipsel ppc64el s390x)_ZNSt5dequeIjSaIjEE6insertESt15_Deque_iteratorIjRKjPS3_ES4_@Qt_6 6.2.2
+ (optional=templinst|arch=amd64 arm64 i386 mips64el mipsel ppc64el s390x)_ZNSt5dequeIjSaIjEE6insertESt15_Deque_iteratorIjRKjPS3_ES4_@Qt_6 6.2.2
  (optional=templinst)_ZNSt5dequeIjSaIjEE8_M_eraseESt15_Deque_iteratorIjRjPjE@Qt_6 6.1.2
  (optional=templinst)_ZNSt5dequeIjSaIjEE8_M_eraseESt15_Deque_iteratorIjRjPjES5_@Qt_6 6.1.2
  (optional=templinst)_ZNSt6vectorIN24QNetworkReplyImplPrivate21InternalNotificationsESaIS1_EE17_M_realloc_insertIJRKS1_EEEvN9__gnu_cxx17__normal_iteratorIPS1_S3_EEDpOT_@Qt_6 6.1.2
@@ -1542,9 +1409,9 @@ libQt6Network.so.6 libqt6network6 #MINVER#
  (arch=!armel !riscv64)_ZTISt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE@Qt_6 6.3.0
  (arch=armel riscv64)_ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE@Qt_6 6.3.0
  (arch=!armel !riscv64)_ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE@Qt_6 6.3.0
- (arch=!amd64 !arm64 !i386 !s390x)_ZTISt19_Sp_make_shared_tag@Qt_6 6.4.2
+ (arch=!amd64 !arm64 !i386 !mips64el !mipsel !ppc64el !s390x)_ZTISt19_Sp_make_shared_tag@Qt_6 6.4.2
  (arch=armel)_ZTISt23_Sp_counted_ptr_inplaceI6QTimerSaIS0_ELN9__gnu_cxx12_Lock_policyE1EE@Qt_6 6.4.2
- (arch=amd64 arm64 armhf i386 s390x)_ZTISt23_Sp_counted_ptr_inplaceI6QTimerSaIS0_ELN9__gnu_cxx12_Lock_policyE2EE@Qt_6 6.4.2
+ (arch=amd64 arm64 armhf i386 mips64el mipsel ppc64el s390x)_ZTISt23_Sp_counted_ptr_inplaceI6QTimerSaIS0_ELN9__gnu_cxx12_Lock_policyE2EE@Qt_6 6.4.2
  _ZTIZN9QMetaType17registerConverterI5QListI14QNetworkCookieE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTIZN9QMetaType17registerConverterI5QListI9QSslErrorE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTIZN9QMetaType17registerConverterI5QListISt4pairI10QByteArrayS3_EE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS5_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
@@ -1580,9 +1447,9 @@ libQt6Network.so.6 libqt6network6 #MINVER#
  (arch=!armel !riscv64)_ZTSSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE@Qt_6 6.3.0
  _ZTSSt19_Sp_make_shared_tag@Qt_6 6.3.0
  (arch=armel)_ZTSSt23_Sp_counted_ptr_inplaceI6QTimerSaIS0_ELN9__gnu_cxx12_Lock_policyE1EE@Qt_6 6.4.2
- (arch=amd64 arm64 armhf i386 s390x)_ZTSSt23_Sp_counted_ptr_inplaceI6QTimerSaIS0_ELN9__gnu_cxx12_Lock_policyE2EE@Qt_6 6.4.2
- (optional=templinst)_ZTSSt23_Sp_counted_ptr_inplaceI6QTimerSaIvELN9__gnu_cxx12_Lock_policyE1EE@Qt_6 6.4.0
- (optional=templinst)_ZTSSt23_Sp_counted_ptr_inplaceI6QTimerSaIvELN9__gnu_cxx12_Lock_policyE2EE@Qt_6 6.4.0
+ (arch=amd64 arm64 armhf i386 mips64el mipsel ppc64el s390x)_ZTSSt23_Sp_counted_ptr_inplaceI6QTimerSaIS0_ELN9__gnu_cxx12_Lock_policyE2EE@Qt_6 6.4.2
+ (optional=templinst|arch=hppa powerpc ppc64)_ZTSSt23_Sp_counted_ptr_inplaceI6QTimerSaIvELN9__gnu_cxx12_Lock_policyE1EE@Qt_6 6.4.0
+ (optional=templinst|arch=hppa powerpc ppc64)_ZTSSt23_Sp_counted_ptr_inplaceI6QTimerSaIvELN9__gnu_cxx12_Lock_policyE2EE@Qt_6 6.4.0
  _ZTSZN9QMetaType17registerConverterI5QListI14QNetworkCookieE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTSZN9QMetaType17registerConverterI5QListI9QSslErrorE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTSZN9QMetaType17registerConverterI5QListISt4pairI10QByteArrayS3_EE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS5_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
@@ -1612,7 +1479,7 @@ libQt6Network.so.6 libqt6network6 #MINVER#
  _ZTV21QNetworkAccessManager@Qt_6 6.1.2
  _ZTV5QDtls@Qt_6 6.1.2
  (arch=armel)_ZTVSt23_Sp_counted_ptr_inplaceI6QTimerSaIS0_ELN9__gnu_cxx12_Lock_policyE1EE@Qt_6 6.4.2
- (arch=amd64 arm64 armhf i386 s390x)_ZTVSt23_Sp_counted_ptr_inplaceI6QTimerSaIS0_ELN9__gnu_cxx12_Lock_policyE2EE@Qt_6 6.4.2
+ (arch=amd64 arm64 armhf i386 mips64el mipsel ppc64el s390x)_ZTVSt23_Sp_counted_ptr_inplaceI6QTimerSaIS0_ELN9__gnu_cxx12_Lock_policyE2EE@Qt_6 6.4.2
  (optional=templinst)_ZZN9QMetaType21registerConverterImplI5QListI14QNetworkCookieE9QIterableI13QMetaSequenceEEEbSt8functionIFbPKvPvEES_S_E10unregister@Qt_6 6.2.0
  (optional=templinst)_ZZN9QMetaType21registerConverterImplI5QListI9QSslErrorE9QIterableI13QMetaSequenceEEEbSt8functionIFbPKvPvEES_S_E10unregister@Qt_6 6.2.0
  (optional=templinst)_ZZN9QMetaType21registerConverterImplI5QListISt4pairI10QByteArrayS3_EE9QIterableI13QMetaSequenceEEEbSt8functionIFbPKvPvEES_S_E10unregister@Qt_6 6.2.0
