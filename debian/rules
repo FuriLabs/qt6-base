@@ -104,6 +104,10 @@ execute_after_dh_auto_install:
 		< debian/qmake-cross-wrapper.in > debian/tmp/usr/bin/$(DEB_HOST_GNU_TYPE)-qmake6
 	chmod +x debian/tmp/usr/bin/$(DEB_HOST_GNU_TYPE)-qmake6
 
+	# Fix Qt6::qmake IMPORTED_LOCATION, see https://bugs.debian.org/1030980
+	sed -i 's,lib/qt6/bin/qmake,bin/$(DEB_HOST_GNU_TYPE)-qmake6,' \
+		debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/cmake/Qt6CoreTools/Qt6CoreToolsTargets-none.cmake
+
 override_dh_makeshlibs:
 	dh_makeshlibs -XlibQt6EglFSDeviceIntegration -XlibQt6EglFsKmsGbmSupport -XlibQt6EglFsKmsSupport -XlibQt6XcbQpa
 

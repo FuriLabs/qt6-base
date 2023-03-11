@@ -1,3 +1,49 @@
+qt6-base (6.4.2+dfsg-7) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Update patch for CVE-2023-24607.
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 28 Feb 2023 23:22:10 +0100
+
+qt6-base (6.4.2+dfsg-6) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Add patch to fix CVE-2023-24607 (Closes: #1031871).
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 24 Feb 2023 22:31:24 +0100
+
+qt6-base (6.4.2+dfsg-5) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Fix path for <triplet>-qmake6 cross wrapper.
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 21 Feb 2023 16:14:43 +0100
+
+qt6-base (6.4.2+dfsg-4) unstable; urgency=medium
+
+  * Team upload.
+  * Workaround wrong path in CMake file, Qt6::qmake IMPORTED_LOCATION by
+    modifying the path (Closes: #1030895).
+    Thanks Helmut Grohne and Dmitry Shachnev for the bug and solution.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Mon, 20 Feb 2023 16:54:52 -0300
+
+qt6-base (6.4.2+dfsg-3) unstable; urgency=medium
+
+  * Team upload.
+  * Remove symbols related to libzstd. They where there because of the static
+    library.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Mon, 06 Feb 2023 16:47:48 -0300
+
+qt6-base (6.4.2+dfsg-2) unstable; urgency=medium
+
+  * Team upload.
+  * Update symbols files with buildd's logs.
+  * Force the usage of the shared version of libzstd (Closes: #1030546).
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Mon, 06 Feb 2023 15:50:58 -0300
+
 qt6-base (6.4.2+dfsg-1~bpo11+3) bullseye-backports; urgency=medium
 
   * Update symbols files with buildds' logs.

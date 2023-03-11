@@ -2,10 +2,14 @@
 upstream_Add-HPPA-detection.patch
 upstream_Add-M68k-detection.patch
 
+# fixed in 6.4.3
+cve-2023-24607.patch
+
 # Debian specific
 remove_privacy_breaches.diff
 build_path_embedded_qtbuildinternalsextra_cmake.patch
 cross.patch
+force_shared_libzstd.patch
 
 # Don't use yield on CPUs that might not support it
 armel-noyield.patch
