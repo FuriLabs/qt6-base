@@ -2,7 +2,7 @@ qt6-base (6.4.2+dfsg-7~bpo11+1) bullseye-backports; urgency=medium
 
   * Rebuild for bullseye-backports.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 11 Mar 2023 12:58:52 -0300
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Sat, 11 Mar 2023 12:59:12 -0300
 
 qt6-base (6.4.2+dfsg-7) unstable; urgency=medium
 
