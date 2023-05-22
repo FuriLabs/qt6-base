@@ -10,10 +10,10 @@ Subject: [PATCH] Add M68k detection
 Change-Id: Ie5694abbe1ae2bfeb5692defba0ca6062c1d60ac
 Reviewed-by: Thiago Macieira <thiago.macieira@intel.com>
 ---
- src/corelib/global/archdetect.cpp           | 2 ++
- src/corelib/global/qprocessordetection.h    | 9 +++++++++
- src/corelib/global/qprocessordetection.qdoc | 9 +++++++++
- src/corelib/plugin/qelfparser_p.cpp         | 3 +++
+ src/corelib/global/archdetect.cpp        |    2 ++
+ src/corelib/global/qglobal.cpp           |    9 +++++++++
+ src/corelib/global/qprocessordetection.h |    9 +++++++++
+ src/corelib/plugin/qelfparser_p.cpp      |    3 +++
  4 files changed, 23 insertions(+)
 
 --- a/src/corelib/global/archdetect.cpp
@@ -47,7 +47,7 @@ Reviewed-by: Thiago Macieira <thiago.macieira@intel.com>
      MIPS is bi-endian, use endianness auto-detection implemented below.
 --- a/src/corelib/plugin/qelfparser_p.cpp
 +++ b/src/corelib/plugin/qelfparser_p.cpp
-@@ -117,6 +117,8 @@ struct ElfMachineCheck
+@@ -122,6 +122,8 @@ struct ElfMachineCheck
              EM_PARISC
  #elif defined(Q_PROCESSOR_IA64)
              EM_IA_64
@@ -56,7 +56,7 @@ Reviewed-by: Thiago Macieira <thiago.macieira@intel.com>
  #elif defined(Q_PROCESSOR_MIPS)
              EM_MIPS
  #elif defined(Q_PROCESSOR_POWER_32)
-@@ -375,6 +377,7 @@ Q_DECL_UNUSED Q_DECL_COLD_FUNCTION stati
+@@ -378,6 +380,7 @@ Q_DECL_UNUSED Q_DECL_COLD_FUNCTION stati
      switch (r.machine) {
      // list definitely not exhaustive!
      case EM_NONE:       d << ", no machine"; break;

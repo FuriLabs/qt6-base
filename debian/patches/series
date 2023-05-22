@@ -1,4 +1,6 @@
 # fixed in 6.5
+cve-2023-32762.diff
+cve-2023-32763.diff
 upstream_Add-HPPA-detection.patch
 upstream_Add-M68k-detection.patch
 

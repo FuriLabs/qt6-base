@@ -9,10 +9,10 @@ Subject: [PATCH] Add HPPA detection
 Change-Id: I5214ce64ef1fdd0ecca3d6c1694c5db9b2852a22
 Reviewed-by: Thiago Macieira <thiago.macieira@intel.com>
 ---
- src/corelib/global/archdetect.cpp           | 2 ++
- src/corelib/global/qprocessordetection.h    | 9 +++++++++
- src/corelib/global/qprocessordetection.qdoc | 9 +++++++++
- src/corelib/plugin/qelfparser_p.cpp         | 3 +++
+ src/corelib/global/archdetect.cpp        |    2 ++
+ src/corelib/global/qglobal.cpp           |    9 +++++++++
+ src/corelib/global/qprocessordetection.h |    9 +++++++++
+ src/corelib/plugin/qelfparser_p.cpp      |    3 +++
  4 files changed, 23 insertions(+)
 
 --- a/src/corelib/global/archdetect.cpp
@@ -46,7 +46,7 @@ Reviewed-by: Thiago Macieira <thiago.macieira@intel.com>
      X86 is little-endian.
 --- a/src/corelib/plugin/qelfparser_p.cpp
 +++ b/src/corelib/plugin/qelfparser_p.cpp
-@@ -113,6 +113,8 @@ struct ElfMachineCheck
+@@ -118,6 +118,8 @@ struct ElfMachineCheck
              EM_AARCH64
  #elif defined(Q_PROCESSOR_BLACKFIN)
              EM_BLACKFIN
@@ -55,7 +55,7 @@ Reviewed-by: Thiago Macieira <thiago.macieira@intel.com>
  #elif defined(Q_PROCESSOR_IA64)
              EM_IA_64
  #elif defined(Q_PROCESSOR_MIPS)
-@@ -380,6 +382,7 @@ Q_DECL_UNUSED Q_DECL_COLD_FUNCTION stati
+@@ -383,6 +385,7 @@ Q_DECL_UNUSED Q_DECL_COLD_FUNCTION stati
  #endif
      case EM_IA_64:      d << ", IA-64"; break;
      case EM_MIPS:       d << ", MIPS"; break;

@@ -1,8 +1,12 @@
 Description: Don't use yield on CPUs that might not support it
 
+---
+ src/corelib/global/qsimd_p.h |    2 ++
+ 1 file changed, 2 insertions(+)
+
 --- a/src/corelib/global/qsimd_p.h
 +++ b/src/corelib/global/qsimd_p.h
-@@ -428,7 +428,9 @@ static inline void qYieldCpu()
+@@ -401,7 +401,9 @@ static inline void qYieldCpu()
           https://stackoverflow.com/a/70076751/134841
           https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105416
      */
