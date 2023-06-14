@@ -50,7 +50,7 @@ override_dh_auto_configure:
 		-DINSTALL_TRANSLATIONDIR=share/qt6/translations \
 		-DINSTALL_MKSPECSDIR=lib/$(DEB_HOST_MULTIARCH)/qt6/mkspecs \
 		-DINSTALL_PUBLICBINDIR=bin \
-		-DBUILD_EXAMPLES=ON \
+		-DQT_BUILD_EXAMPLES=ON \
 		-DFEATURE_mimetype_database=OFF \
 		-DFEATURE_dbus_linked=ON \
 		-DFEATURE_accessibility=ON \

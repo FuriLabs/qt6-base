@@ -1,5 +1,9 @@
 qt6-base (6.4.2+dfsg-12) UNRELEASED; urgency=medium
 
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Enable building the examples, even if they do not ship the source code as
+    Qt 5 does.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 14 Jun 2023 17:15:27 -0300
 
 qt6-base (6.4.2+dfsg-11) unstable; urgency=medium
