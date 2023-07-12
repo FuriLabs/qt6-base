@@ -1,7 +1,7 @@
 Source: qt6-base
 Priority: optional
 Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
-Uploaders: Patrick Franz <deltaone@debian.org>
+Uploaders: Patrick Franz <deltaone@debian.org>,
 Build-Depends: cmake (>= 3.24~),
                debhelper-compat (= 13),
                default-libmysqlclient-dev,
@@ -84,10 +84,10 @@ Vcs-Browser: https://salsa.debian.org/qt-kde-team/qt6/qt6-base
 Package: libqt6core6
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Provides: qt6-base-abi (= 6.4.2)
-Depends: shared-mime-info, ${misc:Depends}, ${shlibs:Depends}
-Recommends: qt6-translations-l10n
+Pre-Depends: ${misc:Pre-Depends},
+Provides: qt6-base-abi (= 6.4.2),
+Depends: shared-mime-info, ${misc:Depends}, ${shlibs:Depends},
+Recommends: qt6-translations-l10n,
 Description: Qt 6 core module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -97,8 +97,8 @@ Description: Qt 6 core module
 Package: libqt6concurrent6
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends}, ${shlibs:Depends},
 Description: Qt 6 concurrent module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -109,8 +109,8 @@ Description: Qt 6 concurrent module
 Package: libqt6dbus6
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends}, ${shlibs:Depends},
 Description: Qt 6 D-Bus module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -125,11 +125,11 @@ Description: Qt 6 D-Bus module
 Package: libqt6gui6
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: fontconfig, ${misc:Depends}, ${shlibs:Depends}
-Breaks: qt6-qpa-plugins (<< 6.3.1+dfsg-6~)
-Replaces: qt6-qpa-plugins (<< 6.3.1+dfsg-6~)
-Recommends: qt6-gtk-platformtheme, qt6-qpa-plugins
+Pre-Depends: ${misc:Pre-Depends},
+Depends: fontconfig, ${misc:Depends}, ${shlibs:Depends},
+Breaks: qt6-qpa-plugins (<< 6.3.1+dfsg-6~),
+Replaces: qt6-qpa-plugins (<< 6.3.1+dfsg-6~),
+Recommends: qt6-gtk-platformtheme, qt6-qpa-plugins,
 Description: Qt 6 GUI module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -139,8 +139,8 @@ Description: Qt 6 GUI module
 Package: qt6-qpa-plugins
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: fontconfig, ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends},
+Depends: fontconfig, ${misc:Depends}, ${shlibs:Depends},
 Breaks: libqt6gui6 (<< 6.3.1+dfsg-6~),
         libqt6network6 (<< 6.2.4+dfsg-5~),
         libqt6opengl6 (<< 6.3.1+dfsg-6~),
@@ -155,8 +155,8 @@ Description: Qt 6 QPA plugins
 Package: qt6-gtk-platformtheme
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends}, ${shlibs:Depends},
 Description: Qt 6 GTK+ 3 platform theme
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -167,8 +167,8 @@ Description: Qt 6 GTK+ 3 platform theme
 Package: qt6-xdgdesktopportal-platformtheme
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends}, ${shlibs:Depends},
 Description: Qt 6 XDG Desktop Portal platform theme
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -179,10 +179,10 @@ Description: Qt 6 XDG Desktop Portal platform theme
 Package: libqt6opengl6
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}
-Breaks: qt6-qpa-plugins (<< 6.3.1+dfsg-6~)
-Replaces: qt6-qpa-plugins (<< 6.3.1+dfsg-6~)
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends}, ${shlibs:Depends},
+Breaks: qt6-qpa-plugins (<< 6.3.1+dfsg-6~),
+Replaces: qt6-qpa-plugins (<< 6.3.1+dfsg-6~),
 Description: Qt 6 OpenGL module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -196,8 +196,8 @@ Description: Qt 6 OpenGL module
 Package: libqt6openglwidgets6
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends}, ${shlibs:Depends},
 Description: Qt 6 OpenGL widgets module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -213,10 +213,10 @@ Description: Qt 6 OpenGL widgets module
 Package: libqt6network6
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${libssl:Depends}, ${misc:Depends}, ${shlibs:Depends}
-Breaks: qt6-qpa-plugins (<< 6.2.4+dfsg-5~)
-Replaces: qt6-qpa-plugins (<< 6.2.4+dfsg-5~)
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${libssl:Depends}, ${misc:Depends}, ${shlibs:Depends},
+Breaks: qt6-qpa-plugins (<< 6.2.4+dfsg-5~),
+Replaces: qt6-qpa-plugins (<< 6.2.4+dfsg-5~),
 Description: Qt 6 network module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -227,8 +227,8 @@ Description: Qt 6 network module
 Package: libqt6sql6
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends}, ${shlibs:Depends},
 Recommends: libqt6sql6-sqlite | libqt6sql6-mysql | libqt6sql6-odbc | libqt6sql6-psql | libqt6sql6-ibase,
 Description: Qt 6 SQL module
  Qt is a cross-platform C++ application framework. Qt's primary feature
@@ -240,8 +240,8 @@ Description: Qt 6 SQL module
 Package: libqt6sql6-mysql
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends}, ${shlibs:Depends},
 Description: Qt 6 MySQL database driver
  This package contains the MySQL plugin for Qt 6.
  .
@@ -251,8 +251,8 @@ Description: Qt 6 MySQL database driver
 Package: libqt6sql6-odbc
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends}, ${shlibs:Depends},
 Description: Qt 6 ODBC database driver
  This package contains the ODBC plugin for Qt 6.
  .
@@ -262,8 +262,8 @@ Description: Qt 6 ODBC database driver
 Package: libqt6sql6-psql
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends}, ${shlibs:Depends},
 Description: Qt 6 PostgreSQL database driver
  This package contains the PostgreSQL plugin for Qt 6.
  .
@@ -273,8 +273,8 @@ Description: Qt 6 PostgreSQL database driver
 Package: libqt6sql6-sqlite
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends}, ${shlibs:Depends},
 Description: Qt 6 SQLite 3 database driver
  This package contains the SQLite 3 plugin for Qt 6.
  .
@@ -284,8 +284,8 @@ Description: Qt 6 SQLite 3 database driver
 Package: libqt6sql6-ibase
 Architecture: kfreebsd-any linux-any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends}, ${shlibs:Depends},
 Description: Qt 6 Firebird database driver
  This package contains the Firebird plugin for Qt 6.
  .
@@ -295,8 +295,8 @@ Description: Qt 6 Firebird database driver
 Package: libqt6test6
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends}, ${shlibs:Depends},
 Description: Qt 6 test module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -307,8 +307,8 @@ Description: Qt 6 test module
 Package: libqt6widgets6
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends}, ${shlibs:Depends},
 Description: Qt 6 widgets module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -318,8 +318,8 @@ Description: Qt 6 widgets module
 Package: libqt6xml6
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends}, ${shlibs:Depends},
 Description: Qt 6 XML module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -330,9 +330,9 @@ Description: Qt 6 XML module
 Package: libqt6printsupport6
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}
-Recommends: libcups2
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends}, ${shlibs:Depends},
+Recommends: libcups2,
 Description: Qt 6 print support module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -363,9 +363,9 @@ Depends: libgl-dev,
          qt6-base-dev-tools (= ${binary:Version}),
          qt6-qpa-plugins (= ${binary:Version}),
          ${misc:Depends},
-Breaks: libqt6opengl6-dev (<< 6.3.1+dfsg-12~)
-Replaces: libqt6opengl6-dev (<< 6.3.1+dfsg-12~)
-Provides: libqt6opengl6-dev
+Breaks: libqt6opengl6-dev (<< 6.3.1+dfsg-12~),
+Replaces: libqt6opengl6-dev (<< 6.3.1+dfsg-12~),
+Provides: libqt6opengl6-dev,
 Description: Qt 6 base development files
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -398,8 +398,8 @@ Package: qt6-base-dev-tools
 Architecture: any
 Multi-Arch: foreign
 Section: devel
-Depends: ${misc:Depends}, ${perl:Depends}, ${shlibs:Depends}
-Suggests: cmake
+Depends: ${misc:Depends}, ${perl:Depends}, ${shlibs:Depends},
+Suggests: cmake,
 Description: Qt 6 base development programs
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -415,7 +415,7 @@ Package: qt6-base-examples
 Architecture: any
 Multi-Arch: same
 Section: misc
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends},
 Description: Qt 6 base examples
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -426,7 +426,7 @@ Package: qmake6-bin
 Architecture: any
 Multi-Arch: foreign
 Section: devel
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends},
 Description: Qt 6 qmake Makefile generator tool — binary file
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
