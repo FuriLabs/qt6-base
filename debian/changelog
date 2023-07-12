@@ -1,12 +1,12 @@
-qt6-base (6.4.2+dfsg-12) UNRELEASED; urgency=medium
+qt6-base (6.4.2+dfsg-12) experimental; urgency=medium
 
-  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Team upload.
   * Enable building the examples, even if they do not ship the source code as
     Qt 5 does.
   * Merge libqt6opengl6-dev into qt6-base-dev, it is not the same situation as
     with Qt 5.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 14 Jun 2023 17:15:27 -0300
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 12 Jul 2023 14:21:06 -0300
 
 qt6-base (6.4.2+dfsg-11) unstable; urgency=medium
 
