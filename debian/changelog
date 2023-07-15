@@ -7,6 +7,7 @@ qt6-base (6.4.2+dfsg-13) UNRELEASED; urgency=medium
     - drop the kfreebsd-any qualifiers in install files
   * Backport upstream commit eeb66b99df521c4a32b8eda1d889f615319355a6 to support
     Alpha; patch upstream_Add-enable-Alpha-detection.patch. (Closes: #1025823)
+  * Mark some Linux-only examples in qt6-base-examples as such.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 15 Jul 2023 14:26:49 +0200
 
