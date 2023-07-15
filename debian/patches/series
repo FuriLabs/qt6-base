@@ -8,6 +8,7 @@ cve-2023-32763.diff
 cve-2023-33285.diff
 upstream_Add-HPPA-detection.patch
 upstream_Add-M68k-detection.patch
+upstream_Add-enable-Alpha-detection.patch
 
 # fixed in 6.4.3
 cve-2023-24607.patch
