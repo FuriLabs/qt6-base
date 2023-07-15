@@ -1,5 +1,10 @@
 qt6-base (6.4.2+dfsg-13) UNRELEASED; urgency=medium
 
+  [ Pino Toscano ]
+  * Drop the support for the dead GNU/kFreeBSD (which was never really used):
+    - drop the kfreebsd-any qualifiers from the firebird-dev build dependency
+    - drop the kfreebsd-any qualifiers from binary packages
+    - drop the kfreebsd-any qualifiers in install files
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 15 Jul 2023 14:26:49 +0200
 
