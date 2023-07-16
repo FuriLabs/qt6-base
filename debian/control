@@ -129,7 +129,7 @@ Pre-Depends: ${misc:Pre-Depends},
 Depends: fontconfig, ${misc:Depends}, ${shlibs:Depends},
 Breaks: qt6-qpa-plugins (<< 6.3.1+dfsg-6~),
 Replaces: qt6-qpa-plugins (<< 6.3.1+dfsg-6~),
-Recommends: qt6-gtk-platformtheme, qt6-qpa-plugins,
+Recommends: qt6-gtk-platformtheme, qt6-qpa-plugins, qt6-wayland [linux-any],
 Description: Qt 6 GUI module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
