@@ -365,7 +365,7 @@ Depends: libgl-dev,
          ${misc:Depends},
 Breaks: libqt6opengl6-dev (<< 6.4.2+dfsg-12~),
 Replaces: libqt6opengl6-dev (<< 6.4.2+dfsg-12~),
-Provides: libqt6opengl6-dev (= 6.4.2+dfsg-11),
+Provides: libqt6opengl6-dev (= ${binary:Version}),
 Description: Qt 6 base development files
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
