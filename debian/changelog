@@ -11,6 +11,10 @@ qt6-base (6.4.2+dfsg-13) UNRELEASED; urgency=medium
   * Recommend qt6-wayland in libqt6gui6, so it is installed by default.
     (Closes: #1038089)
 
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Fix wrong Break+Replaces on qt6-base-dev against libqt6opengl6-dev
+    (Closes: #1041300). Thanks Helmut Grohne for the bug report.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 15 Jul 2023 14:26:49 +0200
 
 qt6-base (6.4.2+dfsg-12) experimental; urgency=medium
