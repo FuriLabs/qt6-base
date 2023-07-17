@@ -16,6 +16,8 @@ qt6-base (6.4.2+dfsg-13) experimental; urgency=medium
   [ Lisandro Damián Nicanor Pérez Meyer ]
   * Fix wrong Break+Replaces on qt6-base-dev against libqt6opengl6-dev
     (Closes: #1041300). Thanks Helmut Grohne for the bug report.
+  * Remove libgl1-mesa-dev from build dependencies. It has been superseded by
+    libgl-dev, which is already a build dependency.
 
  -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Mon, 17 Jul 2023 15:45:11 -0300
 
