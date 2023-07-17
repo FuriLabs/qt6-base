@@ -1,3 +1,9 @@
+qt6-base (6.4.2+dfsg-14) unstable; urgency=medium
+
+  * Team upload to unstable.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Mon, 17 Jul 2023 16:42:10 -0300
+
 qt6-base (6.4.2+dfsg-13) experimental; urgency=medium
 
   * Team upload to unstable.
