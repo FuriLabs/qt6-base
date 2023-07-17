@@ -19,7 +19,7 @@ qt6-base (6.4.2+dfsg-13) experimental; urgency=medium
   * Remove libgl1-mesa-dev from build dependencies. It has been superseded by
     libgl-dev, which is already a build dependency.
 
- -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Mon, 17 Jul 2023 15:45:11 -0300
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Mon, 17 Jul 2023 15:52:14 -0300
 
 qt6-base (6.4.2+dfsg-12) experimental; urgency=medium
 
