@@ -1,4 +1,4 @@
-qt6-base (6.4.2+dfsg-15) UNRELEASED; urgency=medium
+qt6-base (6.4.2+dfsg-15) experimental; urgency=medium
 
   * Team upload.
 
@@ -10,7 +10,7 @@ qt6-base (6.4.2+dfsg-15) UNRELEASED; urgency=medium
   * Add a lintian override for qt6-base-doc-html, documentation is shipped in
     another path on Qt6. We provide symlinks in order to fix this.
 
- -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Sat, 22 Jul 2023 11:55:09 -0300
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Sat, 22 Jul 2023 13:21:44 -0300
 
 qt6-base (6.4.2+dfsg-14) unstable; urgency=medium
 
