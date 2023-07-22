@@ -5,6 +5,9 @@ qt6-base (6.4.2+dfsg-15) UNRELEASED; urgency=medium
   [ Eren Eroğlu ]
   * Add qt6-base-doc* packages.
 
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Remove build path from documentation's index files.
+
  -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Sat, 22 Jul 2023 11:55:09 -0300
 
 qt6-base (6.4.2+dfsg-14) unstable; urgency=medium

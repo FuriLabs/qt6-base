@@ -113,6 +113,9 @@ override_dh_auto_build-indep:
 
 override_dh_auto_install-indep:
 	DESTDIR=$(CURDIR)/debian/tmp dh_auto_build -- install_docs
+	# Remove build path from index files.
+	find $(CURDIR)/debian/tmp/usr/share/qt6/doc -type f -name *.index -exec \
+		sed -i 's@$(CURDIR)/@@g' {} \;
 
 override_dh_makeshlibs:
 	dh_makeshlibs -XlibQt6EglFSDeviceIntegration -XlibQt6EglFsKmsGbmSupport -XlibQt6EglFsKmsSupport -XlibQt6XcbQpa
