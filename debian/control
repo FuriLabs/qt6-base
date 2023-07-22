@@ -461,7 +461,7 @@ Description: Qt 6 qmake Makefile generator tool
 Package: qt6-base-doc
 Architecture: all
 Section: doc
-Depends: ${misc:Depends}
+Depends: ${misc:Depends},
 Multi-Arch: foreign
 Description: Qt 6 base documentation
  Qt is a cross-platform C++ application framework. Qt's primary feature
@@ -472,7 +472,7 @@ Description: Qt 6 base documentation
 Package: qt6-base-doc-html
 Architecture: all
 Section: doc
-Depends: ${misc:Depends}
+Depends: ${misc:Depends},
 Multi-Arch: foreign
 Description: Qt 6 base HTML documentation
  Qt is a cross-platform C++ application framework. Qt's primary feature
@@ -484,7 +484,7 @@ Description: Qt 6 base HTML documentation
 Package: qt6-base-doc-dev
 Architecture: all
 Section: libdevel
-Depends: ${misc:Depends}
+Depends: ${misc:Depends},
 Multi-Arch: foreign
 Description: Qt 6 base tags files
  Qt is a cross-platform C++ application framework. Qt's primary feature

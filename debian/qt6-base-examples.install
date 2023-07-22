@@ -1,4 +1,11 @@
 #!/usr/bin/dh-exec
+[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/network/multistreamclient/multistreamclient
+[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/network/multistreamserver/multistreamserver
+[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/vulkan/hellovulkancubes/hellovulkancubes
+[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/vulkan/hellovulkantexture/hellovulkantexture
+[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/vulkan/hellovulkantriangle/hellovulkantriangle
+[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/vulkan/hellovulkanwidget/hellovulkanwidget
+[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/vulkan/hellovulkanwindow/hellovulkanwindow
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/corelib/bindableproperties/bindablesubscription/bindablesubscription
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/corelib/bindableproperties/subscription/subscription
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/corelib/ipc/localfortuneclient/localfortuneclient
@@ -38,8 +45,6 @@ usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/network/http/http
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/network/loopback/loopback
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/network/multicastreceiver/multicastreceiver
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/network/multicastsender/multicastsender
-[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/network/multistreamclient/multistreamclient
-[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/network/multistreamserver/multistreamserver
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/network/network-chat/network-chat
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/network/securesocketclient/securesocketclient
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/network/secureudpclient/secureudpclient
@@ -80,11 +85,6 @@ usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/sql/relationaltablemodel/relationalta
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/sql/sqlbrowser/sqlbrowser
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/sql/sqlwidgetmapper/sqlwidgetmapper
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/sql/tablemodel/tablemodel
-[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/vulkan/hellovulkancubes/hellovulkancubes
-[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/vulkan/hellovulkantexture/hellovulkantexture
-[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/vulkan/hellovulkantriangle/hellovulkantriangle
-[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/vulkan/hellovulkanwidget/hellovulkanwidget
-[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/vulkan/hellovulkanwindow/hellovulkanwindow
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/widgets/animation/easing/easing
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/widgets/desktop/screenshot/screenshot
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/widgets/desktop/systray/systray

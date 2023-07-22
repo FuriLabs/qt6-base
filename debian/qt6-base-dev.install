@@ -1,9 +1,4 @@
 #!/usr/bin/dh-exec
-[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Sql/Qt6QIBaseDriverPluginAdditionalTargetInfo.cmake
-[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Sql/Qt6QIBaseDriverPluginConfig.cmake
-[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Sql/Qt6QIBaseDriverPluginConfigVersion.cmake
-[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets-none.cmake
-[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets.cmake
 [linux-any] usr/include/${DEB_HOST_MULTIARCH}/qt6/QtEglFsKmsGbmSupport/QtEglFsKmsGbmSupport
 [linux-any] usr/include/${DEB_HOST_MULTIARCH}/qt6/QtEglFsKmsGbmSupport/QtEglFsKmsGbmSupportDepends
 [linux-any] usr/include/${DEB_HOST_MULTIARCH}/qt6/QtEglFsKmsGbmSupport/QtEglFsKmsGbmSupportVersion
@@ -101,7 +96,12 @@
 [linux-any] usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginConfigVersionImpl.cmake
 [linux-any] usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets-none.cmake
 [linux-any] usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets.cmake
+[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Sql/Qt6QIBaseDriverPluginAdditionalTargetInfo.cmake
+[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Sql/Qt6QIBaseDriverPluginConfig.cmake
+[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Sql/Qt6QIBaseDriverPluginConfigVersion.cmake
 [linux-any] usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Sql/Qt6QIBaseDriverPluginConfigVersionImpl.cmake
+[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets-none.cmake
+[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets.cmake
 [linux-any] usr/lib/${DEB_HOST_MULTIARCH}/libQt6EglFsKmsGbmSupport.prl
 [linux-any] usr/lib/${DEB_HOST_MULTIARCH}/libQt6EglFsKmsGbmSupport.so
 [linux-any] usr/lib/${DEB_HOST_MULTIARCH}/libQt6EglFsKmsSupport.prl
