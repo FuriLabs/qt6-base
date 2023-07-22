@@ -73,6 +73,8 @@ Build-Depends: cmake (>= 3.24~),
                qt6-base-dev:native <cross>,
                unixodbc-dev,
                zlib1g-dev,
+Build-Depends-Indep: qt6-base-dev (>= 6.4~) <!nodoc>,
+                     qt6-documentation-tools (>= 6.4~) <!nodoc>,
 Standards-Version: 4.6.2
 Section: libs
 Homepage: https://www.qt.io/developers/
@@ -455,3 +457,37 @@ Description: Qt 6 qmake Makefile generator tool
  many default values used to generate appropriate Makefiles.
  .
  This package contains also these platform specifications.
+
+Package: qt6-base-doc
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Multi-Arch: foreign
+Description: Qt 6 base documentation
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains the documentation for the Qt 6 base libraries.
+
+Package: qt6-base-doc-html
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Multi-Arch: foreign
+Description: Qt 6 base HTML documentation
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains the HTML documentation for the Qt 6 base
+ libraries.
+
+Package: qt6-base-doc-dev
+Architecture: all
+Section: libdevel
+Depends: ${misc:Depends}
+Multi-Arch: foreign
+Description: Qt 6 base tags files
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains the doxygen tags files for the qtbase documentation.

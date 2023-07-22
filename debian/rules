@@ -84,7 +84,7 @@ override_dh_auto_configure:
 		$(extra_cmake_args)
 
 
-execute_after_dh_auto_install:
+execute_after_dh_auto_install-arch:
 	# Policy § 10.4. Remove this if https://bugs.debian.org/904409 gets fixed.
 	sed -i 's,bin/env perl,bin/perl,' debian/tmp/usr/lib/qt6/libexec/*.pl \
 		debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/qt6/mkspecs/features/data/unix/findclasslist.pl
@@ -107,6 +107,12 @@ execute_after_dh_auto_install:
 	# Fix Qt6::qmake IMPORTED_LOCATION, see https://bugs.debian.org/1030980
 	sed -i 's,lib/qt6/bin/qmake,bin/$(DEB_HOST_GNU_TYPE)-qmake6,' \
 		debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/cmake/Qt6CoreTools/Qt6CoreToolsTargets-none.cmake
+
+override_dh_auto_build-indep:
+	dh_auto_build -- docs
+
+override_dh_auto_install-indep:
+	DESTDIR=$(CURDIR)/debian/tmp dh_auto_build -- install_docs
 
 override_dh_makeshlibs:
 	dh_makeshlibs -XlibQt6EglFSDeviceIntegration -XlibQt6EglFsKmsGbmSupport -XlibQt6EglFsKmsSupport -XlibQt6XcbQpa

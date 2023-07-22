@@ -1,5 +1,8 @@
 qt6-base (6.4.2+dfsg-15) UNRELEASED; urgency=medium
 
+  [ Eren Eroğlu ]
+  * Add qt6-base-doc* packages. 
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 22 Jul 2023 10:59:11 -0300
 
 qt6-base (6.4.2+dfsg-14) unstable; urgency=medium
