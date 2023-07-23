@@ -19,6 +19,7 @@ build_path_embedded_qtbuildinternalsextra_cmake.patch
 cross.patch
 force_shared_libzstd.patch
 no_htmlinfo_example.patch
+remove_rpath_from_examples.patch
 
 # Don't use yield on CPUs that might not support it
 armel-noyield.patch

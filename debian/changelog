@@ -1,5 +1,9 @@
 qt6-base (6.4.2+dfsg-17) UNRELEASED; urgency=medium
 
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Add remove_rpath_from_examples.patch in order to avoid setting
+    RPATH/RUNPATH on examples' binaries.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 23 Jul 2023 17:49:16 -0300
 
 qt6-base (6.4.2+dfsg-16) unstable; urgency=medium
