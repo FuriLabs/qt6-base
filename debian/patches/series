@@ -20,6 +20,7 @@ cross.patch
 force_shared_libzstd.patch
 no_htmlinfo_example.patch
 remove_rpath_from_examples.patch
+forkfd_grow_stack_upwards_on_hppa.patch
 
 # Don't use yield on CPUs that might not support it
 armel-noyield.patch

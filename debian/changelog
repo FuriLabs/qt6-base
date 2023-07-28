@@ -3,6 +3,8 @@ qt6-base (6.4.2+dfsg-17) UNRELEASED; urgency=medium
   [ Lisandro Damián Nicanor Pérez Meyer ]
   * Add remove_rpath_from_examples.patch in order to avoid setting
     RPATH/RUNPATH on examples' binaries.
+  * Add forkfd_grow_stack_upwards_on_hppa.patch to solve how stack grows in
+    HPPA. Thanks John David Anglin for the patch.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 23 Jul 2023 17:49:16 -0300
 
