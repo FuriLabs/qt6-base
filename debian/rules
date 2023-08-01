@@ -24,7 +24,7 @@ ifneq ($(DEB_BUILD_ARCH),$(DEB_HOST_ARCH))
 	extra_cmake_args += \
 		-DQT_HOST_PATH=/usr \
 		-DQT_HOST_PATH_CMAKE_DIR=/usr/lib/${DEB_BUILD_MULTIARCH}/cmake \
-		-DQT_BUILD_TOOLS_WHEN_CROSSCOMPILING=ON
+		-DQT_FORCE_BUILD_TOOLS=ON
 endif
 
 %:

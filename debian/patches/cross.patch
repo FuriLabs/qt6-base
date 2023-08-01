@@ -21,7 +21,17 @@
      LABEL "Android deployment tool"
      PURPOSE "The Android deployment tool automates the process of creating Android packages."
 -    CONDITION NOT CMAKE_CROSSCOMPILING AND QT_FEATURE_regularexpression)
-+    CONDITION QT_FEATURE_regularexpression)
++    CONDITION (QT_FORCE_BUILD_TOOLS OR NOT CMAKE_CROSSCOMPILING) AND QT_FEATURE_regularexpression)
  
  qt_feature("macdeployqt" PRIVATE
      SECTION "Deployment"
+--- a/examples/sql/CMakeLists.txt
++++ b/examples/sql/CMakeLists.txt
+@@ -12,6 +12,6 @@ if(TARGET Qt::Xml)
+     qt_internal_add_example(masterdetail)
+ endif()
+ 
+-if(NOT CMAKE_CROSSCOMPILING)
++if(QT_FORCE_BUILD_TOOLS OR NOT CMAKE_CROSSCOMPILING)
+     qt_internal_add_example(sqlbrowser)
+ endif()
