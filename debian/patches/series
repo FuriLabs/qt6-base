@@ -13,6 +13,9 @@ upstream_Add-enable-Alpha-detection.patch
 # fixed in 6.4.3
 cve-2023-24607.patch
 
+# Needs to be fixed upstream.
+Add-SH-detection.patch
+
 # Debian specific
 remove_privacy_breaches.diff
 build_path_embedded_qtbuildinternalsextra_cmake.patch
