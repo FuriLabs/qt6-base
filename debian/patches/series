@@ -5,7 +5,6 @@ Add-SH-detection.patch
 remove_privacy_breaches.diff
 build_path_embedded_qtbuildinternalsextra_cmake.patch
 cross.patch
-force_shared_libzstd.patch
 remove_rpath_from_examples.patch
 forkfd_grow_stack_upwards_on_hppa.patch
 
