@@ -4,6 +4,7 @@ qt6-base (6.6.0+dfsg-1) UNRELEASED; urgency=medium
   * New upstream release (6.6.0).
   * Update ABI to 6.6.0.
   * Remove references to htmlinfo examples.
+  * Remove patches that have been applied upstream.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue, 10 Oct 2023 17:54:32 +0200
 
