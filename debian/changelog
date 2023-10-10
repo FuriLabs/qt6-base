@@ -6,6 +6,7 @@ qt6-base (6.6.0+dfsg-1) UNRELEASED; urgency=medium
   * Remove references to htmlinfo examples.
   * Remove patches that have been applied upstream.
   * Readjust patches for 6.6.0.
+  * Update list of installed files.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue, 10 Oct 2023 17:54:32 +0200
 
