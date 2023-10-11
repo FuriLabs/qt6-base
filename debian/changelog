@@ -1,4 +1,4 @@
-qt6-base (6.6.0+dfsg-1) UNRELEASED; urgency=medium
+qt6-base (6.6.0+dfsg-1) experimental; urgency=medium
 
   [ Patrick Franz ]
   * New upstream release (6.6.0).
@@ -11,7 +11,7 @@ qt6-base (6.6.0+dfsg-1) UNRELEASED; urgency=medium
   * Install source code for examples (Closes: #1051494).
   * Update lintian-overrides.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue, 10 Oct 2023 17:54:32 +0200
+ -- Patrick Franz <deltaone@debian.org>  Wed, 11 Oct 2023 21:00:14 +0200
 
 qt6-base (6.4.2+dfsg-18) unstable; urgency=medium
 
