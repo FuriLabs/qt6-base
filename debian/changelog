@@ -1,11 +1,11 @@
-qt6-base (6.6.0+dfsg-2) UNRELEASED; urgency=medium
+qt6-base (6.6.0+dfsg-2) experimental; urgency=medium
 
   [ Patrick Franz ]
   * Rename the virtual ABI package to qt6-base-private-abi.
   * Update symbols from buildlogs.
   * Move prf-files into qmake6-package (Closes: #1053824).
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 12 Oct 2023 17:42:13 +0200
+ -- Patrick Franz <deltaone@debian.org>  Thu, 12 Oct 2023 18:18:14 +0200
 
 qt6-base (6.6.0+dfsg-1) experimental; urgency=medium
 
