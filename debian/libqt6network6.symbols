@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.6.0 amd64
+# SymbolsHelper-Confirmed: 6.6.0 amd64 armel armhf hppa i386 powerpc
 libQt6Network.so.6 libqt6network6 #MINVER#
 | libqt6network6 #MINVER#, qt6-base-private-abi (= 6.6.0)
 * Build-Depends-Package: qt6-base-dev
@@ -676,7 +676,7 @@ libQt6Network.so.6 libqt6network6 #MINVER#
  _ZN19QDtlsClientVerifierD0Ev@Qt_6 6.1.2
  _ZN19QDtlsClientVerifierD1Ev@Qt_6 6.1.2
  _ZN19QDtlsClientVerifierD2Ev@Qt_6 6.1.2
- _ZN19QHttp1Configuration29setNumberOfConnectionsPerHostEx@Qt_6 6.6.0
+ (subst)_ZN19QHttp1Configuration29setNumberOfConnectionsPerHostE{qptrdiff}@Qt_6 6.6.0
  _ZN19QHttp1ConfigurationC1ERKS_@Qt_6 6.6.0
  _ZN19QHttp1ConfigurationC1Ev@Qt_6 6.6.0
  _ZN19QHttp1ConfigurationC2ERKS_@Qt_6 6.6.0
@@ -1250,7 +1250,7 @@ libQt6Network.so.6 libqt6network6 #MINVER#
  _ZNK19QDtlsClientVerifier25cookieGeneratorParametersEv@Qt_6 6.1.2
  _ZNK19QDtlsClientVerifier9dtlsErrorEv@Qt_6 6.1.2
  _ZNK19QHttp1Configuration26numberOfConnectionsPerHostEv@Qt_6 6.6.0
- _ZNK19QHttp1Configuration4hashEm@Qt_6 6.6.0
+ (subst)_ZNK19QHttp1Configuration4hashE{size_t}@Qt_6 6.6.0
  _ZNK19QHttp1Configuration6equalsERKS_@Qt_6 6.6.0
  _ZNK19QHttp2Configuration12maxFrameSizeEv@Qt_6 6.1.2
  _ZNK19QHttp2Configuration17serverPushEnabledEv@Qt_6 6.1.2

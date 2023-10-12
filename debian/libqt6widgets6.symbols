@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.6.0 amd64
+# SymbolsHelper-Confirmed: 6.6.0 amd64 armel armhf hppa i386 powerpc
 libQt6Widgets.so.6 libqt6widgets6 #MINVER#
 | libqt6widgets6 #MINVER#, qt6-base-private-abi (= 6.6.0)
 * Build-Depends-Package: qt6-base-dev
@@ -2297,7 +2297,7 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZN16QKeySequenceEdit16staticMetaObjectE@Qt_6 6.1.2
  _ZN16QKeySequenceEdit18keySequenceChangedERK12QKeySequence@Qt_6 6.1.2
  _ZN16QKeySequenceEdit21setClearButtonEnabledEb@Qt_6 6.4.0
- _ZN16QKeySequenceEdit24setMaximumSequenceLengthEx@Qt_6 6.6.0
+ (subst)_ZN16QKeySequenceEdit24setMaximumSequenceLengthE{qptrdiff}@Qt_6 6.6.0
  _ZN16QKeySequenceEdit27setFinishingKeyCombinationsERK5QListI15QKeyCombinationE@Qt_6 6.6.0
  _ZN16QKeySequenceEdit5clearEv@Qt_6 6.1.2
  _ZN16QKeySequenceEdit5eventEP6QEvent@Qt_6 6.1.2

@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.6.0 amd64
+# SymbolsHelper-Confirmed: 6.6.0 amd64 arm64 armel armhf hppa i386 loong64 mips64el powerpc ppc64 ppc64el riscv64 s390x sparc64
 libQt6Gui.so.6 libqt6gui6 #MINVER#
 | libqt6gui6 #MINVER#, qt6-base-private-abi (= 6.6.0)
 * Build-Depends-Package: qt6-base-dev
@@ -2899,7 +2899,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZN9QGlyphRun15setBoundingRectERK6QRectF@Qt_6 6.1.2
  _ZN9QGlyphRun15setGlyphIndexesERK5QListIjE@Qt_6 6.1.2
  _ZN9QGlyphRun15setSourceStringERK7QString@Qt_6 6.6.0
- _ZN9QGlyphRun16setStringIndexesERK5QListIxE@Qt_6 6.6.0
+ (subst)_ZN9QGlyphRun16setStringIndexesERK5QListI{qptrdiff}E@Qt_6 6.6.0
  _ZN9QGlyphRun5clearEv@Qt_6 6.1.2
  _ZN9QGlyphRun6detachEv@Qt_6 6.1.2
  _ZN9QGlyphRun7setFlagENS_12GlyphRunFlagEb@Qt_6 6.1.2
@@ -3518,7 +3518,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZNK12QPainterPathneERKS_@Qt_6 6.1.2
  _ZNK12QPainterPathorERKS_@Qt_6 6.1.2
  _ZNK12QPainterPathplERKS_@Qt_6 6.1.2
- _ZNK12QPixmapCache3Key4hashEm@Qt_6 6.6.0
+ (subst)_ZNK12QPixmapCache3Key4hashE{size_t}@Qt_6 6.6.0
  _ZNK12QPixmapCache3Key7isValidEv@Qt_6 6.1.2
  _ZNK12QPixmapCache3KeyeqERKS0_@Qt_6 6.1.2
  _ZNK12QResizeEvent5cloneEv@Qt_6 6.4.0
@@ -4737,7 +4737,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  (arch=!armel !riscv64)_ZTISt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE@Qt_6 6.3.0
  (arch=armel riscv64)_ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE@Qt_6 6.3.0
  (arch=!armel !riscv64)_ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE@Qt_6 6.3.0
- (arch=amd64 armel armhf)_ZTISt19_Sp_make_shared_tag@Qt_6 6.6.0
+ _ZTISt19_Sp_make_shared_tag@Qt_6 6.6.0
  (arch=linux-any)_ZTIZN9QMetaType17registerConverterI5QListI23QDBusUnixFileDescriptorE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTIZN9QMetaType17registerConverterI5QListI4QUrlE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTIZN9QMetaType17registerConverterI5QListI5QSizeE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
