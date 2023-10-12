@@ -2312,7 +2312,6 @@ usr/lib/${DEB_HOST_MULTIARCH}/pkgconfig/Qt6Widgets.pc
 usr/lib/${DEB_HOST_MULTIARCH}/pkgconfig/Qt6Xml.pc
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/devices/linux-rasp-pi4-aarch64/qmake.conf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/devices/linux-rasp-pi4-aarch64/qplatformdefs.h
-usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/unix/no_direct_extern_access.prf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/modules/qt_lib_concurrent.pri
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/modules/qt_lib_concurrent_private.pri
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/modules/qt_lib_core.pri
@@ -2610,9 +2609,6 @@ usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/Widgets.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/Xml.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/common/wasm/qplatformdefs.h
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/common/wasm/wasm.conf
-usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/permissions.prf
-usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/qt_config.prf
-usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/qt_functions.prf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/modules/qt_lib_example_icons_private.pri
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/unsupported/macx-tvos-clang/Info.plist.app
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/unsupported/macx-tvos-clang/Info.plist.lib

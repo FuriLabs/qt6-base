@@ -214,6 +214,7 @@ usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/mac/unsupported/objc_namespac
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/metatypes.prf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/moc.prf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/no_debug_info.prf
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/permissions.prf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/plugin_bundle.prf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/precompile_header.prf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/qgltf.prf
@@ -224,6 +225,8 @@ usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/qml_module.prf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/qml_plugin.prf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/qmltestcase.prf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/qt.prf
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/qt_config.prf
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/qt_functions.prf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/resolve_config.prf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/resolve_target.prf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/resources.prf
@@ -260,6 +263,7 @@ usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/unix/bsymbolic_functions.prf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/unix/ccache.prf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/unix/hide_symbols.prf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/unix/largefile.prf
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/unix/no_direct_extern_access.prf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/unix/opengl.prf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/unix/separate_debug_info.prf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/features/unix/thread.prf

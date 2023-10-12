@@ -443,6 +443,8 @@ Depends: qmake6-bin (= ${binary:Version}),
          ${misc:Depends},
          ${perl:Depends},
          ${shlibs:Depends},
+Breaks: qt6-base-dev (<< 6.6.0+dfsg~),
+Replaces: qt6-base-dev (<< 6.6.0+dfsg~),
 Description: Qt 6 qmake Makefile generator tool
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
