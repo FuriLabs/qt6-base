@@ -1,5 +1,8 @@
 qt6-base (6.6.0+dfsg-3) UNRELEASED; urgency=medium
 
+  [ Patrick Franz ]
+  * Update list of installed files.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 28 Oct 2023 17:48:51 +0200
 
 qt6-base (6.6.0+dfsg-2) experimental; urgency=medium
