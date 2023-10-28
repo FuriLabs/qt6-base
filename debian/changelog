@@ -22,6 +22,14 @@ qt6-base (6.6.0+dfsg-1) experimental; urgency=medium
 
  -- Patrick Franz <deltaone@debian.org>  Wed, 11 Oct 2023 21:00:14 +0200
 
+ qt6-base (6.4.2+dfsg-19) unstable; urgency=medium
+
+   [ Patrick Franz ]
+   * Backport upstream patch to fix build with libxkbcommon 1.6.0
+     (Closes: #1054674).
+
+  -- Patrick Franz <deltaone@debian.org>  Sat, 28 Oct 2023 11:26:45 +0200
+
 qt6-base (6.4.2+dfsg-18) unstable; urgency=medium
 
   [ Helmut Grohne ]
