@@ -1,5 +1,8 @@
 qt6-base (6.6.0+dfsg-4) UNRELEASED; urgency=medium
 
+  [ Patrick Franz ]
+  * Do not include targets for plugins and QML plugins in cmake-files.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue, 31 Oct 2023 22:55:33 +0100
 
 qt6-base (6.6.0+dfsg-3) experimental; urgency=medium
