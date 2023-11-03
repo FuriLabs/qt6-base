@@ -5,7 +5,7 @@ qt6-base (6.6.0+dfsg-6) UNRELEASED; urgency=medium
   * Update list of installed files.
   * Update symbols.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde at lists.debian.org>  Fri, 03 Nov 2023 14:25:13 +0800
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 03 Nov 2023 14:25:13 +0800
 
 qt6-base (6.6.0+dfsg-5) experimental; urgency=medium
 
