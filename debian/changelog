@@ -1,6 +1,6 @@
-qt6-base (6.6.0+dfsg-5) UNRELEASED; urgency=medium
+qt6-base (6.6.0+dfsg-5) experimental; urgency=medium
 
-  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Team upload.
   * Add two patches:
     - be_verbose_on_plugin_inclusion.patch currently on upstream's Gerrit.
     - enable_skip_plugins.patch
@@ -9,7 +9,7 @@ qt6-base (6.6.0+dfsg-5) UNRELEASED; urgency=medium
     unnecessary build dependencies on plugins.
   * Refresh patches.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 01 Nov 2023 18:16:57 -0300
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Thu, 02 Nov 2023 22:33:30 -0300
 
 qt6-base (6.6.0+dfsg-4) experimental; urgency=medium
 
