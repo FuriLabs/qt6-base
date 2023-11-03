@@ -7,6 +7,7 @@ qt6-base (6.6.0+dfsg-5) UNRELEASED; urgency=medium
     These set QT_SKIP_AUTO_PLUGIN_INCLUSION and
     QT_SKIP_AUTO_QML_PLUGIN_INCLUSION to ON by default, thus avoiding
     unnecesary build dependencies on plugins.
+  * Refresh patches.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 01 Nov 2023 18:16:57 -0300
 

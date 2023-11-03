@@ -25,7 +25,7 @@ Forwarded: not-needed
 +    set(QT_SKIP_AUTO_PLUGIN_INCLUSION ON)
  endif()
  
- message(STATUS "Skip auto plugin inclusion is set to ${QT_SKIP_AUTO_PLUGIN_INCLUSION}")
+ if(QT_REPO_MODULE_VERSION)
 --- a/cmake/QtPostProcessHelpers.cmake
 +++ b/cmake/QtPostProcessHelpers.cmake
 @@ -448,7 +448,7 @@ function(qt_internal_create_plugins_auto
@@ -36,4 +36,4 @@ Forwarded: not-needed
 +    set(QT_SKIP_AUTO_QML_PLUGIN_INCLUSION ON)
  endif()
  
- message(STATUS \"Skip auto QML plugin inclusion is set to \${QT_SKIP_AUTO_QML_PLUGIN_INCLUSION}\")
+ if(QT_REPO_MODULE_VERSION)
