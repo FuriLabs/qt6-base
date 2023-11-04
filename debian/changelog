@@ -1,5 +1,8 @@
 qt6-base (6.6.0+dfsg-7) UNRELEASED; urgency=medium
 
+  [ Patrick Franz ]
+  * Backport patch to fix accessibility support on Wayland.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 04 Nov 2023 12:26:02 +0100
 
 qt6-base (6.6.0+dfsg-6) experimental; urgency=medium
