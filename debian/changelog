@@ -6,6 +6,7 @@ qt6-base (6.6.1+dfsg-1) UNRELEASED; urgency=medium
   * New upstream release (6.6.1).
   * Update ABI to 6.6.1.
   * Remove patches that have been applied upstream.
+  * Update list of installed files.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 04 Dec 2023 19:53:40 +0100
 
