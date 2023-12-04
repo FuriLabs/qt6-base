@@ -1,4 +1,4 @@
-qt6-base (6.6.1+dfsg-1) UNRELEASED; urgency=medium
+qt6-base (6.6.1+dfsg-1) experimental; urgency=medium
 
   [ Patrick Franz ]
   * Backport patch to fix accessibility support on Wayland.
@@ -9,7 +9,7 @@ qt6-base (6.6.1+dfsg-1) UNRELEASED; urgency=medium
   * Update list of installed files.
   * Update symbols from buildlogs.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 04 Dec 2023 19:53:40 +0100
+ -- Patrick Franz <deltaone@debian.org>  Mon, 04 Dec 2023 21:52:53 +0100
 
 qt6-base (6.6.0+dfsg-6) experimental; urgency=medium
 
@@ -77,11 +77,11 @@ qt6-base (6.6.0+dfsg-1) experimental; urgency=medium
 
 qt6-base (6.4.2+dfsg-19) unstable; urgency=medium
 
-   [ Patrick Franz ]
-   * Backport upstream patch to fix build with libxkbcommon 1.6.0
-     (Closes: #1054674).
+  [ Patrick Franz ]
+  * Backport upstream patch to fix build with libxkbcommon 1.6.0
+    (Closes: #1054674).
 
-  -- Patrick Franz <deltaone@debian.org>  Sat, 28 Oct 2023 11:26:45 +0200
+ -- Patrick Franz <deltaone@debian.org>  Sat, 28 Oct 2023 11:26:45 +0200
 
 qt6-base (6.4.2+dfsg-18) unstable; urgency=medium
 
