@@ -1,5 +1,8 @@
 qt6-base (6.6.1+dfsg-5) UNRELEASED; urgency=medium
 
+  [ Patrick Franz ]
+  * Update symbols from buildlogs.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 10 Dec 2023 21:29:35 +0100
 
 qt6-base (6.6.1+dfsg-4) experimental; urgency=medium
