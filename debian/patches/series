@@ -1,5 +1,6 @@
 # fixed in 6.5.4, 6.6.1
 libxkbcommon_1.6.0.diff
+cve-2023-37369.diff
 
 # fixed in 6.5.2
 cve-2023-34410-57ba626.diff
