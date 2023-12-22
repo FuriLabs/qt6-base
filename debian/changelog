@@ -1,9 +1,9 @@
-qt6-base (6.4.2+dfsg-20) UNRELEASED; urgency=medium
+qt6-base (6.4.2+dfsg-20) unstable; urgency=medium
 
   [ Patrick Franz ]
   * Add patch to fix CVE-2023-37369.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 22 Dec 2023 15:10:10 +0100
+ -- Patrick Franz <deltaone@debian.org>  Fri, 22 Dec 2023 16:11:45 +0100
 
 qt6-base (6.4.2+dfsg-19) unstable; urgency=medium
 
