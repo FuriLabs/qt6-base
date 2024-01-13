@@ -1,5 +1,8 @@
 qt6-base (6.4.2+dfsg-21) UNRELEASED; urgency=medium
 
+  [ Patrick Franz ]
+  * Add patch to fix CVE-2023-51714.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 13 Jan 2024 14:49:42 +0100
 
 qt6-base (6.4.2+dfsg-20) unstable; urgency=medium
