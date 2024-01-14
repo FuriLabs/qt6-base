@@ -103,6 +103,21 @@ qt6-base (6.6.0+dfsg-1) experimental; urgency=medium
 
  -- Patrick Franz <deltaone@debian.org>  Wed, 11 Oct 2023 21:00:14 +0200
 
+qt6-base (6.4.2+dfsg-21) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Add patch to fix CVE-2023-51714.
+
+ -- Patrick Franz <deltaone@debian.org>  Sat, 13 Jan 2024 14:53:25 +0100
+
+qt6-base (6.4.2+dfsg-20) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Add patch to fix CVE-2023-37369.
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 22 Dec 2023 16:11:45 +0100
+>>>>>>> master
+
 qt6-base (6.4.2+dfsg-19) unstable; urgency=medium
 
   [ Patrick Franz ]
