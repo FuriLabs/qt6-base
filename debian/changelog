@@ -1,4 +1,4 @@
-qt6-base (6.6.2+dfsg-1) UNRELEASED; urgency=medium
+qt6-base (6.6.2+dfsg-1) experimental; urgency=medium
 
   [ Patrick Franz ]
   * New upstream release (6.6.2).
@@ -9,7 +9,7 @@ qt6-base (6.6.2+dfsg-1) UNRELEASED; urgency=medium
   * Build-depend on pkgconf instead of pkg-config as the latter has been
     superseded by the former.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 15 Feb 2024 18:14:07 +0100
+ -- Patrick Franz <deltaone@debian.org>  Thu, 15 Feb 2024 19:44:16 +0100
 
 qt6-base (6.6.1+dfsg-6) experimental; urgency=medium
 
