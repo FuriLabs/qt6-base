@@ -6,6 +6,8 @@ qt6-base (6.6.2+dfsg-1) UNRELEASED; urgency=medium
   * Refresh patches and remove patches that have been applied upstream.
   * Update list of installed files.
   * Update symbols from buildlogs.
+  * Build-depend on pkgconf instead of pkg-config as the latter has been
+    superseded by the former.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 15 Feb 2024 18:14:07 +0100
 
@@ -134,7 +136,6 @@ qt6-base (6.4.2+dfsg-20) unstable; urgency=medium
   * Add patch to fix CVE-2023-37369.
 
  -- Patrick Franz <deltaone@debian.org>  Fri, 22 Dec 2023 16:11:45 +0100
->>>>>>> master
 
 qt6-base (6.4.2+dfsg-19) unstable; urgency=medium
 
