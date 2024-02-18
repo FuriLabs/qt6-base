@@ -119,3 +119,6 @@ override_dh_makeshlibs:
 
 execute_after_dh_shlibdeps-arch:
 	echo libssl:Depends=$(sslpkgname) >> debian/libqt6network6.substvars
+
+# Do not run tests when building the documentation
+override_dh_auto_test-indep:

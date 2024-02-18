@@ -1,5 +1,8 @@
 qt6-base (6.6.2+dfsg-3) UNRELEASED; urgency=medium
 
+  [ Patrick Franz ]
+  * Do not run tests when building the documentation (Closes: #1064199).
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 18 Feb 2024 12:45:43 +0100
 
 qt6-base (6.6.2+dfsg-2) experimental; urgency=medium
