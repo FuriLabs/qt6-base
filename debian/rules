@@ -75,6 +75,7 @@ override_dh_auto_configure:
 		-DFEATURE_sql_psql=ON \
 		-DFEATURE_sql_sqlite=ON \
 		-DFEATURE_system_sqlite=ON \
+		-DFEATURE_system_xcb_xinput=ON \
 		-DFEATURE_jpeg=ON \
 		-DFEATURE_system_jpeg=ON \
 		-DFEATURE_png=ON \
