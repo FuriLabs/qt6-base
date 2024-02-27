@@ -3,6 +3,7 @@ qt6-base (6.6.2+dfsg-4) UNRELEASED; urgency=medium
   [ Patrick Franz ]
   * Add B-Ds for XCB.
   * Do not reduce the amount of relocations (Closes: #1059249).
+  * Clean up cmake-arguments.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 25 Feb 2024 18:25:55 +0100
 
