@@ -1,6 +1,6 @@
 # This dependency has been added to track external packages building against
 # our private headers. It is ok if internal packages depend on the ABI one.
-libqt6gui6: symbols-declares-dependency-on-other-package qt6-base-abi *
+libqt6gui6t64: symbols-declares-dependency-on-other-package qt6-base-abi *
 
 # libQt6XcbQpa is actually a private library *only* used by its
 # platforms plugins.
@@ -9,5 +9,6 @@ libqt6gui6: symbols-declares-dependency-on-other-package qt6-base-abi *
 # We are still shipping the headers but they only contain the version and
 # the only binaries that depend on them are shipped within this very same
 # binary package, so it's safe to override these Lintian warnings.
-libqt6gui6: ships-undeclared-shared-library libQt6XcbQpa 6 for usr/lib/*/libQt6XcbQpa.so.6.*
-libqt6gui6: shared-library-symbols-not-tracked libQt6XcbQpa 6 for usr/lib/*/libQt6XcbQpa.so.6.* [symbols]
+libqt6gui6t64: ships-undeclared-shared-library libQt6XcbQpa 6 for usr/lib/*/libQt6XcbQpa.so.6.*
+libqt6gui6t64: shared-library-symbols-not-tracked libQt6XcbQpa 6 for usr/lib/*/libQt6XcbQpa.so.6.* [symbols]
+libqt6gui6t64: package-name-doesnt-match-sonames libqt6gui6

@@ -2,7 +2,7 @@ Source: qt6-base
 Priority: optional
 Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Patrick Franz <deltaone@debian.org>,
-Build-Depends: cmake (>= 3.24~),
+Build-Depends: dpkg-dev (>= 1.22.5), cmake (>= 3.24~),
                debhelper-compat (= 13),
                default-libmysqlclient-dev,
                dh-exec,
@@ -82,11 +82,13 @@ Rules-Requires-Root: no
 Vcs-Git: https://salsa.debian.org/qt-kde-team/qt6/qt6-base.git
 Vcs-Browser: https://salsa.debian.org/qt-kde-team/qt6/qt6-base
 
-Package: libqt6core6
+Package: libqt6core6t64
+Replaces: libqt6core6
+Breaks: libqt6core6 (<< ${source:Version})
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends},
-Provides: qt6-base-abi (= 6.4.2),
+Provides: ${t64:Provides}, qt6-base-abi (= 6.4.2),
 Depends: shared-mime-info, ${misc:Depends}, ${shlibs:Depends},
 Recommends: qt6-translations-l10n,
 Description: Qt 6 core module
@@ -95,7 +97,10 @@ Description: Qt 6 core module
  .
  The QtCore module contains core non-GUI functionality.
 
-Package: libqt6concurrent6
+Package: libqt6concurrent6t64
+Provides: ${t64:Provides}
+Replaces: libqt6concurrent6
+Breaks: libqt6concurrent6 (<< ${source:Version})
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends},
@@ -107,7 +112,10 @@ Description: Qt 6 concurrent module
  The QtConcurrent module contains functionality to support concurrent execution
  of program code.
 
-Package: libqt6dbus6
+Package: libqt6dbus6t64
+Provides: ${t64:Provides}
+Replaces: libqt6dbus6
+Breaks: libqt6dbus6 (<< ${source:Version})
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends},
@@ -123,13 +131,14 @@ Description: Qt 6 D-Bus module
  applications by exporting objects, as well as use services exported by those
  applications by placing calls and accessing properties.
 
-Package: libqt6gui6
+Package: libqt6gui6t64
+Provides: ${t64:Provides}
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends},
 Depends: fontconfig, ${misc:Depends}, ${shlibs:Depends},
-Breaks: qt6-qpa-plugins (<< 6.3.1+dfsg-6~),
-Replaces: qt6-qpa-plugins (<< 6.3.1+dfsg-6~),
+Breaks: libqt6gui6 (<< ${source:Version}), qt6-qpa-plugins (<< 6.3.1+dfsg-6~),
+Replaces: libqt6gui6, qt6-qpa-plugins (<< 6.3.1+dfsg-6~),
 Recommends: qt6-gtk-platformtheme, qt6-qpa-plugins, qt6-wayland [linux-any],
 Description: Qt 6 GUI module
  Qt is a cross-platform C++ application framework. Qt's primary feature
@@ -142,9 +151,9 @@ Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends},
 Depends: fontconfig, ${misc:Depends}, ${shlibs:Depends},
-Breaks: libqt6gui6 (<< 6.3.1+dfsg-6~),
-        libqt6network6 (<< 6.2.4+dfsg-5~),
-        libqt6opengl6 (<< 6.3.1+dfsg-6~),
+Breaks: libqt6gui6t64 (<< 6.3.1+dfsg-6~),
+        libqt6network6t64 (<< 6.2.4+dfsg-5~),
+        libqt6opengl6t64 (<< 6.3.1+dfsg-6~),
 Description: Qt 6 QPA plugins
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -177,13 +186,14 @@ Description: Qt 6 XDG Desktop Portal platform theme
  This package provides the XDG Desktop portal platform theme, which makes
  Qt use native file dialogs on Flatpak/Snap based environments.
 
-Package: libqt6opengl6
+Package: libqt6opengl6t64
+Provides: ${t64:Provides}
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends},
 Depends: ${misc:Depends}, ${shlibs:Depends},
-Breaks: qt6-qpa-plugins (<< 6.3.1+dfsg-6~),
-Replaces: qt6-qpa-plugins (<< 6.3.1+dfsg-6~),
+Breaks: libqt6opengl6 (<< ${source:Version}), qt6-qpa-plugins (<< 6.3.1+dfsg-6~),
+Replaces: libqt6opengl6, qt6-qpa-plugins (<< 6.3.1+dfsg-6~),
 Description: Qt 6 OpenGL module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -194,7 +204,10 @@ Description: Qt 6 OpenGL module
  OpenGL is a standard API for rendering 3D graphics. OpenGL only deals with 3D
  rendering and provides little or no support for GUI programming issues.
 
-Package: libqt6openglwidgets6
+Package: libqt6openglwidgets6t64
+Provides: ${t64:Provides}
+Replaces: libqt6openglwidgets6
+Breaks: libqt6openglwidgets6 (<< ${source:Version})
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends},
@@ -211,13 +224,14 @@ Description: Qt 6 OpenGL widgets module
  .
  The OpenGL widgets module provides the widget for rendering OpenGL graphics.
 
-Package: libqt6network6
+Package: libqt6network6t64
+Provides: ${t64:Provides}
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends},
 Depends: ${libssl:Depends}, ${misc:Depends}, ${shlibs:Depends},
-Breaks: qt6-qpa-plugins (<< 6.2.4+dfsg-5~),
-Replaces: qt6-qpa-plugins (<< 6.2.4+dfsg-5~),
+Breaks: libqt6network6 (<< ${source:Version}), qt6-qpa-plugins (<< 6.2.4+dfsg-5~),
+Replaces: libqt6network6, qt6-qpa-plugins (<< 6.2.4+dfsg-5~),
 Description: Qt 6 network module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -225,7 +239,10 @@ Description: Qt 6 network module
  The QtNetwork module offers classes that allow you to write TCP/IP clients and
  servers. It provides classes to make network programming easier and portable.
 
-Package: libqt6sql6
+Package: libqt6sql6t64
+Provides: ${t64:Provides}
+Replaces: libqt6sql6
+Breaks: libqt6sql6 (<< ${source:Version})
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends},
@@ -293,7 +310,10 @@ Description: Qt 6 Firebird database driver
  Install it if you intend to use or write Qt programs that are to access a
  Firebird/InterBase DB.
 
-Package: libqt6test6
+Package: libqt6test6t64
+Provides: ${t64:Provides}
+Replaces: libqt6test6
+Breaks: libqt6test6 (<< ${source:Version})
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends},
@@ -305,7 +325,10 @@ Description: Qt 6 test module
  The QtTest module provides classes for unit testing Qt applications and
  libraries.
 
-Package: libqt6widgets6
+Package: libqt6widgets6t64
+Provides: ${t64:Provides}
+Replaces: libqt6widgets6
+Breaks: libqt6widgets6 (<< ${source:Version})
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends},
@@ -316,7 +339,10 @@ Description: Qt 6 widgets module
  .
  The QtWidgets module extends QtGui with C++ widget functionality.
 
-Package: libqt6xml6
+Package: libqt6xml6t64
+Provides: ${t64:Provides}
+Replaces: libqt6xml6
+Breaks: libqt6xml6 (<< ${source:Version})
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends},
@@ -328,7 +354,10 @@ Description: Qt 6 XML module
  The QtXml module provides a stream reader and writer for XML documents,
  and C++ implementations of SAX and DOM.
 
-Package: libqt6printsupport6
+Package: libqt6printsupport6t64
+Provides: ${t64:Provides}
+Replaces: libqt6printsupport6
+Breaks: libqt6printsupport6 (<< ${source:Version})
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends},
@@ -348,17 +377,17 @@ Multi-Arch: same
 Depends: libgl-dev,
          libglx-dev,
          libopengl-dev,
-         libqt6concurrent6 (= ${binary:Version}),
-         libqt6core6 (= ${binary:Version}),
-         libqt6dbus6 (= ${binary:Version}),
-         libqt6gui6 (= ${binary:Version}),
-         libqt6network6 (= ${binary:Version}),
-         libqt6openglwidgets6 (= ${binary:Version}),
-         libqt6printsupport6 (= ${binary:Version}),
-         libqt6sql6 (= ${binary:Version}),
-         libqt6test6 (= ${binary:Version}),
-         libqt6widgets6 (= ${binary:Version}),
-         libqt6xml6 (= ${binary:Version}),
+         libqt6concurrent6t64 (= ${binary:Version}),
+         libqt6core6t64 (= ${binary:Version}),
+         libqt6dbus6t64 (= ${binary:Version}),
+         libqt6gui6t64 (= ${binary:Version}),
+         libqt6network6t64 (= ${binary:Version}),
+         libqt6openglwidgets6t64 (= ${binary:Version}),
+         libqt6printsupport6t64 (= ${binary:Version}),
+         libqt6sql6t64 (= ${binary:Version}),
+         libqt6test6t64 (= ${binary:Version}),
+         libqt6widgets6t64 (= ${binary:Version}),
+         libqt6xml6t64 (= ${binary:Version}),
          libvulkan-dev [linux-any],
          qmake6 (= ${binary:Version}),
          qt6-base-dev-tools (= ${binary:Version}),

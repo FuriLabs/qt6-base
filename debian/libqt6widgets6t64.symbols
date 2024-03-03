@@ -1,6 +1,6 @@
 # SymbolsHelper-Confirmed: 6.4.2 armel armhf
-libQt6Widgets.so.6 libqt6widgets6 #MINVER#
-| libqt6widgets6 #MINVER#, qt6-base-abi (= 6.4.2)
+libQt6Widgets.so.6 libqt6widgets6t64 #MINVER#
+| libqt6widgets6t64 #MINVER#, qt6-base-abi (= 6.4.2)
 * Build-Depends-Package: qt6-base-dev
  Qt_6.0@Qt_6.0 6.1.2
  Qt_6.1@Qt_6.1 6.1.2

@@ -1,6 +1,6 @@
 # SymbolsHelper-Confirmed: 6.4.1 amd64
-libQt6Gui.so.6 libqt6gui6 #MINVER#
-| libqt6gui6 #MINVER#, qt6-base-abi (= 6.4.2)
+libQt6Gui.so.6 libqt6gui6t64 #MINVER#
+| libqt6gui6t64 #MINVER#, qt6-base-abi (= 6.4.2)
 * Build-Depends-Package: qt6-base-dev
  Qt_6.0@Qt_6.0 6.1.2
  Qt_6.1@Qt_6.1 6.1.2
