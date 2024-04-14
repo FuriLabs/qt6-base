@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.6.2 alpha amd64 arm64 armel hppa i386 mips64el powerpc ppc64 ppc64el riscv64 s390x sh4 sparc64
+# SymbolsHelper-Confirmed: 6.6.2 alpha amd64 arm64 armel armhf hppa i386 mips64el powerpc ppc64 ppc64el riscv64 s390x sh4 sparc64
 libQt6Core.so.6 libqt6core6 #MINVER#
 | libqt6core6 #MINVER#, qt6-base-private-abi (= 6.6.2)
 * Build-Depends-Package: qt6-base-dev
@@ -11,7 +11,7 @@ libQt6Core.so.6 libqt6core6 #MINVER#
  Qt_6.6@Qt_6.6 6.6.0
  Qt_6@Qt_6 6.1.2
  (symver)Qt_6_PRIVATE_API 0 1
- _Z10qLocalTimelP2tm@Qt_6 6.6.0
+ (subst)_Z10qLocalTime{time_t}P2tm@Qt_6 6.6.0
  (subst|arch=any-amd64 any-i386)_Z10qRandomCpuPv{qptrdiff}@Qt_6 6.1.2
  _Z10qTerminatev@Qt_6 6.1.2
  (arch=sh4)_Z10qvsnprintfPcjPKc13__va_list_tag@Qt_6 6.1.2

@@ -3,6 +3,7 @@ qt6-base (6.6.2+dfsg-5) UNRELEASED; urgency=medium
   [ Dmitry Shachnev ]
   * Add HostLibraryExecutables to debian/qt.conf.in (closes: #1060267).
     Thanks Maarten van der Schrieck!
+  * Use time_t subst for the qLocalTime(time_t, tm*) symbol.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 13 Apr 2024 23:39:46 +0300
 
