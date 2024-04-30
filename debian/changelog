@@ -5,6 +5,9 @@ qt6-base (6.6.2+dfsg-5) UNRELEASED; urgency=medium
     Thanks Maarten van der Schrieck!
   * Use time_t subst for the qLocalTime(time_t, tm*) symbol.
 
+  [ Patrick Franz ]
+  * Revert renaming libraries from the time_t transition.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 13 Apr 2024 23:39:46 +0300
 
 qt6-base (6.6.2+dfsg-4) experimental; urgency=medium
@@ -154,6 +157,13 @@ qt6-base (6.6.0+dfsg-1) experimental; urgency=medium
   * Update lintian-overrides.
 
  -- Patrick Franz <deltaone@debian.org>  Wed, 11 Oct 2023 21:00:14 +0200
+
+qt6-base (6.4.2+dfsg-21.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Rename libraries for 64-bit time_t transition.  Closes: #1062725
+
+ -- Benjamin Drung <bdrung@debian.org>  Thu, 29 Feb 2024 21:45:27 +0000
 
 qt6-base (6.4.2+dfsg-21) unstable; urgency=medium
 
