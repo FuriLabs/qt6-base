@@ -1,4 +1,4 @@
-qt6-base (6.6.2+dfsg-5) UNRELEASED; urgency=medium
+qt6-base (6.6.2+dfsg-5) experimental; urgency=medium
 
   [ Dmitry Shachnev ]
   * Add HostLibraryExecutables to debian/qt.conf.in (closes: #1060267).
@@ -8,7 +8,7 @@ qt6-base (6.6.2+dfsg-5) UNRELEASED; urgency=medium
   [ Patrick Franz ]
   * Revert renaming libraries from the time_t transition.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 13 Apr 2024 23:39:46 +0300
+ -- Patrick Franz <deltaone@debian.org>  Wed, 01 May 2024 00:48:20 +0200
 
 qt6-base (6.6.2+dfsg-4) experimental; urgency=medium
 
