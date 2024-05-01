@@ -98,15 +98,15 @@ Rules-Requires-Root: no
 Vcs-Git: https://salsa.debian.org/qt-kde-team/qt6/qt6-base.git
 Vcs-Browser: https://salsa.debian.org/qt-kde-team/qt6/qt6-base
 
-Package: libqt6core6
-Provides: qt6-base-private-abi (= 6.6.2),
+Package: libqt6core6t64
+Provides: qt6-base-private-abi (= 6.6.2), ${t64:Provides},
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends},
 Depends: shared-mime-info, ${misc:Depends}, ${shlibs:Depends},
 Recommends: qt6-translations-l10n,
-Breaks: libqt6core6t64,
-Replaces: libqt6core6t64,
+Breaks: libqt6core6 (<< ${source:Version}),
+Replaces: libqt6core6,
 Description: Qt 6 core module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -383,7 +383,7 @@ Depends: libgl-dev,
          libglx-dev,
          libopengl-dev,
          libqt6concurrent6 (= ${binary:Version}),
-         libqt6core6 (= ${binary:Version}),
+         libqt6core6t64 (= ${binary:Version}),
          libqt6dbus6 (= ${binary:Version}),
          libqt6gui6 (= ${binary:Version}),
          libqt6network6 (= ${binary:Version}),
