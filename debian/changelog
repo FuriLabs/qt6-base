@@ -1,9 +1,9 @@
-qt6-base (6.6.2+dfsg-6) UNRELEASED; urgency=medium
+qt6-base (6.6.2+dfsg-6) experimental; urgency=medium
 
   [ Patrick Franz ]
   * Rename libqt6core6 back to libqt6core6t64.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 01 May 2024 14:04:16 +0200
+ -- Patrick Franz <deltaone@debian.org>  Wed, 01 May 2024 15:02:09 +0200
 
 qt6-base (6.6.2+dfsg-5) experimental; urgency=medium
 
