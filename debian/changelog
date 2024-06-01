@@ -2,6 +2,7 @@ qt6-base (6.6.2+dfsg-8) UNRELEASED; urgency=medium
 
   [ Patrick Franz ]
   * Remove the temporary Provides for the t64-suffix.
+  * Handle upstream ABI break (Closes: #1071193, #1071436).
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 01 Jun 2024 02:12:55 +0200
 

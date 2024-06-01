@@ -105,7 +105,7 @@ Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends},
 Depends: shared-mime-info, ${misc:Depends}, ${shlibs:Depends},
 Recommends: qt6-translations-l10n,
-Breaks: libqt6core6 (<< ${source:Version}),
+Breaks: libqt6core6 (<< ${source:Version}), libqt6core5compat6 (<< 6.6.0~)
 Replaces: libqt6core6,
 Description: Qt 6 core module
  Qt is a cross-platform C++ application framework. Qt's primary feature
