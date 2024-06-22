@@ -4931,7 +4931,7 @@ libQt6Core.so.6 libqt6core6t64 #MINVER#
  _ZNK4QDir9entryListERK5QListI7QStringE6QFlagsINS_6FilterEES5_INS_8SortFlagEE@Qt_6 6.1.2
  _ZNK4QDireqERKS_@Qt_6 6.1.2
  _ZNK4QDirixEi@Qt_6 6.1.2
- (arch=!armel !armhf !hppa !i386 !powerpc !sh4)_ZNK4QDirixEx@Qt_6 6.6.1
+ (arch=!armel !armhf !hppa !hurd-i386 !i386 !powerpc !sh4)_ZNK4QDirixEx@Qt_6 6.6.1
  _ZNK4QUrl10isDetachedEv@Qt_6 6.1.2
  _ZNK4QUrl10isParentOfERKS_@Qt_6 6.1.2
  _ZNK4QUrl10isRelativeEv@Qt_6 6.1.2
