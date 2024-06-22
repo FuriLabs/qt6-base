@@ -1,0 +1,20 @@
+# fixed in 6.9.0
+upstream_IPC-add-PATH_MAX-less-fallback-definition-for-MAX_PA.patch
+
+# Needs to be fixed upstream.
+Add-SH-detection.patch
+
+# Pushed to gerrit
+use_float16_only_with_sse2.patch
+
+# Debian specific
+remove_privacy_breaches.diff
+build_path_embedded_qtbuildinternalsextra_cmake.patch
+cross.patch
+remove_rpath_from_examples.patch
+forkfd_grow_stack_upwards_on_hppa.patch
+enable_skip_plugins.patch
+
+# Support old ARM architectures
+# - Support ARMv4 until clang < 17 is available in Debian
+armv4.diff
