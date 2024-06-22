@@ -6,6 +6,15 @@ qt6-base (6.6.2+dfsg-9) UNRELEASED; urgency=medium
   * Exclude one symbol in libqt6core6t64.symbols from hurd-i386, as it is not
     available on x86 architectures.
   * Update install files for more Linux-only bits.
+  * Enable the Vulkan support on all the architectures (i.e. not only on
+    Linux), as vulkan-loader is portable, and now available also on non-Linux
+    architectures in Debian:
+    - remove the linux-any limitation for the libvulkan-dev build and runtime
+      dependency
+    - remove the linux-any limitation for the vulkan-related symbols in
+      libqt6gui6.symbols
+    - remove the linux-any limitation for the vulkan-related files in install
+      files
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 22 Jun 2024 17:18:30 +0200
 

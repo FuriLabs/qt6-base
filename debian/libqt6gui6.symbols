@@ -1210,32 +1210,32 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZN13QTextDocumentD0Ev@Qt_6 6.1.2
  _ZN13QTextDocumentD1Ev@Qt_6 6.1.2
  _ZN13QTextDocumentD2Ev@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow10frameReadyEv@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow11exposeEventEP12QExposeEvent@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow11qt_metacallEN11QMetaObject4CallEiPPv@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow11qt_metacastEPKc@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow11resizeEventEP12QResizeEvent@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow12frameGrabbedERK6QImage@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow14createRendererEv@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow14setSampleCountEi@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow16staticMetaObjectE@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow19setDeviceExtensionsERK5QListI10QByteArrayE@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow20clipCorrectionMatrixEv@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow21supportedSampleCountsEv@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow22setPhysicalDeviceIndexEi@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow24availablePhysicalDevicesEv@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow24setPreferredColorFormatsERK5QListI8VkFormatE@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow25supportedDeviceExtensionsEv@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow26setEnabledFeaturesModifierERKSt8functionIFvR24VkPhysicalDeviceFeaturesEE@Qt_6 6.4.0
- (arch=linux-any)_ZN13QVulkanWindow26setQueueCreateInfoModifierERKSt8functionIFvPK23VkQueueFamilyPropertiesjR5QListI23VkDeviceQueueCreateInfoEEE@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow4grabEv@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow5eventEP6QEvent@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindow8setFlagsE6QFlagsINS_4FlagEE@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindowC1EP7QWindow@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindowC2EP7QWindow@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindowD0Ev@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindowD1Ev@Qt_6 6.1.2
- (arch=linux-any)_ZN13QVulkanWindowD2Ev@Qt_6 6.1.2
+ _ZN13QVulkanWindow10frameReadyEv@Qt_6 6.1.2
+ _ZN13QVulkanWindow11exposeEventEP12QExposeEvent@Qt_6 6.1.2
+ _ZN13QVulkanWindow11qt_metacallEN11QMetaObject4CallEiPPv@Qt_6 6.1.2
+ _ZN13QVulkanWindow11qt_metacastEPKc@Qt_6 6.1.2
+ _ZN13QVulkanWindow11resizeEventEP12QResizeEvent@Qt_6 6.1.2
+ _ZN13QVulkanWindow12frameGrabbedERK6QImage@Qt_6 6.1.2
+ _ZN13QVulkanWindow14createRendererEv@Qt_6 6.1.2
+ _ZN13QVulkanWindow14setSampleCountEi@Qt_6 6.1.2
+ _ZN13QVulkanWindow16staticMetaObjectE@Qt_6 6.1.2
+ _ZN13QVulkanWindow19setDeviceExtensionsERK5QListI10QByteArrayE@Qt_6 6.1.2
+ _ZN13QVulkanWindow20clipCorrectionMatrixEv@Qt_6 6.1.2
+ _ZN13QVulkanWindow21supportedSampleCountsEv@Qt_6 6.1.2
+ _ZN13QVulkanWindow22setPhysicalDeviceIndexEi@Qt_6 6.1.2
+ _ZN13QVulkanWindow24availablePhysicalDevicesEv@Qt_6 6.1.2
+ _ZN13QVulkanWindow24setPreferredColorFormatsERK5QListI8VkFormatE@Qt_6 6.1.2
+ _ZN13QVulkanWindow25supportedDeviceExtensionsEv@Qt_6 6.1.2
+ _ZN13QVulkanWindow26setEnabledFeaturesModifierERKSt8functionIFvR24VkPhysicalDeviceFeaturesEE@Qt_6 6.4.0
+ _ZN13QVulkanWindow26setQueueCreateInfoModifierERKSt8functionIFvPK23VkQueueFamilyPropertiesjR5QListI23VkDeviceQueueCreateInfoEEE@Qt_6 6.1.2
+ _ZN13QVulkanWindow4grabEv@Qt_6 6.1.2
+ _ZN13QVulkanWindow5eventEP6QEvent@Qt_6 6.1.2
+ _ZN13QVulkanWindow8setFlagsE6QFlagsINS_4FlagEE@Qt_6 6.1.2
+ _ZN13QVulkanWindowC1EP7QWindow@Qt_6 6.1.2
+ _ZN13QVulkanWindowC2EP7QWindow@Qt_6 6.1.2
+ _ZN13QVulkanWindowD0Ev@Qt_6 6.1.2
+ _ZN13QVulkanWindowD1Ev@Qt_6 6.1.2
+ _ZN13QVulkanWindowD2Ev@Qt_6 6.1.2
  _ZN14QDragMoveEventC1ERK6QPoint6QFlagsIN2Qt10DropActionEEPK9QMimeDataS3_INS4_11MouseButtonEES3_INS4_16KeyboardModifierEEN6QEvent4TypeE@Qt_6 6.1.2
  _ZN14QDragMoveEventC1ERKS_@Qt_6 6.4.0
  _ZN14QDragMoveEventC2ERK6QPoint6QFlagsIN2Qt10DropActionEEPK9QMimeDataS3_INS4_11MouseButtonEES3_INS4_16KeyboardModifierEEN6QEvent4TypeE@Qt_6 6.1.2
@@ -1532,30 +1532,30 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZN15QTextListFormatC1Ev@Qt_6 6.1.2
  _ZN15QTextListFormatC2ERK11QTextFormat@Qt_6 6.1.2
  _ZN15QTextListFormatC2Ev@Qt_6 6.1.2
- (arch=linux-any)_ZN15QVulkanInstance13presentQueuedEP7QWindow@Qt_6 6.1.2
- (arch=linux-any)_ZN15QVulkanInstance13setApiVersionERK14QVersionNumber@Qt_6 6.1.2
- (arch=linux-any)_ZN15QVulkanInstance13setExtensionsERK5QListI10QByteArrayE@Qt_6 6.1.2
- (arch=linux-any)_ZN15QVulkanInstance13setVkInstanceEP12VkInstance_T@Qt_6 6.1.2
- (arch=linux-any)_ZN15QVulkanInstance15deviceFunctionsEP10VkDevice_T@Qt_6 6.1.2
- (arch=linux-any)_ZN15QVulkanInstance15supportedLayersEv@Qt_6 6.1.2
- (arch=linux-any)_ZN15QVulkanInstance15supportsPresentEP18VkPhysicalDevice_TjP7QWindow@Qt_6 6.1.2
- (arch=linux-any)_ZN15QVulkanInstance16surfaceForWindowEP7QWindow@Qt_6 6.1.2
- (arch=linux-any)_ZN15QVulkanInstance19getInstanceProcAddrEPKc@Qt_6 6.1.2
- (arch=linux-any)_ZN15QVulkanInstance19supportedExtensionsEv@Qt_6 6.1.2
- (arch=linux-any)_ZN15QVulkanInstance20resetDeviceFunctionsEP10VkDevice_T@Qt_6 6.1.2
- (arch=linux-any)_ZN15QVulkanInstance22presentAboutToBeQueuedEP7QWindow@Qt_6 6.1.2
+ _ZN15QVulkanInstance13presentQueuedEP7QWindow@Qt_6 6.1.2
+ _ZN15QVulkanInstance13setApiVersionERK14QVersionNumber@Qt_6 6.1.2
+ _ZN15QVulkanInstance13setExtensionsERK5QListI10QByteArrayE@Qt_6 6.1.2
+ _ZN15QVulkanInstance13setVkInstanceEP12VkInstance_T@Qt_6 6.1.2
+ _ZN15QVulkanInstance15deviceFunctionsEP10VkDevice_T@Qt_6 6.1.2
+ _ZN15QVulkanInstance15supportedLayersEv@Qt_6 6.1.2
+ _ZN15QVulkanInstance15supportsPresentEP18VkPhysicalDevice_TjP7QWindow@Qt_6 6.1.2
+ _ZN15QVulkanInstance16surfaceForWindowEP7QWindow@Qt_6 6.1.2
+ _ZN15QVulkanInstance19getInstanceProcAddrEPKc@Qt_6 6.1.2
+ _ZN15QVulkanInstance19supportedExtensionsEv@Qt_6 6.1.2
+ _ZN15QVulkanInstance20resetDeviceFunctionsEP10VkDevice_T@Qt_6 6.1.2
+ _ZN15QVulkanInstance22presentAboutToBeQueuedEP7QWindow@Qt_6 6.1.2
  _ZN15QVulkanInstance23clearDebugOutputFiltersEv@Qt_6 6.6.0
- (subst|arch=linux-any)_ZN15QVulkanInstance23removeDebugOutputFilterEPFbj26VkDebugReportObjectTypeEXT{uint64_t}{size_t}iPKcS2_E@Qt_6 6.1.2
- (subst|arch=linux-any)_ZN15QVulkanInstance24installDebugOutputFilterEPFbj26VkDebugReportObjectTypeEXT{uint64_t}{size_t}iPKcS2_E@Qt_6 6.1.2
+ (subst)_ZN15QVulkanInstance23removeDebugOutputFilterEPFbj26VkDebugReportObjectTypeEXT{uint64_t}{size_t}iPKcS2_E@Qt_6 6.1.2
+ (subst)_ZN15QVulkanInstance24installDebugOutputFilterEPFbj26VkDebugReportObjectTypeEXT{uint64_t}{size_t}iPKcS2_E@Qt_6 6.1.2
  _ZN15QVulkanInstance24installDebugOutputFilterESt8functionIFb6QFlagsINS_24DebugMessageSeverityFlagEES1_INS_20DebugMessageTypeFlagEEPKvEE@Qt_6 6.6.0
- (arch=linux-any)_ZN15QVulkanInstance6createEv@Qt_6 6.1.2
- (arch=linux-any)_ZN15QVulkanInstance7destroyEv@Qt_6 6.1.2
- (arch=linux-any)_ZN15QVulkanInstance8setFlagsE6QFlagsINS_4FlagEE@Qt_6 6.1.2
- (arch=linux-any)_ZN15QVulkanInstance9setLayersERK5QListI10QByteArrayE@Qt_6 6.1.2
- (arch=linux-any)_ZN15QVulkanInstanceC1Ev@Qt_6 6.1.2
- (arch=linux-any)_ZN15QVulkanInstanceC2Ev@Qt_6 6.1.2
- (arch=linux-any)_ZN15QVulkanInstanceD1Ev@Qt_6 6.1.2
- (arch=linux-any)_ZN15QVulkanInstanceD2Ev@Qt_6 6.1.2
+ _ZN15QVulkanInstance6createEv@Qt_6 6.1.2
+ _ZN15QVulkanInstance7destroyEv@Qt_6 6.1.2
+ _ZN15QVulkanInstance8setFlagsE6QFlagsINS_4FlagEE@Qt_6 6.1.2
+ _ZN15QVulkanInstance9setLayersERK5QListI10QByteArrayE@Qt_6 6.1.2
+ _ZN15QVulkanInstanceC1Ev@Qt_6 6.1.2
+ _ZN15QVulkanInstanceC2Ev@Qt_6 6.1.2
+ _ZN15QVulkanInstanceD1Ev@Qt_6 6.1.2
+ _ZN15QVulkanInstanceD2Ev@Qt_6 6.1.2
  _ZN16QAccessibleEventD0Ev@Qt_6 6.1.2
  _ZN16QAccessibleEventD1Ev@Qt_6 6.1.2
  _ZN16QAccessibleEventD2Ev@Qt_6 6.1.2
@@ -1913,16 +1913,16 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZN21QTextDocumentFragmentD1Ev@Qt_6 6.1.2
  _ZN21QTextDocumentFragmentD2Ev@Qt_6 6.1.2
  _ZN21QTextDocumentFragmentaSERKS_@Qt_6 6.1.2
- (arch=linux-any)_ZN21QVulkanWindowRenderer13initResourcesEv@Qt_6 6.1.2
- (arch=linux-any)_ZN21QVulkanWindowRenderer16preInitResourcesEv@Qt_6 6.1.2
- (arch=linux-any)_ZN21QVulkanWindowRenderer16releaseResourcesEv@Qt_6 6.1.2
- (arch=linux-any)_ZN21QVulkanWindowRenderer17logicalDeviceLostEv@Qt_6 6.1.2
- (arch=linux-any)_ZN21QVulkanWindowRenderer18physicalDeviceLostEv@Qt_6 6.1.2
- (arch=linux-any)_ZN21QVulkanWindowRenderer22initSwapChainResourcesEv@Qt_6 6.1.2
- (arch=linux-any)_ZN21QVulkanWindowRenderer25releaseSwapChainResourcesEv@Qt_6 6.1.2
- (arch=linux-any)_ZN21QVulkanWindowRendererD0Ev@Qt_6 6.1.2
- (arch=linux-any)_ZN21QVulkanWindowRendererD1Ev@Qt_6 6.1.2
- (arch=linux-any)_ZN21QVulkanWindowRendererD2Ev@Qt_6 6.1.2
+ _ZN21QVulkanWindowRenderer13initResourcesEv@Qt_6 6.1.2
+ _ZN21QVulkanWindowRenderer16preInitResourcesEv@Qt_6 6.1.2
+ _ZN21QVulkanWindowRenderer16releaseResourcesEv@Qt_6 6.1.2
+ _ZN21QVulkanWindowRenderer17logicalDeviceLostEv@Qt_6 6.1.2
+ _ZN21QVulkanWindowRenderer18physicalDeviceLostEv@Qt_6 6.1.2
+ _ZN21QVulkanWindowRenderer22initSwapChainResourcesEv@Qt_6 6.1.2
+ _ZN21QVulkanWindowRenderer25releaseSwapChainResourcesEv@Qt_6 6.1.2
+ _ZN21QVulkanWindowRendererD0Ev@Qt_6 6.1.2
+ _ZN21QVulkanWindowRendererD1Ev@Qt_6 6.1.2
+ _ZN21QVulkanWindowRendererD2Ev@Qt_6 6.1.2
  _ZN22QAccessibleApplicationC1Ev@Qt_6 6.1.2
  _ZN22QAccessibleApplicationC2Ev@Qt_6 6.1.2
  _ZN22QAccessibleBridgeUtils20effectiveActionNamesEP20QAccessibleInterface@Qt_6 6.1.2
@@ -2676,7 +2676,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZN7QWindow16setSizeIncrementERK5QSize@Qt_6 6.1.2
  _ZN7QWindow16staticMetaObjectE@Qt_6 6.1.2
  _ZN7QWindow17mouseReleaseEventEP11QMouseEvent@Qt_6 6.1.2
- (arch=linux-any)_ZN7QWindow17setVulkanInstanceEP15QVulkanInstance@Qt_6 6.1.2
+ _ZN7QWindow17setVulkanInstanceEP15QVulkanInstance@Qt_6 6.1.2
  _ZN7QWindow17startSystemResizeE6QFlagsIN2Qt4EdgeEE@Qt_6 6.1.2
  _ZN7QWindow17visibilityChangedENS_10VisibilityE@Qt_6 6.1.2
  _ZN7QWindow18focusObjectChangedEP7QObject@Qt_6 6.1.2
@@ -3671,35 +3671,35 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZNK13QTextFragment8containsEi@Qt_6 6.1.2
  _ZNK13QTextFragment8positionEv@Qt_6 6.1.2
  _ZNK13QTextFragment9glyphRunsEii@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow10metaObjectEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow11colorFormatEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow12currentFrameEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow12supportsGrabEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow13graphicsQueueEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow14msaaColorImageEi@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow14physicalDeviceEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow14swapChainImageEi@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow17defaultRenderPassEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow17depthStencilImageEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow18currentFramebufferEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow18depthStencilFormatEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow18msaaColorImageViewEi@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow18swapChainImageSizeEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow18swapChainImageViewEi@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow19graphicsCommandPoolEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow19sampleCountFlagBitsEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow19swapChainImageCountEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow20concurrentFrameCountEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow20currentCommandBufferEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow21depthStencilImageViewEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow22deviceLocalMemoryIndexEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow22hostVisibleMemoryIndexEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow24graphicsQueueFamilyIndexEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow24physicalDevicePropertiesEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow26currentSwapChainImageIndexEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow5flagsEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow6deviceEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK13QVulkanWindow7isValidEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow10metaObjectEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow11colorFormatEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow12currentFrameEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow12supportsGrabEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow13graphicsQueueEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow14msaaColorImageEi@Qt_6 6.1.2
+ _ZNK13QVulkanWindow14physicalDeviceEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow14swapChainImageEi@Qt_6 6.1.2
+ _ZNK13QVulkanWindow17defaultRenderPassEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow17depthStencilImageEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow18currentFramebufferEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow18depthStencilFormatEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow18msaaColorImageViewEi@Qt_6 6.1.2
+ _ZNK13QVulkanWindow18swapChainImageSizeEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow18swapChainImageViewEi@Qt_6 6.1.2
+ _ZNK13QVulkanWindow19graphicsCommandPoolEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow19sampleCountFlagBitsEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow19swapChainImageCountEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow20concurrentFrameCountEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow20currentCommandBufferEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow21depthStencilImageViewEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow22deviceLocalMemoryIndexEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow22hostVisibleMemoryIndexEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow24graphicsQueueFamilyIndexEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow24physicalDevicePropertiesEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow26currentSwapChainImageIndexEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow5flagsEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow6deviceEv@Qt_6 6.1.2
+ _ZNK13QVulkanWindow7isValidEv@Qt_6 6.1.2
  _ZNK14QDragMoveEvent5cloneEv@Qt_6 6.4.0
  _ZNK14QFileOpenEvent5cloneEv@Qt_6 6.4.0
  _ZNK14QFileOpenEvent8openFileER5QFile6QFlagsIN13QIODeviceBase12OpenModeFlagEE@Qt_6 6.1.2
@@ -3810,16 +3810,16 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZNK15QTextCharFormat11anchorNamesEv@Qt_6 6.1.2
  _ZNK15QTextCharFormat13fontUnderlineEv@Qt_6 6.1.2
  _ZNK15QTextCharFormat4fontEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK15QVulkanInstance10apiVersionEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK15QVulkanInstance10extensionsEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK15QVulkanInstance10vkInstanceEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK15QVulkanInstance19supportedApiVersionEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK15QVulkanInstance5flagsEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK15QVulkanInstance6handleEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK15QVulkanInstance6layersEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK15QVulkanInstance7isValidEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK15QVulkanInstance9errorCodeEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK15QVulkanInstance9functionsEv@Qt_6 6.1.2
+ _ZNK15QVulkanInstance10apiVersionEv@Qt_6 6.1.2
+ _ZNK15QVulkanInstance10extensionsEv@Qt_6 6.1.2
+ _ZNK15QVulkanInstance10vkInstanceEv@Qt_6 6.1.2
+ _ZNK15QVulkanInstance19supportedApiVersionEv@Qt_6 6.1.2
+ _ZNK15QVulkanInstance5flagsEv@Qt_6 6.1.2
+ _ZNK15QVulkanInstance6handleEv@Qt_6 6.1.2
+ _ZNK15QVulkanInstance6layersEv@Qt_6 6.1.2
+ _ZNK15QVulkanInstance7isValidEv@Qt_6 6.1.2
+ _ZNK15QVulkanInstance9errorCodeEv@Qt_6 6.1.2
+ _ZNK15QVulkanInstance9functionsEv@Qt_6 6.1.2
  _ZNK16QAccessibleEvent19accessibleInterfaceEv@Qt_6 6.1.2
  _ZNK16QAccessibleEvent8uniqueIdEv@Qt_6 6.1.2
  _ZNK16QConicalGradient5angleEv@Qt_6 6.1.2
@@ -4400,7 +4400,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZNK7QWindow13sizeIncrementEv@Qt_6 6.1.2
  _ZNK7QWindow13surfaceHandleEv@Qt_6 6.1.2
  _ZNK7QWindow14accessibleRootEv@Qt_6 6.1.2
- (arch=linux-any)_ZNK7QWindow14vulkanInstanceEv@Qt_6 6.1.2
+ _ZNK7QWindow14vulkanInstanceEv@Qt_6 6.1.2
  _ZNK7QWindow15requestedFormatEv@Qt_6 6.1.2
  _ZNK7QWindow15transientParentEv@Qt_6 6.1.2
  _ZNK7QWindow16devicePixelRatioEv@Qt_6 6.1.2
@@ -4657,7 +4657,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZTI13QRasterWindow@Qt_6 6.1.2
  _ZTI13QStandardItem@Qt_6 6.1.2
  _ZTI13QTextDocument@Qt_6 6.1.2
- (arch=linux-any)_ZTI13QVulkanWindow@Qt_6 6.1.2
+ _ZTI13QVulkanWindow@Qt_6 6.1.2
  _ZTI14QDragMoveEvent@Qt_6 6.1.2
  _ZTI14QFileOpenEvent@Qt_6 6.1.2
  _ZTI14QGenericPlugin@Qt_6 6.1.2
@@ -4697,7 +4697,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZTI20QTextFrameLayoutData@Qt_6 6.1.2
  _ZTI20QTextObjectInterface@Qt_6 6.1.2
  _ZTI21QPlatformSurfaceEvent@Qt_6 6.1.2
- (arch=linux-any)_ZTI21QVulkanWindowRenderer@Qt_6 6.1.2
+ _ZTI21QVulkanWindowRenderer@Qt_6 6.1.2
  _ZTI22QAccessibleApplication@Qt_6 6.1.2
  _ZTI22QInputMethodQueryEvent@Qt_6 6.1.2
  _ZTI22QWhatsThisClickedEvent@Qt_6 6.1.2
@@ -4813,7 +4813,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZTS13QRasterWindow@Qt_6 6.1.2
  _ZTS13QStandardItem@Qt_6 6.1.2
  _ZTS13QTextDocument@Qt_6 6.1.2
- (arch=linux-any)_ZTS13QVulkanWindow@Qt_6 6.1.2
+ _ZTS13QVulkanWindow@Qt_6 6.1.2
  _ZTS14QDragMoveEvent@Qt_6 6.1.2
  _ZTS14QFileOpenEvent@Qt_6 6.1.2
  _ZTS14QGenericPlugin@Qt_6 6.1.2
@@ -4853,7 +4853,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZTS20QTextFrameLayoutData@Qt_6 6.1.2
  _ZTS20QTextObjectInterface@Qt_6 6.1.2
  _ZTS21QPlatformSurfaceEvent@Qt_6 6.1.2
- (arch=linux-any)_ZTS21QVulkanWindowRenderer@Qt_6 6.1.2
+ _ZTS21QVulkanWindowRenderer@Qt_6 6.1.2
  _ZTS22QAccessibleApplication@Qt_6 6.1.2
  _ZTS22QInputMethodQueryEvent@Qt_6 6.1.2
  _ZTS22QWhatsThisClickedEvent@Qt_6 6.1.2
@@ -4969,7 +4969,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZTV13QRasterWindow@Qt_6 6.1.2
  _ZTV13QStandardItem@Qt_6 6.1.2
  _ZTV13QTextDocument@Qt_6 6.1.2
- (arch=linux-any)_ZTV13QVulkanWindow@Qt_6 6.1.2
+ _ZTV13QVulkanWindow@Qt_6 6.1.2
  _ZTV14QDragMoveEvent@Qt_6 6.1.2
  _ZTV14QFileOpenEvent@Qt_6 6.1.2
  _ZTV14QGenericPlugin@Qt_6 6.1.2
@@ -5008,7 +5008,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZTV20QTextFrameLayoutData@Qt_6 6.1.2
  _ZTV20QTextObjectInterface@Qt_6 6.1.2
  _ZTV21QPlatformSurfaceEvent@Qt_6 6.1.2
- (arch=linux-any)_ZTV21QVulkanWindowRenderer@Qt_6 6.1.2
+ _ZTV21QVulkanWindowRenderer@Qt_6 6.1.2
  _ZTV22QAccessibleApplication@Qt_6 6.1.2
  _ZTV22QInputMethodQueryEvent@Qt_6 6.1.2
  _ZTV22QWhatsThisClickedEvent@Qt_6 6.1.2
@@ -5104,10 +5104,10 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _Zls6QDebugRK11QTextLength@Qt_6 6.1.2
  _Zls6QDebugRK12QKeySequence@Qt_6 6.1.2
  _Zls6QDebugRK12QPainterPath@Qt_6 6.1.2
- (arch=linux-any)_Zls6QDebugRK12QVulkanLayer@Qt_6 6.1.2
+ _Zls6QDebugRK12QVulkanLayer@Qt_6 6.1.2
  _Zls6QDebugRK14QSurfaceFormat@Qt_6 6.1.2
  _Zls6QDebugRK16QAccessibleEvent@Qt_6 6.1.2
- (arch=linux-any)_Zls6QDebugRK16QVulkanExtension@Qt_6 6.1.2
+ _Zls6QDebugRK16QVulkanExtension@Qt_6 6.1.2
  _Zls6QDebugRK4QPen@Qt_6 6.1.2
  _Zls6QDebugRK5QFont@Qt_6 6.1.2
  _Zls6QDebugRK5QIcon@Qt_6 6.1.2
@@ -5199,7 +5199,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  (c++)"non-virtual thunk to QRasterWindow::metric(QPaintDevice::PaintDeviceMetric) const@Qt_6" 6.1.2
  (c++)"non-virtual thunk to QRasterWindow::redirected(QPoint*) const@Qt_6" 6.1.2
  (c++)"non-virtual thunk to QRasterWindow::~QRasterWindow()@Qt_6" 6.1.2
- (c++|arch=linux-any)"non-virtual thunk to QVulkanWindow::~QVulkanWindow()@Qt_6" 6.1.2
+ (c++)"non-virtual thunk to QVulkanWindow::~QVulkanWindow()@Qt_6" 6.1.2
  (c++)"non-virtual thunk to QWindow::format() const@Qt_6" 6.1.2
  (c++)"non-virtual thunk to QWindow::surfaceHandle() const@Qt_6" 6.1.2
  (c++)"non-virtual thunk to QWindow::surfaceType() const@Qt_6" 6.1.2

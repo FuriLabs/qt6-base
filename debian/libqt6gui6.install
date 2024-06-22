@@ -5,7 +5,7 @@
 [linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/generic/libqevdevtouchplugin.so
 [linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/generic/libqlibinputplugin.so
 [linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/platforms/libqlinuxfb.so
-[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/platforms/libqvkkhrdisplay.so
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/platforms/libqvkkhrdisplay.so
 usr/lib/${DEB_HOST_MULTIARCH}/libQt6Gui.so.*
 usr/lib/${DEB_HOST_MULTIARCH}/libQt6XcbQpa.so.*
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/generic/libqtslibplugin.so

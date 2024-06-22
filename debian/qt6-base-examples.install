@@ -1,7 +1,7 @@
 #!/usr/bin/dh-exec
 [linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/network/multistreamclient/*
 [linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/network/multistreamserver/*
-[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/vulkan/*
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/vulkan/*
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/corelib/*
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/dbus/*
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/examples/gui/*
