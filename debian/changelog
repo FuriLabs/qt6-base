@@ -15,6 +15,7 @@ qt6-base (6.6.2+dfsg-9) UNRELEASED; urgency=medium
       libqt6gui6.symbols
     - remove the linux-any limitation for the vulkan-related files in install
       files
+  * Sort the install files.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 22 Jun 2024 17:18:30 +0200
 
