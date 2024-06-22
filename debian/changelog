@@ -1,5 +1,8 @@
 qt6-base (6.6.2+dfsg-9) UNRELEASED; urgency=medium
 
+  [ Pino Toscano ]
+  * Drop the unused ${perl:Depends} substvar from qt6-base-dev-tools, and
+    qmake6.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 22 Jun 2024 17:18:30 +0200
 

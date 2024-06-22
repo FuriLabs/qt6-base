@@ -437,7 +437,7 @@ Package: qt6-base-dev-tools
 Architecture: any
 Multi-Arch: foreign
 Section: devel
-Depends: ${misc:Depends}, ${perl:Depends}, ${shlibs:Depends},
+Depends: ${misc:Depends}, ${shlibs:Depends},
 Suggests: cmake,
 Description: Qt 6 base development programs
  Qt is a cross-platform C++ application framework. Qt's primary feature
@@ -479,7 +479,6 @@ Multi-Arch: same
 Section: devel
 Depends: qmake6-bin (= ${binary:Version}),
          ${misc:Depends},
-         ${perl:Depends},
          ${shlibs:Depends},
 Breaks: qt6-base-dev (<< 6.6.0+dfsg~),
 Replaces: qt6-base-dev (<< 6.6.0+dfsg~),
