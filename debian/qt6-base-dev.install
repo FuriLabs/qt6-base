@@ -1157,8 +1157,8 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QNetworkReply
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QNetworkRequest
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QOcspResponse
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QPasswordDigestor
-usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QSctpServer
-usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QSctpSocket
+[linux-any] usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QSctpServer
+[linux-any] usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QSctpSocket
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QSsl
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QSslCertificate
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QSslCertificateExtension
@@ -1202,8 +1202,8 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qnetworkreply.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qnetworkrequest.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qocspresponse.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qpassworddigestor.h
-usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qsctpserver.h
-usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qsctpsocket.h
+[linux-any] usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qsctpserver.h
+[linux-any] usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qsctpsocket.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qssl.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qsslcertificate.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qsslcertificateextension.h
@@ -2606,13 +2606,13 @@ usr/lib/${DEB_HOST_MULTIARCH}/qt6/metatypes/qt6core_none_metatypes.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/metatypes/qt6dbus_none_metatypes.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/metatypes/qt6devicediscoverysupportprivate_none_metatypes.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/metatypes/qt6eglfsdeviceintegrationprivate_none_metatypes.json
-usr/lib/${DEB_HOST_MULTIARCH}/qt6/metatypes/qt6eglfskmsgbmsupportprivate_none_metatypes.json
-usr/lib/${DEB_HOST_MULTIARCH}/qt6/metatypes/qt6eglfskmssupportprivate_none_metatypes.json
+[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/metatypes/qt6eglfskmsgbmsupportprivate_none_metatypes.json
+[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/metatypes/qt6eglfskmssupportprivate_none_metatypes.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/metatypes/qt6exampleiconsprivate_none_metatypes.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/metatypes/qt6fbsupportprivate_none_metatypes.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/metatypes/qt6gui_none_metatypes.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/metatypes/qt6inputsupportprivate_none_metatypes.json
-usr/lib/${DEB_HOST_MULTIARCH}/qt6/metatypes/qt6kmssupportprivate_none_metatypes.json
+[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/metatypes/qt6kmssupportprivate_none_metatypes.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/metatypes/qt6network_none_metatypes.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/metatypes/qt6opengl_none_metatypes.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/metatypes/qt6openglwidgets_none_metatypes.json
@@ -2627,13 +2627,13 @@ usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/Core.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/DBus.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/DeviceDiscoverySupportPrivate.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/EglFSDeviceIntegrationPrivate.json
-usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/EglFsKmsGbmSupportPrivate.json
-usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/EglFsKmsSupportPrivate.json
+[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/EglFsKmsGbmSupportPrivate.json
+[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/EglFsKmsSupportPrivate.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/ExampleIconsPrivate.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/FbSupportPrivate.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/Gui.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/InputSupportPrivate.json
-usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/KmsSupportPrivate.json
+[linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/KmsSupportPrivate.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/Network.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/OpenGL.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/OpenGLWidgets.json

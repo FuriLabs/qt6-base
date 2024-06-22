@@ -5,6 +5,7 @@ qt6-base (6.6.2+dfsg-9) UNRELEASED; urgency=medium
     qmake6.
   * Exclude one symbol in libqt6core6t64.symbols from hurd-i386, as it is not
     available on x86 architectures.
+  * Update install files for more Linux-only bits.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 22 Jun 2024 17:18:30 +0200
 
