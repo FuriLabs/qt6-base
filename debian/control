@@ -112,3 +112,31 @@ Description: Qt 6 GUI module
  is its rich set of widgets that provide standard GUI functionality.
  .
  The QtGui module extends QtCore with GUI functionality.
+
+Package: libqt6dbus6t64
+Architecture: all
+Depends: libqt6dbus6 (>= 6.6.2+dfsg-8)
+Description: Qt 6 D-Bus module (transitional package)
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ The QtDBus module is a Unix-only library that you can use to make Inter-Process
+ Communication using the D-Bus protocol.
+ .
+ Applications using the QtDBus module can provide services to other, remote
+ applications by exporting objects, as well as use services exported by those
+ applications by placing calls and accessing properties.
+ .
+ This is a transitional package that can be removed.
+
+Package: libqt6network6t64
+Architecture: all
+Depends: libqt6network6 (>= 6.6.2+dfsg-8)
+Description: Qt 6 network module (transitional package)
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ The QtNetwork module offers classes that allow you to write TCP/IP clients and
+ servers. It provides classes to make network programming easier and portable.
+ .
+ This is a transitional package that can be removed.
