@@ -1,0 +1,36 @@
+From f319895389705a3db7c2134d1ed47ceade1b204e Mon Sep 17 00:00:00 2001
+From: Pino Toscano <toscano.pino@tiscali.it>
+Date: Sat, 22 Jun 2024 19:55:15 +0200
+Subject: [PATCH] IPC: add PATH_MAX-less fallback definition for MAX_PATH
+
+Define MAX_PATH also when PATH_MAX is not defined (e.g on GNU/Hurd).
+MAX_PATH is Windows constant, and it is used in this file only in a
+code path for Windows; because of this, the static fallback define
+should be good enough.
+
+Change-Id: Ic1b9fee3b62505f86aa8ec89bbd20493bfe1f67c
+Reviewed-by: Thiago Macieira <thiago.macieira@intel.com>
+---
+ src/corelib/ipc/qsharedmemory.cpp | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/src/corelib/ipc/qsharedmemory.cpp b/src/corelib/ipc/qsharedmemory.cpp
+index 02761c0263..6ee662dc53 100644
+--- a/src/corelib/ipc/qsharedmemory.cpp
++++ b/src/corelib/ipc/qsharedmemory.cpp
+@@ -14,7 +14,11 @@
+ #endif
+ 
+ #ifndef MAX_PATH
+-#  define MAX_PATH PATH_MAX
++#  ifdef PATH_MAX
++#    define MAX_PATH PATH_MAX
++#  else
++#    define MAX_PATH 1024
++#  endif
+ #endif
+ 
+ QT_BEGIN_NAMESPACE
+-- 
+2.43.0
+
