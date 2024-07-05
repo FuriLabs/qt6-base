@@ -15,5 +15,8 @@ remove_rpath_from_examples.patch
 forkfd_grow_stack_upwards_on_hppa.patch
 enable_skip_plugins.patch
 
-# Don't use yield on CPUs that might not support it
+# Support old ARM architectures
+# - Don't use yield on CPUs that might not support it
 armel-noyield.patch
+# - Support ARMv4 until clang < 17 is available in Debian
+armv4.diff

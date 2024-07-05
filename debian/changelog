@@ -19,6 +19,9 @@ qt6-base (6.6.2+dfsg-9) UNRELEASED; urgency=medium
   * Backport upstream commit f319895389705a3db7c2134d1ed47ceade1b204e to fix
     the build on the Hurd; patch
     upstream_IPC-add-PATH_MAX-less-fallback-definition-for-MAX_PA.patch.
+  * Copy/import the patch armv4.diff from Qt5 to support ARMv4; it is needed
+    to be able to build Qt6 bits with clang 16 and older, which in Debian still
+    defaults to ARMv4.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 22 Jun 2024 17:18:30 +0200
 
