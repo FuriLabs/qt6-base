@@ -1,6 +1,6 @@
-qt6-base (6.6.2+dfsg-9) UNRELEASED; urgency=medium
+qt6-base (6.6.2+dfsg-9) unstable; urgency=medium
 
-  [ Pino Toscano ]
+  * Team upload.
   * Drop the unused ${perl:Depends} substvar from qt6-base-dev-tools, and
     qmake6.
   * Exclude one symbol in libqt6core6t64.symbols from hurd-i386, as it is not
@@ -23,7 +23,7 @@ qt6-base (6.6.2+dfsg-9) UNRELEASED; urgency=medium
     to be able to build Qt6 bits with clang 16 and older, which in Debian still
     defaults to ARMv4.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 22 Jun 2024 17:18:30 +0200
+ -- Pino Toscano <pino@debian.org>  Fri, 05 Jul 2024 07:44:11 +0200
 
 qt6-base (6.6.2+dfsg-8) unstable; urgency=medium
 
