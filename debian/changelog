@@ -1,6 +1,6 @@
-qt6-base (6.6.2+dfsg-10) UNRELEASED; urgency=medium
+qt6-base (6.6.2+dfsg-10) unstable; urgency=medium
 
-  [ Pino Toscano ]
+  * Team upload.
   * Backport upstream commit 7d9d1220f367d9275dfaa7ce12e89b0a9f4c1978 to use
     also the zstd::libzstd cmake target, if available; patch
     upstream_Prefer-using-the-non-suffixed-libzstd-over-static-on.patch.
@@ -8,7 +8,7 @@ qt6-base (6.6.2+dfsg-10) UNRELEASED; urgency=medium
     the libzstd cmake targets to global; patch
     upstream_Ensure-that-libzstd-targets-are-promoted-to-global-i.patch.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue, 16 Jul 2024 06:10:31 +0200
+ -- Pino Toscano <pino@debian.org>  Tue, 16 Jul 2024 21:53:21 +0200
 
 qt6-base (6.6.2+dfsg-9) unstable; urgency=medium
 
