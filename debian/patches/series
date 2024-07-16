@@ -1,3 +1,5 @@
+upstream_Prefer-using-the-non-suffixed-libzstd-over-static-on.patch
+upstream_Ensure-that-libzstd-targets-are-promoted-to-global-i.patch
 # fixed in 6.9.0
 upstream_IPC-add-PATH_MAX-less-fallback-definition-for-MAX_PA.patch
 

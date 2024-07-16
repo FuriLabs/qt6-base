@@ -1,5 +1,12 @@
 qt6-base (6.6.2+dfsg-10) UNRELEASED; urgency=medium
 
+  [ Pino Toscano ]
+  * Backport upstream commit 7d9d1220f367d9275dfaa7ce12e89b0a9f4c1978 to use
+    also the zstd::libzstd cmake target, if available; patch
+    upstream_Prefer-using-the-non-suffixed-libzstd-over-static-on.patch.
+  * Backport upstream commit 3073b9c4dec5e5877363794bf81cbd4b84fdb9ee to promote
+    the libzstd cmake targets to global; patch
+    upstream_Ensure-that-libzstd-targets-are-promoted-to-global-i.patch.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue, 16 Jul 2024 06:10:31 +0200
 
