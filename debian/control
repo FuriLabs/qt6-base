@@ -100,7 +100,7 @@ Vcs-Browser: https://salsa.debian.org/qt-kde-team/qt6/qt6-base
 Package: libqt6gui6-gles
 Architecture: any
 Conflicts: libqt6gui6
-Provides: libqt6gui6 (= 6.6.2+dfsg-8)
+Provides: libqt6gui6 (= 6.6.2+dfsg-10)
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends},
 Depends: fontconfig, ${misc:Depends}, ${shlibs:Depends},
@@ -115,7 +115,7 @@ Description: Qt 6 GUI module
 
 Package: libqt6dbus6t64
 Architecture: all
-Depends: libqt6dbus6 (>= 6.6.2+dfsg-8)
+Depends: libqt6dbus6 (>= 6.6.2+dfsg-10)
 Description: Qt 6 D-Bus module (transitional package)
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -131,7 +131,7 @@ Description: Qt 6 D-Bus module (transitional package)
 
 Package: libqt6network6t64
 Architecture: all
-Depends: libqt6network6 (>= 6.6.2+dfsg-8)
+Depends: libqt6network6 (>= 6.6.2+dfsg-10)
 Description: Qt 6 network module (transitional package)
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
