@@ -8,6 +8,7 @@ Add-SH-detection.patch
 
 # Pushed to gerrit
 be_verbose_on_plugin_inclusion.patch
+use_float16_only_with_sse2.patch
 
 # Debian specific
 remove_privacy_breaches.diff
