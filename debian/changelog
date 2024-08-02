@@ -2,6 +2,7 @@ qt6-base (6.6.2+dfsg-11) UNRELEASED; urgency=medium
 
   [ Dmitry Shachnev ]
   * Add a patch to use _Float16 only when SSE2 is enabled (closes: #1076986).
+  * Backport upstream patch to fix QGtk3Interface::fileIcon with GLib ≥ 2.76.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 01 Aug 2024 23:45:39 +0300
 

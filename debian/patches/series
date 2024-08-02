@@ -1,3 +1,6 @@
+# fixed in 6.6.3
+fix_qgtk3interface_fileicon.patch
+# fixed in 6.7.2
 upstream_Prefer-using-the-non-suffixed-libzstd-over-static-on.patch
 upstream_Ensure-that-libzstd-targets-are-promoted-to-global-i.patch
 # fixed in 6.9.0
