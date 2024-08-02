@@ -1,5 +1,7 @@
 # fixed in 6.6.3
 fix_qgtk3interface_fileicon.patch
+# fixed in 6.7.0
+be_verbose_on_plugin_inclusion.patch
 # fixed in 6.7.2
 upstream_Prefer-using-the-non-suffixed-libzstd-over-static-on.patch
 upstream_Ensure-that-libzstd-targets-are-promoted-to-global-i.patch
@@ -10,7 +12,6 @@ upstream_IPC-add-PATH_MAX-less-fallback-definition-for-MAX_PA.patch
 Add-SH-detection.patch
 
 # Pushed to gerrit
-be_verbose_on_plugin_inclusion.patch
 use_float16_only_with_sse2.patch
 
 # Debian specific
