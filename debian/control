@@ -140,3 +140,40 @@ Description: Qt 6 network module (transitional package)
  servers. It provides classes to make network programming easier and portable.
  .
  This is a transitional package that can be removed.
+
+Package: libqt6gui6t64
+Architecture: any
+Depends: libqt6network6 (>= 6.6.2+dfsg-10)
+Description: Qt 6 GUI module (transitional package)
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ The QtGui module extends QtCore with GUI functionality.
+ .
+ This is a transitional package that can be removed.
+
+Package: libqt6opengl6t64
+Architecture: any
+Depends: libqt6opengl6 (>= 6.6.2+dfsg-10)
+Description: Qt 6 OpenGL module (transitional package)
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ The QtOpenGL module offers classes that make it easy to use OpenGL in Qt
+ applications.
+ .
+ OpenGL is a standard API for rendering 3D graphics. OpenGL only deals with 3D
+ rendering and provides little or no support for GUI programming issues.
+ .
+ This is a transitional package that can be removed.
+
+Package: libqt6widgets6t64
+Architecture: any
+Depends: libqt6widgets6 (>= 6.6.2+dfsg-10)
+Description: Qt 6 widgets module (transitional package)
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ The QtWidgets module extends QtGui with C++ widget functionality.
+ .
+ This is a transitional package that can be removed.
