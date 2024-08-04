@@ -100,12 +100,12 @@ Vcs-Browser: https://salsa.debian.org/qt-kde-team/qt6/qt6-base
 Package: libqt6gui6-gles
 Architecture: any
 Conflicts: libqt6gui6
-Provides: libqt6gui6 (= 6.6.2+dfsg-10)
+Provides: libqt6gui6 (= 6.6.2+dfsg-10), libqt6gui6t64 (= ${binary:Version})
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends},
 Depends: fontconfig, ${misc:Depends}, ${shlibs:Depends},
-Breaks: qt6-qpa-plugins (<< 6.3.1+dfsg-6~),
-Replaces: qt6-qpa-plugins (<< 6.3.1+dfsg-6~),
+Breaks: libqt6gui6t64 (<< ${source:Version}), qt6-qpa-plugins (<< 6.3.1+dfsg-6~),
+Replaces: libqt6gui6t64, qt6-qpa-plugins (<< 6.3.1+dfsg-6~),
 Recommends: qt6-gtk-platformtheme, qt6-qpa-plugins, qt6-wayland [linux-any],
 Description: Qt 6 GUI module
  Qt is a cross-platform C++ application framework. Qt's primary feature
