@@ -91,7 +91,7 @@ Build-Depends: cmake (>= 3.24~),
                zlib1g-dev,
 Build-Depends-Indep: qt6-base-dev (>= 6.6~) <!nodoc>,
                      qt6-documentation-tools (>= 6.6~) <!nodoc>,
-Standards-Version: 4.6.2
+Standards-Version: 4.7.0
 Section: libs
 Homepage: https://www.qt.io/developers/
 Rules-Requires-Root: no

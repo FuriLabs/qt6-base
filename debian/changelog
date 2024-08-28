@@ -3,6 +3,7 @@ qt6-base (6.7.2+dfsg-1) UNRELEASED; urgency=medium
   [ Patrick Franz ]
   * New upstream release (6.7.2).
   * Remove patches that have been applied upstream.
+  * Bump Standards-Version to 4.7.0 (no changes needed).
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 29 Aug 2024 00:08:13 +0200
 
