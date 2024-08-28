@@ -1,10 +1,3 @@
-# fixed in 6.6.3
-fix_qgtk3interface_fileicon.patch
-# fixed in 6.7.0
-be_verbose_on_plugin_inclusion.patch
-# fixed in 6.7.2
-upstream_Prefer-using-the-non-suffixed-libzstd-over-static-on.patch
-upstream_Ensure-that-libzstd-targets-are-promoted-to-global-i.patch
 # fixed in 6.9.0
 upstream_IPC-add-PATH_MAX-less-fallback-definition-for-MAX_PA.patch
 
@@ -23,7 +16,5 @@ forkfd_grow_stack_upwards_on_hppa.patch
 enable_skip_plugins.patch
 
 # Support old ARM architectures
-# - Don't use yield on CPUs that might not support it
-armel-noyield.patch
 # - Support ARMv4 until clang < 17 is available in Debian
 armv4.diff
