@@ -99,7 +99,7 @@ Vcs-Git: https://salsa.debian.org/qt-kde-team/qt6/qt6-base.git
 Vcs-Browser: https://salsa.debian.org/qt-kde-team/qt6/qt6-base
 
 Package: libqt6core6t64
-Provides: qt6-base-private-abi (= 6.6.2), ${t64:Provides},
+Provides: qt6-base-private-abi (= 6.7.2), ${t64:Provides},
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends},
