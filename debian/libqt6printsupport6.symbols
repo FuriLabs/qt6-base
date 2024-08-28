@@ -1,7 +1,8 @@
-# SymbolsHelper-Confirmed: 6.6.0 amd64
+# SymbolsHelper-Confirmed: 6.7.2 amd64
 libQt6PrintSupport.so.6 libqt6printsupport6 #MINVER#
 | libqt6printsupport6 #MINVER#, qt6-base-private-abi (= 6.7.2)
 * Build-Depends-Package: qt6-base-dev
+ NonQt@NonQt 6.7.2
  Qt_6@Qt_6 6.1.2
  (symver)Qt_6_PRIVATE_API 0 1
  _Z49qRegisterNormalizedMetaType_QCUPSSupport__PageSetRK10QByteArray@Qt_6 6.4.0

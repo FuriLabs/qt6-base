@@ -1,7 +1,8 @@
-# SymbolsHelper-Confirmed: 6.6.0 amd64
+# SymbolsHelper-Confirmed: 6.7.2 amd64
 libQt6Sql.so.6 libqt6sql6 #MINVER#
 | libqt6sql6 #MINVER#, qt6-base-private-abi (= 6.7.2)
 * Build-Depends-Package: qt6-base-dev
+ NonQt@NonQt 6.7.2
  Qt_6@Qt_6 6.1.2
  (symver)Qt_6_PRIVATE_API 0 1
  _ZN10QSqlDriver11cancelQueryEv@Qt_6 6.1.2
@@ -54,6 +55,7 @@ libQt6Sql.so.6 libqt6sql6 #MINVER#
  _ZN10QSqlResult14setForwardOnlyEb@Qt_6 6.1.2
  _ZN10QSqlResult19detachFromResultSetEv@Qt_6 6.1.2
  _ZN10QSqlResult27setNumericalPrecisionPolicyEN4QSql24NumericalPrecisionPolicyE@Qt_6 6.1.2
+ _ZN10QSqlResult27setPositionalBindingEnabledEb@Qt_6 6.7.2
  _ZN10QSqlResult4execEv@Qt_6 6.1.2
  _ZN10QSqlResult5clearEv@Qt_6 6.1.2
  _ZN10QSqlResult5setAtEi@Qt_6 6.1.2
@@ -247,6 +249,7 @@ libQt6Sql.so.6 libqt6sql6 #MINVER#
  _ZN9QSqlQuery12addBindValueERK8QVariant6QFlagsIN4QSql13ParamTypeFlagEE@Qt_6 6.1.2
  _ZN9QSqlQuery14setForwardOnlyEb@Qt_6 6.1.2
  _ZN9QSqlQuery27setNumericalPrecisionPolicyEN4QSql24NumericalPrecisionPolicyE@Qt_6 6.1.2
+ _ZN9QSqlQuery27setPositionalBindingEnabledEb@Qt_6 6.7.2
  _ZN9QSqlQuery4execERK7QString@Qt_6 6.1.2
  _ZN9QSqlQuery4execEv@Qt_6 6.1.2
  _ZN9QSqlQuery4lastEv@Qt_6 6.1.2
@@ -318,6 +321,7 @@ libQt6Sql.so.6 libqt6sql6 #MINVER#
  _ZNK10QSqlResult15boundValueCountEv@Qt_6 6.1.2
  _ZNK10QSqlResult15boundValueNamesEv@Qt_6 6.6.0
  _ZNK10QSqlResult24numericalPrecisionPolicyEv@Qt_6 6.1.2
+ _ZNK10QSqlResult26isPositionalBindingEnabledEv@Qt_6 6.7.2
  _ZNK10QSqlResult2atEv@Qt_6 6.1.2
  _ZNK10QSqlResult6driverEv@Qt_6 6.1.2
  _ZNK10QSqlResult6handleEv@Qt_6 6.1.2
@@ -406,7 +410,6 @@ libQt6Sql.so.6 libqt6sql6 #MINVER#
  _ZNK9QSqlField9precisionEv@Qt_6 6.1.2
  _ZNK9QSqlField9tableNameEv@Qt_6 6.1.2
  _ZNK9QSqlFieldeqERKS_@Qt_6 6.1.2
- _ZNK9QSqlIndex11createFieldEiRK7QStringb@Qt_6 6.1.2
  _ZNK9QSqlIndex12isDescendingEi@Qt_6 6.1.2
  _ZNK9QSqlQuery10boundValueERK7QString@Qt_6 6.1.2
  _ZNK9QSqlQuery10boundValueEi@Qt_6 6.1.2
@@ -418,6 +421,7 @@ libQt6Sql.so.6 libqt6sql6 #MINVER#
  _ZNK9QSqlQuery15boundValueNamesEv@Qt_6 6.6.0
  _ZNK9QSqlQuery15numRowsAffectedEv@Qt_6 6.1.2
  _ZNK9QSqlQuery24numericalPrecisionPolicyEv@Qt_6 6.1.2
+ _ZNK9QSqlQuery26isPositionalBindingEnabledEv@Qt_6 6.7.2
  _ZNK9QSqlQuery2atEv@Qt_6 6.1.2
  _ZNK9QSqlQuery4sizeEv@Qt_6 6.1.2
  _ZNK9QSqlQuery5valueERK7QString@Qt_6 6.1.2

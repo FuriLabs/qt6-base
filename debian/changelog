@@ -6,6 +6,7 @@ qt6-base (6.7.2+dfsg-1) UNRELEASED; urgency=medium
   * Bump Standards-Version to 4.7.0 (no changes needed).
   * Update ABI to 6.7.2.
   * Update list of installed files.
+  * Update symbols from buildlogs.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 29 Aug 2024 00:08:13 +0200
 

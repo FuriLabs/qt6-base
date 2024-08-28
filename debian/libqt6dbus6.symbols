@@ -1,7 +1,8 @@
-# SymbolsHelper-Confirmed: 6.6.0 amd64
+# SymbolsHelper-Confirmed: 6.7.2 amd64
 libQt6DBus.so.6 libqt6dbus6 #MINVER#
 | libqt6dbus6 #MINVER#, qt6-base-private-abi (= 6.7.2)
 * Build-Depends-Package: qt6-base-dev
+ NonQt@NonQt 6.7.2
  Qt_6@Qt_6 6.1.2
  (symver)Qt_6_PRIVATE_API 0 1
  _Z14qDBusReplyFillRK12QDBusMessageR10QDBusErrorR8QVariant@Qt_6 6.1.2
@@ -81,8 +82,10 @@ libQt6DBus.so.6 libqt6dbus6 #MINVER#
  _ZN12QDBusMessage19setAutoStartServiceEb@Qt_6 6.1.2
  _ZN12QDBusMessage20createTargetedSignalERK7QStringS2_S2_S2_@Qt_6 6.1.2
  _ZN12QDBusMessage34setInteractiveAuthorizationAllowedEb@Qt_6 6.1.2
+ _ZN12QDBusMessageC1ER19QDBusMessagePrivate@Qt_6 6.7.2
  _ZN12QDBusMessageC1ERKS_@Qt_6 6.1.2
  _ZN12QDBusMessageC1Ev@Qt_6 6.1.2
+ _ZN12QDBusMessageC2ER19QDBusMessagePrivate@Qt_6 6.7.2
  _ZN12QDBusMessageC2ERKS_@Qt_6 6.1.2
  _ZN12QDBusMessageC2Ev@Qt_6 6.1.2
  _ZN12QDBusMessageD1Ev@Qt_6 6.1.2
@@ -182,6 +185,7 @@ libQt6DBus.so.6 libqt6dbus6 #MINVER#
  _ZN15QDBusMetaObject16createMetaObjectERK7QStringS2_R5QHashIS0_PS_ER10QDBusError@Qt_6 6.6.0
  _ZN15QDBusMetaObjectC1Ev@Qt_6 6.6.0
  _ZN15QDBusMetaObjectC2Ev@Qt_6 6.6.0
+ _ZN15QDBusMetaTypeId4initEv@Qt_6 6.7.2
  _ZN15QDBusObjectPath7doCheckEv@Qt_6 6.1.2
  _ZN16QDBusPendingCall15waitForFinishedEv@Qt_6 6.1.2
  _ZN16QDBusPendingCall17fromCompletedCallERK12QDBusMessage@Qt_6 6.1.2
@@ -194,9 +198,12 @@ libQt6DBus.so.6 libqt6dbus6 #MINVER#
  _ZN16QDBusPendingCallD2Ev@Qt_6 6.1.2
  _ZN16QDBusPendingCallaSERKS_@Qt_6 6.1.2
  _ZN16QMetaAssociation15MetaAssociationI4QMapI7QStringS2_EE5valueE@Qt_6 6.1.2
- _ZN18QDBusIntrospection11parseObjectERK7QStringS2_S2_@Qt_6 6.6.0
- _ZN18QDBusIntrospection14parseInterfaceERK7QString@Qt_6 6.6.0
- _ZN18QDBusIntrospection15parseInterfacesERK7QString@Qt_6 6.6.0
+ _ZN18QDBusIntrospection11parseObjectERK7QStringS2_S2_PNS_19DiagnosticsReporterE@Qt_6 6.7.2
+ _ZN18QDBusIntrospection14parseInterfaceERK7QStringPNS_19DiagnosticsReporterE@Qt_6 6.7.2
+ _ZN18QDBusIntrospection15parseInterfacesERK7QStringPNS_19DiagnosticsReporterE@Qt_6 6.7.2
+ _ZN18QDBusIntrospection19DiagnosticsReporterD0Ev@Qt_6 6.7.2
+ _ZN18QDBusIntrospection19DiagnosticsReporterD1Ev@Qt_6 6.7.2
+ _ZN18QDBusIntrospection19DiagnosticsReporterD2Ev@Qt_6 6.7.2
  _ZN18QDBusVirtualObject11qt_metacallEN11QMetaObject4CallEiPPv@Qt_6 6.1.2
  _ZN18QDBusVirtualObject11qt_metacastEPKc@Qt_6 6.1.2
  _ZN18QDBusVirtualObject16staticMetaObjectE@Qt_6 6.1.2
@@ -253,6 +260,7 @@ libQt6DBus.so.6 libqt6dbus6 #MINVER#
  _ZN22QDBusAbstractInterface16staticMetaObjectE@Qt_6 6.1.2
  _ZN22QDBusAbstractInterface20callWithArgumentListEN5QDBus8CallModeERK7QStringRK5QListI8QVariantE@Qt_6 6.1.2
  _ZN22QDBusAbstractInterface25asyncCallWithArgumentListERK7QStringRK5QListI8QVariantE@Qt_6 6.1.2
+ _ZN22QDBusAbstractInterface34setInteractiveAuthorizationAllowedEb@Qt_6 6.7.2
  (subst)_ZN22QDBusAbstractInterface6doCallEN5QDBus8CallModeERK7QStringPK8QVariant{size_t}@Qt_6 6.1.2
  _ZN22QDBusAbstractInterfaceC1ER29QDBusAbstractInterfacePrivateP7QObject@Qt_6 6.1.2
  _ZN22QDBusAbstractInterfaceC1ERK7QStringS2_PKcRK15QDBusConnectionP7QObject@Qt_6 6.1.2
@@ -416,6 +424,7 @@ libQt6DBus.so.6 libqt6dbus6 #MINVER#
  _ZNK22QDBusAbstractInterface10metaObjectEv@Qt_6 6.1.2
  _ZNK22QDBusAbstractInterface15internalPropGetEPKc@Qt_6 6.1.2
  _ZNK22QDBusAbstractInterface17internalConstCallEN5QDBus8CallModeERK7QStringRK5QListI8QVariantE@Qt_6 6.1.2
+ _ZNK22QDBusAbstractInterface33isInteractiveAuthorizationAllowedEv@Qt_6 6.7.2
  _ZNK22QDBusAbstractInterface4pathEv@Qt_6 6.1.2
  _ZNK22QDBusAbstractInterface7isValidEv@Qt_6 6.1.2
  _ZNK22QDBusAbstractInterface7serviceEv@Qt_6 6.1.2
@@ -432,7 +441,6 @@ libQt6DBus.so.6 libqt6dbus6 #MINVER#
  _ZNK24QDBusConnectionInterface19isServiceRegisteredERK7QString@Qt_6 6.1.2
  _ZNK24QDBusConnectionInterface22registeredServiceNamesEv@Qt_6 6.1.2
  _ZNK24QDBusConnectionInterface23activatableServiceNamesEv@Qt_6 6.1.2
- _ZSt19piecewise_construct@Qt_6 6.4.1
  _ZTI11QDBusServer@Qt_6 6.1.2
  _ZTI14QDBusInterface@Qt_6 6.1.2
  _ZTI16QDBusPendingCall@Qt_6 6.1.2
@@ -443,6 +451,7 @@ libQt6DBus.so.6 libqt6dbus6 #MINVER#
  _ZTI23QDBusPendingCallWatcher@Qt_6 6.1.2
  _ZTI24QDBusConnectionInterface@Qt_6 6.1.2
  _ZTI26QDBusAbstractInterfaceBase@Qt_6 6.1.2
+ _ZTIN18QDBusIntrospection19DiagnosticsReporterE@Qt_6 6.7.2
  _ZTIZN9QMetaType17registerConverterI4QMapI7QStringS2_E9QIterableI16QMetaAssociationEN9QtPrivate34QAssociativeIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTIZN9QMetaType17registerConverterI5QListI12QDBusVariantE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.6.0
  _ZTIZN9QMetaType17registerConverterI5QListI14QDBusSignatureE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
@@ -479,6 +488,7 @@ libQt6DBus.so.6 libqt6dbus6 #MINVER#
  _ZTS23QDBusPendingCallWatcher@Qt_6 6.1.2
  _ZTS24QDBusConnectionInterface@Qt_6 6.1.2
  _ZTS26QDBusAbstractInterfaceBase@Qt_6 6.1.2
+ _ZTSN18QDBusIntrospection19DiagnosticsReporterE@Qt_6 6.7.2
  _ZTSZN9QMetaType17registerConverterI4QMapI7QStringS2_E9QIterableI16QMetaAssociationEN9QtPrivate34QAssociativeIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTSZN9QMetaType17registerConverterI5QListI12QDBusVariantE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.6.0
  _ZTSZN9QMetaType17registerConverterI5QListI14QDBusSignatureE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
@@ -514,6 +524,7 @@ libQt6DBus.so.6 libqt6dbus6 #MINVER#
  _ZTV23QDBusPendingCallWatcher@Qt_6 6.1.2
  _ZTV24QDBusConnectionInterface@Qt_6 6.1.2
  _ZTV26QDBusAbstractInterfaceBase@Qt_6 6.1.2
+ _ZTVN18QDBusIntrospection19DiagnosticsReporterE@Qt_6 6.7.2
  (optional=templinst)_ZZN9QMetaType21registerConverterImplI4QMapI7QStringS2_E9QIterableI16QMetaAssociationEEEbSt8functionIFbPKvPvEES_S_E10unregister@Qt_6 6.2.0
  (optional=templinst)_ZZN9QMetaType21registerConverterImplI5QListI12QDBusVariantE9QIterableI13QMetaSequenceEEEbSt8functionIFbPKvPvEES_S_E10unregister@Qt_6 6.6.0
  (optional=templinst)_ZZN9QMetaType21registerConverterImplI5QListI14QDBusSignatureE9QIterableI13QMetaSequenceEEEbSt8functionIFbPKvPvEES_S_E10unregister@Qt_6 6.2.0

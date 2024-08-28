@@ -1,13 +1,15 @@
-# SymbolsHelper-Confirmed: 6.6.0 amd64
+# SymbolsHelper-Confirmed: 6.7.2 amd64
 libQt6Test.so.6 libqt6test6 #MINVER#
 | libqt6test6 #MINVER#, qt6-base-private-abi (= 6.7.2)
 * Build-Depends-Package: qt6-base-dev
+ NonQt@NonQt 6.7.2
  Qt_6@Qt_6 6.1.2
  (symver)Qt_6_PRIVATE_API 0 1
  _ZGVZN14QTestEventLoop8instanceEvE8testLoop@Qt_6 6.3.0
  _ZN12QTestPrivate14parseBlackListEv@Qt_6 6.1.2
  _ZN12QTestPrivate15checkBlackListsEPKcS1_S1_@Qt_6 6.3.1
  _ZN12QTestPrivate17qtestMouseButtonsE@Qt_6 6.1.2
+ _ZN12QTestPrivate22formatTypeWithCRefImplE9QMetaTypebbb@Qt_6 6.7.2
  _ZN14QTestEventLoop11qt_metacallEN11QMetaObject4CallEiPPv@Qt_6 6.1.2
  _ZN14QTestEventLoop11qt_metacastEPKc@Qt_6 6.1.2
  _ZN14QTestEventLoop16staticMetaObjectE@Qt_6 6.1.2
@@ -59,7 +61,6 @@ libQt6Test.so.6 libqt6test6 #MINVER#
  _ZN5QTest21compare_string_helperEPKcS1_S1_S1_S1_i@Qt_6 6.1.2
  _ZN5QTest23printAvailableFunctionsE@Qt_6 6.1.2
  _ZN5QTest29QBenchmarkIterationController4nextEv@Qt_6 6.1.2
- _ZN5QTest29QBenchmarkIterationController6isDoneEv@Qt_6 6.1.2
  _ZN5QTest29QBenchmarkIterationControllerC1ENS0_7RunModeE@Qt_6 6.1.2
  _ZN5QTest29QBenchmarkIterationControllerC1Ev@Qt_6 6.1.2
  _ZN5QTest29QBenchmarkIterationControllerC2ENS0_7RunModeE@Qt_6 6.1.2
@@ -77,6 +78,7 @@ libQt6Test.so.6 libqt6test6 #MINVER#
  _ZN5QTest6addRowEPKcz@Qt_6 6.1.2
  _ZN5QTest6newRowEPKc@Qt_6 6.1.2
  _ZN5QTest7qCaughtEPKcS1_S1_i@Qt_6 6.3.0
+ _ZN5QTest7qCaughtEPKcS1_i@Qt_6 6.7.2
  _ZN5QTest7qVerifyEbPKcS1_S1_i@Qt_6 6.1.2
  _ZN5QTest8Internal28formatTryTimeoutDebugMessageE20QBasicUtf8StringViewILb0EEii@Qt_6 6.3.0
  _ZN5QTest8qCleanupEv@Qt_6 6.1.2
@@ -116,6 +118,7 @@ libQt6Test.so.6 libqt6test6 #MINVER#
  _ZNK24QAbstractItemModelTester10metaObjectEv@Qt_6 6.1.2
  _ZNK24QAbstractItemModelTester20failureReportingModeEv@Qt_6 6.1.2
  _ZNK24QAbstractItemModelTester5modelEv@Qt_6 6.1.2
+ _ZNK5QTest29QBenchmarkIterationController6isDoneEv@Qt_6 6.7.2
  _ZNK9QTestData4dataEi@Qt_6 6.1.2
  _ZNK9QTestData6parentEv@Qt_6 6.1.2
  _ZNK9QTestData7dataTagEv@Qt_6 6.1.2
