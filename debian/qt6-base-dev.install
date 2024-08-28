@@ -158,6 +158,7 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QAssociativeIterator
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QAtomicInt
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QAtomicInteger
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QAtomicPointer
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QAtomicScopedValueRollback
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QBEInteger
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QBaseIterator
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QBasicMutex
@@ -210,7 +211,6 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QDateTime
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QDeadlineTimer
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QDebug
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QDebugStateSaver
-usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QDeferredDeleteEvent
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QDir
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QDirIterator
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QDynamicPropertyChangeEvent
@@ -419,11 +419,13 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QSizeF
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QSocketDescriptor
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QSocketNotifier
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QSortFilterProxyModel
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QSpan
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QSpecialInteger
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QStack
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QStandardPaths
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QStaticByteArrayMatcher
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QStaticByteArrayMatcherBase
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QStaticLatin1StringMatcher
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QStaticPlugin
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QStorageInfo
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QString
@@ -445,6 +447,7 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QSysInfo
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QSystemSemaphore
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QTaggedIterator
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QTaggedPointer
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QTemplatedMetaMethodReturnArgument
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QTemporaryDir
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QTemporaryFile
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/QTextBoundaryFinder
@@ -547,8 +550,10 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/q20algorithm.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/q20chrono.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/q20functional.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/q20iterator.h
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/q20map.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/q20memory.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/q20type_traits.h
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/q20vector.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/q23functional.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/q23utility.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qabstractanimation.h
@@ -567,6 +572,7 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qassert.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qassociativeiterable.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qatomic.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qatomic_cxx11.h
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qatomicscopedvaluerollback.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qbasicatomic.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qbasictimer.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qbindingstorage.h
@@ -592,6 +598,7 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qcommandlineoption.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qcommandlineparser.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qcompare.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qcompare_impl.h
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qcomparehelpers.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qcompilerdetection.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qconcatenatetablesproxymodel.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qconfig.h
@@ -723,8 +730,10 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qsimd.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qsize.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qsocketnotifier.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qsortfilterproxymodel.h
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qspan.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qstack.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qstandardpaths.h
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qstaticlatin1stringmatcher.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qstorageinfo.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qstring.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qstringalgorithms.h
@@ -771,11 +780,13 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qtranslator.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qtransposeproxymodel.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qtresource.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qtsan_impl.h
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qtsymbolmacros.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qttranslation.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qttypetraits.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qtversion.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qtversionchecks.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qtypeinfo.h
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qtyperevision.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qtypes.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qurl.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qurlquery.h
@@ -795,6 +806,7 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qwineventnotifier.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qxmlstream.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qxpfunctional.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qxptype_traits.h
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtCore/qyieldcpu.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtDBus/QDBusAbstractAdaptor
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtDBus/QDBusAbstractInterface
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtDBus/QDBusAbstractInterfaceBase
@@ -830,7 +842,6 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtDBus/qdbuscontext.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtDBus/qdbuserror.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtDBus/qdbusextratypes.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtDBus/qdbusinterface.h
-usr/include/${DEB_HOST_MULTIARCH}/qt6/QtDBus/qdbusmacros.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtDBus/qdbusmessage.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtDBus/qdbusmetatype.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtDBus/qdbuspendingcall.h
@@ -893,6 +904,7 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtGui/QBitmap
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtGui/QBrush
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtGui/QBrushData
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtGui/QBrushDataPointerDeleter
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtGui/QChildWindowEvent
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtGui/QClipboard
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtGui/QCloseEvent
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtGui/QColor
@@ -1163,6 +1175,7 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtGui/qrgb.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtGui/qrgba64.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtGui/qrgbafloat.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtGui/qscreen.h
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtGui/qscreen_platform.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtGui/qsessionmanager.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtGui/qshortcut.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtGui/qstandarditemmodel.h
@@ -1220,6 +1233,7 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QHostInfo
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QHstsPolicy
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QHttp1Configuration
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QHttp2Configuration
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QHttpHeaders
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QHttpMultiPart
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QHttpPart
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QIPv6Address
@@ -1239,8 +1253,11 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QNetworkProxyFactory
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QNetworkProxyQuery
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QNetworkReply
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QNetworkRequest
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QNetworkRequestFactory
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QOcspResponse
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QPasswordDigestor
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QRestAccessManager
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QRestReply
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QSsl
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QSslCertificate
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/QSslCertificateExtension
@@ -1270,6 +1287,7 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qhostinfo.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qhstspolicy.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qhttp1configuration.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qhttp2configuration.h
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qhttpheaders.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qhttpmultipart.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qlocalserver.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qlocalsocket.h
@@ -1283,8 +1301,11 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qnetworkinterface.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qnetworkproxy.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qnetworkreply.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qnetworkrequest.h
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qnetworkrequestfactory.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qocspresponse.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qpassworddigestor.h
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qrestaccessmanager.h
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qrestreply.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qssl.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qsslcertificate.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtNetwork/qsslcertificateextension.h
@@ -1445,7 +1466,6 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtSql/QSqlTableModel
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtSql/QtSql
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtSql/QtSqlDepends
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtSql/QtSqlVersion
-usr/include/${DEB_HOST_MULTIARCH}/qt6/QtSql/qsql.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtSql/qsqldatabase.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtSql/qsqldriver.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtSql/qsqldriverplugin.h
@@ -1488,7 +1508,6 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtTest/qbenchmark.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtTest/qbenchmarkmetric.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtTest/qsignalspy.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtTest/qtest.h
-usr/include/${DEB_HOST_MULTIARCH}/qt6/QtTest/qtest_global.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtTest/qtest_gui.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtTest/qtest_network.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtTest/qtest_widgets.h
@@ -1618,6 +1637,7 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtWidgets/QProgressDialog
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtWidgets/QProxyStyle
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtWidgets/QPushButton
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtWidgets/QRadioButton
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtWidgets/QRhiWidget
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtWidgets/QRubberBand
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtWidgets/QScrollArea
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtWidgets/QScrollBar
@@ -1782,6 +1802,7 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtWidgets/qprogressdialog.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtWidgets/qproxystyle.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtWidgets/qpushbutton.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtWidgets/qradiobutton.h
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtWidgets/qrhiwidget.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtWidgets/qrubberband.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtWidgets/qscrollarea.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtWidgets/qscrollbar.h
@@ -1884,6 +1905,7 @@ usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/FindMySQL.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/FindOracle.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/FindPPS.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/FindPostgreSQL.cmake
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/FindRenderDoc.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/FindSlog2.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/FindTslib.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6/FindWrapAtomic.cmake
@@ -2073,6 +2095,7 @@ usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Core/Qt6CoreDependencies.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Core/Qt6CoreDeploySupport.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Core/Qt6CoreMacros.cmake
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Core/Qt6CoreResourceInit.in.cpp
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Core/Qt6CoreTargets-none.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Core/Qt6CoreTargets.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Core/Qt6CoreVersionlessTargets.cmake
@@ -2380,6 +2403,7 @@ usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Widgets/Qt6WidgetsTargets-none.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Widgets/Qt6WidgetsVersionlessTargets.cmake
@@ -2664,3 +2688,4 @@ usr/share/qt6/doc/global/template/style/offline.css
 usr/share/qt6/doc/global/template/style/online.css
 usr/share/qt6/doc/global/template/style/tech_preview.svg
 usr/share/qt6/doc/global/template/style/theqtcompany.png
+usr/share/qt6/doc/global/warninglimit.qdocconf

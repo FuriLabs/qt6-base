@@ -55,6 +55,7 @@ usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/common/uikit/GLES2/gl2.h
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/common/uikit/clang.conf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/common/uikit/qmake.conf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/common/unix.conf
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/common/vxworks/qplatformdefs.h
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/common/watchos.conf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/common/windows-desktop.conf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/common/windows-vulkan.conf
@@ -408,6 +409,7 @@ usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/unsupported/vxworks-simpentium-dcc/qma
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/unsupported/vxworks-simpentium-dcc/qplatformdefs.h
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/unsupported/vxworks-simpentium-g++/qmake.conf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/unsupported/vxworks-simpentium-g++/qplatformdefs.h
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/vxworks-clang/qplatformdefs.h
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/wasm-emscripten/qmake.conf
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/wasm-emscripten/qplatformdefs.h
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/win32-arm64-msvc/qmake.conf
