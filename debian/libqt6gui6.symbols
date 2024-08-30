@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.7.2 amd64
+# SymbolsHelper-Confirmed: 6.7.2 amd64 armel riscv64
 libQt6Gui.so.6 libqt6gui6 #MINVER#
 | libqt6gui6 #MINVER#, qt6-base-private-abi (= 6.7.2)
 * Build-Depends-Package: qt6-base-dev
@@ -4769,8 +4769,6 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZTIN4QCss13StyleSelectorE@Qt_6 6.6.0
  _ZTIN5QTest19QTouchEventSequenceE@Qt_6 6.1.2
  (arch=armel riscv64)_ZTIN9__gnu_cxx7__mutexE@Qt_6 6.3.0
- (arch=armel riscv64)_ZTISt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE1EE@Qt_6 6.3.0
- (arch=armel riscv64)_ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE@Qt_6 6.3.0
  _ZTIZN9QMetaType17registerConverterI4QMapI7QStringS2_E9QIterableI16QMetaAssociationEN9QtPrivate34QAssociativeIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.6.0
  (arch=linux-any)_ZTIZN9QMetaType17registerConverterI5QListI23QDBusUnixFileDescriptorE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTIZN9QMetaType17registerConverterI5QListI4QUrlE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
@@ -4924,8 +4922,6 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZTSN4QCss13StyleSelectorE@Qt_6 6.6.0
  _ZTSN5QTest19QTouchEventSequenceE@Qt_6 6.1.2
  (arch=armel riscv64)_ZTSN9__gnu_cxx7__mutexE@Qt_6 6.3.0
- (arch=armel riscv64)_ZTSSt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE1EE@Qt_6 6.3.0
- (arch=armel riscv64)_ZTSSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE@Qt_6 6.3.0
  _ZTSZN9QMetaType17registerConverterI4QMapI7QStringS2_E9QIterableI16QMetaAssociationEN9QtPrivate34QAssociativeIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.6.0
  (arch=linux-any)_ZTSZN9QMetaType17registerConverterI5QListI23QDBusUnixFileDescriptorE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTSZN9QMetaType17registerConverterI5QListI4QUrlE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2

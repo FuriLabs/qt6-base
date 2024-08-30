@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.7.2 amd64
+# SymbolsHelper-Confirmed: 6.7.2 amd64 armel armhf hppa i386 powerpc riscv64 sh4 x32
 libQt6Network.so.6 libqt6network6 #MINVER#
 | libqt6network6 #MINVER#, qt6-base-private-abi (= 6.7.2)
 * Build-Depends-Package: qt6-base-dev
@@ -296,12 +296,12 @@ libQt6Network.so.6 libqt6network6 #MINVER#
  _ZN12QHttpHeaders5clearEv@Qt_6 6.7.2
  _ZN12QHttpHeaders6appendE14QAnyStringViewS0_@Qt_6 6.7.2
  _ZN12QHttpHeaders6appendENS_15WellKnownHeaderE14QAnyStringView@Qt_6 6.7.2
- _ZN12QHttpHeaders6insertEx14QAnyStringViewS0_@Qt_6 6.7.2
- _ZN12QHttpHeaders6insertExNS_15WellKnownHeaderE14QAnyStringView@Qt_6 6.7.2
- _ZN12QHttpHeaders7replaceEx14QAnyStringViewS0_@Qt_6 6.7.2
- _ZN12QHttpHeaders7replaceExNS_15WellKnownHeaderE14QAnyStringView@Qt_6 6.7.2
- _ZN12QHttpHeaders7reserveEx@Qt_6 6.7.2
- _ZN12QHttpHeaders8removeAtEx@Qt_6 6.7.2
+ (subst)_ZN12QHttpHeaders6insertE{qptrdiff}14QAnyStringViewS0_@Qt_6 6.7.2
+ (subst)_ZN12QHttpHeaders6insertE{qptrdiff}NS_15WellKnownHeaderE14QAnyStringView@Qt_6 6.7.2
+ (subst)_ZN12QHttpHeaders7replaceE{qptrdiff}14QAnyStringViewS0_@Qt_6 6.7.2
+ (subst)_ZN12QHttpHeaders7replaceE{qptrdiff}NS_15WellKnownHeaderE14QAnyStringView@Qt_6 6.7.2
+ (subst)_ZN12QHttpHeaders7reserveE{qptrdiff}@Qt_6 6.7.2
+ (subst)_ZN12QHttpHeaders8removeAtE{qptrdiff}@Qt_6 6.7.2
  _ZN12QHttpHeaders9removeAllE14QAnyStringView@Qt_6 6.7.2
  _ZN12QHttpHeaders9removeAllENS_15WellKnownHeaderE@Qt_6 6.7.2
  _ZN12QHttpHeadersC1ERKS_@Qt_6 6.7.2
@@ -532,7 +532,7 @@ libQt6Network.so.6 libqt6network6 #MINVER#
  _ZN15QNetworkRequest12setRawHeaderERK10QByteArrayS2_@Qt_6 6.1.2
  _ZN15QNetworkRequest16staticMetaObjectE@Qt_6 6.7.2
  _ZN15QNetworkRequest17setPeerVerifyNameERK7QString@Qt_6 6.1.2
- _ZN15QNetworkRequest18setTransferTimeoutENSt6chrono8durationIlSt5ratioILl1ELl1000EEEE@Qt_6 6.7.2
+ (subst)_ZN15QNetworkRequest18setTransferTimeoutENSt6chrono8durationI{int64_t}St5ratioIL{int64_t}1EL{int64_t}1000EEEE@Qt_6 6.7.2
  _ZN15QNetworkRequest18setTransferTimeoutEi@Qt_6 6.1.2
  _ZN15QNetworkRequest19setSslConfigurationERK17QSslConfiguration@Qt_6 6.1.2
  _ZN15QNetworkRequest20setOriginatingObjectEP7QObject@Qt_6 6.1.2
@@ -843,7 +843,7 @@ libQt6Network.so.6 libqt6network6 #MINVER#
  _ZN21QNetworkAccessManager17sendCustomRequestERK15QNetworkRequestRK10QByteArrayP9QIODevice@Qt_6 6.1.2
  _ZN21QNetworkAccessManager17sendCustomRequestERK15QNetworkRequestRK10QByteArrayS5_@Qt_6 6.1.2
  _ZN21QNetworkAccessManager17setRedirectPolicyEN15QNetworkRequest14RedirectPolicyE@Qt_6 6.1.2
- _ZN21QNetworkAccessManager18setTransferTimeoutENSt6chrono8durationIlSt5ratioILl1ELl1000EEEE@Qt_6 6.7.2
+ (subst)_ZN21QNetworkAccessManager18setTransferTimeoutENSt6chrono8durationI{int64_t}St5ratioIL{int64_t}1EL{int64_t}1000EEEE@Qt_6 6.7.2
  _ZN21QNetworkAccessManager18setTransferTimeoutEi@Qt_6 6.1.2
  _ZN21QNetworkAccessManager20clearConnectionCacheEv@Qt_6 6.1.2
  _ZN21QNetworkAccessManager20setAutoDeleteRepliesEb@Qt_6 6.1.2
@@ -905,7 +905,7 @@ libQt6Network.so.6 libqt6network6 #MINVER#
  _ZN22QNetworkRequestFactory16setCommonHeadersERK12QHttpHeaders@Qt_6 6.7.2
  _ZN22QNetworkRequestFactory18clearCommonHeadersEv@Qt_6 6.7.2
  _ZN22QNetworkRequestFactory18setQueryParametersERK9QUrlQuery@Qt_6 6.7.2
- _ZN22QNetworkRequestFactory18setTransferTimeoutENSt6chrono8durationIlSt5ratioILl1ELl1000EEEE@Qt_6 6.7.2
+ (subst)_ZN22QNetworkRequestFactory18setTransferTimeoutENSt6chrono8durationI{int64_t}St5ratioIL{int64_t}1EL{int64_t}1000EEEE@Qt_6 6.7.2
  _ZN22QNetworkRequestFactory19setSslConfigurationERK17QSslConfiguration@Qt_6 6.7.2
  _ZN22QNetworkRequestFactory20clearQueryParametersEv@Qt_6 6.7.2
  _ZN22QNetworkRequestFactoryC1ERK4QUrl@Qt_6 6.7.2
@@ -1140,10 +1140,10 @@ libQt6Network.so.6 libqt6network6 #MINVER#
  _ZNK12QHttpHeaders4sizeEv@Qt_6 6.7.2
  _ZNK12QHttpHeaders5valueE14QAnyStringView14QByteArrayView@Qt_6 6.7.2
  _ZNK12QHttpHeaders5valueENS_15WellKnownHeaderE14QByteArrayView@Qt_6 6.7.2
- _ZNK12QHttpHeaders6nameAtEx@Qt_6 6.7.2
+ (subst)_ZNK12QHttpHeaders6nameAtE{qptrdiff}@Qt_6 6.7.2
  _ZNK12QHttpHeaders6valuesE14QAnyStringView@Qt_6 6.7.2
  _ZNK12QHttpHeaders6valuesENS_15WellKnownHeaderE@Qt_6 6.7.2
- _ZNK12QHttpHeaders7valueAtEx@Qt_6 6.7.2
+ (subst)_ZNK12QHttpHeaders7valueAtE{qptrdiff}@Qt_6 6.7.2
  _ZNK12QHttpHeaders8containsE14QAnyStringView@Qt_6 6.7.2
  _ZNK12QHttpHeaders8containsENS_15WellKnownHeaderE@Qt_6 6.7.2
  _ZNK12QLocalServer10metaObjectEv@Qt_6 6.1.2
@@ -1516,8 +1516,6 @@ libQt6Network.so.6 libqt6network6 #MINVER#
  _ZTI21QNetworkAccessManager@Qt_6 6.1.2
  _ZTI5QDtls@Qt_6 6.1.2
  (arch=armel riscv64)_ZTIN9__gnu_cxx7__mutexE@Qt_6 6.3.0
- (arch=armel riscv64)_ZTISt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE1EE@Qt_6 6.3.0
- (arch=armel riscv64)_ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE@Qt_6 6.3.0
  _ZTIZN9QMetaType17registerConverterI5QListI14QNetworkCookieE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTIZN9QMetaType17registerConverterI5QListI9QSslErrorE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTIZN9QMetaType17registerConverterI5QListISt4pairI10QByteArrayS3_EE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS5_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
@@ -1548,9 +1546,6 @@ libQt6Network.so.6 libqt6network6 #MINVER#
  _ZTS21QNetworkAccessManager@Qt_6 6.1.2
  _ZTS5QDtls@Qt_6 6.1.2
  (arch=armel riscv64)_ZTSN9__gnu_cxx7__mutexE@Qt_6 6.3.0
- (arch=armel riscv64)_ZTSSt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE1EE@Qt_6 6.3.0
- (arch=armel riscv64)_ZTSSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE@Qt_6 6.3.0
- (arch=armel riscv64)_ZTSSt23_Sp_counted_ptr_inplaceI6QTimerSaIvELN9__gnu_cxx12_Lock_policyE1EE@Qt_6 6.4.0
  _ZTSZN9QMetaType17registerConverterI5QListI14QNetworkCookieE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTSZN9QMetaType17registerConverterI5QListI9QSslErrorE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS3_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
  _ZTSZN9QMetaType17registerConverterI5QListISt4pairI10QByteArrayS3_EE9QIterableI13QMetaSequenceEN9QtPrivate33QSequentialIterableConvertFunctorIS5_EEEEbT1_EUlPKvPvE_@Qt_6 6.1.2
