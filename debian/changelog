@@ -1,9 +1,9 @@
-qt6-base (6.6.2+dfsg-12) UNRELEASED; urgency=medium
+qt6-base (6.6.2+dfsg-12) unstable; urgency=medium
 
-  [ Dmitry Shachnev ]
+  * Team upload.
   * Replace Qml2Imports (deprecated) with QmlImports in debian/qt.conf.in.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 22 Sep 2024 22:07:15 +0300
+ -- Dmitry Shachnev <mitya57@debian.org>  Sun, 22 Sep 2024 22:08:16 +0300
 
 qt6-base (6.6.2+dfsg-11) unstable; urgency=medium
 
