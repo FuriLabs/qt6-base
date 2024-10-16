@@ -448,7 +448,7 @@ function(qt_internal_create_plugins_auto_inclusion_files)
 
 # Distributions should probably change this default.
 if(NOT DEFINED QT_SKIP_AUTO_QML_PLUGIN_INCLUSION)
-    set(QT_SKIP_AUTO_QML_PLUGIN_INCLUSION OFF)
+    set(QT_SKIP_AUTO_QML_PLUGIN_INCLUSION ON)
 endif()
 
 set(__qt_qml_plugins_config_file_list \"\")
