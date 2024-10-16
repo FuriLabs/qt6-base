@@ -15,6 +15,6 @@ if(TARGET Qt6::Xml)
     qt_internal_add_example(masterdetail)
 endif()
 
-if(NOT CMAKE_CROSSCOMPILING)
+if(QT_FORCE_BUILD_TOOLS OR NOT CMAKE_CROSSCOMPILING)
     qt_internal_add_example(sqlbrowser)
 endif()
