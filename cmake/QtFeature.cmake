@@ -80,45 +80,25 @@ function(qt_evaluate_to_boolean expressionVar)
     endif()
 endfunction()
 
-function(qt_evaluate_config_expression resultVar)
+function(qt_internal_evaluate_config_expression resultVar outIdx startIdx)
     set(result "")
-    set(nestingLevel 0)
-    set(skipNext OFF)
     set(expression "${ARGN}")
     list(LENGTH expression length)
 
+    math(EXPR memberIdx "${startIdx} - 1")
     math(EXPR length "${length}-1")
-    foreach(memberIdx RANGE ${length})
-        if(${skipNext})
-            set(skipNext OFF)
-            continue()
-        endif()
-
+    while(memberIdx LESS ${length})
+        math(EXPR memberIdx "${memberIdx} + 1")
         list(GET expression ${memberIdx} member)
 
         if("${member}" STREQUAL "(")
-            if(${nestingLevel} GREATER 0)
-                list(APPEND result ${member})
-            endif()
-            math(EXPR nestingLevel "${nestingLevel} + 1")
-            continue()
+            math(EXPR memberIdx "${memberIdx} + 1")
+            qt_internal_evaluate_config_expression(sub_result memberIdx ${memberIdx} ${expression})
+            list(APPEND result ${sub_result})
         elseif("${member}" STREQUAL ")")
-            math(EXPR nestingLevel "${nestingLevel} - 1")
-            if(nestingLevel LESS 0)
-                break()
-            endif()
-            if(${nestingLevel} EQUAL 0)
-                qt_evaluate_config_expression(result ${result})
-            else()
-                list(APPEND result ${member})
-            endif()
-            continue()
-        elseif(${nestingLevel} GREATER 0)
-            list(APPEND result ${member})
-            continue()
+            break()
         elseif("${member}" STREQUAL "NOT")
             list(APPEND result ${member})
-            continue()
         elseif("${member}" STREQUAL "AND")
             qt_evaluate_to_boolean(result)
             if(NOT ${result})
@@ -143,7 +123,7 @@ function(qt_evaluate_config_expression resultVar)
             set(lhs "${${lhs}}")
 
             math(EXPR rhsIndex "${memberIdx}+1")
-            set(skipNext ON)
+            set(memberIdx ${rhsIndex})
 
             list(GET expression ${rhsIndex} rhs)
             # We can't pass through an empty string with double quotes through various
@@ -163,7 +143,7 @@ function(qt_evaluate_config_expression resultVar)
 
             list(APPEND result ${member})
         endif()
-    endforeach()
+    endwhile()
     # The 'TARGET Gui' case is handled by qt_evaluate_to_boolean, by passing those tokens verbatim
     # to if().
 
@@ -173,7 +153,32 @@ function(qt_evaluate_config_expression resultVar)
         qt_evaluate_to_boolean(result)
     endif()
 
+    # When in recursion, we must skip to the next closing parenthesis on nesting level 0. The outIdx
+    # must point to the matching closing parenthesis, and that's not the case if we're early exiting
+    # in AND/OR.
+    if(startIdx GREATER 0)
+        set(nestingLevel 1)
+        while(TRUE)
+            list(GET expression ${memberIdx} member)
+            if("${member}" STREQUAL ")")
+                math(EXPR nestingLevel "${nestingLevel} - 1")
+                if(nestingLevel EQUAL 0)
+                    break()
+                endif()
+            elseif("${member}" STREQUAL "(")
+                math(EXPR nestingLevel "${nestingLevel} + 1")
+            endif()
+            math(EXPR memberIdx "${memberIdx} + 1")
+        endwhile()
+    endif()
+
+    set(${outIdx} ${memberIdx} PARENT_SCOPE)
     set(${resultVar} ${result} PARENT_SCOPE)
+endfunction()
+
+function(qt_evaluate_config_expression resultVar)
+    qt_internal_evaluate_config_expression(result unused 0 ${ARGN})
+    set("${resultVar}" "${result}" PARENT_SCOPE)
 endfunction()
 
 function(_qt_internal_get_feature_condition_keywords out_var)
@@ -922,6 +927,11 @@ macro(qt_internal_compute_features_from_possible_inputs)
     qt_internal_compute_feature_value_from_possible_input(no_prefix)
 endmacro()
 
+# Builds either a string of source code or a whole project to determine whether the build is
+# successful.
+#
+# Sets a TEST_${name}_OUTPUT variable with the build output, to the scope of the calling function.
+# Sets a TEST_${name} cache variable to either TRUE or FALSE if the build is successful or not.
 function(qt_config_compile_test name)
     if(DEFINED "TEST_${name}")
         return()
@@ -1044,8 +1054,11 @@ function(qt_config_compile_test name)
             get_filename_component(arg_PROJECT_PATH "${arg_PROJECT_PATH}" REALPATH)
         endif()
 
-        try_compile(HAVE_${name} "${CMAKE_BINARY_DIR}/config.tests/${name}" "${arg_PROJECT_PATH}"
-                    "${name}" CMAKE_FLAGS ${flags} ${arg_CMAKE_FLAGS})
+        try_compile(
+            HAVE_${name} "${CMAKE_BINARY_DIR}/config.tests/${name}" "${arg_PROJECT_PATH}" "${name}"
+            CMAKE_FLAGS ${flags} ${arg_CMAKE_FLAGS}
+            OUTPUT_VARIABLE try_compile_output
+        )
 
         if(${HAVE_${name}})
             set(status_label "Success")
@@ -1111,7 +1124,19 @@ function(qt_config_compile_test name)
 
             set(_save_CMAKE_REQUIRED_LIBRARIES "${CMAKE_REQUIRED_LIBRARIES}")
             set(CMAKE_REQUIRED_LIBRARIES "${arg_LIBRARIES}")
-            check_cxx_source_compiles("${arg_UNPARSED_ARGUMENTS} ${arg_CODE}" HAVE_${name})
+
+            # OUTPUT_VARIABLE is an internal undocumented variable of check_cxx_source_compiles
+            # since 3.23. Allow an opt out in case this breaks in the future.
+            set(try_compile_output "")
+            set(output_var "")
+            if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.23"
+                    AND NOT QT_INTERNAL_NO_TRY_COMPILE_OUTPUT_VARIABLE)
+                set(output_var OUTPUT_VARIABLE try_compile_output)
+            endif()
+
+            check_cxx_source_compiles(
+                "${arg_UNPARSED_ARGUMENTS} ${arg_CODE}" HAVE_${name} ${output_var}
+            )
             set(CMAKE_REQUIRED_LIBRARIES "${_save_CMAKE_REQUIRED_LIBRARIES}")
 
             set(CMAKE_C_STANDARD "${_save_CMAKE_C_STANDARD}")
@@ -1123,6 +1148,7 @@ function(qt_config_compile_test name)
         endif()
     endif()
 
+    set(TEST_${name}_OUTPUT "${try_compile_output}" PARENT_SCOPE)
     set(TEST_${name} "${HAVE_${name}}" CACHE INTERNAL "${arg_LABEL}")
 endfunction()
 

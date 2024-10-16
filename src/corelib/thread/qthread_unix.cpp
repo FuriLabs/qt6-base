@@ -20,7 +20,9 @@
 #  endif
 #endif
 
-#include <private/qeventdispatcher_unix_p.h>
+#if !defined(Q_OS_WASM)
+#  include <private/qeventdispatcher_unix_p.h>
+#endif
 
 #include "qthreadstorage.h"
 
@@ -360,7 +362,7 @@ void QThreadPrivate::finish(void *arg)
 
         d->running = false;
         d->finished = true;
-        d->interruptionRequested = false;
+        d->interruptionRequested.store(false, std::memory_order_relaxed);
 
         d->isInFinish = false;
         d->data->threadId.storeRelaxed(nullptr);
@@ -637,7 +639,7 @@ void QThread::start(Priority priority)
     d->finished = false;
     d->returnCode = 0;
     d->exited = false;
-    d->interruptionRequested = false;
+    d->interruptionRequested.store(false, std::memory_order_relaxed);
 
     pthread_attr_t attr;
     pthread_attr_init(&attr);

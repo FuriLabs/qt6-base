@@ -29,6 +29,11 @@
 
 QT_BEGIN_NAMESPACE
 
+enum {
+    defaultWindowWidth = 160,
+    defaultWindowHeight = 160
+};
+
 QIOSWindow::QIOSWindow(QWindow *window, WId nativeHandle)
     : QPlatformWindow(window)
     , m_windowLevel(0)
@@ -50,16 +55,16 @@ QIOSWindow::QIOSWindow(QWindow *window, WId nativeHandle)
 
     connect(qGuiApp, &QGuiApplication::applicationStateChanged, this, &QIOSWindow::applicationStateChanged);
 
+    // Always set parent, even if we don't have a parent window,
+    // as we use setParent to reparent top levels into our desktop
+    // manager view.
     setParent(QPlatformWindow::parent());
 
     if (!isForeignWindow()) {
         // Resolve default window geometry in case it was not set before creating the
-        // platform window. This picks up eg. minimum-size if set, and defaults to
-        // the "maxmized" geometry (even though we're not in that window state).
-        // FIXME: Detect if we apply a maximized geometry and send a window state
-        // change event in that case.
+        // platform window. This picks up eg. minimum-size if set.
         m_normalGeometry = initialGeometry(window, QPlatformWindow::geometry(),
-            screen()->availableGeometry().width(), screen()->availableGeometry().height());
+            defaultWindowWidth, defaultWindowHeight);
 
         setWindowState(window->windowStates());
         setOpacity(window->opacity());
@@ -90,11 +95,12 @@ QIOSWindow::~QIOSWindow()
 
     clearAccessibleCache();
 
-    quiview_cast(m_view).platformWindow = 0;
+    quiview_cast(m_view).platformWindow = nullptr;
 
-    // Remove from superview only if we have a Qt window parent,
-    // as we don't want to affect window container foreign windows.
-    if (QPlatformWindow::parent())
+    // Remove from superview, unless we're a foreign window without a
+    // Qt window parent, in which case the foreign window is used as
+    // a window container for a Qt UI hierarchy inside a native UI.
+    if (!(isForeignWindow() && !QPlatformWindow::parent()))
         [m_view removeFromSuperview];
 
     [m_view release];
@@ -224,7 +230,7 @@ void QIOSWindow::applyGeometry(const QRect &rect)
 
 QMargins QIOSWindow::safeAreaMargins() const
 {
-    UIEdgeInsets safeAreaInsets = m_view.qt_safeAreaInsets;
+    UIEdgeInsets safeAreaInsets = m_view.safeAreaInsets;
     return QMargins(safeAreaInsets.left, safeAreaInsets.top,
         safeAreaInsets.right, safeAreaInsets.bottom);
 }
@@ -248,22 +254,32 @@ void QIOSWindow::setWindowState(Qt::WindowStates state)
     if (state & Qt::WindowMinimized) {
         applyGeometry(QRect());
     } else if (state & (Qt::WindowFullScreen | Qt::WindowMaximized)) {
-        // When an application is in split-view mode, the UIScreen still has the
-        // same geometry, but the UIWindow is resized to the area reserved for the
-        // application. We use this to constrain the geometry used when applying the
-        // fullscreen or maximized window states. Note that we do not do this
-        // in applyGeometry(), as we don't want to artificially limit window
-        // placement "outside" of the screen bounds if that's what the user wants.
-
         QRect uiWindowBounds = QRectF::fromCGRect(m_view.window.bounds).toRect();
-        QRect fullscreenGeometry = screen()->geometry().intersected(uiWindowBounds);
-        QRect maximizedGeometry = window()->flags() & Qt::MaximizeUsingFullscreenGeometryHint ?
-            fullscreenGeometry : screen()->availableGeometry().intersected(uiWindowBounds);
+        if (NSProcessInfo.processInfo.iOSAppOnMac) {
+            // iOS apps running as "Designed for iPad" on macOS do not match
+            // our current window management implementation where a single
+            // UIWindow is tied to a single screen. And even if we're on the
+            // right screen, the UIScreen does not account for the 77% scale
+            // of the UIUserInterfaceIdiomPad environment, so we can't use
+            // it to clamp the window geometry. Instead just use the UIWindow
+            // directly, which represents our "screen".
+            applyGeometry(uiWindowBounds);
+        } else {
+            // When an application is in split-view mode, the UIScreen still has the
+            // same geometry, but the UIWindow is resized to the area reserved for the
+            // application. We use this to constrain the geometry used when applying the
+            // fullscreen or maximized window states. Note that we do not do this
+            // in applyGeometry(), as we don't want to artificially limit window
+            // placement "outside" of the screen bounds if that's what the user wants.
+            QRect fullscreenGeometry = screen()->geometry().intersected(uiWindowBounds);
+            QRect maximizedGeometry = window()->flags() & Qt::MaximizeUsingFullscreenGeometryHint ?
+                fullscreenGeometry : screen()->availableGeometry().intersected(uiWindowBounds);
 
-        if (state & Qt::WindowFullScreen)
-            applyGeometry(fullscreenGeometry);
-        else
-            applyGeometry(maximizedGeometry);
+            if (state & Qt::WindowFullScreen)
+                applyGeometry(fullscreenGeometry);
+            else
+                applyGeometry(maximizedGeometry);
+        }
     } else {
         applyGeometry(m_normalGeometry);
     }
@@ -453,6 +469,11 @@ QUIView *quiview_cast(UIView *view)
 bool QIOSWindow::isForeignWindow() const
 {
     return ![m_view isKindOfClass:QUIView.class];
+}
+
+UIView *QIOSWindow::view() const
+{
+    return m_view;
 }
 
 QT_END_NAMESPACE

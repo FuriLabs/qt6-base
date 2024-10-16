@@ -311,12 +311,12 @@
 
     SuperH is bi-endian, use endianness auto-detection implemented below.
 */
-#elif defined(__sh__)
-#  define Q_PROCESSOR_SH
-#  if defined(__sh4a__)
-#    define Q_PROCESSOR_SH_4A
-#  endif
-#  define Q_BYTE_ORDER Q_LITTLE_ENDIAN
+// #elif defined(__sh__)
+// #  define Q_PROCESSOR_SH
+// #  if defined(__sh4a__)
+// #    define Q_PROCESSOR_SH_4A
+// #  endif
+// Q_BYTE_ORDER not defined, use endianness auto-detection
 
 /*
     SPARC family, optional revision: V9

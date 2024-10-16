@@ -8,21 +8,9 @@
 
 #include <emscripten/html5.h>
 
-namespace {
+using namespace emscripten;
 
-QWasmWindowStack::PositionPreference positionPreferenceFromWindowFlags(Qt::WindowFlags flags)
-{
-    if (flags.testFlag(Qt::WindowStaysOnTopHint))
-        return QWasmWindowStack::PositionPreference::StayOnTop;
-    if (flags.testFlag(Qt::WindowStaysOnBottomHint))
-        return QWasmWindowStack::PositionPreference::StayOnBottom;
-    return QWasmWindowStack::PositionPreference::Regular;
-}
-
-} // namespace
-
-QWasmCompositor::QWasmCompositor(QWasmScreen *screen)
-    : QObject(screen), m_windowStack(std::bind(&QWasmCompositor::onTopWindowChanged, this))
+QWasmCompositor::QWasmCompositor(QWasmScreen *screen) : QObject(screen)
 {
     QWindowSystemInterface::setSynchronousWindowSystemEvents(true);
 }
@@ -37,80 +25,20 @@ QWasmCompositor::~QWasmCompositor()
     m_isEnabled = false; // prevent frame() from creating a new m_context
 }
 
-void QWasmCompositor::addWindow(QWasmWindow *window)
+void QWasmCompositor::onWindowTreeChanged(QWasmWindowTreeNodeChangeType changeType,
+                                          QWasmWindow *window)
 {
-    if (m_windowStack.empty())
-        window->window()->setFlag(Qt::WindowStaysOnBottomHint);
-    m_windowStack.pushWindow(window, positionPreferenceFromWindowFlags(window->window()->flags()));
-    window->requestActivateWindow();
-    setActive(window);
-
-    updateEnabledState();
+    auto allWindows = screen()->allWindows();
+    setEnabled(std::any_of(allWindows.begin(), allWindows.end(), [](QWasmWindow *element) {
+        return !element->context2d().isUndefined();
+    }));
+    if (changeType == QWasmWindowTreeNodeChangeType::NodeRemoval)
+        m_requestUpdateWindows.remove(window);
 }
 
-void QWasmCompositor::removeWindow(QWasmWindow *window)
+void QWasmCompositor::setEnabled(bool enabled)
 {
-    m_requestUpdateWindows.remove(window);
-    m_windowStack.removeWindow(window);
-    if (m_windowStack.topWindow()) {
-        m_windowStack.topWindow()->requestActivateWindow();
-        setActive(m_windowStack.topWindow());
-    }
-
-    updateEnabledState();
-}
-
-void QWasmCompositor::setActive(QWasmWindow *window)
-{
-    m_activeWindow = window;
-
-    auto it = m_windowStack.begin();
-    if (it == m_windowStack.end()) {
-        return;
-    }
-    for (; it != m_windowStack.end(); ++it) {
-        (*it)->onActivationChanged(*it == m_activeWindow);
-    }
-}
-
-void QWasmCompositor::updateEnabledState()
-{
-    m_isEnabled = std::any_of(m_windowStack.begin(), m_windowStack.end(), [](QWasmWindow *window) {
-        return !window->context2d().isUndefined();
-    });
-}
-
-void QWasmCompositor::raise(QWasmWindow *window)
-{
-    m_windowStack.raise(window);
-}
-
-void QWasmCompositor::lower(QWasmWindow *window)
-{
-    m_windowStack.lower(window);
-}
-
-void QWasmCompositor::windowPositionPreferenceChanged(QWasmWindow *window, Qt::WindowFlags flags)
-{
-    m_windowStack.windowPositionPreferenceChanged(window, positionPreferenceFromWindowFlags(flags));
-}
-
-QWindow *QWasmCompositor::windowAt(QPoint targetPointInScreenCoords, int padding) const
-{
-    const auto found = std::find_if(
-            m_windowStack.begin(), m_windowStack.end(),
-            [padding, &targetPointInScreenCoords](const QWasmWindow *window) {
-                const QRect geometry = window->windowFrameGeometry().adjusted(-padding, -padding,
-                                                                              padding, padding);
-
-                return window->isVisible() && geometry.contains(targetPointInScreenCoords);
-            });
-    return found != m_windowStack.end() ? (*found)->window() : nullptr;
-}
-
-QWindow *QWasmCompositor::keyWindow() const
-{
-    return m_activeWindow ? m_activeWindow->window() : nullptr;
+    m_isEnabled = enabled;
 }
 
 void QWasmCompositor::requestUpdateWindow(QWasmWindow *window, UpdateRequestDeliveryType updateType)
@@ -159,7 +87,6 @@ void QWasmCompositor::deliverUpdateRequests()
     // update type: QWindow subclasses expect that requested and delivered updateRequests matches
     // exactly.
     m_inDeliverUpdateRequest = true;
-
     for (auto it = requestUpdateWindows.constBegin(); it != requestUpdateWindows.constEnd(); ++it) {
         auto *window = it.key();
         UpdateRequestDeliveryType updateType = it.value();
@@ -172,11 +99,16 @@ void QWasmCompositor::deliverUpdateRequests()
 
 void QWasmCompositor::deliverUpdateRequest(QWasmWindow *window, UpdateRequestDeliveryType updateType)
 {
+    QWindow *qwindow = window->window();
+
+    // Make sure the DPR value for the window is up to date on expose/repaint.
+    // FIXME: listen to native DPR change events instead, if/when available.
+    QWindowSystemInterface::handleWindowDevicePixelRatioChanged(qwindow);
+
     // Update by deliverUpdateRequest and expose event according to requested update
     // type. If the window has not yet been exposed then we must expose it first regardless
     // of update type. The deliverUpdateRequest must still be sent in this case in order
     // to maintain correct window update state.
-    QWindow *qwindow = window->window();
     QRect updateRect(QPoint(0, 0), qwindow->geometry().size());
     if (updateType == UpdateRequestDelivery) {
         if (qwindow->isExposed() == false)
@@ -200,15 +132,8 @@ void QWasmCompositor::frame(const QList<QWasmWindow *> &windows)
     if (!m_isEnabled || !screen())
         return;
 
-    std::for_each(windows.begin(), windows.end(), [](QWasmWindow *window) { window->paint(); });
-}
-
-void QWasmCompositor::onTopWindowChanged()
-{
-    constexpr int zOrderForElementInFrontOfScreen = 3;
-    int z = zOrderForElementInFrontOfScreen;
-    std::for_each(m_windowStack.rbegin(), m_windowStack.rend(),
-                  [&z](QWasmWindow *window) { window->setZOrder(z++); });
+    for (QWasmWindow *window : windows)
+        window->paint();
 }
 
 QWasmScreen *QWasmCompositor::screen()

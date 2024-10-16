@@ -77,12 +77,12 @@ __extension__ typedef __uint128_t quint128;
 #  ifdef __cplusplus /* need to avoid c-style-casts in C++ mode */
 #    define QT_C_STYLE_CAST(type, x) static_cast<type>(x)
 #  else /* but C doesn't have constructor-style casts */
-#    define QT_C_STYLE_CAST(type, x) ((type)x)
+#    define QT_C_STYLE_CAST(type, x) ((type)(x))
 #  endif
 #  ifndef Q_UINT128_MAX /* allow qcompilerdetection.h/user override */
 #    define Q_UINT128_MAX QT_C_STYLE_CAST(quint128, -1)
 #  endif
-#  define Q_INT128_MAX QT_C_STYLE_CAST(qint128, (Q_UINT128_MAX / 2))
+#  define Q_INT128_MAX QT_C_STYLE_CAST(qint128, Q_UINT128_MAX / 2)
 #  define Q_INT128_MIN (-Q_INT128_MAX - 1)
 
 #  ifdef __cplusplus
@@ -263,12 +263,13 @@ using NativeFloat16Type = std::float16_t;
 // disabled due to https://github.com/llvm/llvm-project/issues/56963
 #  define QFLOAT16_IS_NATIVE        1
 using NativeFloat16Type = decltype(__FLT16_MAX__);
-#elif defined(Q_CC_GNU_ONLY) && defined(__FLT16_MAX__) && defined(__ARM_FP16_FORMAT_IEEE)
+#elif defined(Q_CC_GNU_ONLY) && defined(__FLT16_MAX__)
 #  define QFLOAT16_IS_NATIVE        1
+#  ifdef __ARM_FP16_FORMAT_IEEE
 using NativeFloat16Type = __fp16;
-#elif defined(Q_CC_GNU_ONLY) && defined(__FLT16_MAX__) && defined(__SSE2__)
-#  define QFLOAT16_IS_NATIVE        1
+#  else
 using NativeFloat16Type = _Float16;
+#  endif
 #else
 #  define QFLOAT16_IS_NATIVE        0
 using NativeFloat16Type = void;

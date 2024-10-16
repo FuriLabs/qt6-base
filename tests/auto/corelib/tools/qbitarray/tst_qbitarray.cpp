@@ -1,11 +1,14 @@
 // Copyright (C) 2016 The Qt Company Ltd.
-// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only WITH Qt-GPL-exception-1.0
+// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
 
 #include <QTest>
 #include <QtCore/QBuffer>
 #include <QtCore/QDataStream>
 
 #include "qbitarray.h"
+
+#include <QtCore/qelapsedtimer.h>
+#include <QtCore/qscopeguard.h>
 
 /**
  * Helper function to initialize a bitarray from a string
@@ -26,10 +29,17 @@ static QBitArray QStringToQBitArray(const QString &str)
     return ba;
 }
 
+static QBitArray detached(QBitArray a)
+{
+    a.detach();
+    return a;
+}
+
 class tst_QBitArray : public QObject
 {
     Q_OBJECT
 private slots:
+    void canHandleIntMaxBits();
     void size_data();
     void size();
     void countBits_data();
@@ -43,12 +53,21 @@ private slots:
     // operator &=
     void operator_andeq_data();
     void operator_andeq();
+    // operator &
+    void operator_and_data() { operator_andeq_data(); }
+    void operator_and();
     // operator |=
     void operator_oreq_data();
     void operator_oreq();
+    // operator |
+    void operator_or_data() { operator_oreq_data(); }
+    void operator_or();
     // operator ^=
     void operator_xoreq_data();
     void operator_xoreq();
+    // operator ^
+    void operator_xor_data() { operator_xoreq_data(); }
+    void operator_xor();
     // operator ~
     void operator_neg_data();
     void operator_neg();
@@ -65,6 +84,54 @@ private slots:
     void toUInt32_data();
     void toUInt32();
 };
+
+void tst_QBitArray::canHandleIntMaxBits()
+{
+    QElapsedTimer timer;
+    timer.start();
+    const auto print = qScopeGuard([&] {
+        qDebug("Function took %lldms", qlonglong(timer.elapsed()));
+    });
+
+    try {
+        constexpr qsizetype Size1 = sizeof(void*) > sizeof(int) ? qsizetype(INT_MAX) + 2 :
+                                                                  INT_MAX - 2;
+        constexpr qsizetype Size2 = Size1 + 2;
+
+        QBitArray ba(Size1, true);
+        QCOMPARE(ba.size(), Size1);
+        QCOMPARE(ba.at(Size1 - 1), true);
+
+        ba.resize(Size2);
+        QCOMPARE(ba.size(), Size2);
+        QCOMPARE(ba.at(Size1 - 1), true);
+        QCOMPARE(ba.at(Size1),     false);
+        QCOMPARE(ba.at(Size2 - 1), false);
+
+        QByteArray serialized;
+        if constexpr (sizeof(void*) > sizeof(int)) {
+            QDataStream ds(&serialized, QIODevice::WriteOnly);
+            ds.setVersion(QDataStream::Qt_5_15);
+            ds << ba;
+            QCOMPARE(ds.status(), QDataStream::Status::SizeLimitExceeded);
+            serialized.clear();
+        }
+        {
+            QDataStream ds(&serialized, QIODevice::WriteOnly);
+            ds << ba;
+            QCOMPARE(ds.status(), QDataStream::Status::Ok);
+        }
+        {
+            QDataStream ds(serialized);
+            QBitArray ba2;
+            ds >> ba2;
+            QCOMPARE(ds.status(), QDataStream::Status::Ok);
+            QCOMPARE(ba, ba2);
+        }
+    } catch (const std::bad_alloc &) {
+        QSKIP("Failed to allocate sufficient memory");
+    }
+}
 
 void tst_QBitArray::size_data()
 {
@@ -301,9 +368,64 @@ void tst_QBitArray::operator_andeq()
     QFETCH(QBitArray, input2);
     QFETCH(QBitArray, res);
 
-    input1&=input2;
+    QBitArray result = input1;
+    result &= input2;
+    QCOMPARE(result, res);
+    result = input1;
+    result &= std::move(input2);
+    QCOMPARE(result, res);
+    result = input1;
+    result &= detached(input2);
+    QCOMPARE(result, res);
 
-    QCOMPARE(input1, res);
+    // operation is commutative
+    result = input2;
+    result &= input1;
+    QCOMPARE(result, res);
+    result = input2;
+    result &= std::move(input1);
+    QCOMPARE(result, res);
+    result = input2;
+    result &= detached(input1);
+    QCOMPARE(result, res);
+
+    // operation is idempotent
+    result &= result;
+    QCOMPARE(result, res);
+    result &= std::move(result);
+    QCOMPARE(result, res);
+    result &= detached(result);
+    QCOMPARE(result, res);
+}
+
+void tst_QBitArray::operator_and()
+{
+    QFETCH(QBitArray, input1);
+    QFETCH(QBitArray, input2);
+    QFETCH(QBitArray, res);
+
+    QBitArray result = input1 & input2;
+    QCOMPARE(result, res);
+    result = input1 & QBitArray(input2);
+    QCOMPARE(result, res);
+    result = input1 & detached(input2);
+    QCOMPARE(result, res);
+
+    // operation is commutative
+    result = input2 & input1;
+    QCOMPARE(result, res);
+    result = input2 & QBitArray(input1);
+    QCOMPARE(result, res);
+    result = input2 & detached(input1);
+    QCOMPARE(result, res);
+
+    // operation is idempotent
+    result = result & result;
+    QCOMPARE(result, res);
+    result = result & QBitArray(result);
+    QCOMPARE(result, res);
+    result = result & detached(result);
+    QCOMPARE(result, res);
 }
 
 void tst_QBitArray::operator_oreq_data()
@@ -352,9 +474,64 @@ void tst_QBitArray::operator_oreq()
     QFETCH(QBitArray, input2);
     QFETCH(QBitArray, res);
 
-    input1|=input2;
+    QBitArray result = input1;
+    result |= input2;
+    QCOMPARE(result, res);
+    result = input1;
+    result |= QBitArray(input2);
+    QCOMPARE(result, res);
+    result = input1;
+    result |= detached(input2);
+    QCOMPARE(result, res);
 
-    QCOMPARE(input1, res);
+    // operation is commutative
+    result = input2;
+    result |= input1;
+    QCOMPARE(result, res);
+    result = input2;
+    result |= QBitArray(input1);
+    QCOMPARE(result, res);
+    result = input2;
+    result |= detached(input1);
+    QCOMPARE(result, res);
+
+    // operation is idempotent
+    result |= result;
+    QCOMPARE(result, res);
+    result |= QBitArray(result);
+    QCOMPARE(result, res);
+    result |= detached(result);
+    QCOMPARE(result, res);
+}
+
+void tst_QBitArray::operator_or()
+{
+    QFETCH(QBitArray, input1);
+    QFETCH(QBitArray, input2);
+    QFETCH(QBitArray, res);
+
+    QBitArray result = input1 | input2;
+    QCOMPARE(result, res);
+    result = input1 | QBitArray(input2);
+    QCOMPARE(result, res);
+    result = input1 | detached(input2);
+    QCOMPARE(result, res);
+
+    // operation is commutative
+    result = input2 | input1;
+    QCOMPARE(result, res);
+    result = input2 | QBitArray(input1);
+    QCOMPARE(result, res);
+    result = input2 | detached(input1);
+    QCOMPARE(result, res);
+
+    // operation is idempotent
+    result = result | result;
+    QCOMPARE(result, res);
+    result = result | QBitArray(result);
+    QCOMPARE(result, res);
+    result = result | detached(result);
+    QCOMPARE(result, res);
 }
 
 void tst_QBitArray::operator_xoreq_data()
@@ -401,11 +578,102 @@ void tst_QBitArray::operator_xoreq()
     QFETCH(QBitArray, input2);
     QFETCH(QBitArray, res);
 
-    input1^=input2;
+    QBitArray result = input1;
+    result ^= input2;
+    QCOMPARE(result, res);
+    result = input1;
+    result ^= QBitArray(input2);
+    QCOMPARE(result, res);
+    result = input1;
+    result ^= detached(input2);
+    QCOMPARE(result, res);
 
-    QCOMPARE(input1, res);
+    // operation is commutative
+    result = input2;
+    result ^= input1;
+    QCOMPARE(result, res);
+    result = input2;
+    result ^= QBitArray(input1);
+    QCOMPARE(result, res);
+    result = input2;
+    result ^= detached(input1);
+    QCOMPARE(result, res);
+
+    // XORing with oneself is nilpotent
+    result = input1;
+    result ^= input1;
+    QCOMPARE(result, QBitArray(input1.size()));
+    result = input1;
+    result ^= QBitArray(result);
+    QCOMPARE(result, QBitArray(input1.size()));
+    result = input1;
+    result ^= detached(result);
+    QCOMPARE(result, QBitArray(input1.size()));
+
+    result = input2;
+    result ^= input2;
+    QCOMPARE(result, QBitArray(input2.size()));
+    result = input2;
+    result ^= QBitArray(input2);
+    QCOMPARE(result, QBitArray(input2.size()));
+    result = input2;
+    result ^= detached(input2);
+    QCOMPARE(result, QBitArray(input2.size()));
+
+    result = res;
+    result ^= res;
+    QCOMPARE(result, QBitArray(res.size()));
+    result = res;
+    result ^= QBitArray(res);
+    QCOMPARE(result, QBitArray(res.size()));
+    result = res;
+    result ^= detached(res);
+    QCOMPARE(result, QBitArray(res.size()));
 }
 
+void tst_QBitArray::operator_xor()
+{
+    QFETCH(QBitArray, input1);
+    QFETCH(QBitArray, input2);
+    QFETCH(QBitArray, res);
+
+    QBitArray result = input1 ^ input2;
+    QCOMPARE(result, res);
+    result = input1 ^ QBitArray(input2);
+    QCOMPARE(result, res);
+    result = input1 ^ detached(input2);
+    QCOMPARE(result, res);
+
+    // operation is commutative
+    result = input2 ^ input1;
+    QCOMPARE(result, res);
+    result = input2 ^ QBitArray(input1);
+    QCOMPARE(result, res);
+    result = input2 ^ detached(input1);
+    QCOMPARE(result, res);
+
+    // XORing with oneself is nilpotent
+    result = input1 ^ input1;
+    QCOMPARE(result, QBitArray(input1.size()));
+    result = input1 ^ QBitArray(input1);
+    QCOMPARE(result, QBitArray(input1.size()));
+    result = input1 ^ detached(input1);
+    QCOMPARE(result, QBitArray(input1.size()));
+
+    result = input2 ^ input2;
+    QCOMPARE(result, QBitArray(input2.size()));
+    result = input2 ^ QBitArray(input2);
+    QCOMPARE(result, QBitArray(input2.size()));
+    result = input2 ^ detached(input2);
+    QCOMPARE(result, QBitArray(input2.size()));
+
+    result = res ^ res;
+    QCOMPARE(result, QBitArray(res.size()));
+    result = res ^ QBitArray(res);
+    QCOMPARE(result, QBitArray(res.size()));
+    result = res ^ detached(res);
+    QCOMPARE(result, QBitArray(res.size()));
+}
 
 void tst_QBitArray::operator_neg_data()
 {
@@ -454,6 +722,7 @@ void tst_QBitArray::operator_neg()
     input = ~input;
 
     QCOMPARE(input, res);
+    QCOMPARE(~~input, res);     // performs two in-place negations
 }
 
 void tst_QBitArray::datastream_data()

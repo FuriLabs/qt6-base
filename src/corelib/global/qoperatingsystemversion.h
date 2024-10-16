@@ -111,6 +111,8 @@ class QOperatingSystemVersionUnexported : public QOperatingSystemVersionBase
 {
 public:
     using QOperatingSystemVersionBase::QOperatingSystemVersionBase;
+    constexpr QOperatingSystemVersionUnexported(QOperatingSystemVersionBase other) noexcept
+        : QOperatingSystemVersionBase(other) {}
 #else
 class QOperatingSystemVersion : public QOperatingSystemVersionBase
 {
@@ -119,6 +121,8 @@ class QOperatingSystemVersion : public QOperatingSystemVersionBase
 
     // ### Qt7: Regroup with the rest below
     static constexpr QOperatingSystemVersionBase MacOSSonoma { QOperatingSystemVersionBase::MacOS, 14, 0 };
+    static constexpr QOperatingSystemVersionBase Android14 { QOperatingSystemVersionBase::Android, 14, 0 };
+    static constexpr QOperatingSystemVersionBase Windows11_23H2 { QOperatingSystemVersionBase::Windows, 10, 0, 22631 };
 
 #if QT_VERSION < QT_VERSION_CHECK(7, 0, 0) && !defined(QT_BOOTSTRAPPED) && !defined(Q_QDOC)
 };
@@ -224,7 +228,7 @@ public:
     static constexpr QOperatingSystemVersionBase MacOSVentura { QOperatingSystemVersionBase::MacOS, 13, 0 };
 
     constexpr QOperatingSystemVersion(const QOperatingSystemVersionBase &osversion)
-        : QOperatingSystemVersionUnexported(static_cast<const QOperatingSystemVersionUnexported &>(osversion)) {}
+        : QOperatingSystemVersionUnexported(osversion) {}
 
     constexpr QOperatingSystemVersion(OSType osType, int vmajor, int vminor = -1, int vmicro = -1)
         : QOperatingSystemVersionUnexported(QOperatingSystemVersionBase::OSType(osType), vmajor, vminor,
@@ -232,13 +236,16 @@ public:
     {
     }
 
+#if QT_CORE_REMOVED_SINCE(6, 3) || defined(Q_QDOC)
     static QOperatingSystemVersion current();
+#endif
 
     static constexpr OSType currentType()
     {
         return OSType(QOperatingSystemVersionBase::currentType());
     }
 
+#if QT_CORE_REMOVED_SINCE(6, 3) || defined(Q_QDOC)
     QVersionNumber version() const { return QOperatingSystemVersionBase::version(); }
 
     constexpr int majorVersion() const { return QOperatingSystemVersionBase::majorVersion(); }
@@ -247,10 +254,13 @@ public:
 
     constexpr int segmentCount() const
     { return QOperatingSystemVersionBase::segmentCount(); }
+#endif // QT_CORE_REMOVED_SINCE(6, 3)
 
     constexpr OSType type() const { return OSType(QOperatingSystemVersionBase::type()); }
     QT7_ONLY(Q_CORE_EXPORT) bool isAnyOfType(std::initializer_list<OSType> types) const;
-    QT7_ONLY(Q_CORE_EXPORT) QString name() const;
+#if QT_CORE_REMOVED_SINCE(6, 3) || defined(Q_QDOC)
+    QString name() const;
+#endif
 
 private:
     QOperatingSystemVersion() = default;

@@ -42,12 +42,15 @@
 #include <qpa/qplatformbackingstore.h>
 #include <QtGui/private/qbackingstorerhisupport_p.h>
 
+#include <QtCore/qpointer.h>
+
 #include <vector>
 #include <memory>
 
 QT_BEGIN_NAMESPACE
 
 Q_DECLARE_LOGGING_CATEGORY(lcWidgetPainting);
+Q_DECLARE_LOGGING_CATEGORY(lcWidgetShowHide);
 
 // Extra QWidget data
 //  - to minimize memory usage for members that are seldom used.
@@ -72,10 +75,6 @@ class QUpdateLaterEvent : public QEvent
 public:
     explicit QUpdateLaterEvent(const QRegion& paintRegion)
         : QEvent(UpdateLater), m_region(paintRegion)
-    {
-    }
-
-    ~QUpdateLaterEvent()
     {
     }
 
@@ -221,6 +220,8 @@ public:
     QPainter *sharedPainter() const;
     void setSharedPainter(QPainter *painter);
     QWidgetRepaintManager *maybeRepaintManager() const;
+
+    QRhi *rhi() const;
 
     enum class WindowHandleMode {
         Direct,
@@ -369,6 +370,8 @@ public:
     void showChildren(bool spontaneous);
     void hideChildren(bool spontaneous);
     void setParent_sys(QWidget *parent, Qt::WindowFlags);
+    void reparentWidgetWindows(QWidget *parentWithWindow, Qt::WindowFlags windowFlags = {});
+    void reparentWidgetWindowChildren(QWidget *parentWithWindow);
     void scroll_sys(int dx, int dy);
     void scroll_sys(int dx, int dy, const QRect &r);
     void deactivateWidgetCleanup();
@@ -381,6 +384,7 @@ public:
     void show_sys();
     void hide_sys();
     void hide_helper();
+    bool isExplicitlyHidden() const;
     void _q_showIfNotHidden();
     void setVisible(bool);
 
@@ -634,6 +638,8 @@ public:
     static void setWidgetParentHelper(QObject *widgetAsObject, QObject *newParent);
 
     std::string flagsForDumping() const override;
+
+    QWidget *closestParentWidgetWithWindowHandle() const;
 
     // Variables.
     // Regular pointers (keep them together to avoid gaps on 64 bit architectures).

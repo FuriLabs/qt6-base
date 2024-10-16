@@ -87,10 +87,19 @@ void QLibrarySettings::load()
     }
 }
 
+namespace {
+const QString *qtconfManualPath = nullptr;
+}
+
+void QLibraryInfoPrivate::setQtconfManualPath(const QString *path)
+{
+    qtconfManualPath = path;
+}
+
 static QSettings *findConfiguration()
 {
-    if (QLibraryInfoPrivate::qtconfManualPath)
-        return new QSettings(*QLibraryInfoPrivate::qtconfManualPath, QSettings::IniFormat);
+    if (qtconfManualPath)
+        return new QSettings(*qtconfManualPath, QSettings::IniFormat);
 
     QString qtconfig = QStringLiteral(":/qt/etc/qt.conf");
     if (QFile::exists(qtconfig))
@@ -121,8 +130,6 @@ static QSettings *findConfiguration()
     }
     return nullptr;     //no luck
 }
-
-const QString *QLibraryInfoPrivate::qtconfManualPath = nullptr;
 
 QSettings *QLibraryInfoPrivate::configuration()
 {
@@ -365,6 +372,11 @@ static QString getRelocatablePrefix(QLibraryInfoPrivate::UsageMode usageMode)
     const QString prefixDir = QString(libDirCFString) + "/" QT_CONFIGURE_LIBLOCATION_TO_PREFIX_PATH;
 
     prefixPath = QDir::cleanPath(prefixDir);
+#elif defined(Q_OS_WASM)
+    // Emscripten expects to find shared libraries at the root of the in-memory
+    // file system when resolving dependencies for for dlopen() calls. So that's
+    // where libqt6core.so would be.
+    prefixPath = QStringLiteral("/");
 #elif QT_CONFIG(dlopen)
     Q_UNUSED(usageMode);
     Dl_info info;
@@ -744,13 +756,14 @@ extern "C" void qt_core_boilerplate() __attribute__((force_align_arg_pointer));
 void qt_core_boilerplate()
 {
     printf("This is the QtCore library version %s\n"
-           "Copyright (C) 2023 The Qt Company Ltd.\n"
-           "Contact: http://www.qt.io/licensing/\n"
+           "%s\n"
+           "Contact: https://www.qt.io/licensing/\n"
            "\n"
            "Installation prefix: %s\n"
            "Library path:        %s\n"
            "Plugin path:         %s\n",
            QT_PREPEND_NAMESPACE(qt_build_string)(),
+           QT_COPYRIGHT,
            QT_CONFIGURE_PREFIX_PATH,
            qt_configure_strs[QT_PREPEND_NAMESPACE(QLibraryInfo)::LibrariesPath - 1],
            qt_configure_strs[QT_PREPEND_NAMESPACE(QLibraryInfo)::PluginsPath - 1]);

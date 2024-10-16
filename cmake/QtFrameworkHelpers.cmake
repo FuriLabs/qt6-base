@@ -37,6 +37,7 @@ macro(qt_find_apple_system_frameworks)
         qt_internal_find_apple_system_framework(FWContacts Contacts)
         qt_internal_find_apple_system_framework(FWEventKit EventKit)
         qt_internal_find_apple_system_framework(FWHealthKit HealthKit)
+        qt_internal_find_apple_system_framework(FWUniformTypeIdentifiers UniformTypeIdentifiers)
     endif()
 endmacro()
 
@@ -72,7 +73,7 @@ function(qt_copy_framework_headers target)
 
     set(options)
     set(oneValueArgs)
-    set(multiValueArgs PUBLIC PRIVATE QPA RHI)
+    set(multiValueArgs PUBLIC PRIVATE QPA RHI SSG)
     cmake_parse_arguments(arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
     qt_internal_get_framework_info(fw ${target})
@@ -81,15 +82,18 @@ function(qt_copy_framework_headers target)
     set(output_dir_PRIVATE "${output_dir}/${fw_private_module_header_dir}/private")
     set(output_dir_QPA "${output_dir}/${fw_private_module_header_dir}/qpa")
     set(output_dir_RHI "${output_dir}/${fw_private_module_header_dir}/rhi")
+    set(output_dir_SSG "${output_dir}/${fw_private_module_header_dir}/ssg")
 
     qt_internal_module_info(module "${target}")
 
     set(out_files "")
     set(in_files "")
+    set(out_dirs "")
     set(copy_commands "")
-    foreach(type IN ITEMS PUBLIC PRIVATE QPA RHI)
+    foreach(type IN ITEMS PUBLIC PRIVATE QPA RHI SSG)
         set(in_files_${type} "")
         set(fw_output_header_dir "${output_dir_${type}}")
+        list(APPEND out_dirs "${fw_output_header_dir}")
         foreach(hdr IN LISTS arg_${type})
             get_filename_component(in_file_path ${hdr} ABSOLUTE)
             get_filename_component(in_file_name ${hdr} NAME)
@@ -106,19 +110,40 @@ function(qt_copy_framework_headers target)
 
     list(REMOVE_DUPLICATES out_files)
     list(REMOVE_DUPLICATES in_files)
-    add_custom_command(
-        OUTPUT "${output_dir}/${fw_versioned_header_dir}" ${out_files}
-        DEPENDS ${in_files} ${target}_sync_headers
-        COMMAND
-            ${CMAKE_COMMAND} -E copy_directory
-            "${module_build_interface_include_dir}/.syncqt_staging"
-            "${output_dir}/${fw_versioned_header_dir}"
-        ${copy_commands}
-        VERBATIM
-        COMMENT "Copy the ${target} header files to the framework directory"
+
+    set(copy_fw_sync_headers_command
+        "${CMAKE_COMMAND}" -E copy_directory
+        "${module_build_interface_include_dir}/.syncqt_staging"
+        "${output_dir}/${fw_versioned_header_dir}"
     )
-    set_property(TARGET ${target} APPEND PROPERTY
-        QT_COPIED_FRAMEWORK_HEADERS "${out_files}")
+
+    if(CMAKE_GENERATOR MATCHES "^Ninja")
+        add_custom_command(
+            OUTPUT "${output_dir}/${fw_versioned_header_dir}"
+            DEPENDS ${target}_sync_headers
+            COMMAND ${copy_fw_sync_headers_command}
+            VERBATIM
+        )
+        add_custom_target(${target}_copy_fw_sync_headers
+            DEPENDS "${output_dir}/${fw_versioned_header_dir}")
+    else()
+        add_custom_target(${target}_copy_fw_sync_headers
+            COMMAND ${copy_fw_sync_headers_command})
+    endif()
+
+    if(out_files)
+        add_custom_command(
+            OUTPUT ${out_files}
+            DEPENDS ${target}_copy_fw_sync_headers ${in_files}
+            COMMAND
+                ${CMAKE_COMMAND} -E make_directory ${out_dirs}
+            ${copy_commands}
+            VERBATIM
+            COMMENT "Copy the ${target} header files to the framework directory"
+        )
+        set_property(TARGET ${target} APPEND PROPERTY
+            QT_COPIED_FRAMEWORK_HEADERS "${out_files}")
+    endif()
 endfunction()
 
 function(qt_internal_generate_fake_framework_header target)

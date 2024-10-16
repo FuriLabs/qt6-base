@@ -488,7 +488,8 @@ void QTextHtmlImporter::import()
          *      means there was a tag closing in the input html
          */
         if (currentNodeIdx > 0 && (currentNode->parent != currentNodeIdx - 1)) {
-            blockTagClosed = closeTag();
+            const bool lastBlockTagClosed = closeTag();
+            blockTagClosed = blockTagClosed || lastBlockTagClosed;
             // visually collapse subsequent block tags, but if the element after the closed block tag
             // is for example an inline element (!isBlock) we have to make sure we start a new paragraph by setting
             // hasBlock to false.
@@ -540,6 +541,7 @@ void QTextHtmlImporter::import()
 
             appendBlock(block, currentNode->charFormat);
 
+            blockTagClosed = false;
             hasBlock = true;
         }
 
@@ -1313,8 +1315,7 @@ QTextDocumentFragment QTextDocumentFragment::fromMarkdown(const QString &markdow
     QTextDocumentFragment res;
     res.d = new QTextDocumentFragmentPrivate;
 
-    QTextMarkdownImporter importer(features);
-    importer.import(res.d->doc, markdown);
+    QTextMarkdownImporter(res.d->doc, features).import(markdown);
     return res;
 }
 

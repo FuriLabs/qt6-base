@@ -395,26 +395,34 @@ QLibraryStore *QLibraryStore::instance()
 inline QLibraryPrivate *QLibraryStore::findOrCreate(const QString &fileName, const QString &version,
                                                     QLibrary::LoadHints loadHints)
 {
+    auto lazyNewLib = [&] {
+        auto result = new QLibraryPrivate(fileName, version, loadHints);
+        result->libraryRefCount.ref();
+        return result;
+    };
+
+    if (fileName.isEmpty())   // request for empty d-pointer in QLibrary::setLoadHints();
+        return lazyNewLib();  // must return an independent (new) object
+
     QMutexLocker locker(&qt_library_mutex);
     QLibraryStore *data = instance();
 
+    if (Q_UNLIKELY(!data)) {
+        locker.unlock();
+        return lazyNewLib();
+    }
+
     QString mapName = version.isEmpty() ? fileName : fileName + u'\0' + version;
 
-    // check if this library is already loaded
-    QLibraryPrivate *lib = nullptr;
-    if (Q_LIKELY(data)) {
-        lib = data->libraryMap.value(mapName);
-        if (lib)
-            lib->mergeLoadHints(loadHints);
+    QLibraryPrivate *&lib = data->libraryMap[std::move(mapName)];
+    if (lib) {
+        // already loaded
+        lib->libraryRefCount.ref();
+        lib->mergeLoadHints(loadHints);
+    } else {
+        lib = lazyNewLib();
     }
-    if (!lib)
-        lib = new QLibraryPrivate(fileName, version, loadHints);
 
-    // track this library
-    if (Q_LIKELY(data) && !fileName.isEmpty())
-        data->libraryMap.insert(mapName, lib);
-
-    lib->libraryRefCount.ref();
     return lib;
 }
 
@@ -465,7 +473,7 @@ void QLibraryPrivate::mergeLoadHints(QLibrary::LoadHints lh)
     if (pHnd.loadRelaxed())
         return;
 
-    loadHintsInt.storeRelaxed(lh.toInt());
+    loadHintsInt.fetchAndOrRelaxed(lh.toInt());
 }
 
 QFunctionPointer QLibraryPrivate::resolve(const char *symbol)
@@ -477,6 +485,13 @@ QFunctionPointer QLibraryPrivate::resolve(const char *symbol)
 
 void QLibraryPrivate::setLoadHints(QLibrary::LoadHints lh)
 {
+    // Set the load hints directly for a dummy if this object is not associated
+    // with a file. Such object is not shared between multiple instances.
+    if (fileName.isEmpty()) {
+        loadHintsInt.storeRelaxed(lh.toInt());
+        return;
+    }
+
     // this locks a global mutex
     QMutexLocker lock(&qt_library_mutex);
     mergeLoadHints(lh);
@@ -1117,6 +1132,10 @@ QString QLibrary::errorString() const
     By default, none of these flags are set, so libraries will be loaded with
     lazy symbol resolution, and will not export external symbols for resolution
     in other dynamically-loaded libraries.
+
+    \note Hints can only be cleared when this object is not associated with a
+    file. Hints can only be added once the file name is set (\a hints will
+    be or'ed with the old hints).
 
     \note Setting this property after the library has been loaded has no effect
     and loadHints() will not reflect those changes.

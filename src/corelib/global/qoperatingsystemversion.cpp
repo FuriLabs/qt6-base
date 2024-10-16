@@ -111,15 +111,11 @@ QT_BEGIN_NAMESPACE
 */
 
 /*!
+    \fn QOperatingSystemVersion::current()
     Returns a QOperatingSystemVersion indicating the current OS and its version number.
 
     \sa currentType()
 */
-QOperatingSystemVersion QOperatingSystemVersion::current()
-{
-    return QOperatingSystemVersionBase::current();
-}
-
 QOperatingSystemVersionBase QOperatingSystemVersionBase::current()
 {
     static const QOperatingSystemVersionBase v = current_impl();
@@ -306,11 +302,6 @@ int QOperatingSystemVersionBase::compare(QOperatingSystemVersionBase v1,
 
     \sa type()
 */
-QString QOperatingSystemVersion::name() const
-{
-    return QOperatingSystemVersionBase::name();
-}
-
 QString QOperatingSystemVersionBase::name(QOperatingSystemVersionBase osversion)
 {
     switch (osversion.type()) {
@@ -478,6 +469,12 @@ const QOperatingSystemVersionBase QOperatingSystemVersion::Windows11_21H2;
     \since 6.4
  */
 const QOperatingSystemVersionBase QOperatingSystemVersion::Windows11_22H2;
+
+/*!
+    \variable QOperatingSystemVersion::Windows11_23H2
+    \brief a version corresponding to Windows 11 Version 23H2 (version 10.0.22631).
+    \since 6.6
+ */
 
 /*!
     \variable QOperatingSystemVersion::OSXMavericks
@@ -700,6 +697,12 @@ const QOperatingSystemVersionBase QOperatingSystemVersion::Android12L;
     \since 6.5
  */
 const QOperatingSystemVersionBase QOperatingSystemVersion::Android13;
+
+/*!
+    \variable QOperatingSystemVersion::Android14
+    \brief a version corresponding to Android 14 (version 14.0, API level 34).
+    \since 6.7
+ */
 
 #endif // !QT_BOOTSTRAPPED
 

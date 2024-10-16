@@ -1,5 +1,7 @@
 // Copyright (C) 2016 The Qt Company Ltd.
-// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only WITH Qt-GPL-exception-1.0
+// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
+
+#undef QT_NO_FOREACH // this file contains unported legacy Q_FOREACH uses
 
 #include "paintcommands.h"
 #include <qbaselinetest.h>
@@ -52,7 +54,7 @@ private:
 
 private slots:
     void initTestCase();
-    void cleanupTestCase() {}
+    void init();
 
     void testRasterARGB32PM_data();
     void testRasterARGB32PM();
@@ -131,6 +133,11 @@ void tst_Lancelot::initTestCase()
 #endif
 }
 
+void tst_Lancelot::init()
+{
+    // This gets called for every row. QSKIP if current item is blacklisted on the baseline server:
+    QBASELINE_SKIP_IF_BLACKLISTED;
+}
 
 void tst_Lancelot::testRasterARGB32PM_data()
 {

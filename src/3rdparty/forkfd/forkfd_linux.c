@@ -169,12 +169,7 @@ int system_vforkfd(int flags, pid_t *ppid, int (*childFn)(void *), void *token, 
     }
     *system = 1;
 
-#if defined(__hppa__)
-    /* Stack grows up */
-    pid = clone(childFn, childStack, cloneflags, token, &pidfd, NULL, NULL);
-#else
     pid = clone(childFn, childStack + sizeof(childStack), cloneflags, token, &pidfd, NULL, NULL);
-#endif
     if (pid < 0)
         return pid;
     if (ppid)

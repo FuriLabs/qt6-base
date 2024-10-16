@@ -5,14 +5,14 @@ qt_feature("androiddeployqt" PRIVATE
     SECTION "Deployment"
     LABEL "Android deployment tool"
     PURPOSE "The Android deployment tool automates the process of creating Android packages."
-    CONDITION (QT_FORCE_BUILD_TOOLS OR NOT CMAKE_CROSSCOMPILING) AND QT_FEATURE_regularexpression)
+    CONDITION NOT CMAKE_CROSSCOMPILING AND QT_FEATURE_regularexpression AND QT_FEATURE_settings)
 
 qt_feature("macdeployqt" PRIVATE
     SECTION "Deployment"
     LABEL "macOS deployment tool"
     PURPOSE "The Mac deployment tool automates the process of creating a deployable application bundle that contains the Qt libraries as private frameworks."
     AUTODETECT CMAKE_HOST_APPLE
-    CONDITION MACOS)
+    CONDITION MACOS AND QT_FEATURE_thread)
 
 qt_feature("windeployqt" PRIVATE
     SECTION "Deployment"

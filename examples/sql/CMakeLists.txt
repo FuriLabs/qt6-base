@@ -1,5 +1,5 @@
 # Copyright (C) 2022 The Qt Company Ltd.
-# SPDX-License-Identifier: BSD-3-Clause
+# SPDX-License-Identifier: LicenseRef-Qt-Commercial OR BSD-3-Clause
 
 if(NOT TARGET Qt6::Widgets)
     return()
@@ -15,6 +15,6 @@ if(TARGET Qt6::Xml)
     qt_internal_add_example(masterdetail)
 endif()
 
-if(QT_FORCE_BUILD_TOOLS OR NOT CMAKE_CROSSCOMPILING)
+if(NOT CMAKE_CROSSCOMPILING)
     qt_internal_add_example(sqlbrowser)
 endif()

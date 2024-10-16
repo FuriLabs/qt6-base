@@ -230,7 +230,8 @@ void QBackingStore::flush(const QRegion &region, QWindow *window, const QPoint &
 void QBackingStore::resize(const QSize &size)
 {
     d_ptr->size = size;
-    handle()->resize(QHighDpi::scale(size, d_ptr->deviceIndependentToNativeFactor()), d_ptr->staticContents);
+    const qreal factor = d_ptr->deviceIndependentToNativeFactor();
+    handle()->resize(QHighDpi::scale(size, factor), QHighDpi::scale(d_ptr->staticContents, factor));
 }
 
 /*!
@@ -266,6 +267,13 @@ bool QBackingStore::scroll(const QRegion &area, int dx, int dy)
 */
 void QBackingStore::setStaticContents(const QRegion &region)
 {
+    [[maybe_unused]] static const bool didCheckPlatformSupport = []{
+        const auto *integration = QGuiApplicationPrivate::platformIntegration();
+        if (!integration->hasCapability(QPlatformIntegration::BackingStoreStaticContents))
+            qWarning("QBackingStore::setStaticContents(): Platform does not support static contents");
+        return true;
+    }();
+
     d_ptr->staticContents = region;
 }
 

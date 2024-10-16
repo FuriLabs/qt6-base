@@ -5,6 +5,7 @@
 #include <qcoreapplication.h>
 #include <qdebug.h>
 #include <qdiriterator.h>
+#include <private/qabstractfileiconprovider_p.h>
 #include <private/qfileinfo_p.h>
 #ifndef Q_OS_WIN
 #  include <unistd.h>
@@ -13,8 +14,6 @@
 #if defined(Q_OS_VXWORKS)
 #  include "qplatformdefs.h"
 #endif
-
-#include <utility>
 
 QT_BEGIN_NAMESPACE
 
@@ -346,8 +345,12 @@ void QFileInfoGatherer::run()
 QExtendedInformation QFileInfoGatherer::getInfo(const QFileInfo &fileInfo) const
 {
     QExtendedInformation info(fileInfo);
-    info.icon = m_iconProvider->icon(fileInfo);
-    info.displayType = m_iconProvider->type(fileInfo);
+    if (m_iconProvider) {
+        info.icon = m_iconProvider->icon(fileInfo);
+        info.displayType = m_iconProvider->type(fileInfo);
+    } else {
+        info.displayType = QAbstractFileIconProviderPrivate::getFileType(fileInfo);
+    }
 #if QT_CONFIG(filesystemwatcher)
     // ### Not ready to listen all modifications by default
     static const bool watchFiles = qEnvironmentVariableIsSet("QT_FILESYSTEMMODEL_WATCH_FILES");
@@ -411,7 +414,7 @@ void QFileInfoGatherer::getFileInfos(const QString &path, const QStringList &fil
     base.start();
     QFileInfo fileInfo;
     bool firstTime = true;
-    QList<QPair<QString, QFileInfo>> updatedFiles;
+    QList<std::pair<QString, QFileInfo>> updatedFiles;
     QStringList filesToCheck = files;
 
     QStringList allFiles;
@@ -440,9 +443,9 @@ void QFileInfoGatherer::getFileInfos(const QString &path, const QStringList &fil
 }
 
 void QFileInfoGatherer::fetch(const QFileInfo &fileInfo, QElapsedTimer &base, bool &firstTime,
-                              QList<QPair<QString, QFileInfo>> &updatedFiles, const QString &path)
+                              QList<std::pair<QString, QFileInfo>> &updatedFiles, const QString &path)
 {
-    updatedFiles.append(QPair<QString, QFileInfo>(fileInfo.fileName(), fileInfo));
+    updatedFiles.emplace_back(std::pair(fileInfo.fileName(), fileInfo));
     QElapsedTimer current;
     current.start();
     if ((firstTime && updatedFiles.size() > 100) || base.msecsTo(current) > 1000) {

@@ -27,6 +27,7 @@
 #include <QtGui/qwindow.h>
 #include <QtGui/qregion.h>
 #include <QtGui/qopenglcontext.h>
+#include <QtGui/private/qwindowsthemecache_p.h>
 #include <private/qwindow_p.h> // QWINDOWSIZE_MAX
 #include <private/qguiapplication_p.h>
 #include <private/qhighdpiscaling_p.h>
@@ -429,11 +430,7 @@ static inline bool windowIsAccelerated(const QWindow *w)
 {
     switch (w->surfaceType()) {
     case QSurface::OpenGLSurface:
-        return true;
-    case QSurface::RasterGLSurface:
-        return qt_window_private(const_cast<QWindow *>(w))->compositing;
     case QSurface::VulkanSurface:
-        return true;
     case QSurface::Direct3DSurface:
         return true;
     default:
@@ -841,6 +838,10 @@ void WindowCreationData::fromWindow(const QWindow *w, const Qt::WindowFlags flag
         // NOTE: WS_EX_TRANSPARENT flag can make mouse inputs fall through a layered window
         if (flagsIn & Qt::WindowTransparentForInput)
             exStyle |= WS_EX_LAYERED | WS_EX_TRANSPARENT;
+
+        // Currently only compatible with D3D surfaces, use it with care.
+        if (qEnvironmentVariableIntValue("QT_QPA_DISABLE_REDIRECTION_SURFACE"))
+            exStyle |= WS_EX_NOREDIRECTIONBITMAP;
     }
 }
 
@@ -1356,6 +1357,8 @@ QWindowsForeignWindow::QWindowsForeignWindow(QWindow *window, HWND hwnd)
     , m_hwnd(hwnd)
     , m_topLevelStyle(0)
 {
+    if (QPlatformWindow::parent())
+        setParent(QPlatformWindow::parent());
 }
 
 void QWindowsForeignWindow::setParent(const QPlatformWindow *newParentWindow)
@@ -1531,6 +1534,7 @@ QWindowsWindow::QWindowsWindow(QWindow *aWindow, const QWindowsWindowData &data)
 QWindowsWindow::~QWindowsWindow()
 {
     setFlag(WithinDestroy);
+    QWindowsThemeCache::clearThemeCache(m_data.hwnd);
     if (testFlag(TouchRegistered))
         UnregisterTouchWindow(m_data.hwnd);
     destroyWindow();
@@ -2009,6 +2013,9 @@ void QWindowsWindow::handleDpiChanged(HWND hwnd, WPARAM wParam, LPARAM lParam)
     const UINT dpi = HIWORD(wParam);
     const qreal scale = dpiRelativeScale(dpi);
     setSavedDpi(dpi);
+
+    QWindowsThemeCache::clearThemeCache(hwnd);
+
     // Send screen change first, so that the new screen is set during any following resize
     checkForScreenChanged(QWindowsWindow::FromDpiChange);
 
@@ -2473,6 +2480,11 @@ void QWindowsWindow::handleWindowStateChange(Qt::WindowStates state)
             GetWindowPlacement(m_data.hwnd, &windowPlacement);
             const RECT geometry = RECTfromQRect(m_data.restoreGeometry);
             windowPlacement.rcNormalPosition = geometry;
+            // Even if the window is hidden, windowPlacement's showCmd is not SW_HIDE, so change it
+            // manually to avoid unhiding a hidden window with the subsequent call to
+            // SetWindowPlacement().
+            if (!isVisible())
+                windowPlacement.showCmd = SW_HIDE;
             SetWindowPlacement(m_data.hwnd, &windowPlacement);
         }
         // QTBUG-17548: We send expose events when receiving WM_Paint, but for
@@ -2803,15 +2815,16 @@ void QWindowsWindow::calculateFullFrameMargins()
     const auto systemMargins = testFlag(DisableNonClientScaling)
         ? QWindowsGeometryHint::frameOnPrimaryScreen(window(), m_data.hwnd)
         : frameMargins_sys();
+    const QMargins actualMargins = systemMargins + customMargins();
 
     const int yDiff = (windowRect.bottom - windowRect.top) - (clientRect.bottom - clientRect.top);
-    const bool typicalFrame = (systemMargins.left() == systemMargins.right())
-            && (systemMargins.right() == systemMargins.bottom());
+    const bool typicalFrame = (actualMargins.left() == actualMargins.right())
+            && (actualMargins.right() == actualMargins.bottom());
 
     const QMargins adjustedMargins = typicalFrame ?
-          QMargins(systemMargins.left(), (yDiff - systemMargins.bottom()),
-                   systemMargins.right(), systemMargins.bottom())
-            : systemMargins + customMargins();
+          QMargins(actualMargins.left(), (yDiff - actualMargins.bottom()),
+                   actualMargins.right(), actualMargins.bottom())
+            : actualMargins;
 
     setFullFrameMargins(adjustedMargins);
 }
@@ -3431,24 +3444,6 @@ void QWindowsWindow::registerTouchWindow()
         setFlag(TouchRegistered);
     else
         qErrnoWarning("RegisterTouchWindow() failed for window '%s'.", qPrintable(window()->objectName()));
-}
-
-void QWindowsWindow::aboutToMakeCurrent()
-{
-#ifndef QT_NO_OPENGL
-    // For RasterGLSurface windows, that become OpenGL windows dynamically, it might be
-    // time to set up some GL specifics.  This is particularly important for layered
-    // windows (WS_EX_LAYERED due to alpha > 0).
-    const bool isCompositing = qt_window_private(window())->compositing;
-    if (isCompositing != testFlag(Compositing)) {
-        if (isCompositing)
-            setFlag(Compositing);
-        else
-            clearFlag(Compositing);
-
-        updateGLWindowSettings(window(), m_data.hwnd, m_data.flags, m_opacity);
-    }
-#endif
 }
 
 void QWindowsWindow::setHasBorderInFullScreenStatic(QWindow *window, bool border)

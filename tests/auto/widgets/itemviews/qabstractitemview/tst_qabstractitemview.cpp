@@ -1,5 +1,5 @@
 // Copyright (C) 2016 The Qt Company Ltd.
-// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only WITH Qt-GPL-exception-1.0
+// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
 
 #include <private/qguiapplication_p.h>
 
@@ -109,6 +109,7 @@ private slots:
     void QTBUG6407_extendedSelection();
     void QTBUG6753_selectOnSelection();
     void testDelegateDestroyEditor();
+    void testDelegateDestroyEditorChild();
     void testClickedSignal();
     void testChangeEditorState();
     void deselectInSingleSelection();
@@ -150,6 +151,7 @@ private slots:
     void testSpinBoxAsEditor_data();
     void testSpinBoxAsEditor();
     void removeIndexWhileEditing();
+    void focusNextOnHide();
 
 private:
     static QAbstractItemView *viewFromString(const QByteArray &viewType, QWidget *parent = nullptr)
@@ -176,17 +178,19 @@ public:
     QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &, const QModelIndex &) const override
     {
         openedEditor = new QWidget(parent);
+        virtualCtorCallCount++;
         return openedEditor;
     }
     void destroyEditor(QWidget *editor, const QModelIndex &) const override
     {
-        calledVirtualDtor = true;
+        virtualDtorCallCount++;
         editor->deleteLater();
     }
     void changeSize() { size = QSize(50, 50); emit sizeHintChanged(QModelIndex()); }
     mutable QWidget *openedEditor = nullptr;
     QSize size;
-    mutable bool calledVirtualDtor = false;
+    mutable int virtualCtorCallCount = 0;
+    mutable int virtualDtorCallCount = 0;
 };
 
 class DialogItemDelegate : public QStyledItemDelegate
@@ -1616,9 +1620,31 @@ void tst_QAbstractItemView::testDelegateDestroyEditor()
     table.setItemDelegate(&delegate);
     table.edit(table.model()->index(1, 1));
     QAbstractItemView *tv = &table;
-    QVERIFY(!delegate.calledVirtualDtor);
+    QCOMPARE(delegate.virtualDtorCallCount, 0);
     tv->closeEditor(delegate.openedEditor, QAbstractItemDelegate::NoHint);
-    QVERIFY(delegate.calledVirtualDtor);
+    QCOMPARE(delegate.virtualDtorCallCount, 1);
+}
+
+void tst_QAbstractItemView::testDelegateDestroyEditorChild()
+{
+    QTreeWidget tree;
+    MyAbstractItemDelegate delegate;
+    tree.setItemDelegate(&delegate);
+    QTreeWidgetItem *topLevel = new QTreeWidgetItem;
+    QTreeWidgetItem *levelOne1 = new QTreeWidgetItem(topLevel);
+    QTreeWidgetItem *levelTwo1 = new QTreeWidgetItem(levelOne1);
+    QTreeWidgetItem *levelOne2 = new QTreeWidgetItem(topLevel);
+    QTreeWidgetItem *levelTwo2 = new QTreeWidgetItem(levelOne2);
+    tree.insertTopLevelItem(0, topLevel);
+    tree.openPersistentEditor(levelOne1);
+    tree.openPersistentEditor(levelTwo1);
+    tree.openPersistentEditor(levelOne2);
+    tree.openPersistentEditor(levelTwo2);
+    QCOMPARE(delegate.virtualCtorCallCount, 4);
+    levelOne1->removeChild(levelTwo1);
+    QCOMPARE(delegate.virtualDtorCallCount, 1);
+    topLevel->removeChild(levelOne2);
+    QCOMPARE(delegate.virtualDtorCallCount, 3);
 }
 
 void tst_QAbstractItemView::testClickedSignal()
@@ -3497,6 +3523,7 @@ void tst_QAbstractItemView::removeIndexWhileEditing()
         QVERIFY(filteredIndex.isValid());
         view.edit(filteredIndex);
         QCOMPARE(view.state(), QAbstractItemView::EditingState);
+        QTRY_VERIFY(QApplication::focusWidget());
         QPointer<QLineEdit> lineEdit = qobject_cast<QLineEdit *>(QApplication::focusWidget());
         QVERIFY(lineEdit);
         lineEdit->setText("c");
@@ -3512,6 +3539,7 @@ void tst_QAbstractItemView::removeIndexWhileEditing()
         QVERIFY(filteredIndex.isValid());
         view.edit(filteredIndex);
         QCOMPARE(view.state(), QAbstractItemView::EditingState);
+        QTRY_VERIFY(QApplication::focusWidget());
         QPointer<QLineEdit> lineEdit = qobject_cast<QLineEdit *>(QApplication::focusWidget());
         QVERIFY(lineEdit);
         filterModel.setFilterFixedString("c");
@@ -3519,6 +3547,33 @@ void tst_QAbstractItemView::removeIndexWhileEditing()
         QTRY_VERIFY(!lineEdit);
         QCOMPARE(view.state(), QAbstractItemView::NoState);
     }
+}
+
+void tst_QAbstractItemView::focusNextOnHide()
+{
+    QWidget widget;
+    QTableWidget table(10, 10);
+    table.setTabKeyNavigation(true);
+    QLineEdit lineEdit;
+
+    QHBoxLayout layout;
+    layout.addWidget(&table);
+    layout.addWidget(&lineEdit);
+    widget.setLayout(&layout);
+
+    widget.setTabOrder({&table, &lineEdit});
+
+    widget.show();
+    QVERIFY(QTest::qWaitForWindowExposed(&widget));
+
+    QVERIFY(table.hasFocus());
+    QCOMPARE(table.currentIndex(), table.model()->index(0, 0));
+    QTest::keyPress(&table, Qt::Key_Tab);
+    QCOMPARE(table.currentIndex(), table.model()->index(0, 1));
+
+    table.hide();
+    QCOMPARE(table.currentIndex(), table.model()->index(0, 1));
+    QVERIFY(lineEdit.hasFocus());
 }
 
 QTEST_MAIN(tst_QAbstractItemView)

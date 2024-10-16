@@ -1,13 +1,12 @@
+# Copyright (C) 2024 The Qt Company Ltd.
+# SPDX-License-Identifier: BSD-3-Clause
+
 include_guard(DIRECTORY)
 @QT_MODULE_PLUGIN_INCLUDES@
 
 # Distributions should probably change this default.
 if(NOT DEFINED QT_SKIP_AUTO_PLUGIN_INCLUSION)
-    set(QT_SKIP_AUTO_PLUGIN_INCLUSION ON)
-endif()
-
-if(QT_REPO_MODULE_VERSION)
-    message(STATUS "Skip auto plugin inclusion is set to ${QT_SKIP_AUTO_PLUGIN_INCLUSION}")
+    set(QT_SKIP_AUTO_PLUGIN_INCLUSION OFF)
 endif()
 
 if(NOT QT_NO_CREATE_TARGETS AND NOT QT_SKIP_AUTO_PLUGIN_INCLUSION)

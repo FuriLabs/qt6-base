@@ -222,6 +222,7 @@ _qt_internal_test_expect_pass(test_multiple_find_package)
 _qt_internal_test_expect_pass(test_add_resources_delayed_file)
 _qt_internal_test_expect_pass(test_add_binary_resources_delayed_file BINARY test_add_binary_resources_delayed_file)
 _qt_internal_test_expect_pass(test_qt_add_resources_rebuild)
+_qt_internal_test_expect_pass(test_resource_without_obj_lib BINARY test_resource_without_obj_lib)
 
 if(NOT NO_GUI)
     _qt_internal_test_expect_pass(test_private_includes)
@@ -337,6 +338,12 @@ if(is_qt_build_platform)
     set_tests_properties(test_import_plugins PROPERTIES FIXTURES_REQUIRED build_mockplugins)
 endif()
 
+if(NOT NO_GUI)
+    _qt_internal_test_expect_pass(test_standalone_test
+                                  BINARY "${CMAKE_CTEST_COMMAND}"
+                                  BINARY_ARGS "-V")
+endif()
+
 _qt_internal_test_expect_pass(test_versionless_targets)
 
 if(NOT NO_GUI)
@@ -387,4 +394,10 @@ if(WIN32 OR (APPLE AND NOT IOS) OR is_desktop_linux)
     _qt_internal_test_expect_pass(${deploy_args})
 else()
     _qt_internal_test_expect_fail(${deploy_args})
+endif()
+
+_qt_internal_test_expect_pass(test_config_expressions)
+_qt_internal_test_expect_pass(test_QTP0003)
+if(NOT NO_GUI)
+    _qt_internal_test_expect_pass(test_collecting_plugins)
 endif()

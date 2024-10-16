@@ -24,6 +24,8 @@
 
 QT_BEGIN_NAMESPACE
 
+using namespace Qt::Literals::StringLiterals;
+
 static const UINT q_uNOTIFYICONID = 0;
 
 static uint MYWM_TASKBARCREATED = 0;
@@ -116,7 +118,7 @@ static inline HWND createTrayIconMessageWindow()
         return nullptr;
     // Register window class in the platform plugin.
     const QString className =
-        ctx->registerWindowClass(QWindowsContext::classNamePrefix() + QStringLiteral("TrayIconMessageWindowClass"),
+        ctx->registerWindowClass(QWindowsContext::classNamePrefix() + "TrayIconMessageWindowClass"_L1,
                                  qWindowsTrayIconWndProc);
     const wchar_t windowName[] = L"QTrayIconMessageWindow";
     return CreateWindowEx(0, reinterpret_cast<const wchar_t *>(className.utf16()),
@@ -218,11 +220,16 @@ void QWindowsSystemTrayIcon::showMessage(const QString &title, const QString &me
 
     const auto size = icon.actualSize(QSize(256, 256));
     QPixmap pm = icon.pixmap(size);
+    if (m_hMessageIcon) {
+        DestroyIcon(m_hMessageIcon);
+        m_hMessageIcon = nullptr;
+    }
     if (pm.isNull()) {
         tnd.dwInfoFlags = NIIF_INFO;
     } else {
         tnd.dwInfoFlags = NIIF_USER | NIIF_LARGE_ICON;
-        tnd.hBalloonIcon = qt_pixmapToWinHICON(pm);
+        m_hMessageIcon = qt_pixmapToWinHICON(pm);
+        tnd.hBalloonIcon = m_hMessageIcon;
     }
     tnd.hWnd = m_hwnd;
     tnd.uTimeout = msecsIn <= 0 ?  UINT(10000) : UINT(msecsIn); // 10s default
@@ -280,7 +287,10 @@ void QWindowsSystemTrayIcon::ensureCleanup()
     }
     if (m_hIcon != nullptr)
         DestroyIcon(m_hIcon);
+    if (m_hMessageIcon != nullptr)
+        DestroyIcon(m_hMessageIcon);
     m_hIcon = nullptr;
+    m_hMessageIcon = nullptr;
     m_menu = nullptr; // externally owned
     m_toolTip.clear();
 }

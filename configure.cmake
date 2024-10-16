@@ -113,7 +113,15 @@ SSL_free(SSL_new(0));
 }
 ")
 
-qt_find_package(WrapZSTD 1.3 PROVIDED_TARGETS WrapZSTD::WrapZSTD MODULE_NAME global QMAKE_LIB zstd)
+qt_find_package(WrapZSTD 1.3
+    PROVIDED_TARGETS
+        WrapZSTD::WrapZSTD
+        zstd::libzstd
+        zstd::libzstd_static
+        zstd::libzstd_shared
+    MODULE_NAME global
+    QMAKE_LIB zstd
+)
 qt_find_package(WrapDBus1 1.2 PROVIDED_TARGETS dbus-1 MODULE_NAME global QMAKE_LIB dbus)
 qt_find_package(Libudev PROVIDED_TARGETS PkgConfig::Libudev MODULE_NAME global QMAKE_LIB libudev)
 qt_find_package(LTTngUST PROVIDED_TARGETS LTTng::UST MODULE_NAME core QMAKE_LIB lttng-ust)
@@ -551,6 +559,12 @@ qt_feature("rpath" PUBLIC
     CONDITION BUILD_SHARED_LIBS AND UNIX AND NOT WIN32 AND NOT ANDROID
 )
 qt_feature_config("rpath" QMAKE_PUBLIC_QT_CONFIG)
+qt_feature("elf_private_full_version" PRIVATE
+    LABEL "Use Qt's full version number in ELF version symbols"
+    AUTODETECT OFF
+    CONDITION BUILD_SHARED_LIBS AND UNIX AND NOT APPLE
+)
+qt_feature_config("elf_private_full_version" QMAKE_PRIVATE_QT_CONFIG)
 qt_feature("force_asserts" PUBLIC
     LABEL "Force assertions"
     AUTODETECT OFF
@@ -578,11 +592,6 @@ qt_feature("largefile"
 )
 qt_feature_definition("largefile" "QT_LARGEFILE_SUPPORT" VALUE "64")
 qt_feature_config("largefile" QMAKE_PRIVATE_CONFIG)
-qt_feature("testcocoon"
-    LABEL "Testcocoon support"
-    AUTODETECT OFF
-)
-qt_feature_config("testcocoon" QMAKE_PUBLIC_CONFIG)
 qt_feature("sanitize_address"
     LABEL "Addresses"
     AUTODETECT OFF
@@ -637,13 +646,9 @@ qt_feature_config("c++2a" QMAKE_PUBLIC_QT_CONFIG)
 qt_feature("c++2b" PUBLIC
     LABEL "C++2b"
     AUTODETECT OFF
-)
-qt_feature_config("c++2b" QMAKE_PUBLIC_QT_CONFIG)
-qt_feature("c++2b" PUBLIC
-    LABEL "C++2b"
-    AUTODETECT FALSE
     CONDITION QT_FEATURE_cxx20 AND (CMAKE_VERSION VERSION_GREATER_EQUAL "3.20") AND TEST_cxx2b
 )
+qt_feature_config("c++2b" QMAKE_PUBLIC_QT_CONFIG)
 qt_feature("precompile_header"
     LABEL "Using precompiled headers"
     CONDITION BUILD_WITH_PCH AND TEST_precompile_header
@@ -912,7 +917,7 @@ qt_feature("zstd" PUBLIC
 qt_feature("stdlib-libcpp" PRIVATE
     LABEL "Using stdlib=libc++"
     AUTODETECT OFF
-    CONDITION LINUX AND NOT ANDROID
+    CONDITION MINGW OR (LINUX AND NOT ANDROID)
 )
 # Check whether CMake was built with zstd support.
 # See https://gitlab.kitware.com/cmake/cmake/-/issues/21552
@@ -951,7 +956,7 @@ qt_feature("concurrent" PUBLIC
 qt_feature_definition("concurrent" "QT_NO_CONCURRENT" NEGATE VALUE "1")
 qt_feature("dbus" PUBLIC PRIVATE
     LABEL "Qt D-Bus"
-    AUTODETECT NOT UIKIT AND NOT ANDROID
+    AUTODETECT NOT UIKIT AND NOT ANDROID AND NOT VXWORKS
     CONDITION QT_FEATURE_thread AND NOT WASM
 )
 qt_feature_definition("dbus" "QT_NO_DBUS" NEGATE VALUE "1")
@@ -1068,6 +1073,33 @@ qt_feature("intelcet" PRIVATE
     LABEL "Using Intel CET"
     CONDITION ( INPUT_intelcet STREQUAL yes ) OR TEST_intelcet
 )
+
+if("${INPUT_coverage}" STREQUAL "gcov")
+    qt_config_compile_test(gcov
+        LABEL "gcov compiler flags"
+        COMPILE_OPTIONS "--coverage"
+        CODE
+    "int main(void)
+    {
+        /* BEGIN TEST: */
+        /* END TEST: */
+        return 0;
+    }
+    ")
+endif()
+
+qt_feature("coverage-gcov"
+    LABEL "Gcov"
+    ENABLE INPUT_coverage STREQUAL "gcov"
+    CONDITION TEST_gcov AND
+        ( QT_FEATURE_debug OR QT_FEATURE_debug_and_release )
+)
+
+qt_feature("coverage"
+    LABEL "Coverage"
+    CONDITION QT_FEATURE_coverage_gcov
+)
+
 qt_configure_add_summary_build_type_and_config()
 qt_configure_add_summary_section(NAME "Build options")
 qt_configure_add_summary_build_mode(Mode)
@@ -1246,16 +1278,17 @@ https://github.com/llvm/llvm-project/issues/53520
 ]=]
         )
     else()
+        string(CONCAT error_message
+            "x86 intrinsics support missing. Check your compiler settings.\n"
+            "If this is an error, report at https://bugreports.qt.io with your compiler ID and "
+            "version, and this output:\n"
+            "\n"
+            "${TEST_x86intrin_OUTPUT}"
+        )
         qt_configure_add_report_entry(
             TYPE ERROR
             CONDITION (NOT QT_FEATURE_x86intrin)
-            MESSAGE [========[
-x86 intrinsics support missing. Check your compiler settings. If this is an
-error, report at https://bugreports.qt.io with your compiler ID and version,
-and this output:
-
-${TEST_x86intrin_OUTPUT}
-]========]
+            MESSAGE "${error_message}"
         )
     endif()
 endif()
@@ -1282,8 +1315,7 @@ qt_extra_definition("QT_VERSION_MAJOR" ${PROJECT_VERSION_MAJOR} PUBLIC)
 qt_extra_definition("QT_VERSION_MINOR" ${PROJECT_VERSION_MINOR} PUBLIC)
 qt_extra_definition("QT_VERSION_PATCH" ${PROJECT_VERSION_PATCH} PUBLIC)
 
-qt_extra_definition("QT_COPYRIGHT" \"${QT_COPYRIGHT}\" PRIVATE)
-qt_extra_definition("QT_COPYRIGHT_YEAR" \"${QT_COPYRIGHT_YEAR}\" PRIVATE)
+qt_extra_definition("QT_COPYRIGHT" \"${QT_COPYRIGHT}\" PUBLIC)
 
 qt_configure_add_report_entry(
     TYPE WARNING

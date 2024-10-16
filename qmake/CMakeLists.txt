@@ -58,7 +58,6 @@ qt_internal_add_tool(${target_name}
     TRY_RUN
     TOOLS_TARGET Core
     USER_FACING
-    NO_UNITY_BUILD
     INSTALL_VERSIONED_LINK
     SOURCES
         cachekeys.h
@@ -99,6 +98,9 @@ qt_internal_add_tool(${target_name}
         "qmake_pch.h"
     LIBRARIES
         QtLibraryInfo
+    NO_UNITY_BUILD_SOURCES
+        generators/win32/msvc_objectmodel.cpp # xml symbols clash with generators/win32/msbuild_objectmodel.cpp
+        library/qmakeparser.cpp               # struct statics clashes with qmakeevaluator_p.h
 )
 qt_internal_return_unless_building_tools()
 
@@ -123,12 +125,6 @@ qt_internal_extend_target(${target_name} CONDITION WIN32
         library/registry.cpp
     DEFINES
         _SCL_SECURE_NO_WARNINGS
-)
-
-qt_internal_extend_target(${target_name} CONDITION CLANG AND WIN32
-    COMPILE_OPTIONS
-        "-fms-compatibility-version=19.00.23506"
-        "-Wno-microsoft-enum-value"
 )
 
 set_target_properties(${target_name} PROPERTIES

@@ -20,6 +20,8 @@
 QT_BEGIN_NAMESPACE
 Q_LOGGING_CATEGORY(lcIcc, "qt.gui.icc", QtWarningMsg)
 
+namespace QIcc {
+
 struct ICCProfileHeader
 {
     quint32_be profileSize;
@@ -61,7 +63,7 @@ enum class ColorSpaceType : quint32 {
 };
 
 enum class ProfileClass : quint32 {
-    Input       = IccTag('s', 'c', 'r', 'n'),
+    Input       = IccTag('s', 'c', 'n', 'r'),
     Display     = IccTag('m', 'n', 't', 'r'),
     // Not supported:
     Output      = IccTag('p', 'r', 't', 'r'),
@@ -104,7 +106,9 @@ enum class Tag : quint32 {
     aabg = IccTag('a', 'a', 'b', 'g'),
 };
 
-inline size_t qHash(const Tag &key, size_t seed = 0)
+} // namespace QIcc
+
+inline size_t qHash(const QIcc::Tag &key, size_t seed = 0)
 {
     return qHash(quint32(key), seed);
 }
@@ -433,6 +437,8 @@ bool parseXyzData(const QByteArray &data, const TagEntry &tagEntry, QColorVector
 
 bool parseTRC(const QByteArray &data, const TagEntry &tagEntry, QColorTrc &gamma)
 {
+    if (tagEntry.size < 12)
+        return false;
     const GenericTagData trcData = qFromUnaligned<GenericTagData>(data.constData()
                                                                   + tagEntry.offset);
     if (trcData.type == quint32(Tag::curv)) {
@@ -560,6 +566,8 @@ bool parseDesc(const QByteArray &data, const TagEntry &tagEntry, QString &descNa
 
     // Either 'desc' (ICCv2) or 'mluc' (ICCv4)
     if (tag.type == quint32(Tag::desc)) {
+        if (tagEntry.size < sizeof(DescTagData))
+            return false;
         Q_STATIC_ASSERT(sizeof(DescTagData) == 12);
         const DescTagData desc = qFromUnaligned<DescTagData>(data.constData() + tagEntry.offset);
         const quint32 len = desc.asciiDescriptionLength;
@@ -639,7 +647,7 @@ bool fromIccProfile(const QByteArray &data, QColorSpace *colorSpace)
             qCWarning(lcIcc) << "fromIccProfile: failed tag offset sanity 2";
             return false;
         }
-        if (tagTable.size < 12) {
+        if (tagTable.size < 8) {
             qCWarning(lcIcc) << "fromIccProfile: failed minimal tag size sanity";
             return false;
         }

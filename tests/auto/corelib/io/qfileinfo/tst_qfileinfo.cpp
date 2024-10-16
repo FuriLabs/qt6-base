@@ -1,5 +1,5 @@
 // Copyright (C) 2021 The Qt Company Ltd.
-// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only WITH Qt-GPL-exception-1.0
+// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
 
 #include <QTest>
 #include <QStandardPaths>
@@ -1210,9 +1210,16 @@ void tst_QFileInfo::setFileTimes()
     QCOMPARE(file.write(data), data.size());
     QCOMPARE(file.size(), data.size());
 
-    const QDateTime before = QDateTime::currentDateTimeUtc().addMSecs(-5000);
+    QDateTime before = QDateTime::currentDateTimeUtc().addMSecs(-5000);
+
     QVERIFY(file.setFileTime(before, QFile::FileModificationTime));
     const QDateTime mtime = file.fileTime(QFile::FileModificationTime).toUTC();
+    if (mtime.time().msec() == 0)
+    {
+        const QTime beforeTime = before.time();
+        const QTime beforeTimeWithMSCutOff{beforeTime.hour(), beforeTime.minute(), beforeTime.second(), 0};
+        before.setTime(beforeTimeWithMSCutOff);
+    }
     QCOMPARE(mtime, before);
 }
 
@@ -1518,9 +1525,9 @@ void tst_QFileInfo::isHidden_data()
 {
     QTest::addColumn<QString>("path");
     QTest::addColumn<bool>("isHidden");
-    foreach (const QFileInfo& info, QDir::drives()) {
+    const auto drives = QDir::drives();
+    for (const QFileInfo& info : drives)
         QTest::newRow(qPrintable("drive." + info.path())) << info.path() << false;
-    }
 
 #if defined(Q_OS_WIN)
     QVERIFY(QDir("./hidden-directory").exists() || QDir().mkdir("./hidden-directory"));

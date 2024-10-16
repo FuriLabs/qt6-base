@@ -45,10 +45,13 @@
 #include <QtCore/qscopedpointer.h>
 #include <QtCore/quuid.h>
 #include <QtCore/private/qwinregistry_p.h>
-#include <QtCore/private/qfactorycacheregistration_p.h>
+#if QT_CONFIG(cpp_winrt)
+#  include <QtCore/private/qfactorycacheregistration_p.h>
+#endif
 #include <QtCore/private/qsystemerror_p.h>
 
 #include <QtGui/private/qwindowsguieventdispatcher_p.h>
+#include <QtGui/private/qwindowsthemecache_p.h>
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -200,6 +203,8 @@ QWindowsContext::~QWindowsContext()
 
     if (d->m_powerDummyWindow)
         DestroyWindow(d->m_powerDummyWindow);
+
+    d->m_screenManager.destroyWindow();
 
     unregisterWindowClasses();
     if (d->m_oleInitializeResult == S_OK || d->m_oleInitializeResult == S_FALSE) {
@@ -481,9 +486,9 @@ bool QWindowsContext::useRTLExtensions() const
     return d->m_keyMapper.useRTLExtensions();
 }
 
-QList<int> QWindowsContext::possibleKeys(const QKeyEvent *e) const
+QPlatformKeyMapper *QWindowsContext::keyMapper() const
 {
-    return d->m_keyMapper.possibleKeys(e);
+    return &d->m_keyMapper;
 }
 
 QWindowsContext::HandleBaseWindowHash &QWindowsContext::windows()
@@ -535,6 +540,8 @@ QString QWindowsContext::classNamePrefix()
 #  define xstr(s) str(s)
 #  define str(s) #s
         str << xstr(QT_NAMESPACE);
+#  undef str
+#  undef xstr
 #endif
     }
     return result;
@@ -1161,7 +1168,7 @@ bool QWindowsContext::windowsProc(HWND hwnd, UINT message,
         if (wParam == DBT_DEVNODES_CHANGED)
             initTouch();
         break;
-    case QtWindows::KeyboardLayoutChangeEvent:
+    case QtWindows::InputLanguageChangeEvent:
         if (QWindowsInputContext *wic = windowsInputContext())
             wic->handleInputLanguageChanged(wParam, lParam);
         Q_FALLTHROUGH();
@@ -1273,6 +1280,7 @@ bool QWindowsContext::windowsProc(HWND hwnd, UINT message,
         QWindowSystemInterface::handleCloseEvent(platformWindow->window());
         return true;
     case QtWindows::ThemeChanged: {
+        QWindowsThemeCache::clearThemeCache(platformWindow->handle());
         // Switch from Aero to Classic changes margins.
         if (QWindowsTheme *theme = QWindowsTheme::instance())
             theme->windowsThemeChanged(platformWindow->window());
@@ -1411,7 +1419,7 @@ void QWindowsContext::handleFocusEvent(QtWindows::WindowsEventType et,
     }
     if (nextActiveWindow != d->m_lastActiveWindow) {
          d->m_lastActiveWindow = nextActiveWindow;
-         QWindowSystemInterface::handleWindowActivated(nextActiveWindow, Qt::ActiveWindowFocusReason);
+         QWindowSystemInterface::handleFocusWindowChanged(nextActiveWindow, Qt::ActiveWindowFocusReason);
     }
 }
 
@@ -1441,7 +1449,7 @@ bool QWindowsContext::handleContextMenuEvent(QWindow *window, const MSG &msg)
     }
 
     QWindowSystemInterface::handleContextMenuEvent(window, mouseTriggered, pos, globalPos,
-                                                   QWindowsKeyMapper::queryKeyboardModifiers());
+                                                   keyMapper()->queryKeyboardModifiers());
     return true;
 }
 #endif
@@ -1462,7 +1470,7 @@ void QWindowsContext::handleExitSizeMove(QWindow *window)
     const Qt::MouseButtons appButtons = QGuiApplication::mouseButtons();
     if (currentButtons == appButtons)
         return;
-    const Qt::KeyboardModifiers keyboardModifiers = QWindowsKeyMapper::queryKeyboardModifiers();
+    const Qt::KeyboardModifiers keyboardModifiers = keyMapper()->queryKeyboardModifiers();
     const QPoint globalPos = QWindowsCursor::mousePosition();
     const QPlatformWindow *platWin = window->handle();
     const QPoint localPos = platWin->mapFromGlobal(globalPos);

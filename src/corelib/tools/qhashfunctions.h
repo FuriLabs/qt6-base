@@ -7,10 +7,10 @@
 
 #include <QtCore/qstring.h>
 #include <QtCore/qstringfwd.h>
-#include <QtCore/qpair.h>
 
 #include <numeric> // for std::accumulate
 #include <functional> // for std::hash
+#include <utility> // For std::pair
 
 #if 0
 #pragma qt_class(QHashFunctions)
@@ -112,9 +112,7 @@ Q_DECL_CONST_FUNCTION inline size_t qHash(float key, size_t seed = 0) noexcept
     return QHashPrivate::hash(k, seed);
 }
 Q_CORE_EXPORT Q_DECL_CONST_FUNCTION size_t qHash(double key, size_t seed = 0) noexcept;
-#if !defined(Q_OS_DARWIN) || defined(Q_QDOC)
 Q_CORE_EXPORT Q_DECL_CONST_FUNCTION size_t qHash(long double key, size_t seed = 0) noexcept;
-#endif
 Q_DECL_CONST_FUNCTION constexpr inline size_t qHash(wchar_t key, size_t seed = 0) noexcept
 { return QHashPrivate::hash(size_t(key), seed); }
 Q_DECL_CONST_FUNCTION constexpr inline size_t qHash(char16_t key, size_t seed = 0) noexcept
@@ -153,7 +151,9 @@ inline Q_DECL_PURE_FUNCTION size_t qHash(const QByteArray &key, size_t seed = 0
 Q_CORE_EXPORT Q_DECL_PURE_FUNCTION size_t qHash(QStringView key, size_t seed = 0) noexcept;
 inline Q_DECL_PURE_FUNCTION size_t qHash(const QString &key, size_t seed = 0) noexcept
 { return qHash(QStringView{key}, seed); }
+#ifndef QT_BOOTSTRAPPED
 Q_CORE_EXPORT Q_DECL_PURE_FUNCTION size_t qHash(const QBitArray &key, size_t seed = 0) noexcept;
+#endif
 Q_CORE_EXPORT Q_DECL_PURE_FUNCTION size_t qHash(QLatin1StringView key, size_t seed = 0) noexcept;
 Q_DECL_CONST_FUNCTION constexpr inline size_t qHash(QKeyCombination key, size_t seed = 0) noexcept
 { return qHash(key.toCombined(), seed); }
@@ -326,7 +326,9 @@ QT_SPECIALIZE_STD_HASH_TO_CALL_QHASH_BY_VALUE(QStringView)
 QT_SPECIALIZE_STD_HASH_TO_CALL_QHASH_BY_VALUE(QLatin1StringView)
 QT_SPECIALIZE_STD_HASH_TO_CALL_QHASH_BY_VALUE(QByteArrayView)
 QT_SPECIALIZE_STD_HASH_TO_CALL_QHASH_BY_CREF(QByteArray)
+#ifndef QT_BOOTSTRAPPED
 QT_SPECIALIZE_STD_HASH_TO_CALL_QHASH_BY_CREF(QBitArray)
+#endif
 
 QT_END_NAMESPACE
 

@@ -1,6 +1,22 @@
 # Copyright (C) 2023 The Qt Company Ltd.
 # SPDX-License-Identifier: BSD-3-Clause
 
+function(qt_internal_validate_cmake_generator)
+    get_property(warning_shown GLOBAL PROPERTY _qt_validate_cmake_generator_warning_shown)
+
+    if(NOT warning_shown
+            AND NOT CMAKE_GENERATOR MATCHES "Ninja"
+            AND NOT QT_SILENCE_CMAKE_GENERATOR_WARNING
+            AND NOT DEFINED ENV{QT_SILENCE_CMAKE_GENERATOR_WARNING})
+        set_property(GLOBAL PROPERTY _qt_validate_cmake_generator_warning_shown TRUE)
+        message(WARNING
+               "The officially supported CMake generator for building Qt is "
+               "Ninja / Ninja Multi-Config. "
+               "You are using: '${CMAKE_GENERATOR}' instead. "
+               "Thus, you might encounter issues. Use at your own risk.")
+    endif()
+endfunction()
+
 macro(qt_internal_set_qt_building_qt)
     # Set the QT_BUILDING_QT variable so we can verify whether we are building
     # Qt from source.
@@ -362,17 +378,18 @@ macro(qt_internal_setup_android_platform_specifics)
 endmacro()
 
 macro(qt_internal_setup_build_and_global_variables)
+    qt_internal_validate_cmake_generator()
     qt_internal_set_qt_building_qt()
     qt_internal_compute_features_from_possible_inputs()
 
     # Depends on qt_internal_compute_features_from_possible_inputs
-    qt_internal_set_default_build_type()
+    qt_internal_set_cmake_build_type()
 
     qt_internal_set_message_log_level(CMAKE_MESSAGE_LOG_LEVEL)
     qt_internal_unset_extra_build_internals_vars()
     qt_internal_get_generator_is_multi_config()
 
-    # Depends on qt_internal_set_default_build_type
+    # Depends on qt_internal_set_cmake_build_type
     qt_internal_setup_cmake_config_postfix()
 
     qt_internal_setup_position_independent_code()

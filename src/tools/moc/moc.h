@@ -10,7 +10,7 @@
 #include <qjsondocument.h>
 #include <qjsonarray.h>
 #include <qjsonobject.h>
-#include <qversionnumber.h>
+#include <qtyperevision.h>
 #include <stdio.h>
 
 #include <private/qtools_p.h>
@@ -157,6 +157,7 @@ struct BaseDef {
 
 struct SuperClass {
     QByteArray classname;
+    QByteArray qualified;
     FunctionDef::Access access;
 };
 Q_DECLARE_TYPEINFO(SuperClass, Q_RELOCATABLE_TYPE);
@@ -240,6 +241,8 @@ public:
         return index > def->begin && index < def->end - 1;
     }
 
+    const QByteArray &toFullyQualified(const QByteArray &name) const noexcept;
+
     void prependNamespaces(BaseDef &def, const QList<NamespaceDef> &namespaceList) const;
 
     Type parseType();
@@ -287,6 +290,8 @@ public:
     void checkSuperClasses(ClassDef *def);
     void checkProperties(ClassDef* cdef);
     bool testForFunctionModifiers(FunctionDef *def);
+
+    void checkListSizes(const ClassDef &def);
 };
 
 inline QByteArray noRef(const QByteArray &type)

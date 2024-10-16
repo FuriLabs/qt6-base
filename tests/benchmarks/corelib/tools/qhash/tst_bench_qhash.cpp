@@ -1,6 +1,8 @@
 // Copyright (C) 2016 The Qt Company Ltd.
 // Copyright (C) 2016 Intel Corporation.
-// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only WITH Qt-GPL-exception-1.0
+// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
+
+#undef QT_NO_FOREACH // this file contains unported legacy Q_FOREACH uses
 
 #include "tst_bench_qhash.h"
 
@@ -53,6 +55,8 @@ private:
 
 void tst_QHash::initTestCase()
 {
+    QHashSeed::setDeterministicGlobalSeed();
+
     // small list of strings (that happen to look like file paths produced long
     // ago by cd ../.. && find . -print, but that's irrelevant).
     QFile smallPathsData(QFINDTESTDATA("paths_small_data.txt"));

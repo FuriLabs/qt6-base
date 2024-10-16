@@ -693,7 +693,9 @@ QVariant QFileSystemModel::myComputer(int role) const
         return QFileSystemModelPrivate::myComputer();
 #if QT_CONFIG(filesystemwatcher)
     case Qt::DecorationRole:
-        return d->fileInfoGatherer->iconProvider()->icon(QAbstractFileIconProvider::Computer);
+        if (auto *provider = d->fileInfoGatherer->iconProvider())
+            return provider->icon(QAbstractFileIconProvider::Computer);
+    break;
 #endif
     }
     return QVariant();
@@ -733,10 +735,9 @@ QVariant QFileSystemModel::data(const QModelIndex &index, int role) const
             QIcon icon = d->icon(index);
 #if QT_CONFIG(filesystemwatcher)
             if (icon.isNull()) {
-                if (d->node(index)->isDir())
-                    icon = d->fileInfoGatherer->iconProvider()->icon(QAbstractFileIconProvider::Folder);
-                else
-                    icon = d->fileInfoGatherer->iconProvider()->icon(QAbstractFileIconProvider::File);
+                using P = QAbstractFileIconProvider;
+                if (auto *provider = d->fileInfoGatherer->iconProvider())
+                    icon = provider->icon(d->node(index)->isDir() ? P::Folder: P::File);
             }
 #endif // filesystemwatcher
             return icon;
@@ -1569,7 +1570,7 @@ QAbstractFileIconProvider *QFileSystemModel::iconProvider() const
     Q_D(const QFileSystemModel);
     return d->fileInfoGatherer->iconProvider();
 #else
-    return 0;
+    return nullptr;
 #endif
 }
 
@@ -1913,7 +1914,7 @@ void QFileSystemModelPrivate::removeVisibleFile(QFileSystemNode *parentNode, int
     update and emit dataChanged if it has actually changed.
  */
 void QFileSystemModelPrivate::_q_fileSystemChanged(const QString &path,
-                                                   const QList<QPair<QString, QFileInfo>> &updates)
+                                                   const QList<std::pair<QString, QFileInfo>> &updates)
 {
 #if QT_CONFIG(filesystemwatcher)
     Q_Q(QFileSystemModel);
@@ -2078,7 +2079,7 @@ QFileSystemModelPrivate::QFileSystemModelPrivate()
 QFileSystemModelPrivate::~QFileSystemModelPrivate()
 {
 #if QT_CONFIG(filesystemwatcher)
-    fileInfoGatherer->requestInterruption();
+    fileInfoGatherer->requestAbort();
     if (!fileInfoGatherer->wait(1000)) {
         // If the thread hangs, perhaps because the network was disconnected
         // while the gatherer was stat'ing a remote file, then don't block
@@ -2100,7 +2101,7 @@ void QFileSystemModelPrivate::init()
 
     delayedSortTimer.setSingleShot(true);
 
-    qRegisterMetaType<QList<QPair<QString, QFileInfo>>>();
+    qRegisterMetaType<QList<std::pair<QString, QFileInfo>>>();
 #if QT_CONFIG(filesystemwatcher)
     q->connect(fileInfoGatherer.get(), SIGNAL(newListOfFiles(QString,QStringList)),
                q, SLOT(_q_directoryChanged(QString,QStringList)));
@@ -2124,8 +2125,14 @@ void QFileSystemModelPrivate::init()
 */
 bool QFileSystemModelPrivate::filtersAcceptsNode(const QFileSystemNode *node) const
 {
+    // When the model is set to only show files, then a node representing a dir
+    // should be hidden regardless of bypassFilters.
+    // QTBUG-74471
+    const bool hideDirs = (filters & (QDir::Dirs | QDir::AllDirs)) == 0;
+    const bool shouldHideDirNode = hideDirs && node->isDir();
+
     // always accept drives
-    if (node->parent == &root || bypassFilters.contains(node))
+    if (node->parent == &root || (!shouldHideDirNode && bypassFilters.contains(node)))
         return true;
 
     // If we don't know anything yet don't accept it
@@ -2134,7 +2141,6 @@ bool QFileSystemModelPrivate::filtersAcceptsNode(const QFileSystemNode *node) co
 
     const bool filterPermissions = ((filters & QDir::PermissionMask)
                                    && (filters & QDir::PermissionMask) != QDir::PermissionMask);
-    const bool hideDirs          = !(filters & (QDir::Dirs | QDir::AllDirs));
     const bool hideFiles         = !(filters & QDir::Files);
     const bool hideReadable      = !(!filterPermissions || (filters & QDir::Readable));
     const bool hideWritable      = !(!filterPermissions || (filters & QDir::Writable));

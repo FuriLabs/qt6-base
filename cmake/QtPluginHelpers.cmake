@@ -91,6 +91,11 @@ function(qt_internal_add_plugin target)
     qt6_add_plugin(${target} ${plugin_args})
     qt_internal_mark_as_internal_library(${target})
 
+    get_target_property(target_type "${target}" TYPE)
+    if(plugin_init_target AND TARGET "${plugin_init_target}")
+        qt_internal_add_target_aliases("${plugin_init_target}")
+    endif()
+
     set(plugin_type "")
     # TODO: Transitional: Remove the TYPE option handling after all repos have been converted to use
     # PLUGIN_TYPE.
@@ -211,6 +216,13 @@ function(qt_internal_add_plugin target)
             # This QT_PLUGINS assignment is only used by QtPostProcessHelpers to decide if a
             # QtModulePlugins.cmake file should be generated.
             set_property(TARGET "${qt_module_target}" APPEND PROPERTY QT_PLUGINS "${target}")
+        else()
+            # The _qt_plugins property is considered when collecting the plugins in
+            # deployment process. The usecase is following:
+            # QtModuleX is built separately and installed, so it's imported.
+            # The plugin is built in some application build tree and its PLUGIN_TYPE is associated
+            # with QtModuleX.
+            set_property(TARGET "${qt_module_target}" APPEND PROPERTY _qt_plugins "${target}")
         endif()
 
         set(plugin_target_versioned "${QT_CMAKE_EXPORT_NAMESPACE}::${target}")
@@ -383,7 +395,6 @@ function(qt_internal_add_plugin target)
 
     qt_register_target_dependencies("${target}" "${arg_PUBLIC_LIBRARIES}" "${qt_libs_private}")
 
-    get_target_property(target_type "${target}" TYPE)
     if(target_type STREQUAL STATIC_LIBRARY)
         if(qt_module_target)
             qt_internal_link_internal_platform_for_object_library("${plugin_init_target}")

@@ -1104,7 +1104,7 @@ void QRegularExpressionPrivate::doMatch(QRegularExpressionMatchPrivate *priv,
                                         const QRegularExpressionMatchPrivate *previous) const
 {
     Q_ASSERT(priv);
-    Q_ASSUME(priv != previous);
+    Q_ASSERT(priv != previous);
 
     const qsizetype subjectLength = priv->subject.size();
 
@@ -3100,7 +3100,8 @@ static const char *pcreCompileErrorCodes[] =
     QT_TRANSLATE_NOOP("QRegularExpression", "heap limit exceeded"),
     QT_TRANSLATE_NOOP("QRegularExpression", "invalid syntax"),
     QT_TRANSLATE_NOOP("QRegularExpression", "internal error - duplicate substitution match"),
-    QT_TRANSLATE_NOOP("QRegularExpression", "PCRE2_MATCH_INVALID_UTF is not supported for DFA matching")
+    QT_TRANSLATE_NOOP("QRegularExpression", "PCRE2_MATCH_INVALID_UTF is not supported for DFA matching"),
+    QT_TRANSLATE_NOOP("QRegularExpression", "INTERNAL ERROR: invalid substring offset")
 };
 #endif // #if 0
 
