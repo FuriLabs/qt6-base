@@ -30,12 +30,10 @@ override_dh_auto_configure:
 		-DINSTALL_ARCHDATADIR=lib/$(DEB_HOST_MULTIARCH)/qt6 \
 		-DINSTALL_EXAMPLESDIR=lib/$(DEB_HOST_MULTIARCH)/qt6/examples \
 		-DINSTALL_DATADIR=share/qt6 \
-		-DINSTALL_HOSTDATADIR=lib/$(DEB_HOST_MULTIARCH)/qt6 \
 		-DINSTALL_DOCDIR=share/qt6/doc \
 		-DINSTALL_SYSCONFDIR=/etc/xdg \
 		-DINSTALL_INCLUDEDIR=include/$(DEB_HOST_MULTIARCH)/qt6 \
-		-DINSTALL_PLUGINDIR=lib/$(DEB_HOST_MULTIARCH)/qt6/plugins \
-		-DINSTALL_TRANSLATIONDIR=share/qt6/translations \
+		-DINSTALL_TRANSLATIONSDIR=share/qt6/translations \
 		-DINSTALL_MKSPECSDIR=lib/$(DEB_HOST_MULTIARCH)/qt6/mkspecs \
 		-DINSTALL_PUBLICBINDIR=bin \
 		-DFEATURE_mimetype_database=OFF \
@@ -65,6 +63,7 @@ override_dh_auto_configure:
 		-DFEATURE_sql=OFF \
 		-DFEATURE_widgets=OFF \
 		-DFEATURE_xml=OFF \
+		-DFEATURE_reduce_relocations=OFF \
 		-DFEATURE_opengl=ON \
 		-DINPUT_opengl=es2 \
 		$(extra_cmake_args)
