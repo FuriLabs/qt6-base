@@ -94,11 +94,6 @@ $(document).ready(function($) {
 });
 
 $( window ).load(function() {
-    load_sdk('script', 'facebook-jssdk','//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=207346529386114&version=v2.0');
-    load_sdk('script', 'twitter-wjs', '//platform.twitter.com/widgets.js');
-    $.getScript("//www.google.com/jsapi", function(){
-        google.load("feeds", "1", {"callback": oneQt.liveFeeds});
-    });
 });
 
 var oneQt = {
