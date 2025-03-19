@@ -1,0 +1,17 @@
+#!/usr/bin/dh-exec
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/generic/libqevdevkeyboardplugin.so
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/generic/libqevdevmouseplugin.so
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/generic/libqevdevtabletplugin.so
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/generic/libqevdevtouchplugin.so
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/generic/libqlibinputplugin.so
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/platforms/libqlinuxfb.so
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/platforms/libqvkkhrdisplay.so
+usr/lib/${DEB_HOST_MULTIARCH}/libQt6Gui.so.*
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/generic/libqtslibplugin.so
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/imageformats/libqgif.so
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/imageformats/libqico.so
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/imageformats/libqjpeg.so
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/platforminputcontexts/libcomposeplatforminputcontextplugin.so
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/platforminputcontexts/libibusplatforminputcontextplugin.so
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/platforms/libqminimal.so
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/platforms/libqoffscreen.so

@@ -1,0 +1,85 @@
+From ca04f4fedf5d46dcd1c5504a518c209e26d2159f Mon Sep 17 00:00:00 2001
+From: David Redondo <qt@david-redondo.de>
+Date: Wed, 15 Jan 2025 13:52:13 +0100
+Subject: [PATCH] QOpenGlContext: Always unset current context in doneCurrent()
+
+Otherwise when no other context is made current until thread exit, the
+QGuiGLThreadContext destructor will try to call doneCurrent() on an
+already deleted context.
+
+Change-Id: If55dd69a72b8ab4012780a449f6a02729dd0ed43
+Reviewed-by: Laszlo Agocs <laszlo.agocs@qt.io>
+(cherry picked from commit cd1686e55f706048286cbc962bbe02032c2396cd)
+Reviewed-by: Qt Cherry-pick Bot <cherrypick_bot@qt-project.org>
+(cherry picked from commit 10c195b86432eaa430c6991c0fcb74c411407cdf)
+---
+
+diff --git a/src/gui/kernel/qopenglcontext.cpp b/src/gui/kernel/qopenglcontext.cpp
+index dd41318..c25132d 100644
+--- a/src/gui/kernel/qopenglcontext.cpp
++++ b/src/gui/kernel/qopenglcontext.cpp
+@@ -743,13 +743,13 @@
+ void QOpenGLContext::doneCurrent()
+ {
+     Q_D(QOpenGLContext);
+-    if (!isValid())
+-        return;
+ 
+-    if (QOpenGLContext::currentContext() == this)
+-        d->shareGroup->d_func()->deletePendingResources(this);
++    if (isValid()) {
++        if (QOpenGLContext::currentContext() == this)
++            d->shareGroup->d_func()->deletePendingResources(this);
++        d->platformGLContext->doneCurrent();
++    }
+ 
+-    d->platformGLContext->doneCurrent();
+     QOpenGLContextPrivate::setCurrentContext(nullptr);
+ 
+     d->surface = nullptr;
+diff --git a/tests/auto/gui/qopengl/tst_qopengl.cpp b/tests/auto/gui/qopengl/tst_qopengl.cpp
+index af59f3e..3f4aa8c 100644
+--- a/tests/auto/gui/qopengl/tst_qopengl.cpp
++++ b/tests/auto/gui/qopengl/tst_qopengl.cpp
+@@ -84,6 +84,9 @@
+     void bufferCreate();
+     void bufferMapRange();
+     void defaultQGLCurrentBuffer();
++#if QT_CONFIG(egl)
++    void dontCrashOnInvalidContextThreadTeardown();
++#endif
+ };
+ 
+ struct SharedResourceTracker
+@@ -1751,6 +1754,31 @@
+     //QCOMPARE(fb.pixelColor(clipRect.right(), clipRect.top() + 1), QColor(Qt::red));
+ }
+ 
++#if QT_CONFIG(egl)
++void tst_QOpenGL::dontCrashOnInvalidContextThreadTeardown()
++{
++    class Thread : public QThread
++    {
++        void run() override
++        {
++            auto context = std::make_unique<QOpenGLContext>();
++            QVERIFY(context->create());
++            QScopedPointer<QSurface> surface(createSurface(int(QSurface::Window)));
++            QVERIFY(context->makeCurrent(surface.data()));
++            auto eglContext = context->nativeInterface<QNativeInterface::QEGLContext>();
++            if (!eglContext) {
++                QSKIP("Need an egl context for this test");
++            }
++            eglContext->invalidateContext();
++            context->doneCurrent();
++        }
++    };
++    Thread thread;
++    thread.start();
++    thread.wait();
++}
++#endif
++
+ QTEST_MAIN(tst_QOpenGL)
+ 
+ #include "tst_qopengl.moc"

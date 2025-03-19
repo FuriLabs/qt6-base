@@ -1,0 +1,106 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE = 1
+
+# Use already defined DEB_HOST_* variables.
+include /usr/share/dpkg/architecture.mk
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all optimize=+lto
+sslpkgname := $(shell dpkg-query --show '--showformat=$${Depends}' libssl-dev | cut -d ' ' -f1)
+
+# cross-builds
+ifneq ($(DEB_BUILD_ARCH),$(DEB_HOST_ARCH))
+	extra_cmake_args += \
+		-DQT_HOST_PATH=/usr \
+		-DQT_HOST_PATH_CMAKE_DIR=/usr/lib/${DEB_BUILD_MULTIARCH}/cmake \
+		-DQT_FORCE_BUILD_TOOLS=ON
+endif
+
+%:
+	dh $@ --with pkgkde_symbolshelper --buildsystem=cmake+ninja
+
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		--log-level=STATUS \
+		-DCMAKE_LIBRARY_PATH=$(DEB_HOST_MULTIARCH) \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DINSTALL_BINDIR=lib/qt6/bin \
+		-DINSTALL_LIBDIR=lib/$(DEB_HOST_MULTIARCH) \
+		-DINSTALL_LIBEXECDIR=lib/qt6/libexec \
+		-DINSTALL_ARCHDATADIR=lib/$(DEB_HOST_MULTIARCH)/qt6 \
+		-DINSTALL_EXAMPLESDIR=lib/$(DEB_HOST_MULTIARCH)/qt6/examples \
+		-DINSTALL_DATADIR=share/qt6 \
+		-DINSTALL_DOCDIR=share/qt6/doc \
+		-DINSTALL_SYSCONFDIR=/etc/xdg \
+		-DINSTALL_INCLUDEDIR=include/$(DEB_HOST_MULTIARCH)/qt6 \
+		-DINSTALL_TRANSLATIONSDIR=share/qt6/translations \
+		-DINSTALL_MKSPECSDIR=lib/$(DEB_HOST_MULTIARCH)/qt6/mkspecs \
+		-DINSTALL_PUBLICBINDIR=bin \
+		-DFEATURE_mimetype_database=OFF \
+		-DFEATURE_dbus_linked=ON \
+		-DFEATURE_accessibility=ON \
+		-DFEATURE_doubleconversion=ON \
+		-DFEATURE_glib=ON \
+		-DFEATURE_icu=ON \
+		-DFEATURE_pcre2=ON \
+		-DFEATURE_system_pcre2=ON \
+		-DFEATURE_fontconfig=ON \
+		-DFEATURE_freetype=ON \
+		-DFEATURE_harfbuzz=ON \
+		-DFEATURE_directfb=OFF \
+		-DFEATURE_system_xcb_xinput=ON \
+		-DFEATURE_jpeg=ON \
+		-DFEATURE_system_jpeg=ON \
+		-DFEATURE_png=ON \
+		-DFEATURE_system_png=ON \
+		-DFEATURE_system_libb2=ON \
+		-DFEATURE_rpath=OFF \
+		-DFEATURE_relocatable=OFF \
+		-DFEATURE_concurrent=OFF \
+		-DFEATURE_dbus=ON \
+		-DFEATURE_network=OFF \
+		-DFEATURE_printsupport=OFF \
+		-DFEATURE_sql=OFF \
+		-DFEATURE_widgets=OFF \
+		-DFEATURE_xml=OFF \
+		-DFEATURE_reduce_relocations=OFF \
+		-DFEATURE_opengl=ON \
+		-DINPUT_opengl=es2 \
+		$(extra_cmake_args)
+
+override_dh_auto_install:
+	mkdir -p debian/tmp/usr
+	cp -r obj-$(DEB_HOST_MULTIARCH)/lib debian/tmp/usr
+
+execute_after_dh_auto_instal:
+	# Policy § 10.4. Remove this if https://bugs.debian.org/904409 gets fixed.
+	sed -i 's,bin/env perl,bin/perl,' debian/tmp/usr/lib/qt6/libexec/*.pl \
+		debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/qt6/mkspecs/features/data/unix/findclasslist.pl
+
+	# Reproducible builds: remove build paths from .prl files
+	sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libQt6*.prl
+
+	# Specifies parameters to pass to the platform plugin.
+	mkdir -p debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/qt6
+	sed 's/@DEB_HOST_MULTIARCH@/$(DEB_HOST_MULTIARCH)/' debian/qt.conf.in \
+		> debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/qt6/qt6.conf
+
+	# Inject cross-wrapper for qmake6
+	mkdir -p debian/tmp/usr/bin
+	sed -e 's/@DEB_HOST_MULTIARCH@/$(DEB_HOST_MULTIARCH)/g' \
+		-e 's/@DEB_HOST_GNU_TYPE@/$(DEB_HOST_GNU_TYPE)/g' \
+		< debian/qmake-cross-wrapper.in > debian/tmp/usr/bin/$(DEB_HOST_GNU_TYPE)-qmake6
+	chmod +x debian/tmp/usr/bin/$(DEB_HOST_GNU_TYPE)-qmake6
+
+	# Fix Qt6::qmake IMPORTED_LOCATION, see https://bugs.debian.org/1030980
+	sed -i 's,lib/qt6/bin/qmake,bin/$(DEB_HOST_GNU_TYPE)-qmake6,' \
+		debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/cmake/Qt6CoreTools/Qt6CoreToolsTargets-none.cmake
+
+override_dh_shlibdeps:
+	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info
+
+override_dh_makeshlibs:
+	dh_makeshlibs -XlibQt6EglFSDeviceIntegration -XlibQt6EglFsKmsGbmSupport -XlibQt6EglFsKmsSupport -XlibQt6XcbQpa
+
+override_dh_missing:
+	dh_missing --list-missing

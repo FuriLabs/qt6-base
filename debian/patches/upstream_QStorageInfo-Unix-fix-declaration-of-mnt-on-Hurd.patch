@@ -1,0 +1,30 @@
+From fc3e3d033584c62dfb2f3e3da551a7dbd7c0150d Mon Sep 17 00:00:00 2001
+From: Pino Toscano <toscano.pino@tiscali.it>
+Date: Sun, 6 Oct 2024 09:40:14 +0200
+Subject: [PATCH] QStorageInfo/Unix: fix declaration of 'mnt' on Hurd
+
+Directly use the right type for it, after the Linux code was dropped.
+Fixes commit 543ae6e6a43519b9fca6758c4a8c78625fcb2c86.
+
+Change-Id: I1417853153d2851262f40713b3318f0dae09c391
+Reviewed-by: Thiago Macieira <thiago.macieira@intel.com>
+---
+ src/corelib/io/qstorageinfo_unix.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/corelib/io/qstorageinfo_unix.cpp b/src/corelib/io/qstorageinfo_unix.cpp
+index b809a52f97..526c75c00a 100644
+--- a/src/corelib/io/qstorageinfo_unix.cpp
++++ b/src/corelib/io/qstorageinfo_unix.cpp
+@@ -98,7 +98,7 @@ private:
+ #elif defined(Q_OS_HURD)
+     FILE *fp;
+     QByteArray buffer;
+-    mountinfoent mnt;
++    struct mntent mnt;
+ #elif defined(Q_OS_HAIKU)
+     BVolumeRoster m_volumeRoster;
+ 
+-- 
+2.45.2
+
