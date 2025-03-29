@@ -90,7 +90,9 @@ Build-Depends: cmake (>= 3.24~),
                libqt6network6,
                unixodbc-dev,
                zlib1g-dev,
-Standards-Version: 4.7.0
+Build-Depends-Indep: qt6-base-dev (>= 6.8~) <!nodoc>,
+                     qt6-documentation-tools (>= 6.8~) <!nodoc>,
+Standards-Version: 4.7.2
 Section: libs
 Homepage: https://www.qt.io/developers/
 Rules-Requires-Root: no
