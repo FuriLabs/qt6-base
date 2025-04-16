@@ -5,6 +5,9 @@ upstream_prevent_recursion_in_qsortfilterproxymodel.diff
 upstream_IPC-add-PATH_MAX-less-fallback-definition-for-MAX_PA.patch
 upstream_QStorageInfo-Unix-fix-declaration-of-mnt-on-Hurd.patch
 
+# fixed in 6.8.4
+upstream_cve-2025-3512_fix_heap_buffer_overflow.diff
+
 # fixed in 6.8.3
 upstream_unset_current_openglcontext.diff
 upstream_qlocale_shutdown.patch
