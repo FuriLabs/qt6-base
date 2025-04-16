@@ -2,8 +2,10 @@ qt6-base (6.8.2+dfsg-6) UNRELEASED; urgency=medium
 
   [ Patrick Franz ]
   * Backport patch to fix issue when configuring Plasma to have multiple
-    Notification widgets, fixes QTBUG-134210:
+    Notification widgets, fixes QTBUG-134210.
   * Backport patch to fix CVE-2025-3512 (Closes: #1103022).
+  * Let qt6-gtk-platformtheme depend on gnome-themes-extra-data to fix
+    issue with dark themes (Closes: #1095836).
 
   [ Pino Toscano ]
   * Bump Standards-Version to 4.7.2, no changes required.
