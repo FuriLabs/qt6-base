@@ -1,4 +1,4 @@
-qt6-base (6.8.2+dfsg-6) UNRELEASED; urgency=medium
+qt6-base (6.8.2+dfsg-6) unstable; urgency=medium
 
   [ Patrick Franz ]
   * Backport patch to fix issue when configuring Plasma to have multiple
@@ -10,7 +10,7 @@ qt6-base (6.8.2+dfsg-6) UNRELEASED; urgency=medium
   [ Pino Toscano ]
   * Bump Standards-Version to 4.7.2, no changes required.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 08 Mar 2025 14:31:41 +0100
+ -- Patrick Franz <deltaone@debian.org>  Wed, 16 Apr 2025 21:33:04 +0200
 
 qt6-base (6.8.2+dfsg-5) unstable; urgency=medium
 
