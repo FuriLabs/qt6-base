@@ -13,6 +13,7 @@ upstream_unset_current_openglcontext.diff
 upstream_qlocale_shutdown.patch
 upstream_qsystemlocale_post_destruction_access.patch
 upstream_qlibraryinfo_speedup.patch
+upstream_prevent_unregistering_input_device.diff
 
 # Needs to be fixed upstream.
 Add-SH-detection.patch

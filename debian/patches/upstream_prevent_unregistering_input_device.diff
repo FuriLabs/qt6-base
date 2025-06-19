@@ -1,0 +1,28 @@
+From c46ac58ea36d5d446f7e64ce0021de0956b2e704 Mon Sep 17 00:00:00 2001
+From: Thiago Macieira <thiago.macieira@intel.com>
+Date: Mon, 17 Feb 2025 20:16:55 +0100
+Subject: [PATCH] GUI: no need to unregister input device if list is destroyed
+
+Fixes: QTBUG-133776
+Change-Id: If4a148e3ebf753ccd661a5ed1b321dbd7751576e
+Reviewed-by: Shawn Rutledge <shawn.rutledge@qt.io>
+Reviewed-by: Liang Qi <liang.qi@qt.io>
+(cherry picked from commit 1040728e39b8b898d6e96b79a4c7bfcd0cb3f027)
+Reviewed-by: Qt Cherry-pick Bot <cherrypick_bot@qt-project.org>
+(cherry picked from commit 6ad615cd1218a9b7f4204c04288ae2d6ed6c232b)
+---
+
+diff --git a/src/gui/kernel/qinputdevice.cpp b/src/gui/kernel/qinputdevice.cpp
+index 3ef8ad1..25f16c4 100644
+--- a/src/gui/kernel/qinputdevice.cpp
++++ b/src/gui/kernel/qinputdevice.cpp
+@@ -356,6 +356,9 @@
+ */
+ void QInputDevicePrivate::unregisterDevice(const QInputDevice *dev)
+ {
++    if (deviceList.isDestroyed())
++        return;     // nothing to remove!
++
+     QMutexLocker lock(&devicesMutex);
+     deviceList()->removeOne(dev);
+     qCInfo(lcQpaInputDevices) << "Unregistered" << dev;
