@@ -1,4 +1,4 @@
-qt6-base (6.8.2+dfsg-7) UNRELEASED; urgency=medium
+qt6-base (6.8.2+dfsg-7) unstable; urgency=medium
 
   [ Patrick Franz ]
   * Backport patch to prevent unregistering an input device if the list
@@ -6,7 +6,7 @@ qt6-base (6.8.2+dfsg-7) UNRELEASED; urgency=medium
   * Backport patch to rely on CUPS for multiple page ranges (Closes:
     #1108026).
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 19 Jun 2025 23:58:53 +0200
+ -- Patrick Franz <deltaone@debian.org>  Fri, 20 Jun 2025 00:08:21 +0200
 
 qt6-base (6.8.2+dfsg-6) unstable; urgency=medium
 
