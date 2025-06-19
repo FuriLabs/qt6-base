@@ -1,0 +1,42 @@
+From 3730a7f83ef081564331ea619131e63be8488386 Mon Sep 17 00:00:00 2001
+From: Alexander Stippich <a.stippich@gmx.net>
+Date: Wed, 26 Feb 2025 20:46:04 +0100
+Subject: [PATCH] rely on CUPS for multiple page ranges in unix version of QPrintDialog
+
+Since the introduction of QPageRanges with Qt6, multiple/arbitrary page
+ranges are broken in the unix implementation of QPrintDialog due to a
+possible double application of the page ranges: on the application side
+and on the server side with CUPS. Reason for this is that the
+QPrinter::PrintRange is set to PageRange instead of AllPages.
+The latter is needed when relying on the CUPS server-side page range.
+However, the server-side page range is always applied later on.
+
+Restore the behavior of Qt5 and set the PrintRange to AllPages for
+multiple/arbitrary page ranges and rely on the server-side filtering
+with CUPS.
+
+Change-Id: I1b85552a8cf2509b11a81db028f957584043f3ee
+Reviewed-by: Albert Astals Cid <aacid@kde.org>
+Reviewed-by: David Faure <david.faure@kdab.com>
+(cherry picked from commit 2428cbf44e3e2aa4eaf00c9548ac5a74685101c4)
+Reviewed-by: Qt Cherry-pick Bot <cherrypick_bot@qt-project.org>
+(cherry picked from commit b630ed4ef8c7ae43c8ab2a8826d664995cc8b685)
+---
+
+diff --git a/src/printsupport/dialogs/qprintdialog_unix.cpp b/src/printsupport/dialogs/qprintdialog_unix.cpp
+index 8846fc3..bdaa5fa 100644
+--- a/src/printsupport/dialogs/qprintdialog_unix.cpp
++++ b/src/printsupport/dialogs/qprintdialog_unix.cpp
+@@ -785,10 +785,8 @@
+ #if QT_CONFIG(cups)
+     if (options.pagesRadioButton->isChecked()) {
+         const QPageRanges ranges = QPageRanges::fromString(options.pagesLineEdit->text());
+-        if (!ranges.isEmpty()) {
+-            p->setPrintRange(QPrinter::PageRange);
+-            p->setPageRanges(ranges);
+-        }
++        p->setPrintRange(QPrinter::AllPages);
++        p->setPageRanges(QPageRanges());
+ 
+         // server-side page filtering
+         QCUPSSupport::setPageRange(p, ranges.toString());

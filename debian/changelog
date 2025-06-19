@@ -3,6 +3,8 @@ qt6-base (6.8.2+dfsg-7) UNRELEASED; urgency=medium
   [ Patrick Franz ]
   * Backport patch to prevent unregistering an input device if the list
     is destroyed (Closes: 1108018).
+  * Backport patch to rely on CUPS for multiple page ranges (Closes:
+    #1108026).
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 19 Jun 2025 23:58:53 +0200
 
