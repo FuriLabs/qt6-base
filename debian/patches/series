@@ -7,6 +7,7 @@ upstream_QStorageInfo-Unix-fix-declaration-of-mnt-on-Hurd.patch
 
 # fixed in 6.8.4
 upstream_cve-2025-3512_fix_heap_buffer_overflow.diff
+upstream_cve-2025-5455_fix_data_assertion_error.diff
 
 # fixed in 6.8.3
 upstream_unset_current_openglcontext.diff

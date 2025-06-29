@@ -1,5 +1,8 @@
 qt6-base (6.8.2+dfsg-8) UNRELEASED; urgency=medium
 
+  [ Patrick Franz ]
+  * Backport patch to fix CVE-2025-5455 (Closes: #1108474).
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 29 Jun 2025 23:46:01 +0200
 
 qt6-base (6.8.2+dfsg-7) unstable; urgency=medium
