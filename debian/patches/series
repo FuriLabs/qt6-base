@@ -1,5 +1,6 @@
 # fixed in 6.8.4/6.9.2
 upstream_QColorTransferGeneric_fix_BT2100PQEOTF.patch
+upstream_cve-2025-5992_input_range_qcolortransformation.diff
 
 # fixed in 6.9.1
 upstream_prevent_recursion_in_qsortfilterproxymodel.diff

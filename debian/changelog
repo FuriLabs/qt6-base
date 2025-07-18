@@ -2,7 +2,8 @@ qt6-base (6.8.2+dfsg-9) UNRELEASED; urgency=medium
 
   [ Patrick Franz ]
   * Backport patch to fix the PQ EOTF formula for BT.2100. This patch is
-    needed to make the patch for CVE-2025-5992 appllicable.
+    needed to make the patch for CVE-2025-5992 applicable.
+  * Backport patch to fix CVE-2025-5992 (Closes: #1109299).
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue, 15 Jul 2025 16:11:23 +0200
 
