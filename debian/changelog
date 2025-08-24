@@ -1,5 +1,9 @@
 qt6-base (6.8.2+dfsg-10) UNRELEASED; urgency=medium
 
+  [ Patrick Franz ]
+  * Backport patch to fix high CPU load of kwin_x11 when locking the
+    screen (Closes: #1111957).
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 24 Aug 2025 13:07:20 +0200
 
 qt6-base (6.8.2+dfsg-9) unstable; urgency=medium
