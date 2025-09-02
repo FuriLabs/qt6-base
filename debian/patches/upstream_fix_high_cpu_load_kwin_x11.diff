@@ -1,0 +1,49 @@
+From e2b88612e5c8dfc3f4bf416dff7b1af3e1e4f0f6 Mon Sep 17 00:00:00 2001
+From: Vlad Zahorodnii <vlad.zahorodnii@kde.org>
+Date: Sun, 27 Jul 2025 15:58:31 +0300
+Subject: [PATCH] XCB: Remove extra xcb_randr_select_input() calls
+
+This fixes high CPU usage in kwin.
+
+If there is a ConfigureNotify event for the root window, QtXCB will
+call xcb_randr_select_input(). The problem is that the X server may send
+an output change event in response to xcb_randr_select_input().
+
+When kwin sees that output change event, it will process the event and
+it can update its override redirect windows, which can produce a few
+ConfigureNotify events for the root window and make kwin get stuck in an
+update loop.
+
+Since the QXcbConnection constructor already subscribes to the RandR
+events, these xcb_randr_select_input() function calls can be removed.
+Also, `true` is not a valid argument for xcb_randr_select_input(). It
+expects a mask of events to listen. For what it's worth, `true`
+corresponds to XCB_RANDR_NOTIFY_MASK_SCREEN_CHANGE = 1, which
+xrandrSelectEvents() already subscribes to.
+
+Pick-to: 6.10 6.9 6.8
+Change-Id: I950a0a6e2e34822ac3da8cd69b96670e4bf4b07d
+Reviewed-by: Liang Qi <liang.qi@qt.io>
+---
+
+diff --git a/src/plugins/platforms/xcb/qxcbscreen.cpp b/src/plugins/platforms/xcb/qxcbscreen.cpp
+index 2f00615..c1b8f84 100644
+--- a/src/plugins/platforms/xcb/qxcbscreen.cpp
++++ b/src/plugins/platforms/xcb/qxcbscreen.cpp
+@@ -499,7 +499,6 @@
+     , m_cursor(std::make_unique<QXcbCursor>(connection, this))
+ {
+     if (connection->isAtLeastXRandR12()) {
+-        xcb_randr_select_input(xcb_connection(), screen()->root, true);
+         auto crtc = Q_XCB_REPLY_UNCHECKED(xcb_randr_get_crtc_info, xcb_connection(),
+                                           m_crtc, output ? output->timestamp : 0);
+         if (crtc) {
+@@ -605,8 +604,6 @@
+         return;
+     }
+ 
+-    xcb_randr_select_input(xcb_connection(), screen()->root, true);
+-
+     m_monitor = monitorInfo;
+     qCDebug(lcQpaScreen) << "xcb_randr_monitor_info_t: primary=" << m_monitor->primary << ", x=" << m_monitor->x << ", y=" << m_monitor->y
+         << ", width=" << m_monitor->width << ", height=" << m_monitor->height
