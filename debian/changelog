@@ -1,3 +1,7 @@
+qt6-base (6.8.2+dfsg-9+deb13u1) trixie; urgency=medium
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue, 02 Sep 2025 20:58:17 +0200
+
 qt6-base (6.8.2+dfsg-9) unstable; urgency=medium
 
   [ Patrick Franz ]
