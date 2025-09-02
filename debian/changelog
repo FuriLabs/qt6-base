@@ -1,9 +1,9 @@
-qt6-base (6.8.2+dfsg-9+deb13u1) UNRELEASED; urgency=medium
+qt6-base (6.8.2+dfsg-9+deb13u1) trixie; urgency=medium
 
   * Backport patch to fix high CPU load of kwin_x11 when locking the
     screen.
 
- -- Patrick Franz <deltaone@debian.org>  Tue, 02 Sep 2025 21:03:24 +0200
+ -- Patrick Franz <deltaone@debian.org>  Tue, 02 Sep 2025 21:04:45 +0200
 
 qt6-base (6.8.2+dfsg-9) unstable; urgency=medium
 
