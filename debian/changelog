@@ -1,10 +1,10 @@
-qt6-base (6.9.2+dfsg-3) UNRELEASED; urgency=medium
+qt6-base (6.9.2+dfsg-3) unstable; urgency=medium
 
   [ Patrick Franz ]
   * Enable ccache only whhen build in corresponding build profile.
   * Drop Rules-Requires-Root: no, not needed any more.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 25 Oct 2025 10:06:14 +0200
+ -- Patrick Franz <deltaone@debian.org>  Sat, 25 Oct 2025 14:34:36 +0200
 
 qt6-base (6.9.2+dfsg-2) unstable; urgency=medium
 
