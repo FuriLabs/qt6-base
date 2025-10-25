@@ -2,6 +2,7 @@ qt6-base (6.9.2+dfsg-3) UNRELEASED; urgency=medium
 
   [ Patrick Franz ]
   * Enable ccache only whhen build in corresponding build profile.
+  * Drop Rules-Requires-Root: no, not needed any more.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 25 Oct 2025 10:06:14 +0200
 
