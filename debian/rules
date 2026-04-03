@@ -53,44 +53,44 @@ override_dh_auto_configure:
 		-DINSTALL_TRANSLATIONSDIR=share/qt6/translations \
 		-DINSTALL_MKSPECSDIR=lib/$(DEB_HOST_MULTIARCH)/qt6/mkspecs \
 		-DINSTALL_PUBLICBINDIR=bin \
-		-DQT_BUILD_EXAMPLES=ON \
-		-DQT_INSTALL_EXAMPLES_SOURCES=ON \
-		-DFEATURE_accessibility=ON \
-		-DFEATURE_cups=ON \
+		-DFEATURE_mimetype_database=OFF \
 		-DFEATURE_dbus_linked=ON \
-		-DFEATURE_directfb=OFF \
+		-DFEATURE_accessibility=ON \
 		-DFEATURE_doubleconversion=ON \
+		-DFEATURE_glib=ON \
+		-DFEATURE_icu=ON \
+		-DFEATURE_pcre2=ON \
+		-DFEATURE_system_pcre2=ON \
 		-DFEATURE_fontconfig=ON \
 		-DFEATURE_freetype=ON \
-		-DFEATURE_glib=ON \
-		-DFEATURE_gtk3=ON \
 		-DFEATURE_harfbuzz=ON \
-		-DFEATURE_icu=ON \
-		-DFEATURE_jpeg=ON \
-		-DFEATURE_libproxy=ON \
-		-DFEATURE_mimetype_database=OFF \
-		-DFEATURE_pcre2=ON \
-		-DFEATURE_png=ON \
-		-DFEATURE_reduce_relocations=OFF \
-		-DFEATURE_relocatable=OFF \
-		-DFEATURE_rpath=OFF \
-		-DFEATURE_sql_mysql=ON \
-		-DFEATURE_sql_odbc=ON \
-		-DFEATURE_sql_psql=ON \
-		-DFEATURE_sql_sqlite=ON \
-		-DFEATURE_ssl=ON \
-		-DFEATURE_system_jpeg=ON \
-		-DFEATURE_system_libb2=ON \
-		-DFEATURE_system_pcre2=ON \
-		-DFEATURE_system_png=ON \
-		-DFEATURE_system_proxies=ON \
-		-DFEATURE_system_sqlite=ON \
+		-DFEATURE_directfb=OFF \
 		-DFEATURE_system_xcb_xinput=ON \
-		-DFEATURE_system_zlib=ON \
+		-DFEATURE_jpeg=ON \
+		-DFEATURE_system_jpeg=ON \
+		-DFEATURE_png=ON \
+		-DFEATURE_system_png=ON \
+		-DFEATURE_system_libb2=ON \
+		-DFEATURE_rpath=OFF \
+		-DFEATURE_relocatable=OFF \
+		-DFEATURE_concurrent=OFF \
+		-DFEATURE_dbus=ON \
+		-DFEATURE_network=OFF \
+		-DFEATURE_printsupport=OFF \
+		-DFEATURE_sql=OFF \
+		-DFEATURE_widgets=OFF \
+		-DFEATURE_xml=OFF \
+		-DFEATURE_reduce_relocations=OFF \
+		-DFEATURE_opengl=ON \
+		-DINPUT_opengl=es2 \
 		$(extra_cmake_args)
 
 
-execute_after_dh_auto_install-arch:
+override_dh_auto_install:
+	mkdir -p debian/tmp/usr
+	cp -r obj-$(DEB_HOST_MULTIARCH)/lib debian/tmp/usr
+
+execute_after_dh_auto_install-archh:
 	# Reproducible builds: remove build paths from .prl files
 	sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libQt6*.prl
 
@@ -133,3 +133,8 @@ execute_after_dh_shlibdeps-arch:
 
 # Do not run tests when building the documentation
 override_dh_auto_test-indep:
+
+override_dh_missing:
+
+override_dh_shlibdeps:
+	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info
