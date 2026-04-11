@@ -249,7 +249,6 @@
 [linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/WaylandClient.json
 [linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/WaylandGlobalPrivate.json
 [linux-any] usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/WlShellIntegrationPrivate.json
-usr/bin/${DEB_HOST_GNU_TYPE}-qtpaths6
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtConcurrent/QtConcurrent
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtConcurrent/QtConcurrentDepends
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtConcurrent/QtConcurrentFilter

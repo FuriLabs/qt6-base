@@ -7,7 +7,6 @@ usr/lib/qt6/bin/qdbusxml2cpp
 usr/lib/qt6/bin/qt-cmake
 usr/lib/qt6/bin/qt-cmake-create
 usr/lib/qt6/bin/qt-configure-module
-usr/lib/qt6/bin/qtpaths6
 usr/lib/qt6/libexec/cmake_automoc_parser
 usr/lib/qt6/libexec/moc
 usr/lib/qt6/libexec/qlalr

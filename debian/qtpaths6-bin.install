@@ -1,0 +1,2 @@
+#!/usr/bin/dh-exec
+usr/lib/qt6/bin/qtpaths6
