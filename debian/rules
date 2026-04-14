@@ -71,6 +71,8 @@ override_dh_auto_configure:
 		-DFEATURE_png=ON \
 		-DFEATURE_system_png=ON \
 		-DFEATURE_system_libb2=ON \
+		-DFEATURE_textmarkdownreader=ON \
+		-DINPUT_libmd4c=qt \
 		-DFEATURE_rpath=OFF \
 		-DFEATURE_relocatable=OFF \
 		-DFEATURE_concurrent=OFF \
