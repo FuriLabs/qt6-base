@@ -1,6 +1,7 @@
 Source: qt6-base
 Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Patrick Franz <deltaone@debian.org>,
+XS-FuriOS-Force-Staging: true
 Build-Depends: debhelper-compat (= 13),
                dh-exec,
                dh-sequence-pkgkde-symbolshelper,
