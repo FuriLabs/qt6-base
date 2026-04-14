@@ -1,0 +1,5 @@
+# Example/demo-specific documentation
+qt6-base-examples: package-contains-documentation-outside-usr-share-doc [usr/lib/*/qt6/examples/**/*.html]
+
+# CMake listfiles and textual resources for examples
+qt6-base-examples: package-contains-documentation-outside-usr-share-doc [usr/lib/*/qt6/examples/**/*.txt]

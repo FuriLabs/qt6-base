@@ -1,2 +1,5 @@
 # Configuration file with common mkspec bits for BSD systems
 qmake6: extra-license-file [usr/lib/*/qt6/mkspecs/common/bsd/bsd.conf]
+
+# Qt module note
+qmake6: package-contains-documentation-outside-usr-share-doc [usr/lib/*/qt6/mkspecs/modules/README]
