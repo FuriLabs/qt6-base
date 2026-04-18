@@ -94,7 +94,6 @@ Build-Depends-Indep: qt6-base-dev (>= 6.10~) <!nodoc>,
                      qt6-documentation-tools (>= 6.10~) <!nodoc>,
 Standards-Version: 4.7.3
 Section: libs
-Priority: optional
 Homepage: https://www.qt.io/developers/
 Vcs-Git: https://salsa.debian.org/qt-kde-team/qt6/qt6-base.git
 Vcs-Browser: https://salsa.debian.org/qt-kde-team/qt6/qt6-base
