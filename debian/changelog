@@ -1,7 +1,7 @@
 qt6-base (6.10.2+dfsg-8~) UNRELEASED; urgency=medium
 
   [ Sandro Knauß ]
-  * Split qtpaths into own package.
+  * Split qtpaths into own package (Closes #1134349).
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 11 Apr 2026 23:09:09 +0200
 
