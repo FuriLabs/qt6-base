@@ -2,6 +2,7 @@ qt6-base (6.10.2+dfsg-8~) UNRELEASED; urgency=medium
 
   [ Sandro Knauß ]
   * Split qtpaths into own package (Closes #1134349).
+  * Use dh-python to handle python dependencies.
 
   [Daniel Richard G.]
   * Fix numerous lintian warnings.
