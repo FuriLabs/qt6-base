@@ -95,7 +95,7 @@ execute_after_dh_auto_install-archh:
 	sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libQt6*.prl
 
 	# Fix shebang
-	sed -i -e 's#/bin/env python#/usr/bin/python#' debian/tmp/usr/lib/x86_64-linux-gnu/qt6/examples/corelib/serialization/cbordump/cbortag.py
+	sed -i -e 's#/bin/env python#/usr/bin/python#' debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/qt6/examples/corelib/serialization/cbordump/cbortag.py
 	sed -i '1i #!/usr/bin/python3' debian/tmp/usr/lib/qt6/libexec/qt_cyclonedx_generator.py
 
 	# Specifies parameters to pass to the platform plugin.
@@ -128,6 +128,11 @@ override_dh_auto_install-indep:
 	# Remove build path from index files.
 	find $(CURDIR)/debian/tmp/usr/share/qt6/doc -type f -name *.index -exec \
 		sed -i 's@$(CURDIR)/@@g' {} \;
+
+override_dh_python3-arch:
+	dh_python3 -pqmake6 /usr/lib/$(DEB_HOST_MULTIARCH)/qt6/mkspecs/features/uikit/
+	dh_python3 -pqt6-base-dev-tools /usr/lib/qt6/libexec/
+	dh_python3 -pqt6-base-examples /usr/lib/$(DEB_HOST_MULTIARCH)/qt6/examples/corelib/serialization/cbordump/
 
 override_dh_makeshlibs:
 	dh_makeshlibs -XlibQt6EglFSDeviceIntegration -XlibQt6EglFsKmsGbmSupport -XlibQt6EglFsKmsSupport -XlibQt6XcbQpa
