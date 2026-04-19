@@ -94,6 +94,10 @@ execute_after_dh_auto_install-archh:
 	# Reproducible builds: remove build paths from .prl files
 	sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libQt6*.prl
 
+	# Fix shebang
+	sed -i -e 's#/bin/env python#/usr/bin/python#' debian/tmp/usr/lib/x86_64-linux-gnu/qt6/examples/corelib/serialization/cbordump/cbortag.py
+	sed -i '1i #!/usr/bin/python3' debian/tmp/usr/lib/qt6/libexec/qt_cyclonedx_generator.py
+
 	# Specifies parameters to pass to the platform plugin.
 	mkdir -p debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/qt6
 	sed 's/@DEB_HOST_MULTIARCH@/$(DEB_HOST_MULTIARCH)/' debian/qt.conf.in \

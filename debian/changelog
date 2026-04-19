@@ -10,6 +10,7 @@ qt6-base (6.10.2+dfsg-8~) UNRELEASED; urgency=medium
   * Cleanup copyright file.
   * Update lintian overrides.
   * Add python3 to build-depends, as this is needed for dh-python.
+  * Fix shebangs for some Python scripts.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 11 Apr 2026 23:09:09 +0200
 
