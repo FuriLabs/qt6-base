@@ -5,6 +5,7 @@ qt6-base (6.10.2+dfsg-8~) UNRELEASED; urgency=medium
   * Use dh-python to handle python dependencies.
   * Bump Standards-Version to 4.7.4 (No changes needed).
   * Cleanup copyright file.
+  * Update lintian overrides.
 
   [Daniel Richard G.]
   * Fix numerous lintian warnings.

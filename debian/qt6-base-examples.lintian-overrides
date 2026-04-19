@@ -3,3 +3,4 @@ qt6-base-examples: package-contains-documentation-outside-usr-share-doc [usr/lib
 
 # CMake listfiles and textual resources for examples
 qt6-base-examples: package-contains-documentation-outside-usr-share-doc [usr/lib/*/qt6/examples/**/*.txt]
+qt6-base-examples: package-contains-documentation-outside-usr-share-doc [usr/lib/*/qt6/examples/**/CMakeLists.txt]

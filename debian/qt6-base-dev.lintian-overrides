@@ -3,8 +3,6 @@ qt6-base-dev: package-contains-documentation-outside-usr-share-doc [usr/lib/*/cm
 # script for the cmake build system
 qt6-base-dev: package-contains-documentation-outside-usr-share-doc [usr/lib/*/cmake/Qt6BuildInternals/QtStandaloneTestTemplateProject/CMakeLists.txt]
 
-qt6-base-dev: no-code-sections [usr/lib/*/libQt6ExampleIcons.a]
-
 # Font files for documentation CSS
 qt6-base-dev: font-in-non-font-package [usr/share/qt6/doc/global/template/style/icomoon.*]
 qt6-base-dev: font-outside-font-dir [usr/share/qt6/doc/global/template/style/icomoon.*]
