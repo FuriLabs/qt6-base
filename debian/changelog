@@ -1,14 +1,14 @@
 qt6-base (6.10.2+dfsg-8~) UNRELEASED; urgency=medium
 
+  [Daniel Richard G.]
+  * Fix numerous lintian warnings.
+
   [ Sandro Knauß ]
   * Split qtpaths into own package (Closes: #1134349).
   * Use dh-python to handle python dependencies.
   * Bump Standards-Version to 4.7.4 (No changes needed).
   * Cleanup copyright file.
   * Update lintian overrides.
-
-  [Daniel Richard G.]
-  * Fix numerous lintian warnings.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 11 Apr 2026 23:09:09 +0200
 
