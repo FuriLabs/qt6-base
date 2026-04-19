@@ -9,6 +9,7 @@ qt6-base (6.10.2+dfsg-8~) UNRELEASED; urgency=medium
   * Bump Standards-Version to 4.7.4 (No changes needed).
   * Cleanup copyright file.
   * Update lintian overrides.
+  * Add python3 to build-depends, as this is needed for dh-python.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 11 Apr 2026 23:09:09 +0200
 
