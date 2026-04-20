@@ -1,4 +1,6 @@
-qt6-base (6.10.2+dfsg-8~) UNRELEASED; urgency=medium
+qt6-base (6.10.2+dfsg-8) experimental; urgency=medium
+
+  * Team upload.
 
   [Daniel Richard G.]
   * Fix numerous lintian warnings.
@@ -13,7 +15,7 @@ qt6-base (6.10.2+dfsg-8~) UNRELEASED; urgency=medium
   * Fix shebangs for some Python scripts.
   * Scan the correct directories for Python scripts.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 11 Apr 2026 23:09:09 +0200
+ -- Sandro Knauß <hefee@debian.org>  Sun, 19 Apr 2026 17:56:32 +0200
 
 qt6-base (6.10.2+dfsg-7) unstable; urgency=medium
 
