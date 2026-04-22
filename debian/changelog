@@ -1,9 +1,12 @@
-qt6-base (6.10.2+dfsg-9) UNRELEASED; urgency=medium
+qt6-base (6.10.2+dfsg-9) unstable; urgency=medium
+
+  * Team upload.
+  * Release to unstable.
 
   [ Mike Gabriel ]
   * Fix building with DEB_BUILD_PROFILES=nodoc.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 22 Apr 2026 22:47:06 +0200
+ -- Sandro Knauß <hefee@debian.org>  Wed, 22 Apr 2026 22:52:12 +0200
 
 qt6-base (6.10.2+dfsg-8) experimental; urgency=medium
 
