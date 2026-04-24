@@ -1,3 +1,16 @@
+qt6-base (6.10.2+dfsg-10) UNRELEASED; urgency=medium
+
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since buster (oldstable):
+    + Build-Depends: Drop versioned constraint on pkg-kde-tools (>= 0.15.17~).
+
+  [ Patrick Franz ]
+  * Remove the dependency to python3 from qmake6 and qt6-base-examples
+    as it breaks Multi-Arch installations due to the added rtupdate
+    files (Closes: #1134675).
+
+ -- Debian Janitor <janitor@jelmer.uk>  Tue, 31 Jan 2023 19:09:49 -0000
+
 qt6-base (6.10.2+dfsg-9) unstable; urgency=medium
 
   * Team upload.
