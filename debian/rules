@@ -131,8 +131,10 @@ override_dh_auto_install-indep:
 
 override_dh_python3-arch:
 	dh_python3 -pqmake6 /usr/lib/$(DEB_HOST_MULTIARCH)/qt6/mkspecs/features/uikit/
+	mv $(CURDIR)/debian/qmake6/usr/share/python3/runtime.d/qmake6.rtupdate $(CURDIR)/debian/qmake6//usr/share/python3/runtime.d/qmake6-${DEB_HOST_GNU_TYPE}.rtupdate
 	dh_python3 -pqt6-base-dev-tools /usr/lib/qt6/libexec/
 	dh_python3 -pqt6-base-examples /usr/lib/$(DEB_HOST_MULTIARCH)/qt6/examples/corelib/serialization/cbordump/
+	mv $(CURDIR)/debian/qt6-base-examples/usr/share/python3/runtime.d/qt6-base-examples.rtupdate $(CURDIR)/debian/qt6-base-examples/usr/share/python3/runtime.d/qt6-base-examples-${DEB_HOST_GNU_TYPE}.rtupdate
 
 override_dh_makeshlibs:
 	dh_makeshlibs -XlibQt6EglFSDeviceIntegration -XlibQt6EglFsKmsGbmSupport -XlibQt6EglFsKmsSupport -XlibQt6XcbQpa
