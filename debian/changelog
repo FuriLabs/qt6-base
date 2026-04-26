@@ -1,10 +1,10 @@
-qt6-base (6.10.2+dfsg-11) UNRELEASED; urgency=medium
+qt6-base (6.10.2+dfsg-11) unstable; urgency=medium
 
   [ Sandro Knauß ]
   * Find a solution to use dh-python: Install the .rtupdate files with
     a different name for each arch to be coinstallable. (Closes: #1134675)
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 25 Apr 2026 10:44:36 +0200
+ -- Sandro Knauß <hefee@debian.org>  Sun, 26 Apr 2026 18:14:15 +0200
 
 qt6-base (6.10.2+dfsg-10) unstable; urgency=medium
 
