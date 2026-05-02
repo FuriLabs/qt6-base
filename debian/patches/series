@@ -1,6 +1,7 @@
 # Fixed in 6.10.3
 upstream_hdr_vulkan.diff
 upstream_QFileSystemEngine-handle-copy_file_range-returning-E.patch
+upstream_Revert-QProcessEnvironment-simplify-locking.patch
 
 # Needs to be fixed upstream.
 Add-SH-detection.patch

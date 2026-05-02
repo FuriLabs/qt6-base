@@ -1,0 +1,206 @@
+From 4b1eb34337bdbc66e0da18a7e7375ed0dd8455ec Mon Sep 17 00:00:00 2001
+From: Miao Wang <shankerwangmiao@gmail.com>
+Date: Thu, 22 Jan 2026 01:30:17 +0800
+Subject: [PATCH] Revert "QProcessEnvironment: simplify locking"
+
+This reverts commit c5d6b263c204cb09db2be36826e19acb03dc24fb.
+
+The commit being reverted assumes the mutex is only protecting 'nameMap'
+and nothing else is mutable, which is false. The mutex is not only
+protecting 'nameMap' but also protecting the containing value objects,
+since even though the value object is accessed read-only, its
+implementation mutates its internal states for 2-way conversion between
+ByteArray and QString.
+
+Commit 85e61297f7b02297641826332dbdbc845a88c34b ("restore
+QProcessEnvironment shared data thread safety on unix") said that
+implicit sharing together with 'mutable' is a time bomb and the bomb is
+triggered by the reverted commit.
+
+Fixes: QTBUG-142938
+Pick-to: 6.8
+Change-Id: I9e3234f0eb2c691eccf753a11f63fae9944bd503
+Reviewed-by: Thiago Macieira <thiago.macieira@intel.com>
+Reviewed-by: Oswald Buddenhagen <oswald.buddenhagen@gmx.de>
+(cherry picked from commit 080d61c020678b75ed9d5acb062ec82ba8fc402f)
+Reviewed-by: Qt Cherry-pick Bot <cherrypick_bot@qt-project.org>
+(cherry picked from commit 62917e4b518ecaa9dc34337e30f12eaeb41e790e)
+---
+ src/corelib/io/qprocess.cpp      | 12 ++++++--
+ src/corelib/io/qprocess_p.h      | 50 ++++++++++++++++++--------------
+ src/corelib/io/qprocess_unix.cpp |  2 ++
+ 3 files changed, 40 insertions(+), 24 deletions(-)
+
+diff --git a/src/corelib/io/qprocess.cpp b/src/corelib/io/qprocess.cpp
+index 3e4f5cc27cd..9d904c0bc18 100644
+--- a/src/corelib/io/qprocess.cpp
++++ b/src/corelib/io/qprocess.cpp
+@@ -105,7 +105,6 @@ void QProcessEnvironmentPrivate::insert(const QProcessEnvironmentPrivate &other)
+         vars.insert(it.key(), it.value());
+ 
+ #ifdef Q_OS_UNIX
+-    const OrderedNameMapMutexLocker locker(this, &other);
+     auto nit = other.nameMap.constBegin();
+     const auto nend = other.nameMap.constEnd();
+     for ( ; nit != nend; ++nit)
+@@ -206,8 +205,10 @@ bool comparesEqual(const QProcessEnvironment &lhs, const QProcessEnvironment &rh
+ {
+     if (lhs.d == rhs.d)
+         return true;
+-
+-    return lhs.d && rhs.d && lhs.d->vars == rhs.d->vars;
++    if (!(lhs.d && rhs.d))
++        return false;
++    QProcessEnvironmentPrivate::OrderedMutexLocker locker(lhs.d, rhs.d);
++    return lhs.d->vars == rhs.d->vars;
+ }
+ 
+ /*!
+@@ -265,6 +266,7 @@ bool QProcessEnvironment::contains(const QString &name) const
+ {
+     if (!d)
+         return false;
++    QProcessEnvironmentPrivate::MutexLocker locker(d);
+     return d->vars.contains(d->prepareName(name));
+ }
+ 
+@@ -315,6 +317,7 @@ QString QProcessEnvironment::value(const QString &name, const QString &defaultVa
+     if (!d)
+         return defaultValue;
+ 
++    QProcessEnvironmentPrivate::MutexLocker locker(d);
+     const auto it = d->vars.constFind(d->prepareName(name));
+     if (it == d->vars.constEnd())
+         return defaultValue;
+@@ -339,6 +342,7 @@ QStringList QProcessEnvironment::toStringList() const
+ {
+     if (!d)
+         return QStringList();
++    QProcessEnvironmentPrivate::MutexLocker locker(d);
+     return d->toList();
+ }
+ 
+@@ -355,6 +359,7 @@ QStringList QProcessEnvironment::keys() const
+ {
+     if (!d)
+         return QStringList();
++    QProcessEnvironmentPrivate::MutexLocker locker(d);
+     return d->keys();
+ }
+ 
+@@ -371,6 +376,7 @@ void QProcessEnvironment::insert(const QProcessEnvironment &e)
+         return;
+ 
+     // our re-impl of detach() detaches from null
++    QProcessEnvironmentPrivate::MutexLocker locker(e.d);
+     d->insert(*e.d);
+ }
+ 
+diff --git a/src/corelib/io/qprocess_p.h b/src/corelib/io/qprocess_p.h
+index e9634c13dca..d48cab9c24b 100644
+--- a/src/corelib/io/qprocess_p.h
++++ b/src/corelib/io/qprocess_p.h
+@@ -111,22 +111,16 @@ public:
+     inline QString nameToString(const Key &name) const { return name; }
+     inline Value prepareValue(const QString &value) const { return value; }
+     inline QString valueToString(const Value &value) const { return value; }
+-#else
+-    struct NameMapMutexLocker : public QMutexLocker<QMutex>
+-    {
+-        NameMapMutexLocker(const QProcessEnvironmentPrivate *d) : QMutexLocker(&d->nameMapMutex) {}
++    struct MutexLocker {
++        MutexLocker(const QProcessEnvironmentPrivate *) {}
+     };
+-    struct OrderedNameMapMutexLocker : public QOrderedMutexLocker
+-    {
+-        OrderedNameMapMutexLocker(const QProcessEnvironmentPrivate *d1,
+-                                  const QProcessEnvironmentPrivate *d2)
+-            : QOrderedMutexLocker(&d1->nameMapMutex, &d2->nameMapMutex)
+-        {}
++    struct OrderedMutexLocker {
++        OrderedMutexLocker(const QProcessEnvironmentPrivate *,
++                           const QProcessEnvironmentPrivate *) {}
+     };
+-
++#else
+     inline Key prepareName(const QString &name) const
+     {
+-        const NameMapMutexLocker locker(this);
+         Key &ent = nameMap[name];
+         if (ent.isEmpty())
+             ent = name.toLocal8Bit();
+@@ -135,27 +129,40 @@ public:
+     inline QString nameToString(const Key &name) const
+     {
+         const QString sname = QString::fromLocal8Bit(name);
+-        {
+-            const NameMapMutexLocker locker(this);
+-            nameMap[sname] = name;
+-        }
++        nameMap[sname] = name;
+         return sname;
+     }
+     inline Value prepareValue(const QString &value) const { return Value(value); }
+     inline QString valueToString(const Value &value) const { return value.string(); }
+ 
++    struct MutexLocker : public QMutexLocker<QMutex>
++    {
++        MutexLocker(const QProcessEnvironmentPrivate *d) : QMutexLocker(&d->mutex) {}
++    };
++    struct OrderedMutexLocker : public QOrderedMutexLocker
++    {
++        OrderedMutexLocker(const QProcessEnvironmentPrivate *d1,
++                           const QProcessEnvironmentPrivate *d2) :
++            QOrderedMutexLocker(&d1->mutex, &d2->mutex)
++        {}
++    };
++
+     QProcessEnvironmentPrivate() : QSharedData() {}
+     QProcessEnvironmentPrivate(const QProcessEnvironmentPrivate &other) :
+-        QSharedData(), vars(other.vars)
++        QSharedData()
+     {
++        // This being locked ensures that the functions that only assign
++        // d pointers don't need explicit locking.
+         // We don't need to lock our own mutex, as this object is new and
+         // consequently not shared. For the same reason, non-const methods
+         // do not need a lock, as they detach objects (however, we need to
+         // ensure that they really detach before using prepareName()).
+-        NameMapMutexLocker locker(&other);
++        MutexLocker locker(&other);
++        vars = other.vars;
+         nameMap = other.nameMap;
+-        // We need to detach our nameMap, so that our mutex can protect it.
+-        // As we are being detached, it likely would be detached a moment later anyway.
++        // We need to detach our members, so that our mutex can protect them.
++        // As we are being detached, they likely would be detached a moment later anyway.
++        vars.detach();
+         nameMap.detach();
+     }
+ #endif
+@@ -166,7 +173,8 @@ public:
+ #ifdef Q_OS_UNIX
+     typedef QHash<QString, Key> NameHash;
+     mutable NameHash nameMap;
+-    mutable QMutex nameMapMutex;
++
++    mutable QMutex mutex;
+ #endif
+ 
+     static QProcessEnvironment fromList(const QStringList &list);
+diff --git a/src/corelib/io/qprocess_unix.cpp b/src/corelib/io/qprocess_unix.cpp
+index a6131f117ff..32c08516092 100644
+--- a/src/corelib/io/qprocess_unix.cpp
++++ b/src/corelib/io/qprocess_unix.cpp
+@@ -425,6 +425,8 @@ QChildProcess::CharPointerList::CharPointerList(const QProcessEnvironmentPrivate
+     if (!environment)
+         return;
+ 
++    QProcessEnvironmentPrivate::MutexLocker locker(environment);
++
+     const QProcessEnvironmentPrivate::Map &env = environment->vars;
+     qsizetype count = env.size();
+     pointers.reset(new char *[count + 1]);
+-- 
+2.53.0
+

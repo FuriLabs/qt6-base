@@ -6,6 +6,10 @@ qt6-base (6.10.2+dfsg-12) UNRELEASED; urgency=medium
     copy_file_range() returning ENOSYS (e.g. on Hurd); patch
     upstream_QFileSystemEngine-handle-copy_file_range-returning-E.patch.
     (Closes: #1133708)
+  * Backport upstream commit 4b1eb34337bdbc66e0da18a7e7375ed0dd8455ec to fix
+    concurrency issues in QProcessEnvironment; patch
+    upstream_Revert-QProcessEnvironment-simplify-locking.patch.
+    (Closes: #1123679)
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 02 May 2026 08:54:05 +0200
 
