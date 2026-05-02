@@ -1,6 +1,6 @@
-qt6-base (6.10.2+dfsg-12) UNRELEASED; urgency=medium
+qt6-base (6.10.2+dfsg-12) unstable; urgency=medium
 
-  [ Pino Toscano ]
+  * Team upload.
   * Update the symbols files from the logs of buildds.
   * Backport upstream commit 406903b6ef76b8333bcc332a2e5768953c3fddd4 to handle
     copy_file_range() returning ENOSYS (e.g. on Hurd); patch
@@ -11,7 +11,7 @@ qt6-base (6.10.2+dfsg-12) UNRELEASED; urgency=medium
     upstream_Revert-QProcessEnvironment-simplify-locking.patch.
     (Closes: #1123679)
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 02 May 2026 08:54:05 +0200
+ -- Pino Toscano <pino@debian.org>  Sat, 02 May 2026 10:14:59 +0200
 
 qt6-base (6.10.2+dfsg-11) unstable; urgency=medium
 
