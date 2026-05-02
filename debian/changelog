@@ -2,6 +2,10 @@ qt6-base (6.10.2+dfsg-12) UNRELEASED; urgency=medium
 
   [ Pino Toscano ]
   * Update the symbols files from the logs of buildds.
+  * Backport upstream commit 406903b6ef76b8333bcc332a2e5768953c3fddd4 to handle
+    copy_file_range() returning ENOSYS (e.g. on Hurd); patch
+    upstream_QFileSystemEngine-handle-copy_file_range-returning-E.patch.
+    (Closes: #1133708)
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 02 May 2026 08:54:05 +0200
 
