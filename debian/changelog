@@ -1,5 +1,9 @@
 qt6-base (6.10.2+dfsg-13) UNRELEASED; urgency=medium
 
+  [ Sandro Knauß ]
+  * Use python3:any as Build-Dependency to help cross-compiling.
+    (Thanks Daniel Richard G.)
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue, 05 May 2026 12:45:17 +0200
 
 qt6-base (6.10.2+dfsg-12) unstable; urgency=medium
