@@ -1,3 +1,13 @@
+qt6-base (6.8.2+dfsg-9+deb13u2) trixie; urgency=medium
+
+  * Non-maintainer upload.
+  * Backport upstream patches to fix data races in QReadWriteLock
+    (Closes: #1122640).
+  * Backport a upstream patch to fix data races in QProcessEnvironment
+    (Closes: #1123679).
+
+ -- Miao Wang <shankerwangmiao@gmail.com>  Mon, 04 May 2026 16:21:36 +0800
+
 qt6-base (6.8.2+dfsg-9+deb13u1) trixie; urgency=medium
 
   * Backport patch to fix high CPU load of kwin_x11 when locking the

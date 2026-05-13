@@ -1,0 +1,60 @@
+From 80d01c4ccb697b9d390cc0da49c2f111b19b4c5b Mon Sep 17 00:00:00 2001
+From: David Faure <david.faure@kdab.com>
+Date: Sat, 5 Apr 2025 13:40:05 +0200
+Subject: [PATCH] QReadWriteLock: fix data race on the d_ptr members
+
+Testcase: ./tst_qreadwritelock countingTest
+
+WARNING: ThreadSanitizer: data race (pid=356186)
+  Read of size 1 at 0x7294000000f8 by thread T12:
+    #0 contendedTryLockForRead qtbase/src/corelib/thread/qreadwritelock.cpp:230 (libQt6Core_tsan.so.6+0x6c3743)
+    #1 QReadWriteLock::tryLockForRead(QDeadlineTimer) qtbase/src/corelib/thread/qreadwritelock.cpp:190 (libQt6Core_tsan.so.6+0x6c347b)
+    #2 QReadWriteLock::lockForRead() qtbase/src/corelib/thread/qreadwritelock.h:68 (tst_qreadwritelock+0xb0f0)
+    #3 ReadLockCountThread::run() qtbase/tests/auto/corelib/thread/qreadwritelock/tst_qreadwritelock.cpp:597 (tst_qreadwritelock+0xc506)
+
+  Previous write of size 8 at 0x7294000000f8 by thread T2:
+    #0 operator new[](unsigned long, std::align_val_t) <null> (libtsan.so.2+0xa78eb)
+    #1 allocate qtbase/src/corelib/tools/qfreelist_p.h:135 (libQt6Core_tsan.so.6+0x6c6079)
+    #2 next qtbase/src/corelib/tools/qfreelist_p.h:212 (libQt6Core_tsan.so.6+0x6c5915)
+    #3 QReadWriteLockPrivate::allocate() qtbase/src/corelib/thread/qreadwritelock.cpp:564 (libQt6Core_tsan.so.6+0x6c5354)
+    #4 contendedTryLockForRead qtbase/src/corelib/thread/qreadwritelock.cpp:218 (libQt6Core_tsan.so.6+0x6c364f)
+
+The loadRelaxed() at the beginning of tryLockForRead/tryLockForWrite
+isn't enough to bring us the non-atomic write of the recursive bool.
+Same issue with the std::mutex itself.
+
+Pick-to: 6.9 6.8 6.5
+Change-Id: I6f5e371cf94292b643cb36041d1406b19d22cdbe
+Reviewed-by: Thiago Macieira <thiago.macieira@intel.com>
+---
+ src/corelib/thread/qreadwritelock.cpp | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+diff --git a/src/corelib/thread/qreadwritelock.cpp b/src/corelib/thread/qreadwritelock.cpp
+index e79bed223117..0fefc7dab693 100644
+--- a/src/corelib/thread/qreadwritelock.cpp
++++ b/src/corelib/thread/qreadwritelock.cpp
+@@ -225,7 +225,10 @@ Q_NEVER_INLINE static bool contendedTryLockForRead(QAtomicPointer<QReadWriteLock
+             d = val;
+         }
+         Q_ASSERT(!isUncontendedLocked(d));
+-        // d is an actual pointer;
++        // d is an actual pointer; acquire its contents
++        d = d_ptr.loadAcquire();
++        if (!d || isUncontendedLocked(d))
++            continue;
+ 
+         if (d->recursive)
+             return d->recursiveLockForRead(timeout);
+@@ -333,7 +336,10 @@ Q_NEVER_INLINE static bool contendedTryLockForWrite(QAtomicPointer<QReadWriteLoc
+             d = val;
+         }
+         Q_ASSERT(!isUncontendedLocked(d));
+-        // d is an actual pointer;
++        // d is an actual pointer; acquire its contents
++        d = d_ptr.loadAcquire();
++        if (!d || isUncontendedLocked(d))
++            continue;
+ 
+         if (d->recursive)
+             return d->recursiveLockForWrite(timeout);

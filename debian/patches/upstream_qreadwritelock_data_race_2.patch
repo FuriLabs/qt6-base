@@ -1,0 +1,251 @@
+From 4fd88011fa7975ce64d5648698a234f85bac359c Mon Sep 17 00:00:00 2001
+From: Miao Wang <shankerwangmiao@gmail.com>
+Date: Fri, 5 Dec 2025 18:41:24 +0000
+Subject: [PATCH] QReadWriteLock: fix data race on weakly-ordered memory
+ architectures
+
+Testcase: ./tst_qreadwritelock heavyLoadLocks
+
+When the test run under release mode on arm64, all the spawned threads
+may block without this fix. When the test run with optimization
+enabled and assertions enabled and the assertions for !mutex.try_lock()
+are removed from the entry of QReadWriteLockPrivate::
+lockFor{Read,Write}, random assertion failures may happen without this
+fix.
+
+The reason for the race is because when a lock is uncontended locked and
+being converted into a contended lock, no synchronization happens
+between the initialization of new allocated QReadWriteLockPrivate object
+and the use of the existing QReadWriteLockPrivate object in
+lockFor{Read,Write}. QReadWriteLockPrivate objects are allocated from a
+statically allocated freelist and it is of high probability that the
+newly allocated object has just been released. The possible execution
+order that leads to a data race is described as follows:
+
+Suppose there are three threads T1, T2, and T3, and T1 holds the write
+lock initially. T1 first releases the lock, and then gains the read
+lock, while T2 tries to gain the write lock, and T3 tries to gain the
+read lock. The interleaved execution order is as follows, where <- means
+a normal memory write, <1> means a memory address of a
+QReadWriteLockPrivate object, : means a return value, #n means a
+synchronization point. For abberviation, wc denotes writerCount and rc
+denotes readerCount. The .h/.c and the number in the parentheses denotes
+the line number in qreadwritelock.h/.cpp.
+
+T2                   T1                                       T3
+                     unlock()                                 lockForRead()
+                     d = d_ptr.loadRelaxed(): <1>   (.h 52)   d = d_ptr.loadRelaxed(): <1>  (.h 52)
+                     <1>->mutex.lock()              (.c 393)  d = d_ptr.loadAcquire(): <1>  (.c 229)
+                     <1> <-{wc = 0}(rc should be 0) (.c 397)  <1>->mutex.lock() ...         (.c 236)
+                     d_ptr.storeRelease(null)   #1  (.c 409)
+                     <1>->release()                 (.c 410)
+                     <1>->mutex.unlock()        #2  (.c 412)
+                     lockForRead()                            <1>->mutex.lock() returns  #2
+                     d = d_ptr.loadRelaxed(): null  (.h 93)
+lockForWrite()       d_ptr.testAndSetAcquire(1) #3  (.h 81)
+d = d_ptr.loadRelaxed(): 1      (.h 116)
+val = allocate -> <1>           (.c 321)
+//                ^ suppose <1> is reused here
+<1> <-{rc = 1}(wc should be 0)  (.c 325)
+d_ptr.testAndSetOrdered(<1>) #5 (.c 326)
+d = d_ptr.loadAcquire(): <1> #6 (.c 335)                      d_ptr.loadRelaxed(): <1>      (.c 237)
+<1>->mutex.lock() ...           (.c 342)                      // Here T3 sees the d_ptr load result
+                                                              // as <1>, which is the same as
+                                                              // before, thinking it unchanged and
+                                                              // thus continues to execute
+                                                              // d->lockForRead().
+                                                              // T3 here has no synchronization T2,
+                                                              // but had synchronization with T1 at
+                                                              // #2. So T3 may see the stale data
+                                                              // previous written by T1 to <1>, i.e.
+                                                              // wc = 0, rc = 0
+                                                              <1> <-{rc = 1}                (.c 432)
+                                                              <1>->mutex.unlock()        #4 (.c 248)
+<1>->mutex.lock() returns    #4
+d_ptr.loadRelaxed(): <1>        (.c 343)
+// The same happens to T2 here, it continues
+// to execute d->lockForWrite().
+// T2 here is synchronized with T3 at #4,
+// so T2 must see the data written by T3
+// to <1>, i.e. wc = 0, rc = 1
+<1>->writerCond.wait()          (.c 455)
+
+After the above interleaved execution, T2 is blocked while T3 and T1 are
+holding the read lock, but in the QReadWriteLockPrivate object, the
+readerCount is 1, which is incorrect. This might further lead to
+deadlock if readerCount becomes -1 after the two readers release the
+lock or letting a writer to proceed when only one of the readers
+releases the lock.
+
+The fix changes the relaxed load of d_ptr in lockFor{Read,Write} after
+the acquire of the mutex to an acquire load, to establish
+synchronization with the release store of d_ptr when converting from an
+uncontended lock to a contended lock.
+
+Fixes: QTBUG-142321
+Change-Id: I5a570471b52359dd65f309e644d9aacfd58ce943
+Reviewed-by: Thiago Macieira <thiago.macieira@intel.com>
+---
+ src/corelib/thread/qreadwritelock.cpp         |   8 +-
+ .../qreadwritelock/tst_qreadwritelock.cpp     | 106 ++++++++++++++++++
+ 2 files changed, 110 insertions(+), 4 deletions(-)
+
+diff --git a/src/corelib/thread/qreadwritelock.cpp b/src/corelib/thread/qreadwritelock.cpp
+index 96e35dcb9652..2a1af2315ca7 100644
+--- a/src/corelib/thread/qreadwritelock.cpp
++++ b/src/corelib/thread/qreadwritelock.cpp
+@@ -234,14 +234,14 @@ QBasicReadWriteLock::contendedTryLockForRead(QDeadlineTimer timeout, void *dd)
+             return d->recursiveLockForRead(timeout);
+ 
+         auto lock = qt_unique_lock(d->mutex);
+-        if (d != d_ptr.loadRelaxed()) {
++        if (QReadWriteLockPrivate *dd = d_ptr.loadAcquire(); d != dd) {
+             // d_ptr has changed: this QReadWriteLock was unlocked before we had
+             // time to lock d->mutex.
+             // We are holding a lock to a mutex within a QReadWriteLockPrivate
+             // that is already released (or even is already re-used). That's ok
+             // because the QFreeList never frees them.
+             // Just unlock d->mutex (at the end of the scope) and retry.
+-            d = d_ptr.loadAcquire();
++            d = dd;
+             continue;
+         }
+         return d->lockForRead(lock, timeout);
+@@ -340,11 +340,11 @@ QBasicReadWriteLock::contendedTryLockForWrite(QDeadlineTimer timeout, void *dd)
+             return d->recursiveLockForWrite(timeout);
+ 
+         auto lock = qt_unique_lock(d->mutex);
+-        if (d != d_ptr.loadRelaxed()) {
++        if (QReadWriteLockPrivate *dd = d_ptr.loadAcquire(); d != dd) {
+             // The mutex was unlocked before we had time to lock the mutex.
+             // We are holding to a mutex within a QReadWriteLockPrivate that is already released
+             // (or even is already re-used) but that's ok because the QFreeList never frees them.
+-            d = d_ptr.loadAcquire();
++            d = dd;
+             continue;
+         }
+         return d->lockForWrite(lock, timeout);
+diff --git a/tests/auto/corelib/thread/qreadwritelock/tst_qreadwritelock.cpp b/tests/auto/corelib/thread/qreadwritelock/tst_qreadwritelock.cpp
+index 86dfa5faffc3..4c089091f8dc 100644
+--- a/tests/auto/corelib/thread/qreadwritelock/tst_qreadwritelock.cpp
++++ b/tests/auto/corelib/thread/qreadwritelock/tst_qreadwritelock.cpp
+@@ -57,6 +57,7 @@ private slots:
+     void multipleReadersLoop();
+     void multipleWritersLoop();
+     void multipleReadersWritersLoop();
++    void heavyLoadLocks();
+     void countingTest();
+     void limitedReaders();
+     void deleteOnUnlock();
+@@ -603,6 +604,111 @@ class ReadLockCountThread : public QThread
+     }
+ };
+ 
++class HeavyLoadLockThread : public QThread
++{
++public:
++    QReadWriteLock &testRwlock;
++    const qsizetype iterations;
++    const int numThreads;
++    inline HeavyLoadLockThread(QReadWriteLock &l, qsizetype iters, int numThreads, QVector<QAtomicInt *> &counters):
++        testRwlock(l),
++        iterations(iters),
++        numThreads(numThreads),
++        counters(counters)
++    { }
++
++private:
++    QVector<QAtomicInt *> &counters;
++    QAtomicInt *getCounter(qsizetype index)
++    {
++        QReadLocker locker(&testRwlock);
++        /*
++          The index is increased monotonically, so the index
++          being requested should be always within or at the end of the
++          counters vector.
++        */
++        Q_ASSERT(index <= counters.size());
++        if (counters.size() <= index || counters[index] == nullptr) {
++            locker.unlock();
++            QWriteLocker wlocker(&testRwlock);
++            if (counters.size() <= index)
++                counters.resize(index + 1, nullptr);
++            if (counters[index] == nullptr)
++                counters[index] = new QAtomicInt(0);
++            return counters[index];
++        }
++        return counters[index];
++    }
++    void releaseCounter(qsizetype index)
++    {
++        QWriteLocker locker(&testRwlock);
++        delete counters[index];
++        counters[index] = nullptr;
++    }
++
++public:
++    void run() override
++    {
++        for (qsizetype i = 0; i < iterations; ++i) {
++            QAtomicInt *counter = getCounter(i);
++            /*
++                Here each counter is accessed by each thread
++                and increaed only once. As a result, when the
++                counter reaches numThreads, i.e. the fetched
++                value before the increment is numThreads-1,
++                we know all threads have accessed this counter
++                and we can delete it safely.
++            */
++            int prev = counter->fetchAndAddRelaxed(1);
++            if (prev == numThreads - 1) {
++#ifdef QT_BUILDING_UNDER_TSAN
++            /*
++                Under TSAN, deleting and freeing an object
++                will trigger a write operation on the memory
++                of the object. Since we used fetchAndAddRelaxed
++                to update the counter, TSAN will report a data
++                race when deleting the counter here. To avoid
++                the false positive, we simply reset the counter
++                to 0 here, with ordered semantics to establish
++                the sequence to ensure the the free-ing option
++                happens after all fetchAndAddRelaxed operations
++                in other threads.
++
++                When not building under TSAN, deleting the counter
++                will not result in any data read or written to the
++                memory region of the counter, so no data race will
++                happen.
++            */
++                counter->fetchAndStoreOrdered(0);
++#endif
++                releaseCounter(i);
++            }
++        }
++    }
++};
++
++/*
++    Multiple threads racing acquiring and releasing
++    locks on the same indices.
++*/
++
++void tst_QReadWriteLock::heavyLoadLocks()
++{
++    constexpr qsizetype iterations = 65536 * 4;
++    constexpr int numThreads = 8;
++    QVector<QAtomicInt *> counters;
++    QReadWriteLock testLock;
++    std::array<std::unique_ptr<HeavyLoadLockThread>, numThreads> threads;
++    for (auto &thread : threads)
++        thread = std::make_unique<HeavyLoadLockThread>(testLock, iterations, numThreads, counters);
++    for (auto &thread : threads)
++        thread->start();
++    for (auto &thread : threads)
++        thread->wait();
++    QVERIFY(counters.size() == iterations);
++    for (qsizetype i = 0; i < iterations; ++i)
++        QVERIFY(counters[i] == nullptr);
++}
+ 
+ /*
+     A writer acquires a read-lock, a reader locks
