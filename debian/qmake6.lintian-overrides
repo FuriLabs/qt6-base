@@ -6,3 +6,6 @@ qmake6: package-contains-documentation-outside-usr-share-doc [usr/lib/*/qt6/mksp
 
 # The path of the python script is arch-dependend, so it is Multi-Arch safe
 multi-arch-same-package-calls-pycompile [postinst:*]
+
+qmake6: no-manual-page [usr/bin/qmake6]
+qmake6: no-manual-page [usr/bin/*-qmake6]

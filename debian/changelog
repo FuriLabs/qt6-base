@@ -9,6 +9,7 @@ qt6-base (6.10.2+dfsg-13) UNRELEASED; urgency=medium
     the former has been merged into the latter (Closes: #1127915).
   * Remove kernel version from build artifacts to help with reproducible
     builds.
+  * Update lintian-overrides.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue, 05 May 2026 12:45:17 +0200
 
