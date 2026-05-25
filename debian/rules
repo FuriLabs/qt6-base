@@ -93,6 +93,8 @@ override_dh_auto_install:
 execute_after_dh_auto_install-archh:
 	# Reproducible builds: remove build paths from .prl files
 	sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libQt6*.prl
+	# Reproducible builds: remove kernel version from build artifacts
+	sed -i '/^[[:space:]]*"version":.*deb/d' debian/tmp/usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/*.json
 
 	# Fix shebang
 	sed -i -e 's#/bin/env python#/usr/bin/python#' debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/qt6/examples/corelib/serialization/cbordump/cbortag.py
