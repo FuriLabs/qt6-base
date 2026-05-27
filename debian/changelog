@@ -1,10 +1,10 @@
-qt6-base (6.10.2+dfsg-14) UNRELEASED; urgency=medium
+qt6-base (6.10.2+dfsg-14) unstable; urgency=medium
 
   [ Patrick Franz ]
   * Replace default-libmysqlclient-dev with libmariadb-dev (Closes:
     #1137791).
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 27 May 2026 19:56:29 +0200
+ -- Patrick Franz <deltaone@debian.org>  Wed, 27 May 2026 20:00:01 +0200
 
 qt6-base (6.10.2+dfsg-13) unstable; urgency=medium
 
