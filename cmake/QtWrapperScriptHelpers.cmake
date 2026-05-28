@@ -237,7 +237,7 @@ export CMAKE_GENERATOR=Xcode
     qt_internal_create_qt_configure_part_wrapper_script("STANDALONE_EXAMPLES")
     qt_internal_create_cyclone_dx_sbom_generator_script()
 
-    if(NOT CMAKE_CROSSCOMPILING)
+    if(QT_FORCE_BUILD_TOOLS OR NOT CMAKE_CROSSCOMPILING)
         qt_internal_create_qt_android_runner_wrapper_script()
     endif()
 endfunction()
