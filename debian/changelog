@@ -1,5 +1,8 @@
 qt6-base (6.10.2+dfsg-15) UNRELEASED; urgency=medium
 
+  [ Patrick Franz ]
+  * Backport patch to support OpenSSL 4 (Closes: #1138359).
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 03 Jun 2026 23:45:37 +0200
 
 qt6-base (6.10.2+dfsg-14) unstable; urgency=medium
