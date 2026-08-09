@@ -1,9 +1,9 @@
-qt6-base (6.10.2+dfsg-16) UNRELEASED; urgency=medium
+qt6-base (6.10.2+dfsg-16) unstable; urgency=medium
 
   [ Jakub Vanek ]
   * Backport patch for fixing font rendering crashes.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 09 Aug 2026 11:04:09 +0200
+ -- Patrick Franz <deltaone@debian.org>  Sun, 09 Aug 2026 12:38:49 +0200
 
 qt6-base (6.10.2+dfsg-15) unstable; urgency=medium
 
