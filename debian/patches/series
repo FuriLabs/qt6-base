@@ -1,5 +1,6 @@
 # Fixed in 6.11
 upstream_openssl4.patch
+upstream_freetype-handle-failing-glyph-rendering.patch
 
 # Fixed in 6.10.3
 upstream_hdr_vulkan.diff
