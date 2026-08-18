@@ -25,10 +25,12 @@ Forwarded: not-needed
 +    set(QT_SKIP_AUTO_PLUGIN_INCLUSION ON)
  endif()
 
- if(NOT QT_NO_CREATE_TARGETS AND NOT QT_SKIP_AUTO_PLUGIN_INCLUSION)
+ if(__qt_@QT_MODULE@_targets_file_included AND NOT QT_SKIP_AUTO_PLUGIN_INCLUSION)
+diff --git a/cmake/QtPublicPluginHelpers.cmake b/cmake/QtPublicPluginHelpers.cmake
+index 749e40e3f2a..912808814fe 100644
 --- a/cmake/QtPublicPluginHelpers.cmake
 +++ b/cmake/QtPublicPluginHelpers.cmake
-@@ -649,7 +649,7 @@ macro(__qt_internal_include_qml_plugin_packages)
+@@ -607,7 +607,7 @@ macro(__qt_internal_include_qml_plugin_packages)
  
      # Distributions should probably change this default.
      if(NOT DEFINED QT_SKIP_AUTO_QML_PLUGIN_INCLUSION)
