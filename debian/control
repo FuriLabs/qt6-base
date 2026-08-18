@@ -1,7 +1,7 @@
 Source: qt6-base
 Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Patrick Franz <deltaone@debian.org>,
-Build-Depends: debhelper-compat (= 13),
+Build-Depends: debhelper-compat (= 14),
                dh-exec,
                dh-sequence-pkgkde-symbolshelper,
                dh-sequence-python3,

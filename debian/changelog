@@ -3,6 +3,7 @@ qt6-base (6.11.2+dfsg-1) UNRELEASED; urgency=medium
   [ Patrick Franz ]
   * New upstream release (6.11.2).
   * Bump B-Ds for the documentation to 6.11.
+  * Bump compat level to 14.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue, 18 Aug 2026 20:28:49 +0200
 
