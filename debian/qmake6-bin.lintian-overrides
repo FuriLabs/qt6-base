@@ -1,1 +1,1 @@
-qmake6: no-manual-page [usr/bin/qmake6]
+qmake6-bin: no-manual-page [usr/bin/qmake6]
