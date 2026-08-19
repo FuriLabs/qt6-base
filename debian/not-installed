@@ -9,6 +9,7 @@ usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Sql/Qt6SqlPlugins.cmake
 usr/lib/qt6/bin/androiddeployqt
 usr/lib/qt6/bin/qmake
 usr/lib/qt6/bin/qtpaths
+usr/lib/qt6/bin/wasmdeployqt
 # cross build specific:
 usr/lib/qt6/bin/host-qmake
 usr/lib/qt6/bin/host-qmake6
