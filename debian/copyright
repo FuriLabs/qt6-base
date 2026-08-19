@@ -59,7 +59,7 @@ Copyright: 2016-2022 The Qt Company Ltd.
 License: BSD-3-clause
 
 Files: debian/*
-Copyright: 2021-2022 Patrick Franz <deltaone@debian.org>
+Copyright: 2021-2026 Patrick Franz <deltaone@debian.org>
 License: LGPL-3 or GPL-2
 
 # Auto-generated rules for non-3rdparty code
@@ -88,7 +88,6 @@ Files: examples/network/multistreamclient/chatconsumer.cpp
        examples/network/multistreamserver/server.h
        examples/network/multistreamserver/timeprovider.cpp
        examples/network/multistreamserver/timeprovider.h
-       examples/network/shared/sctpchannels.h
        src/network/doc/snippets/code/src_network_socket_qsctpsocket.cpp
 Copyright: 2015-2016 Alex Trotsenko <alex1973tr@gmail.com>
 License: BSD-3-clause
@@ -195,8 +194,7 @@ Files: src/corelib/doc/snippets/qmessageauthenticationcode/main.cpp
 Copyright: 2016 Ruslan Nigmatullin <euroelessar@yandex.ru>
 License: BSD-3-clause
 
-Files: src/corelib/doc/snippets/code/src_corelib_kernel_qabstractnativeeventfilter.h
-       src/corelib/doc/snippets/code/src_corelib_kernel_qabstractnativeeventfilter.mm
+Files: src/corelib/doc/snippets/code/src_corelib_kernel_qabstractnativeeventfilter.mm
        src/gui/doc/snippets/qfileopenevent/Info.plist
        src/gui/doc/snippets/qfileopenevent/main.cpp
        src/gui/doc/snippets/qimagewriter/main.cpp
@@ -557,7 +555,6 @@ Files: tests/auto/cmake/test(needsquoting)dirname/mywidget.cpp
        tests/auto/corelib/text/qstringtokenizer/tst_qstringtokenizer.cpp
        tests/auto/corelib/text/qstringview/tst_qstringview.cpp
        tests/auto/corelib/tools/containerapisymmetry/tst_containerapisymmetry.cpp
-       tests/auto/corelib/tools/qpair/tst_qpair.cpp
        tests/auto/testlib/selftests/deleteLater/tst_deleteLater.cpp
        tests/auto/testlib/selftests/deleteLater_noApp/tst_deleteLater_noApp.cpp
        tests/auto/tools/moc/cxx11-explicit-override-control.h
@@ -573,7 +570,6 @@ Files: tests/auto/cmake/test(needsquoting)dirname/mywidget.cpp
        tests/manual/qmetatype/declare_metatype_noninline.cpp
        tests/manual/qmetatype/declare_metatype_noninline.h
        tests/manual/qmetatype/tst_qmetatype.cpp
-       tests/manual/widgets/itemviews/qconcatenatetablesproxymodel/main.cpp
        tests/manual/widgets/itemviews/tableview-span-navigation/main.cpp
        util/glgen/codegenerator.cpp
        util/glgen/codegenerator.h
