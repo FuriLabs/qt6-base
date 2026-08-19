@@ -10,6 +10,7 @@ qt6-base (6.11.2+dfsg-1) UNRELEASED; urgency=medium
   * Update symbols from buildlogs.
   * Update lintian-overrides.
   * Update d/copyright.
+  * Enable QIORing to abstract io_uring.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue, 18 Aug 2026 20:28:49 +0200
 

@@ -3966,6 +3966,7 @@ libQt6Core.so.6 libqt6core6t64 #MINVER#
  (subst)_ZN9QtPrivate19QStringList_indexOfERK5QListI7QStringE13QLatin1String{qptrdiff}N2Qt15CaseSensitivityE@Qt_6 6.7.2
  _ZN9QtPrivate19QVariantTypeCoercer6coerceERK8QVariantRK9QMetaType@Qt_6 6.1.2
  _ZN9QtPrivate19QVariantTypeCoercer7convertERK8QVariantRK9QMetaType@Qt_6 6.1.2
+ _ZN9QtPrivate19testMaxReadWriteLenE@Qt_6 6.11.2
  _ZN9QtPrivate20QPropertyBindingData10setBindingERK23QUntypedPropertyBindingP20QUntypedPropertyDataPFvS5_EPFb9QMetaTypeS5_NS_24QPropertyBindingFunctionEE@Qt_6 6.1.2
  _ZN9QtPrivate20QPropertyBindingData20removeBinding_helperEv@Qt_6 6.1.2
  _ZN9QtPrivate20QPropertyBindingDataC1EOS0_@Qt_6 6.1.2
