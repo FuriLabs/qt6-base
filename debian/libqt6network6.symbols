@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.10.2 amd64 armhf hppa i386 powerpc x32
+# SymbolsHelper-Confirmed: 6.11.2 amd64
 libQt6Network.so.6 libqt6network6 #MINVER#
 | libqt6network6 #MINVER#, qt6-base-private-abi (= 6.11.2)
 * Build-Depends-Package: qt6-base-dev
@@ -458,6 +458,7 @@ libQt6Network.so.6 libqt6network6 #MINVER#
  _ZN13QOcspResponseaSERKS_@Qt_6 6.1.2
  _ZN14QAuthenticator11setPasswordERK7QString@Qt_6 6.1.2
  _ZN14QAuthenticator16staticMetaObjectE@Qt_6 6.8.2
+ _ZN14QAuthenticator5clearEv@Qt_6 6.11.2
  _ZN14QAuthenticator6detachEv@Qt_6 6.1.2
  _ZN14QAuthenticator7setUserERK7QString@Qt_6 6.1.2
  _ZN14QAuthenticator8setRealmERK7QString@Qt_6 6.1.2
@@ -567,6 +568,9 @@ libQt6Network.so.6 libqt6network6 #MINVER#
  _ZN15QNetworkRequest21setHttp1ConfigurationERK19QHttp1Configuration@Qt_6 6.6.0
  _ZN15QNetworkRequest21setHttp2ConfigurationERK19QHttp2Configuration@Qt_6 6.1.2
  _ZN15QNetworkRequest22DefaultTransferTimeoutE@Qt_6 6.7.2
+ _ZN15QNetworkRequest25doSetIdleTimeBeforeProbesENSt6chrono8durationIiSt5ratioILl1ELl1EEEE@Qt_6 6.11.2
+ _ZN15QNetworkRequest25setTcpKeepAliveProbeCountEi@Qt_6 6.11.2
+ _ZN15QNetworkRequest26doSetIntervalBetweenProbesENSt6chrono8durationIiSt5ratioILl1ELl1EEEE@Qt_6 6.11.2
  _ZN15QNetworkRequest26setMaximumRedirectsAllowedEi@Qt_6 6.1.2
  _ZN15QNetworkRequest35setDecompressedSafetyCheckThresholdEx@Qt_6 6.2.0
  _ZN15QNetworkRequest6setUrlERK4QUrl@Qt_6 6.1.2
@@ -1333,9 +1337,12 @@ libQt6Network.so.6 libqt6network6 #MINVER#
  _ZNK15QNetworkRequest17originatingObjectEv@Qt_6 6.1.2
  _ZNK15QNetworkRequest18http1ConfigurationEv@Qt_6 6.6.0
  _ZNK15QNetworkRequest18http2ConfigurationEv@Qt_6 6.1.2
+ _ZNK15QNetworkRequest22tcpKeepAliveProbeCountEv@Qt_6 6.11.2
  _ZNK15QNetworkRequest23maximumRedirectsAllowedEv@Qt_6 6.1.2
  _ZNK15QNetworkRequest25transferTimeoutAsDurationEv@Qt_6 6.7.2
  _ZNK15QNetworkRequest32decompressedSafetyCheckThresholdEv@Qt_6 6.2.0
+ _ZNK15QNetworkRequest32tcpKeepAliveIdleTimeBeforeProbesEv@Qt_6 6.11.2
+ _ZNK15QNetworkRequest33tcpKeepAliveIntervalBetweenProbesEv@Qt_6 6.11.2
  _ZNK15QNetworkRequest3urlEv@Qt_6 6.1.2
  _ZNK15QNetworkRequest6headerENS_12KnownHeadersE@Qt_6 6.1.2
  _ZNK15QNetworkRequest7headersEv@Qt_6 6.8.2

@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.10.2 amd64
+# SymbolsHelper-Confirmed: 6.11.2 amd64
 libQt6WaylandClient.so.6 libqt6waylandclient6 #MINVER#
 | libqt6waylandclient6 #MINVER#, qt6-base-private-abi (= 6.11.2)
 * Build-Depends-Package: qt6-base-dev
@@ -343,6 +343,31 @@ libQt6WaylandClient.so.6 libqt6waylandclient6 #MINVER#
  _ZN9QtWayland13wp_viewporterD0Ev@Qt_6 6.10.2
  _ZN9QtWayland13wp_viewporterD1Ev@Qt_6 6.10.2
  _ZN9QtWayland13wp_viewporterD2Ev@Qt_6 6.10.2
+ _ZN9QtWayland13xx_session_v110fromObjectEP13xx_session_v1@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v112add_toplevelEP12xdg_toplevelRK7QString@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v113init_listenerEv@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v114handle_createdEPvP13xx_session_v1PKc@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v115handle_replacedEPvP13xx_session_v1@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v115handle_restoredEPvP13xx_session_v1@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v116restore_toplevelEP12xdg_toplevelRK7QString@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v121xx_session_v1_createdERK7QString@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v122xx_session_v1_replacedEv@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v122xx_session_v1_restoredEv@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v124m_xx_session_v1_listenerE@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v14initEP11wl_registryji@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v14initEP13xx_session_v1@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v16removeEv@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v17destroyEv@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v19interfaceEv@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v1C1EP11wl_registryji@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v1C1EP13xx_session_v1@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v1C1Ev@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v1C2EP11wl_registryji@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v1C2EP13xx_session_v1@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v1C2Ev@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v1D0Ev@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v1D1Ev@Qt_6 6.11.2
+ _ZN9QtWayland13xx_session_v1D2Ev@Qt_6 6.11.2
  _ZN9QtWayland13zwp_tablet_v210fromObjectEP13zwp_tablet_v2@Qt_6 6.10.2
  _ZN9QtWayland13zwp_tablet_v211handle_doneEPvP13zwp_tablet_v2@Qt_6 6.10.2
  _ZN9QtWayland13zwp_tablet_v211handle_nameEPvP13zwp_tablet_v2PKc@Qt_6 6.10.2
@@ -902,6 +927,21 @@ libQt6WaylandClient.so.6 libqt6waylandclient6 #MINVER#
  _ZN9QtWayland20xdg_toplevel_drag_v1D0Ev@Qt_6 6.10.2
  _ZN9QtWayland20xdg_toplevel_drag_v1D1Ev@Qt_6 6.10.2
  _ZN9QtWayland20xdg_toplevel_drag_v1D2Ev@Qt_6 6.10.2
+ _ZN9QtWayland21xx_session_manager_v110fromObjectEP21xx_session_manager_v1@Qt_6 6.11.2
+ _ZN9QtWayland21xx_session_manager_v111get_sessionEjRK7QString@Qt_6 6.11.2
+ _ZN9QtWayland21xx_session_manager_v14initEP11wl_registryji@Qt_6 6.11.2
+ _ZN9QtWayland21xx_session_manager_v14initEP21xx_session_manager_v1@Qt_6 6.11.2
+ _ZN9QtWayland21xx_session_manager_v17destroyEv@Qt_6 6.11.2
+ _ZN9QtWayland21xx_session_manager_v19interfaceEv@Qt_6 6.11.2
+ _ZN9QtWayland21xx_session_manager_v1C1EP11wl_registryji@Qt_6 6.11.2
+ _ZN9QtWayland21xx_session_manager_v1C1EP21xx_session_manager_v1@Qt_6 6.11.2
+ _ZN9QtWayland21xx_session_manager_v1C1Ev@Qt_6 6.11.2
+ _ZN9QtWayland21xx_session_manager_v1C2EP11wl_registryji@Qt_6 6.11.2
+ _ZN9QtWayland21xx_session_manager_v1C2EP21xx_session_manager_v1@Qt_6 6.11.2
+ _ZN9QtWayland21xx_session_manager_v1C2Ev@Qt_6 6.11.2
+ _ZN9QtWayland21xx_session_manager_v1D0Ev@Qt_6 6.11.2
+ _ZN9QtWayland21xx_session_manager_v1D1Ev@Qt_6 6.11.2
+ _ZN9QtWayland21xx_session_manager_v1D2Ev@Qt_6 6.11.2
  _ZN9QtWayland21zwp_tablet_manager_v210fromObjectEP21zwp_tablet_manager_v2@Qt_6 6.10.2
  _ZN9QtWayland21zwp_tablet_manager_v215get_tablet_seatEP7wl_seat@Qt_6 6.10.2
  _ZN9QtWayland21zwp_tablet_manager_v24initEP11wl_registryji@Qt_6 6.10.2
@@ -950,6 +990,25 @@ libQt6WaylandClient.so.6 libqt6waylandclient6 #MINVER#
  _ZN9QtWayland22wp_fractional_scale_v1D0Ev@Qt_6 6.10.2
  _ZN9QtWayland22wp_fractional_scale_v1D1Ev@Qt_6 6.10.2
  _ZN9QtWayland22wp_fractional_scale_v1D2Ev@Qt_6 6.10.2
+ _ZN9QtWayland22xx_toplevel_session_v110fromObjectEP22xx_toplevel_session_v1@Qt_6 6.11.2
+ _ZN9QtWayland22xx_toplevel_session_v113init_listenerEv@Qt_6 6.11.2
+ _ZN9QtWayland22xx_toplevel_session_v115handle_restoredEPvP22xx_toplevel_session_v1P12xdg_toplevel@Qt_6 6.11.2
+ _ZN9QtWayland22xx_toplevel_session_v131xx_toplevel_session_v1_restoredEP12xdg_toplevel@Qt_6 6.11.2
+ _ZN9QtWayland22xx_toplevel_session_v133m_xx_toplevel_session_v1_listenerE@Qt_6 6.11.2
+ _ZN9QtWayland22xx_toplevel_session_v14initEP11wl_registryji@Qt_6 6.11.2
+ _ZN9QtWayland22xx_toplevel_session_v14initEP22xx_toplevel_session_v1@Qt_6 6.11.2
+ _ZN9QtWayland22xx_toplevel_session_v16removeEv@Qt_6 6.11.2
+ _ZN9QtWayland22xx_toplevel_session_v17destroyEv@Qt_6 6.11.2
+ _ZN9QtWayland22xx_toplevel_session_v19interfaceEv@Qt_6 6.11.2
+ _ZN9QtWayland22xx_toplevel_session_v1C1EP11wl_registryji@Qt_6 6.11.2
+ _ZN9QtWayland22xx_toplevel_session_v1C1EP22xx_toplevel_session_v1@Qt_6 6.11.2
+ _ZN9QtWayland22xx_toplevel_session_v1C1Ev@Qt_6 6.11.2
+ _ZN9QtWayland22xx_toplevel_session_v1C2EP11wl_registryji@Qt_6 6.11.2
+ _ZN9QtWayland22xx_toplevel_session_v1C2EP22xx_toplevel_session_v1@Qt_6 6.11.2
+ _ZN9QtWayland22xx_toplevel_session_v1C2Ev@Qt_6 6.11.2
+ _ZN9QtWayland22xx_toplevel_session_v1D0Ev@Qt_6 6.11.2
+ _ZN9QtWayland22xx_toplevel_session_v1D1Ev@Qt_6 6.11.2
+ _ZN9QtWayland22xx_toplevel_session_v1D2Ev@Qt_6 6.11.2
  _ZN9QtWayland22zwp_tablet_pad_ring_v210fromObjectEP22zwp_tablet_pad_ring_v2@Qt_6 6.10.2
  _ZN9QtWayland22zwp_tablet_pad_ring_v211handle_stopEPvP22zwp_tablet_pad_ring_v2@Qt_6 6.10.2
  _ZN9QtWayland22zwp_tablet_pad_ring_v212handle_angleEPvP22zwp_tablet_pad_ring_v2i@Qt_6 6.10.2
@@ -1661,6 +1720,22 @@ libQt6WaylandClient.so.6 libqt6waylandclient6 #MINVER#
  _ZN9QtWayland7wl_seatD0Ev@Qt_6 6.10.2
  _ZN9QtWayland7wl_seatD1Ev@Qt_6 6.10.2
  _ZN9QtWayland7wl_seatD2Ev@Qt_6 6.10.2
+ _ZN9QtWayland8wl_fixes10fromObjectEP8wl_fixes@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixes16destroy_registryEP11wl_registry@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixes17ack_global_removeEP11wl_registryj@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixes4initEP11wl_registryji@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixes4initEP8wl_fixes@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixes7destroyEv@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixes9interfaceEv@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixesC1EP11wl_registryji@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixesC1EP8wl_fixes@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixesC1Ev@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixesC2EP11wl_registryji@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixesC2EP8wl_fixes@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixesC2Ev@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixesD0Ev@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixesD1Ev@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixesD2Ev@Qt_6 6.11.2
  _ZN9QtWayland8wl_shell10fromObjectEP8wl_shell@Qt_6 6.10.2
  _ZN9QtWayland8wl_shell17get_shell_surfaceEP10wl_surface@Qt_6 6.10.2
  _ZN9QtWayland8wl_shell4initEP11wl_registryji@Qt_6 6.10.2
@@ -1823,6 +1898,8 @@ libQt6WaylandClient.so.6 libqt6waylandclient6 #MINVER#
  _ZNK9QtWayland13wl_subsurface7versionEv@Qt_6 6.10.2
  _ZNK9QtWayland13wp_viewporter13isInitializedEv@Qt_6 6.10.2
  _ZNK9QtWayland13wp_viewporter7versionEv@Qt_6 6.10.2
+ _ZNK9QtWayland13xx_session_v113isInitializedEv@Qt_6 6.11.2
+ _ZNK9QtWayland13xx_session_v17versionEv@Qt_6 6.11.2
  _ZNK9QtWayland13zwp_tablet_v213isInitializedEv@Qt_6 6.10.2
  _ZNK9QtWayland13zwp_tablet_v27versionEv@Qt_6 6.10.2
  _ZNK9QtWayland14wl_data_device13isInitializedEv@Qt_6 6.10.2
@@ -1863,12 +1940,16 @@ libQt6WaylandClient.so.6 libqt6waylandclient6 #MINVER#
  _ZNK9QtWayland20org_kde_kwin_appmenu7versionEv@Qt_6 6.10.2
  _ZNK9QtWayland20xdg_toplevel_drag_v113isInitializedEv@Qt_6 6.10.2
  _ZNK9QtWayland20xdg_toplevel_drag_v17versionEv@Qt_6 6.10.2
+ _ZNK9QtWayland21xx_session_manager_v113isInitializedEv@Qt_6 6.11.2
+ _ZNK9QtWayland21xx_session_manager_v17versionEv@Qt_6 6.11.2
  _ZNK9QtWayland21zwp_tablet_manager_v213isInitializedEv@Qt_6 6.10.2
  _ZNK9QtWayland21zwp_tablet_manager_v27versionEv@Qt_6 6.10.2
  _ZNK9QtWayland22wl_data_device_manager13isInitializedEv@Qt_6 6.10.2
  _ZNK9QtWayland22wl_data_device_manager7versionEv@Qt_6 6.10.2
  _ZNK9QtWayland22wp_fractional_scale_v113isInitializedEv@Qt_6 6.10.2
  _ZNK9QtWayland22wp_fractional_scale_v17versionEv@Qt_6 6.10.2
+ _ZNK9QtWayland22xx_toplevel_session_v113isInitializedEv@Qt_6 6.11.2
+ _ZNK9QtWayland22xx_toplevel_session_v17versionEv@Qt_6 6.11.2
  _ZNK9QtWayland22zwp_tablet_pad_ring_v213isInitializedEv@Qt_6 6.10.2
  _ZNK9QtWayland22zwp_tablet_pad_ring_v27versionEv@Qt_6 6.10.2
  _ZNK9QtWayland22zxdg_output_manager_v113isInitializedEv@Qt_6 6.10.2
@@ -1939,6 +2020,8 @@ libQt6WaylandClient.so.6 libqt6waylandclient6 #MINVER#
  _ZNK9QtWayland6wl_shm7versionEv@Qt_6 6.10.2
  _ZNK9QtWayland7wl_seat13isInitializedEv@Qt_6 6.10.2
  _ZNK9QtWayland7wl_seat7versionEv@Qt_6 6.10.2
+ _ZNK9QtWayland8wl_fixes13isInitializedEv@Qt_6 6.11.2
+ _ZNK9QtWayland8wl_fixes7versionEv@Qt_6 6.11.2
  _ZNK9QtWayland8wl_shell13isInitializedEv@Qt_6 6.10.2
  _ZNK9QtWayland8wl_shell7versionEv@Qt_6 6.10.2
  _ZNK9QtWayland8wl_touch13isInitializedEv@Qt_6 6.10.2
@@ -1966,6 +2049,7 @@ libQt6WaylandClient.so.6 libqt6waylandclient6 #MINVER#
  _ZTIN9QtWayland13wl_data_offerE@Qt_6 6.10.2
  _ZTIN9QtWayland13wl_subsurfaceE@Qt_6 6.10.2
  _ZTIN9QtWayland13wp_viewporterE@Qt_6 6.10.2
+ _ZTIN9QtWayland13xx_session_v1E@Qt_6 6.11.2
  _ZTIN9QtWayland13zwp_tablet_v2E@Qt_6 6.10.2
  _ZTIN9QtWayland14wl_data_deviceE@Qt_6 6.10.2
  _ZTIN9QtWayland14wl_data_sourceE@Qt_6 6.10.2
@@ -1986,9 +2070,11 @@ libQt6WaylandClient.so.6 libqt6waylandclient6 #MINVER#
  _ZTIN9QtWayland19wp_color_manager_v1E@Qt_6 6.10.2
  _ZTIN9QtWayland20org_kde_kwin_appmenuE@Qt_6 6.10.2
  _ZTIN9QtWayland20xdg_toplevel_drag_v1E@Qt_6 6.10.2
+ _ZTIN9QtWayland21xx_session_manager_v1E@Qt_6 6.11.2
  _ZTIN9QtWayland21zwp_tablet_manager_v2E@Qt_6 6.10.2
  _ZTIN9QtWayland22wl_data_device_managerE@Qt_6 6.10.2
  _ZTIN9QtWayland22wp_fractional_scale_v1E@Qt_6 6.10.2
+ _ZTIN9QtWayland22xx_toplevel_session_v1E@Qt_6 6.11.2
  _ZTIN9QtWayland22zwp_tablet_pad_ring_v2E@Qt_6 6.10.2
  _ZTIN9QtWayland22zxdg_output_manager_v1E@Qt_6 6.10.2
  _ZTIN9QtWayland23qt_hardware_integrationE@Qt_6 6.10.2
@@ -2024,6 +2110,7 @@ libQt6WaylandClient.so.6 libqt6waylandclient6 #MINVER#
  _ZTIN9QtWayland39zwp_primary_selection_device_manager_v1E@Qt_6 6.10.2
  _ZTIN9QtWayland6wl_shmE@Qt_6 6.10.2
  _ZTIN9QtWayland7wl_seatE@Qt_6 6.10.2
+ _ZTIN9QtWayland8wl_fixesE@Qt_6 6.11.2
  _ZTIN9QtWayland8wl_shellE@Qt_6 6.10.2
  _ZTIN9QtWayland8wl_touchE@Qt_6 6.10.2
  _ZTIN9QtWayland9wl_bufferE@Qt_6 6.10.2
@@ -2045,6 +2132,7 @@ libQt6WaylandClient.so.6 libqt6waylandclient6 #MINVER#
  _ZTSN9QtWayland13wl_data_offerE@Qt_6 6.10.2
  _ZTSN9QtWayland13wl_subsurfaceE@Qt_6 6.10.2
  _ZTSN9QtWayland13wp_viewporterE@Qt_6 6.10.2
+ _ZTSN9QtWayland13xx_session_v1E@Qt_6 6.11.2
  _ZTSN9QtWayland13zwp_tablet_v2E@Qt_6 6.10.2
  _ZTSN9QtWayland14wl_data_deviceE@Qt_6 6.10.2
  _ZTSN9QtWayland14wl_data_sourceE@Qt_6 6.10.2
@@ -2065,9 +2153,11 @@ libQt6WaylandClient.so.6 libqt6waylandclient6 #MINVER#
  _ZTSN9QtWayland19wp_color_manager_v1E@Qt_6 6.10.2
  _ZTSN9QtWayland20org_kde_kwin_appmenuE@Qt_6 6.10.2
  _ZTSN9QtWayland20xdg_toplevel_drag_v1E@Qt_6 6.10.2
+ _ZTSN9QtWayland21xx_session_manager_v1E@Qt_6 6.11.2
  _ZTSN9QtWayland21zwp_tablet_manager_v2E@Qt_6 6.10.2
  _ZTSN9QtWayland22wl_data_device_managerE@Qt_6 6.10.2
  _ZTSN9QtWayland22wp_fractional_scale_v1E@Qt_6 6.10.2
+ _ZTSN9QtWayland22xx_toplevel_session_v1E@Qt_6 6.11.2
  _ZTSN9QtWayland22zwp_tablet_pad_ring_v2E@Qt_6 6.10.2
  _ZTSN9QtWayland22zxdg_output_manager_v1E@Qt_6 6.10.2
  _ZTSN9QtWayland23qt_hardware_integrationE@Qt_6 6.10.2
@@ -2103,6 +2193,7 @@ libQt6WaylandClient.so.6 libqt6waylandclient6 #MINVER#
  _ZTSN9QtWayland39zwp_primary_selection_device_manager_v1E@Qt_6 6.10.2
  _ZTSN9QtWayland6wl_shmE@Qt_6 6.10.2
  _ZTSN9QtWayland7wl_seatE@Qt_6 6.10.2
+ _ZTSN9QtWayland8wl_fixesE@Qt_6 6.11.2
  _ZTSN9QtWayland8wl_shellE@Qt_6 6.10.2
  _ZTSN9QtWayland8wl_touchE@Qt_6 6.10.2
  _ZTSN9QtWayland9wl_bufferE@Qt_6 6.10.2
@@ -2124,6 +2215,7 @@ libQt6WaylandClient.so.6 libqt6waylandclient6 #MINVER#
  _ZTVN9QtWayland13wl_data_offerE@Qt_6 6.10.2
  _ZTVN9QtWayland13wl_subsurfaceE@Qt_6 6.10.2
  _ZTVN9QtWayland13wp_viewporterE@Qt_6 6.10.2
+ _ZTVN9QtWayland13xx_session_v1E@Qt_6 6.11.2
  _ZTVN9QtWayland13zwp_tablet_v2E@Qt_6 6.10.2
  _ZTVN9QtWayland14wl_data_deviceE@Qt_6 6.10.2
  _ZTVN9QtWayland14wl_data_sourceE@Qt_6 6.10.2
@@ -2144,9 +2236,11 @@ libQt6WaylandClient.so.6 libqt6waylandclient6 #MINVER#
  _ZTVN9QtWayland19wp_color_manager_v1E@Qt_6 6.10.2
  _ZTVN9QtWayland20org_kde_kwin_appmenuE@Qt_6 6.10.2
  _ZTVN9QtWayland20xdg_toplevel_drag_v1E@Qt_6 6.10.2
+ _ZTVN9QtWayland21xx_session_manager_v1E@Qt_6 6.11.2
  _ZTVN9QtWayland21zwp_tablet_manager_v2E@Qt_6 6.10.2
  _ZTVN9QtWayland22wl_data_device_managerE@Qt_6 6.10.2
  _ZTVN9QtWayland22wp_fractional_scale_v1E@Qt_6 6.10.2
+ _ZTVN9QtWayland22xx_toplevel_session_v1E@Qt_6 6.11.2
  _ZTVN9QtWayland22zwp_tablet_pad_ring_v2E@Qt_6 6.10.2
  _ZTVN9QtWayland22zxdg_output_manager_v1E@Qt_6 6.10.2
  _ZTVN9QtWayland23qt_hardware_integrationE@Qt_6 6.10.2
@@ -2182,6 +2276,7 @@ libQt6WaylandClient.so.6 libqt6waylandclient6 #MINVER#
  _ZTVN9QtWayland39zwp_primary_selection_device_manager_v1E@Qt_6 6.10.2
  _ZTVN9QtWayland6wl_shmE@Qt_6 6.10.2
  _ZTVN9QtWayland7wl_seatE@Qt_6 6.10.2
+ _ZTVN9QtWayland8wl_fixesE@Qt_6 6.11.2
  _ZTVN9QtWayland8wl_shellE@Qt_6 6.10.2
  _ZTVN9QtWayland8wl_touchE@Qt_6 6.10.2
  _ZTVN9QtWayland9wl_bufferE@Qt_6 6.10.2

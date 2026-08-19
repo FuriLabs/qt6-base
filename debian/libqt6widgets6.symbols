@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.10.2 amd64
+# SymbolsHelper-Confirmed: 6.11.2 amd64
 libQt6Widgets.so.6 libqt6widgets6 #MINVER#
 | libqt6widgets6 #MINVER#, qt6-base-private-abi (= 6.11.2)
 * Build-Depends-Package: qt6-base-dev
@@ -329,6 +329,7 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZN11QColumnView17setSelectionModelEP19QItemSelectionModel@Qt_6 6.1.2
  _ZN11QColumnView19updatePreviewWidgetERK11QModelIndex@Qt_6 6.1.2
  _ZN11QColumnView21setResizeGripsVisibleEb@Qt_6 6.1.2
+ _ZN11QColumnView23setPreviewColumnVisibleEb@Qt_6 6.11.2
  _ZN11QColumnView8scrollToERK11QModelIndexN17QAbstractItemView10ScrollHintE@Qt_6 6.1.2
  _ZN11QColumnView8setModelEP18QAbstractItemModel@Qt_6 6.1.2
  _ZN11QColumnView9selectAllEv@Qt_6 6.1.2
@@ -2428,6 +2429,7 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZN17QAbstractItemView21setDropIndicatorShownEb@Qt_6 6.1.2
  _ZN17QAbstractItemView21setItemDelegateForRowEiP21QAbstractItemDelegate@Qt_6 6.1.2
  _ZN17QAbstractItemView21setVerticalScrollModeENS_10ScrollModeE@Qt_6 6.1.2
+ _ZN17QAbstractItemView22setKeyboardSearchFlagsE6QFlagsIN2Qt9MatchFlagEE@Qt_6 6.11.2
  _ZN17QAbstractItemView22updateEditorGeometriesEv@Qt_6 6.1.2
  _ZN17QAbstractItemView23resetVerticalScrollModeEv@Qt_6 6.1.2
  _ZN17QAbstractItemView23setAlternatingRowColorsEb@Qt_6 6.1.2
@@ -3022,6 +3024,8 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZN22QStyleOptionDockWidgetC1Ev@Qt_6 6.1.2
  _ZN22QStyleOptionDockWidgetC2Ei@Qt_6 6.1.2
  _ZN22QStyleOptionDockWidgetC2Ev@Qt_6 6.1.2
+ _ZN22QStyleOptionMenuItemV2C1Ei@Qt_6 6.11.2
+ _ZN22QStyleOptionMenuItemV2C2Ei@Qt_6 6.11.2
  _ZN22QStyleOptionRubberBandC1Ei@Qt_6 6.1.2
  _ZN22QStyleOptionRubberBandC1Ev@Qt_6 6.1.2
  _ZN22QStyleOptionRubberBandC2Ei@Qt_6 6.1.2
@@ -4578,6 +4582,7 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZNK11QColumnView16horizontalOffsetEv@Qt_6 6.1.2
  _ZNK11QColumnView16initializeColumnEP17QAbstractItemView@Qt_6 6.1.2
  _ZNK11QColumnView18resizeGripsVisibleEv@Qt_6 6.1.2
+ _ZNK11QColumnView22isPreviewColumnVisibleEv@Qt_6 6.11.2
  _ZNK11QColumnView24visualRegionForSelectionERK14QItemSelection@Qt_6 6.1.2
  _ZNK11QColumnView7indexAtERK6QPoint@Qt_6 6.1.2
  _ZNK11QColumnView8sizeHintEv@Qt_6 6.1.2
@@ -5547,6 +5552,7 @@ libQt6Widgets.so.6 libqt6widgets6 #MINVER#
  _ZNK17QAbstractItemView18initViewItemOptionEP20QStyleOptionViewItem@Qt_6 6.1.2
  _ZNK17QAbstractItemView18itemDelegateForRowEi@Qt_6 6.1.2
  _ZNK17QAbstractItemView18verticalScrollModeEv@Qt_6 6.1.2
+ _ZNK17QAbstractItemView19keyboardSearchFlagsEv@Qt_6 6.11.2
  _ZNK17QAbstractItemView20alternatingRowColorsEv@Qt_6 6.1.2
  _ZNK17QAbstractItemView20horizontalScrollModeEv@Qt_6 6.1.2
  _ZNK17QAbstractItemView20itemDelegateForIndexERK11QModelIndex@Qt_6 6.1.2

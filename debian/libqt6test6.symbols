@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.10.2 amd64 armhf hppa i386 powerpc x32
+# SymbolsHelper-Confirmed: 6.11.2 amd64
 libQt6Test.so.6 libqt6test6 #MINVER#
 | libqt6test6 #MINVER#, qt6-base-private-abi (= 6.11.2)
 * Build-Depends-Package: qt6-base-dev
@@ -16,11 +16,14 @@ libQt6Test.so.6 libqt6test6 #MINVER#
  _ZN10QSignalSpyD2Ev@Qt_6 6.8.2
  _ZN12QTestPrivate14parseBlackListEv@Qt_6 6.1.2
  _ZN12QTestPrivate15checkBlackListsEPKcS1_S1_@Qt_6 6.3.1
+ _ZN12QTestPrivate17blacklistKeywordsEv@Qt_6 6.11.2
  _ZN12QTestPrivate17qtestMouseButtonsE@Qt_6 6.1.2
  _ZN12QTestPrivate22formatTypeWithCRefImplE9QMetaTypebbb@Qt_6 6.7.2
  _ZN14QTestEventLoop11qt_metacallEN11QMetaObject4CallEiPPv@Qt_6 6.1.2
  _ZN14QTestEventLoop11qt_metacastEPKc@Qt_6 6.1.2
  _ZN14QTestEventLoop16staticMetaObjectE@Qt_6 6.1.2
+ _ZN18QTestAccessibility8instanceEv@Qt_6 6.11.2
+ _ZN18QTestAccessibility9eventListEv@Qt_6 6.11.2
  _ZN24QAbstractItemModelTester11qt_metacallEN11QMetaObject4CallEiPPv@Qt_6 6.1.2
  _ZN24QAbstractItemModelTester11qt_metacastEPKc@Qt_6 6.1.2
  _ZN24QAbstractItemModelTester15setUseFetchMoreEb@Qt_6 6.4.0
@@ -79,6 +82,7 @@ libQt6Test.so.6 libqt6test6 #MINVER#
  _ZN5QTest19currentTestFunctionEv@Qt_6 6.1.2
  _ZN5QTest19currentTestResolvedEv@Qt_6 6.6.0
  (subst)_ZN5QTest19toHexRepresentationEPKc{qptrdiff}@Qt_6 6.4.0
+ _ZN5QTest20currentGlobalDataTagEv@Qt_6 6.11.2
  _ZN5QTest21compare_string_helperEPKcS1_S1_S1_S1_i@Qt_6 6.1.2
  _ZN5QTest23printAvailableFunctionsE@Qt_6 6.1.2
  _ZN5QTest29QBenchmarkIterationController4nextEv@Qt_6 6.1.2

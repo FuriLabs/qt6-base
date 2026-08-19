@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.10.2 amd64
+# SymbolsHelper-Confirmed: 6.11.2 amd64
 libQt6Gui.so.6 libqt6gui6 #MINVER#
 | libqt6gui6 #MINVER#, qt6-base-private-abi (= 6.11.2)
 * Build-Depends-Package: qt6-base-dev
@@ -20,6 +20,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _Z14qt_accStripAmpRK7QString@Qt_6 6.9.2
  _Z14qt_defaultDpiXv@Qt_6 6.1.2
  _Z14qt_defaultDpiYv@Qt_6 6.1.2
+ _Z14qt_defaultDpisv@Qt_6 6.11.2
  _Z14qt_getFreetypev@Qt_6 6.1.2
  _Z14qt_memrotate90PK10QRgbaFloatIfEiiiPS0_i@Qt_6 6.2.0
  _Z14qt_memrotate90PKhiiiPhi@Qt_6 6.1.2
@@ -41,7 +42,6 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _Z15qt_memrotate270PKtiiiPti@Qt_6 6.1.2
  _Z15qt_memrotate270PKyiiiPyi@Qt_6 6.1.2
  _Z15qt_regionToPathRK7QRegion@Qt_6 6.1.2
- (subst)_Z15qt_xForm_helperRK10QTransformiiiPh{qptrdiff}iiPKh{qptrdiff}ii@Qt_6 6.1.2
  _Z16q_printEglConfigPvS_@Qt_6 6.1.2
  _Z16qt_fusionPalettev@Qt_6 6.1.2
  _Z16qt_imageForBrushib@Qt_6 6.1.2
@@ -77,6 +77,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _Z22qt_paint_device_metricPK12QPaintDeviceNS_17PaintDeviceMetricE@Qt_6 6.1.2
  _Z23QT_DISTANCEFIELD_RADIUSb@Qt_6 6.1.2
  _Z24q_reduceConfigAttributesP5QListIiE@Qt_6 6.1.2
+ _Z24qt_accTextAtOffsetHelperRK24QAccessibleTextInterfaceRK11QTextCursoriN11QAccessible16TextBoundaryTypeEPiS7_@Qt_6 6.11.2
  _Z24qt_fontHasNarrowOutlinesRK8QRawFont@Qt_6 6.1.2
  _Z24qt_region_strictContainsRK7QRegionRK5QRect@Qt_6 6.1.2
  _Z25qt_legacyToOpenTypeWeighti@Qt_6 6.1.2
@@ -84,7 +85,9 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _Z26q_physicalScreenSizeFromFbiRK5QSize@Qt_6 6.1.2
  _Z26qt_convert_rgb888_to_rgb32PjPKhi@Qt_6 6.1.2
  _Z26qt_gl_global_share_contextv@Qt_6 6.1.2
+ _Z27qt_accTextAfterOffsetHelperRK24QAccessibleTextInterfaceRK11QTextCursoriN11QAccessible16TextBoundaryTypeEPiS7_@Qt_6 6.11.2
  _Z27qt_isExtendedRadialGradientRK6QBrush@Qt_6 6.1.2
+ _Z28qt_accTextBeforeOffsetHelperRK24QAccessibleTextInterfaceRK11QTextCursoriN11QAccessible16TextBoundaryTypeEPiS7_@Qt_6 6.11.2
  _Z28qt_script_for_writing_systemN13QFontDatabase13WritingSystemE@Qt_6 6.1.2
  _Z28qt_sendShortcutOverrideEventP7QObjectmi6QFlagsIN2Qt16KeyboardModifierEERK7QStringbt@Qt_6 6.1.2
  _Z28qt_writing_system_for_scripti@Qt_6 6.1.2
@@ -581,6 +584,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZN11QQuaternion18fromRotationMatrixERK14QGenericMatrixILi3ELi3EfE@Qt_6 6.1.2
  _ZN11QQuaternion5nlerpERKS_S1_f@Qt_6 6.1.2
  _ZN11QQuaternion5slerpERKS_S1_f@Qt_6 6.1.2
+ _ZN11QQuaternion8fromAxesENS_4AxesE@Qt_6 6.11.2
  _ZN11QQuaternion8fromAxesERK9QVector3DS2_S2_@Qt_6 6.1.2
  _ZN11QQuaternion9normalizeEv@Qt_6 6.1.2
  _ZN11QStaticText12setTextWidthEd@Qt_6 6.1.2
@@ -985,6 +989,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZN12QPainterPathmIERKS_@Qt_6 6.1.2
  _ZN12QPainterPathoRERKS_@Qt_6 6.1.2
  _ZN12QPainterPathpLERKS_@Qt_6 6.1.2
+ _ZN12QPixelFormat16staticMetaObjectE@Qt_6 6.11.2
  _ZN12QPixmapCache10cacheLimitEv@Qt_6 6.1.2
  _ZN12QPixmapCache13setCacheLimitEi@Qt_6 6.1.2
  _ZN12QPixmapCache3KeyC1ERKS0_@Qt_6 6.1.2
@@ -1559,7 +1564,9 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZN15QTextBlockGroupD0Ev@Qt_6 6.1.2
  _ZN15QTextBlockGroupD1Ev@Qt_6 6.1.2
  _ZN15QTextBlockGroupD2Ev@Qt_6 6.1.2
+ _ZN15QTextCharFormat15setFontFeaturesERK4QMapIN5QFont3TagEjE@Qt_6 6.11.2
  _ZN15QTextCharFormat17setUnderlineStyleENS_14UnderlineStyleE@Qt_6 6.1.2
+ _ZN15QTextCharFormat19setFontVariableAxesERK4QMapIN5QFont3TagEfE@Qt_6 6.11.2
  _ZN15QTextCharFormat7setFontERK5QFontNS_33FontPropertiesInheritanceBehaviorE@Qt_6 6.1.2
  _ZN15QTextCharFormatC1ERK11QTextFormat@Qt_6 6.1.2
  _ZN15QTextCharFormatC1Ev@Qt_6 6.1.2
@@ -1593,6 +1600,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZN15QVulkanInstanceC2Ev@Qt_6 6.1.2
  _ZN15QVulkanInstanceD1Ev@Qt_6 6.1.2
  _ZN15QVulkanInstanceD2Ev@Qt_6 6.1.2
+ _ZN16QAccessibleEvent8setChildEi@Qt_6 6.11.2
  _ZN16QAccessibleEventD0Ev@Qt_6 6.1.2
  _ZN16QAccessibleEventD1Ev@Qt_6 6.1.2
  _ZN16QAccessibleEventD2Ev@Qt_6 6.1.2
@@ -2060,6 +2068,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZN24QAccessibleTextInterfaceD1Ev@Qt_6 6.1.2
  _ZN24QAccessibleTextInterfaceD2Ev@Qt_6 6.1.2
  _ZN25QAbstractFileIconProvider10setOptionsE6QFlagsINS_6OptionEE@Qt_6 6.1.2
+ _ZN25QAbstractFileIconProvider16staticMetaObjectE@Qt_6 6.11.2
  _ZN25QAbstractFileIconProviderC1Ev@Qt_6 6.1.2
  _ZN25QAbstractFileIconProviderC2Ev@Qt_6 6.1.2
  _ZN25QAbstractFileIconProviderD0Ev@Qt_6 6.1.2
@@ -2195,11 +2204,8 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZN32QAccessibleTableModelChangeEventD1Ev@Qt_6 6.1.2
  _ZN32QAccessibleTableModelChangeEventD2Ev@Qt_6 6.1.2
  _ZN4QCss10StyleSheet12buildIndexesEN2Qt15CaseSensitivityE@Qt_6 6.1.2
- _ZN4QCss13StyleSelector15selectorMatchesERKNS_8SelectorENS0_7NodePtrE@Qt_6 6.6.0
  _ZN4QCss13StyleSelector17styleRulesForNodeENS0_7NodePtrE@Qt_6 6.6.0
  _ZN4QCss13StyleSelector19declarationsForNodeENS0_7NodePtrEPKc@Qt_6 6.6.0
- _ZN4QCss13StyleSelector20basicSelectorMatchesERKNS_13BasicSelectorENS0_7NodePtrE@Qt_6 6.6.0
- _ZN4QCss13StyleSelector9matchRuleENS0_7NodePtrERKNS_9StyleRuleENS_16StyleSheetOriginEiP9QMultiMapIjS2_E@Qt_6 6.6.0
  _ZN4QCss13StyleSelectorD0Ev@Qt_6 6.6.0
  _ZN4QCss13StyleSelectorD1Ev@Qt_6 6.6.0
  _ZN4QCss13StyleSelectorD2Ev@Qt_6 6.6.0
@@ -2209,18 +2215,13 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZN4QCss14ValueExtractor11borderValueERKNS_11DeclarationEPiPNS_11BorderStyleEP6QBrush@Qt_6 6.6.0
  _ZN4QCss14ValueExtractor11extractFontEP5QFontPi@Qt_6 6.6.0
  _ZN4QCss14ValueExtractor11extractFontEv@Qt_6 6.6.0
- _ZN4QCss14ValueExtractor11extractIconEP5QIconP5QSize@Qt_6 6.6.0
  _ZN4QCss14ValueExtractor11lengthValueERKNS_11DeclarationE@Qt_6 6.6.0
  _ZN4QCss14ValueExtractor11lengthValueERKNS_5ValueE@Qt_6 6.6.0
- _ZN4QCss14ValueExtractor12extractImageEP5QIconP6QFlagsIN2Qt13AlignmentFlagEEP5QSize@Qt_6 6.6.0
  _ZN4QCss14ValueExtractor12lengthValuesERKNS_11DeclarationEPi@Qt_6 6.6.0
  _ZN4QCss14ValueExtractor13extractBorderEPiP6QBrushPNS_11BorderStyleEP5QSize@Qt_6 6.6.0
  _ZN4QCss14ValueExtractor14extractOutlineEPiP6QBrushPNS_11BorderStyleEP5QSizeS1_@Qt_6 6.6.0
- _ZN4QCss14ValueExtractor14extractPaletteEP6QBrushS2_S2_S2_S2_S2_@Qt_6 6.6.0
  _ZN4QCss14ValueExtractor15extractGeometryEPiS1_S1_S1_S1_S1_@Qt_6 6.6.0
  _ZN4QCss14ValueExtractor15extractPositionEPiS1_S1_S1_PNS_6OriginEP6QFlagsIN2Qt13AlignmentFlagEEPNS_12PositionModeES8_@Qt_6 6.6.0
- _ZN4QCss14ValueExtractor17extractBackgroundEP6QBrushP7QStringPNS_6RepeatEP6QFlagsIN2Qt13AlignmentFlagEEPNS_6OriginEPNS_10AttachmentESD_@Qt_6 6.6.0
- _ZN4QCss14ValueExtractor20extractStyleFeaturesEv@Qt_6 6.6.0
  _ZN4QCss14ValueExtractor9sizeValueERKNS_11DeclarationE@Qt_6 6.6.0
  _ZN4QCss14ValueExtractorC1ERK5QListINS_11DeclarationEERK8QPalette@Qt_6 6.6.0
  _ZN4QCss14ValueExtractorC2ERK5QListINS_11DeclarationEERK8QPalette@Qt_6 6.6.0
@@ -2365,6 +2366,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZN5QIcon12hasThemeIconENS_9ThemeIconE@Qt_6 6.7.2
  _ZN5QIcon12hasThemeIconERK7QString@Qt_6 6.1.2
  _ZN5QIcon12setThemeNameERK7QString@Qt_6 6.1.2
+ _ZN5QIcon16staticMetaObjectE@Qt_6 6.11.2
  _ZN5QIcon16themeSearchPathsEv@Qt_6 6.1.2
  _ZN5QIcon17fallbackThemeNameEv@Qt_6 6.1.2
  _ZN5QIcon19fallbackSearchPathsEv@Qt_6 6.1.2
@@ -2868,6 +2870,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZN7QWindowD0Ev@Qt_6 6.1.2
  _ZN7QWindowD1Ev@Qt_6 6.1.2
  _ZN7QWindowD2Ev@Qt_6 6.1.2
+ _ZN8QPainter10doSetBrushERK6QBrushPS0_@Qt_6 6.11.2
  _ZN8QPainter10drawPixmapERK6QRectFRK7QPixmapS2_@Qt_6 6.1.2
  _ZN8QPainter10drawPixmapERK7QPointFRK7QPixmap@Qt_6 6.1.2
  _ZN8QPainter10drawPointsEPK6QPointi@Qt_6 6.1.2
@@ -2927,6 +2930,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZN8QPainter7drawPieERK6QRectFii@Qt_6 6.1.2
  _ZN8QPainter7restoreEv@Qt_6 6.1.2
  _ZN8QPainter7setFontERK5QFont@Qt_6 6.1.2
+ _ZN8QPainter8doSetPenERK4QPenPS0_@Qt_6 6.11.2
  _ZN8QPainter8drawPathERK12QPainterPath@Qt_6 6.1.2
  _ZN8QPainter8drawTextERK5QRectiRK7QStringPS0_@Qt_6 6.1.2
  _ZN8QPainter8drawTextERK6QRectFRK7QStringRK11QTextOption@Qt_6 6.1.2
@@ -3174,6 +3178,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZN9QtGuiTest26synthesizeExtendedKeyEventEN6QEvent4TypeEi6QFlagsIN2Qt16KeyboardModifierEEjjRK7QString@Qt_6 6.9.1
  _ZN9QtGuiTest27setEventPointGlobalPositionER11QEventPoint7QPointF@Qt_6 6.9.1
  _ZN9QtGuiTest29setEventPointEllipseDiametersER11QEventPoint6QSizeF@Qt_6 6.9.1
+ _ZN9QtGuiTest31platformSupportsMultipleWindowsEv@Qt_6 6.11.2
  _ZN9QtPrivate22QPixelFormat_createYUVEN12QPixelFormat9YUVLayoutEhNS0_10AlphaUsageENS0_13AlphaPositionENS0_18AlphaPremultipliedENS0_18TypeInterpretationENS0_9ByteOrderE@Qt_6 6.1.2
  _ZNK10QClipboard10metaObjectEv@Qt_6 6.1.2
  _ZNK10QClipboard12supportsModeENS_4ModeE@Qt_6 6.1.2
@@ -3400,12 +3405,14 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZNK11QPageRanges9firstPageEv@Qt_6 6.1.2
  _ZNK11QPaintEvent5cloneEv@Qt_6 6.4.0
  _ZNK11QQuaternion10normalizedEv@Qt_6 6.1.2
+ _ZNK11QQuaternion11eulerAnglesEv@Qt_6 6.11.2
  _ZNK11QQuaternion13lengthSquaredEv@Qt_6 6.1.2
  _ZNK11QQuaternion13rotatedVectorERK9QVector3D@Qt_6 6.1.2
  _ZNK11QQuaternion14getEulerAnglesEPfS0_S0_@Qt_6 6.1.2
  _ZNK11QQuaternion15getAxisAndAngleEPfS0_S0_S0_@Qt_6 6.1.2
  _ZNK11QQuaternion16toRotationMatrixEv@Qt_6 6.1.2
  _ZNK11QQuaternion6lengthEv@Qt_6 6.1.2
+ _ZNK11QQuaternion6toAxesEv@Qt_6 6.11.2
  _ZNK11QQuaternion7getAxesEP9QVector3DS1_S1_@Qt_6 6.1.2
  _ZNK11QQuaternioncv8QVariantEv@Qt_6 6.1.2
  _ZNK11QStaticText10textFormatEv@Qt_6 6.1.2
@@ -3983,7 +3990,9 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZNK15QTextBlockGroup10metaObjectEv@Qt_6 6.1.2
  _ZNK15QTextBlockGroup9blockListEv@Qt_6 6.1.2
  _ZNK15QTextCharFormat11anchorNamesEv@Qt_6 6.1.2
+ _ZNK15QTextCharFormat12fontFeaturesEv@Qt_6 6.11.2
  _ZNK15QTextCharFormat13fontUnderlineEv@Qt_6 6.1.2
+ _ZNK15QTextCharFormat16fontVariableAxesEv@Qt_6 6.11.2
  _ZNK15QTextCharFormat4fontEv@Qt_6 6.1.2
  _ZNK15QVulkanInstance10apiVersionEv@Qt_6 6.1.2
  _ZNK15QVulkanInstance10extensionsEv@Qt_6 6.1.2
@@ -4230,7 +4239,15 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZNK4QCss11Declaration9rectValueEv@Qt_6 6.6.0
  _ZNK4QCss11Declaration9sizeValueEv@Qt_6 6.6.0
  _ZNK4QCss13StyleSelector14nodeNameEqualsENS0_7NodePtrERK7QString@Qt_6 6.6.0
+ _ZNK4QCss13StyleSelector15selectorMatchesERKNS_8SelectorENS0_7NodePtrE@Qt_6 6.11.2
+ _ZNK4QCss13StyleSelector20basicSelectorMatchesERKNS_13BasicSelectorENS0_7NodePtrE@Qt_6 6.11.2
  _ZNK4QCss13StyleSelector7nodeIdsENS0_7NodePtrE@Qt_6 6.6.0
+ _ZNK4QCss13StyleSelector9matchRuleENS0_7NodePtrERKNS_9StyleRuleENS_16StyleSheetOriginEiPSt8multimapImS2_St4lessImESaISt4pairIKmS2_EEE@Qt_6 6.11.2
+ _ZNK4QCss14ValueExtractor11extractIconEP5QIconP5QSize@Qt_6 6.11.2
+ _ZNK4QCss14ValueExtractor12extractImageEP5QIconP6QFlagsIN2Qt13AlignmentFlagEEP5QSize@Qt_6 6.11.2
+ _ZNK4QCss14ValueExtractor14extractPaletteEP6QBrushS2_S2_S2_S2_S2_@Qt_6 6.11.2
+ _ZNK4QCss14ValueExtractor17extractBackgroundEP6QBrushP7QStringPNS_6RepeatEP6QFlagsIN2Qt13AlignmentFlagEEPNS_6OriginEPNS_10AttachmentESD_@Qt_6 6.11.2
+ _ZNK4QCss14ValueExtractor20extractStyleFeaturesEv@Qt_6 6.11.2
  _ZNK4QCss5Value8toStringEv@Qt_6 6.1.2
  _ZNK4QCss6Parser13unquotedLexemEv@Qt_6 6.6.0
  _ZNK4QCss6Symbol5lexemEv@Qt_6 6.1.2
@@ -4631,6 +4648,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZNK8QPainter11hasClippingEv@Qt_6 6.1.2
  _ZNK8QPainter11paintEngineEv@Qt_6 6.1.2
  _ZNK8QPainter11renderHintsEv@Qt_6 6.1.2
+ _ZNK8QPainter12brushOriginFEv@Qt_6 6.11.2
  _ZNK8QPainter14backgroundModeEv@Qt_6 6.1.2
  _ZNK8QPainter14worldTransformEv@Qt_6 6.1.2
  _ZNK8QPainter15compositionModeEv@Qt_6 6.1.2
@@ -4678,6 +4696,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZNK8QPolygon6unitedERKS_@Qt_6 6.1.2
  _ZNK8QPolygoncv8QVariantEv@Qt_6 6.1.2
  _ZNK8QRawFont10familyNameEv@Qt_6 6.1.2
+ _ZNK8QRawFont10glyphCountEv@Qt_6 6.11.2
  _ZNK8QRawFont10unitsPerEmEv@Qt_6 6.1.2
  _ZNK8QRawFont12boundingRectEj@Qt_6 6.1.2
  _ZNK8QRawFont12maxCharWidthEv@Qt_6 6.1.2
@@ -4693,6 +4712,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZNK8QRawFont21glyphIndexesForStringERK7QString@Qt_6 6.1.2
  _ZNK8QRawFont23advancesForGlyphIndexesEPKjP7QPointFi6QFlagsINS_10LayoutFlagEE@Qt_6 6.1.2
  _ZNK8QRawFont23advancesForGlyphIndexesEPKjP7QPointFi@Qt_6 6.1.2
+ _ZNK8QRawFont23advancesForGlyphIndexesERK5QListIjE6QFlagsINS_10LayoutFlagEE@Qt_6 6.11.2
  _ZNK8QRawFont23supportedWritingSystemsEv@Qt_6 6.1.2
  _ZNK8QRawFont5styleEv@Qt_6 6.1.2
  _ZNK8QRawFont6ascentEv@Qt_6 6.1.2
@@ -4704,6 +4724,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZNK8QRawFont9capHeightEv@Qt_6 6.1.2
  _ZNK8QRawFont9fontTableEN5QFont3TagE@Qt_6 6.7.2
  _ZNK8QRawFont9fontTableEPKc@Qt_6 6.1.2
+ _ZNK8QRawFont9glyphNameEj@Qt_6 6.11.2
  _ZNK8QRawFont9pixelSizeEv@Qt_6 6.1.2
  _ZNK8QRawFont9styleNameEv@Qt_6 6.1.2
  _ZNK8QRawFonteqERKS_@Qt_6 6.1.2
@@ -5329,6 +5350,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _Zls6QDebugRK11QTextLength@Qt_6 6.1.2
  _Zls6QDebugRK12QKeySequence@Qt_6 6.1.2
  _Zls6QDebugRK12QPainterPath@Qt_6 6.1.2
+ _Zls6QDebugRK12QPixelFormat@Qt_6 6.11.2
  _Zls6QDebugRK12QVulkanLayer@Qt_6 6.1.2
  _Zls6QDebugRK14QSurfaceFormat@Qt_6 6.1.2
  _Zls6QDebugRK16QAccessibleEvent@Qt_6 6.1.2

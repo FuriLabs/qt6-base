@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.10.2 amd64
+# SymbolsHelper-Confirmed: 6.11.2 amd64
 libQt6WlShellIntegration.so.6 libqt6wlshellintegration6 #MINVER#
 | libqt6wlshellintegration6 #MINVER#, qt6-base-private-abi (= 6.11.2)
 * Build-Depends-Package: qt6-base-dev
@@ -382,6 +382,22 @@ libQt6WlShellIntegration.so.6 libqt6wlshellintegration6 #MINVER#
  _ZN9QtWayland7wl_seatD0Ev@Qt_6 6.10.2
  _ZN9QtWayland7wl_seatD1Ev@Qt_6 6.10.2
  _ZN9QtWayland7wl_seatD2Ev@Qt_6 6.10.2
+ _ZN9QtWayland8wl_fixes10fromObjectEP8wl_fixes@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixes16destroy_registryEP11wl_registry@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixes17ack_global_removeEP11wl_registryj@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixes4initEP11wl_registryji@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixes4initEP8wl_fixes@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixes7destroyEv@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixes9interfaceEv@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixesC1EP11wl_registryji@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixesC1EP8wl_fixes@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixesC1Ev@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixesC2EP11wl_registryji@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixesC2EP8wl_fixes@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixesC2Ev@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixesD0Ev@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixesD1Ev@Qt_6 6.11.2
+ _ZN9QtWayland8wl_fixesD2Ev@Qt_6 6.11.2
  _ZN9QtWayland8wl_shell10fromObjectEP8wl_shell@Qt_6 6.10.2
  _ZN9QtWayland8wl_shell17get_shell_surfaceEP10wl_surface@Qt_6 6.10.2
  _ZN9QtWayland8wl_shell4initEP11wl_registryji@Qt_6 6.10.2
@@ -520,6 +536,8 @@ libQt6WlShellIntegration.so.6 libqt6wlshellintegration6 #MINVER#
  _ZNK9QtWayland6wl_shm7versionEv@Qt_6 6.10.2
  _ZNK9QtWayland7wl_seat13isInitializedEv@Qt_6 6.10.2
  _ZNK9QtWayland7wl_seat7versionEv@Qt_6 6.10.2
+ _ZNK9QtWayland8wl_fixes13isInitializedEv@Qt_6 6.11.2
+ _ZNK9QtWayland8wl_fixes7versionEv@Qt_6 6.11.2
  _ZNK9QtWayland8wl_shell13isInitializedEv@Qt_6 6.10.2
  _ZNK9QtWayland8wl_shell7versionEv@Qt_6 6.10.2
  _ZNK9QtWayland8wl_touch13isInitializedEv@Qt_6 6.10.2
@@ -546,6 +564,7 @@ libQt6WlShellIntegration.so.6 libqt6wlshellintegration6 #MINVER#
  _ZTIN9QtWayland22wl_data_device_managerE@Qt_6 6.10.2
  _ZTIN9QtWayland6wl_shmE@Qt_6 6.10.2
  _ZTIN9QtWayland7wl_seatE@Qt_6 6.10.2
+ _ZTIN9QtWayland8wl_fixesE@Qt_6 6.11.2
  _ZTIN9QtWayland8wl_shellE@Qt_6 6.10.2
  _ZTIN9QtWayland8wl_touchE@Qt_6 6.10.2
  _ZTIN9QtWayland9wl_bufferE@Qt_6 6.10.2
@@ -567,6 +586,7 @@ libQt6WlShellIntegration.so.6 libqt6wlshellintegration6 #MINVER#
  _ZTSN9QtWayland22wl_data_device_managerE@Qt_6 6.10.2
  _ZTSN9QtWayland6wl_shmE@Qt_6 6.10.2
  _ZTSN9QtWayland7wl_seatE@Qt_6 6.10.2
+ _ZTSN9QtWayland8wl_fixesE@Qt_6 6.11.2
  _ZTSN9QtWayland8wl_shellE@Qt_6 6.10.2
  _ZTSN9QtWayland8wl_touchE@Qt_6 6.10.2
  _ZTSN9QtWayland9wl_bufferE@Qt_6 6.10.2
@@ -588,6 +608,7 @@ libQt6WlShellIntegration.so.6 libqt6wlshellintegration6 #MINVER#
  _ZTVN9QtWayland22wl_data_device_managerE@Qt_6 6.10.2
  _ZTVN9QtWayland6wl_shmE@Qt_6 6.10.2
  _ZTVN9QtWayland7wl_seatE@Qt_6 6.10.2
+ _ZTVN9QtWayland8wl_fixesE@Qt_6 6.11.2
  _ZTVN9QtWayland8wl_shellE@Qt_6 6.10.2
  _ZTVN9QtWayland8wl_touchE@Qt_6 6.10.2
  _ZTVN9QtWayland9wl_bufferE@Qt_6 6.10.2
