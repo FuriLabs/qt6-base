@@ -1,4 +1,4 @@
-qt6-base (6.11.2+dfsg-1) UNRELEASED; urgency=medium
+qt6-base (6.11.2+dfsg-1) experimental; urgency=medium
 
   [ Patrick Franz ]
   * New upstream release (6.11.2).
@@ -12,7 +12,7 @@ qt6-base (6.11.2+dfsg-1) UNRELEASED; urgency=medium
   * Update d/copyright.
   * Enable QIORing to abstract io_uring.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue, 18 Aug 2026 20:28:49 +0200
+ -- Patrick Franz <deltaone@debian.org>  Wed, 19 Aug 2026 22:23:04 +0200
 
 qt6-base (6.10.2+dfsg-16) unstable; urgency=medium
 
