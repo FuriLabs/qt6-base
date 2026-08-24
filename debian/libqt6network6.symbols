@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.11.2 amd64
+# SymbolsHelper-Confirmed: 6.11.2 amd64 armhf hppa i386 powerpc
 libQt6Network.so.6 libqt6network6 #MINVER#
 | libqt6network6 #MINVER#, qt6-base-private-abi (= 6.11.2)
 * Build-Depends-Package: qt6-base-dev
@@ -568,9 +568,9 @@ libQt6Network.so.6 libqt6network6 #MINVER#
  _ZN15QNetworkRequest21setHttp1ConfigurationERK19QHttp1Configuration@Qt_6 6.6.0
  _ZN15QNetworkRequest21setHttp2ConfigurationERK19QHttp2Configuration@Qt_6 6.1.2
  _ZN15QNetworkRequest22DefaultTransferTimeoutE@Qt_6 6.7.2
- _ZN15QNetworkRequest25doSetIdleTimeBeforeProbesENSt6chrono8durationIiSt5ratioILl1ELl1EEEE@Qt_6 6.11.2
+ (subst)_ZN15QNetworkRequest25doSetIdleTimeBeforeProbesENSt6chrono8durationIiSt5ratioIL{int64_t}1EL{int64_t}1EEEE@Qt_6 6.11.2
  _ZN15QNetworkRequest25setTcpKeepAliveProbeCountEi@Qt_6 6.11.2
- _ZN15QNetworkRequest26doSetIntervalBetweenProbesENSt6chrono8durationIiSt5ratioILl1ELl1EEEE@Qt_6 6.11.2
+ (subst)_ZN15QNetworkRequest26doSetIntervalBetweenProbesENSt6chrono8durationIiSt5ratioIL{int64_t}1EL{int64_t}1EEEE@Qt_6 6.11.2
  _ZN15QNetworkRequest26setMaximumRedirectsAllowedEi@Qt_6 6.1.2
  _ZN15QNetworkRequest35setDecompressedSafetyCheckThresholdEx@Qt_6 6.2.0
  _ZN15QNetworkRequest6setUrlERK4QUrl@Qt_6 6.1.2

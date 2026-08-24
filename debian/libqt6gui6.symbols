@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.11.2 amd64
+# SymbolsHelper-Confirmed: 6.11.2 amd64 armhf hppa i386 powerpc
 libQt6Gui.so.6 libqt6gui6 #MINVER#
 | libqt6gui6 #MINVER#, qt6-base-private-abi (= 6.11.2)
 * Build-Depends-Package: qt6-base-dev
@@ -4242,7 +4242,7 @@ libQt6Gui.so.6 libqt6gui6 #MINVER#
  _ZNK4QCss13StyleSelector15selectorMatchesERKNS_8SelectorENS0_7NodePtrE@Qt_6 6.11.2
  _ZNK4QCss13StyleSelector20basicSelectorMatchesERKNS_13BasicSelectorENS0_7NodePtrE@Qt_6 6.11.2
  _ZNK4QCss13StyleSelector7nodeIdsENS0_7NodePtrE@Qt_6 6.6.0
- _ZNK4QCss13StyleSelector9matchRuleENS0_7NodePtrERKNS_9StyleRuleENS_16StyleSheetOriginEiPSt8multimapImS2_St4lessImESaISt4pairIKmS2_EEE@Qt_6 6.11.2
+ (subst)_ZNK4QCss13StyleSelector9matchRuleENS0_7NodePtrERKNS_9StyleRuleENS_16StyleSheetOriginEiPSt8multimapI{uint64_t}S2_St4lessI{uint64_t}ESaISt4pairIK{uint64_t}S2_EEE@Qt_6 6.11.2
  _ZNK4QCss14ValueExtractor11extractIconEP5QIconP5QSize@Qt_6 6.11.2
  _ZNK4QCss14ValueExtractor12extractImageEP5QIconP6QFlagsIN2Qt13AlignmentFlagEEP5QSize@Qt_6 6.11.2
  _ZNK4QCss14ValueExtractor14extractPaletteEP6QBrushS2_S2_S2_S2_S2_@Qt_6 6.11.2

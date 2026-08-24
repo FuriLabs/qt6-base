@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 6.11.2 amd64
+# SymbolsHelper-Confirmed: 6.11.2 amd64 armhf hppa i386 powerpc ppc64el
 libQt6Core.so.6 libqt6core6t64 #MINVER#
 | libqt6core6t64 #MINVER#, qt6-base-private-abi (= 6.11.2)
 * Build-Depends-Package: qt6-base-dev
@@ -161,7 +161,7 @@ libQt6Core.so.6 libqt6core6t64 #MINVER#
  (subst)_Z5qHashRKN10QByteArray16FromBase64ResultE{size_t}@Qt_6 6.1.2
  (subst)_Z5qHashd{size_t}@Qt_6 6.1.2
  (arch=ppc64el)_Z5qHashu9__ieee128m@Qt_6 6.9.2+dfsg-2~
- (optional|subst)_Z5qHash{long_double}{size_t}@Qt_6 6.1.2
+ (optional|subst|arch=!ppc64el)_Z5qHash{long_double}{size_t}@Qt_6 6.1.2
  _Z5qQNaNv@Qt_6 6.1.2
  _Z5qSNaNv@Qt_6 6.1.2
  _Z5qdtoadPiS_@Qt_6 6.1.2
@@ -983,8 +983,8 @@ libQt6Core.so.6 libqt6core6t64 #MINVER#
  _ZN14QStandardPaths6locateENS_16StandardLocationERK7QString6QFlagsINS_12LocateOptionEE@Qt_6 6.1.2
  _ZN14QStandardPaths9locateAllENS_16StandardLocationERK7QString6QFlagsINS_12LocateOptionEE@Qt_6 6.1.2
  _ZN14QStringDecoder14decoderForHtmlE14QByteArrayView@Qt_6 6.4.0
- _ZN14QStringDecoder8finalizeEPDsx@Qt_6 6.11.2
- _ZN14QStringEncoder8finalizeEPcx@Qt_6 6.11.2
+ (subst)_ZN14QStringDecoder8finalizeEPDs{qptrdiff}@Qt_6 6.11.2
+ (subst)_ZN14QStringEncoder8finalizeEPc{qptrdiff}@Qt_6 6.11.2
  _ZN14QStringMatcher10setPatternERK7QString@Qt_6 6.1.2
  _ZN14QStringMatcher15updateSkipTableEv@Qt_6 6.1.2
  _ZN14QStringMatcher18setCaseSensitivityEN2Qt15CaseSensitivityE@Qt_6 6.1.2
@@ -3444,7 +3444,7 @@ libQt6Core.so.6 libqt6core6t64 #MINVER#
  _ZN9QtPrivate12equalStringsE20QBasicUtf8StringViewILb0EES1_@Qt_6 6.1.2
  _ZN9QtPrivate12isValidUtf16E11QStringView@Qt_6 6.1.2
  _ZN9QtPrivate12qustrcasechrE11QStringViewDs@Qt_6 6.8.2
- _ZN9QtPrivate13_q_atomicWaitEPKvS1_x@Qt_6 6.11.2
+ (subst)_ZN9QtPrivate13_q_atomicWaitEPKvS1_{qptrdiff}@Qt_6 6.11.2
  _ZN9QtPrivate13_q_atomicWakeEPvNS_8WakeModeE@Qt_6 6.11.2
  _ZN9QtPrivate13compareMemoryE14QByteArrayViewS0_@Qt_6 6.1.2
  _ZN9QtPrivate13convertToUcs4E11QStringView@Qt_6 6.1.2
