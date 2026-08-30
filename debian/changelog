@@ -1,5 +1,7 @@
 qt6-base (6.11.2+dfsg-3) UNRELEASED; urgency=medium
 
+  [ Pino Toscano ]
+  * Update install files for Linux-only bits, and ibase-specific files.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 30 Aug 2026 04:57:20 +0200
 
