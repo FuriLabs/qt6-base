@@ -1,9 +1,9 @@
-qt6-base (6.11.2+dfsg-3) UNRELEASED; urgency=medium
+qt6-base (6.11.2+dfsg-3) experimental; urgency=medium
 
-  [ Pino Toscano ]
+  * Team upload.
   * Update install files for Linux-only bits, and ibase-specific files.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 30 Aug 2026 04:57:20 +0200
+ -- Pino Toscano <pino@debian.org>  Mon, 31 Aug 2026 07:38:37 +0200
 
 qt6-base (6.11.2+dfsg-2) experimental; urgency=medium
 
