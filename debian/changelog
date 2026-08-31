@@ -1,3 +1,8 @@
+qt6-base (6.11.2+dfsg-4) UNRELEASED; urgency=medium
+
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 31 Aug 2026 19:51:16 +0200
+
 qt6-base (6.11.2+dfsg-3) experimental; urgency=medium
 
   * Team upload.
